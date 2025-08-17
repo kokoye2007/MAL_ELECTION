@@ -607,6 +607,13 @@ def main():
     <div style='text-align: center; color: #666; padding: 2rem;'>
         <p>Myanmar Election Data Visualization | Data Source: Myanmar Election Commission</p>
         <p>🤖 Built with Streamlit | 📊 Powered by Plotly & Folium</p>
+        <p style='font-size: 12px; margin-top: 1rem;'>
+            Translation Services: National Language Services (NLS) | 
+            Data Processing: Clean Text & MIMU Boundary Integration
+        </p>
+        <p style='font-size: 11px; color: #888;'>
+            Special thanks to MIMU (Myanmar Information Management Unit) for township boundary data
+        </p>
     </div>
     """, unsafe_allow_html=True)
 
