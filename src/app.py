@@ -104,6 +104,31 @@ def create_sidebar(visualizer: MyanmarElectionVisualizer):
         **Source:** Myanmar Election Commission
         """)
     
+    # Performance monitoring section
+    st.sidebar.markdown("---")
+    st.sidebar.subheader("⚡ Performance")
+    
+    cache_info = visualizer.get_cache_info()
+    if cache_info["data_loaded"]:
+        st.sidebar.success(f"✅ Data: {cache_info['total_constituencies']} constituencies")
+    else:
+        st.sidebar.error("❌ Data not loaded")
+    
+    # Cache management
+    if st.sidebar.button("🧹 Clear Cache"):
+        visualizer.clear_cache()
+        st.rerun()
+    
+    # Performance tips
+    with st.sidebar.expander("💡 Performance Tips"):
+        st.markdown("""
+        **For optimal performance:**
+        - Use 'Auto' render mode on maps
+        - Clear cache if experiencing slow loading
+        - Regional filters reduce processing time
+        - PDF generation may take 10-15 seconds
+        """)
+    
     return page, selected_regions, search_term, language
 
 
@@ -172,46 +197,243 @@ def show_overview_page(visualizer: MyanmarElectionVisualizer):
 
 
 def show_map_page(visualizer: MyanmarElectionVisualizer, selected_regions):
-    """Display interactive map page."""
+    """Display enhanced interactive map page with zoom-adaptive rendering."""
     
     display_bilingual_title(
-        "Interactive Constituency Map", 
+        "Enhanced Interactive Constituency Map", 
         "အပြန်အလှန်တုံ့ပြန်သော မဲဆန္ဒနယ် မြေပုံ"
     )
     
-    # Map instructions
+    # Map configuration sidebar
+    with st.sidebar:
+        st.markdown("### 🗺️ Map Settings")
+        
+        # Zoom level selector
+        zoom_level = st.select_slider(
+            "Initial Zoom Level",
+            options=[4, 5, 6, 7, 8, 9, 10, 11, 12],
+            value=6,
+            help="Lower values show country-wide view, higher values show detailed local view"
+        )
+        
+        # Rendering mode selector
+        render_mode = st.radio(
+            "Map Display Mode",
+            options=["auto", "regional_counts", "heat_map", "clustered", "individual"],
+            index=0,
+            help="""
+            - Auto: Automatically choose based on zoom level and view mode
+            - Regional Counts: Show constituency count per state/region
+            - Heat Map: Show constituency density as heat overlay
+            - Clustered: Group nearby constituencies 
+            - Individual: Show all constituencies separately
+            """
+        )
+        
+        # Info about Auto mode progression
+        if render_mode == "auto":
+            st.info("""
+            **Auto Mode Progression:**
+            - Zoom ≤6: Heat Map (density visualization)
+            - Zoom 7-8: Regional Count Badges  
+            - Zoom 9-10: Clustered Markers
+            - Zoom 11+: Individual Markers
+            """)
+        
+        # Base map provider selection
+        st.markdown("### 🎨 Base Map Provider")
+        base_map_provider = st.selectbox(
+            "Choose Base Map",
+            options=["auto", "cartodb", "osm"],
+            index=0,
+            help="""
+            - Auto: Automatically choose based on zoom level
+            - CartoDB: Clean, minimal style (best for country view)
+            - OSM: OpenStreetMap with detailed streets
+            """
+        )
+        
+        # Map provider info
+        if base_map_provider == "auto":
+            st.info("**Auto Mode**: Uses CartoDB for country view (≤6), OSM for detailed view (7+)")
+        elif base_map_provider == "cartodb":
+            st.info("**CartoDB**: Clean, minimal design ideal for data visualization")
+        elif base_map_provider == "osm":
+            st.info("**OpenStreetMap**: Detailed street-level mapping with community data")
+    
+    # Map usage instructions  
     st.markdown("""
-    📍 **Instructions:** Click on any marker to see constituency details. Use the sidebar filters to focus on specific regions.
+    📍 **Map Features:**
+    - **Zoom Out (Country View)**: Shows density patterns across Myanmar with heat map visualization
+    - **Zoom In (Regional View)**: Displays regional counts and groupings for better overview
+    - **Zoom In (Local View)**: Shows individual constituencies with detailed information
+    - **Interactive**: Click on any area for detailed constituency information and statistics
+    - **Heat Map Colors**: Purple indicates fewer constituencies, red indicates more constituencies per region
     """)
     
-    # Create and display map
-    try:
-        constituency_map = visualizer.create_interactive_map(selected_regions)
+    # Initialize session state for dynamic zoom tracking
+    if 'map_zoom_level' not in st.session_state:
+        st.session_state.map_zoom_level = zoom_level
+    if 'map_render_mode' not in st.session_state:
+        st.session_state.map_render_mode = render_mode
+    
+    # Auto mode logic: determine actual render mode based on zoom
+    actual_render_mode = render_mode
+    current_zoom_for_map = zoom_level
+    
+    if render_mode == "auto":
+        # Check if we have a detected zoom from previous interaction
+        if 'detected_zoom' in st.session_state and st.session_state.detected_zoom:
+            current_zoom_for_map = st.session_state.detected_zoom
         
-        # Display map
+        # Determine render mode based on current zoom
+        if current_zoom_for_map <= 6:
+            actual_render_mode = "heat_map"
+            mode_name = "Heat Map"
+        elif current_zoom_for_map <= 8:
+            actual_render_mode = "regional_counts"
+            mode_name = "Regional Count Badges" 
+        elif current_zoom_for_map <= 10:
+            actual_render_mode = "clustered"
+            mode_name = "Clustered Markers"
+        else:
+            actual_render_mode = "individual"
+            mode_name = "Individual Markers"
+        
+        st.caption(f"📍 **Auto Mode Active**: {mode_name} (Zoom {current_zoom_for_map})")
+    
+    # Create and display map with determined mode
+    try:
+        constituency_map = visualizer.create_interactive_map(
+            selected_regions=selected_regions,
+            zoom_level=current_zoom_for_map,
+            render_mode=actual_render_mode,  # Use the determined mode, not "auto"
+            base_map_provider=base_map_provider,
+            heat_map_mode=False
+        )
+        
+        # Display map with zoom detection
         map_data = st_folium(
             constituency_map, 
             width=None, 
-            height=500,
-            returned_objects=["last_object_clicked"]
+            height=600,
+            returned_objects=["last_object_clicked", "zoom", "bounds"],
+            key=f"map_{actual_render_mode}_{current_zoom_for_map}"  # Dynamic key for re-rendering
         )
         
-        # Show details when a marker is clicked
+        # Handle zoom changes for Auto mode
+        if map_data and 'zoom' in map_data and map_data['zoom'] and render_mode == "auto":
+            detected_zoom = map_data['zoom']
+            
+            # Determine what mode should be at detected zoom
+            if detected_zoom <= 6:
+                target_mode = "heat_map"
+                target_name = "Heat Map"
+            elif detected_zoom <= 8:
+                target_mode = "regional_counts"
+                target_name = "Regional Count Badges"
+            elif detected_zoom <= 10:
+                target_mode = "clustered"
+                target_name = "Clustered Markers"
+            else:
+                target_mode = "individual"
+                target_name = "Individual Markers"
+            
+            # Check if mode needs to change
+            if target_mode != actual_render_mode:
+                st.info(f"🔄 **Auto Mode**: Detected zoom change to {detected_zoom} - Switching to {target_name}")
+                st.session_state.detected_zoom = detected_zoom
+                st.rerun()  # Trigger re-run to regenerate map with new mode
+        
+        # Enhanced details when a marker is clicked
         if map_data['last_object_clicked']:
-            st.markdown("### 📋 Selected Constituency Details")
-            # This would be enhanced to show specific constituency data
-            st.info("Click on a constituency marker to see detailed information here.")
+            st.markdown("### 📋 Selected Area Details")
+            
+            # Try to extract details from clicked object
+            clicked_coords = map_data['last_object_clicked'].get('lat'), map_data['last_object_clicked'].get('lng')
+            if clicked_coords[0] and clicked_coords[1]:
+                # Find nearest constituency
+                data_to_search = visualizer.data[visualizer.data['state_region_en'].isin(selected_regions)] if selected_regions else visualizer.data
+                
+                if len(data_to_search) > 0:
+                    # Calculate distances and find closest
+                    distances = ((data_to_search['lat'] - clicked_coords[0])**2 + 
+                               (data_to_search['lng'] - clicked_coords[1])**2)**0.5
+                    closest_idx = distances.idxmin()
+                    closest_constituency = data_to_search.loc[closest_idx]
+                    
+                    # Display detailed information
+                    col1, col2 = st.columns(2)
+                    
+                    with col1:
+                        st.markdown(f"**{closest_constituency['constituency_en']}**")
+                        st.markdown(f"*{closest_constituency['constituency_mm']}*")
+                        st.markdown(f"**State/Region:** {closest_constituency['state_region_en']}")
+                        st.markdown(f"**Representatives:** {closest_constituency['representatives']}")
+                    
+                    with col2:
+                        st.markdown(f"**Areas Included:**")
+                        st.markdown(f"{closest_constituency['areas_included_en']}")
+                        st.markdown(f"**ID:** {closest_constituency['id']}")
+                        st.markdown(f"**Assembly:** Pyithu Hluttaw")
         
     except Exception as e:
-        st.error(f"Error loading map: {str(e)}")
+        st.error(f"Error loading enhanced map: {str(e)}")
         st.markdown("Please ensure all required dependencies are installed and data files are available.")
+        
+        # Show basic error info for debugging
+        with st.expander("🔧 Technical Details"):
+            st.code(str(e))
     
-    # Map statistics
+    # Enhanced map statistics
+    col1, col2, col3 = st.columns(3)
+    
+    with col1:
+        if selected_regions:
+            filtered_data = visualizer.data[visualizer.data['state_region_en'].isin(selected_regions)]
+            st.metric("Constituencies Shown", len(filtered_data))
+        else:
+            st.metric("Total Constituencies", len(visualizer.data))
+    
+    with col2:
+        # Display current rendering mode
+        if render_mode == "auto":
+            if zoom_level <= 6:
+                display_mode = "Auto (Heat Map)"
+            elif zoom_level <= 8:
+                display_mode = "Auto (Regional Counts)"
+            elif zoom_level <= 10:
+                display_mode = "Auto (Clustered)"
+            else:
+                display_mode = "Auto (Individual)"
+        else:
+            render_mode_display = {
+                "regional_counts": "Regional Counts",
+                "heat_map": "Heat Map",
+                "clustered": "Clustered View", 
+                "individual": "Individual Markers"
+            }
+            display_mode = render_mode_display.get(render_mode, render_mode)
+        
+        st.metric("Rendering Mode", display_mode)
+    
+    with col3:
+        zoom_level_desc = {
+            4: "Country", 5: "Country", 6: "Country",
+            7: "Regional", 8: "Regional", 9: "Regional", 
+            10: "Local", 11: "Local", 12: "Local"
+        }
+        st.metric("Zoom Level", f"{zoom_level} ({zoom_level_desc.get(zoom_level, 'Custom')})")
+    
+    # Performance tip
+    if render_mode == "individual" and zoom_level <= 6:
+        st.warning("💡 **Performance Tip**: Individual marker mode at low zoom levels may be slow. Consider using 'Auto' mode for better performance.")
+    
+    # Region statistics
     if selected_regions:
-        filtered_data = visualizer.data[visualizer.data['state_region_en'].isin(selected_regions)]
-        st.markdown(f"**Showing {len(filtered_data)} constituencies** from selected regions: {', '.join(selected_regions)}")
+        st.markdown(f"**Filtered View**: {', '.join(selected_regions)}")
     else:
-        st.markdown(f"**Showing all {len(visualizer.data)} constituencies** across Myanmar")
+        st.markdown("**View**: All 15 states and regions across Myanmar")
 
 
 def show_search_page(visualizer: MyanmarElectionVisualizer, selected_regions, search_term):
@@ -239,7 +461,7 @@ def show_search_page(visualizer: MyanmarElectionVisualizer, selected_regions, se
     
     # Export options
     st.markdown("### 📥 Export Options")
-    col1, col2 = st.columns(2)
+    col1, col2, col3 = st.columns(3)
     
     with col1:
         csv = filtered_data.to_csv(index=False).encode('utf-8')
@@ -251,6 +473,32 @@ def show_search_page(visualizer: MyanmarElectionVisualizer, selected_regions, se
         )
     
     with col2:
+        # PDF Export functionality
+        try:
+            if st.button("📑 Generate PDF Report"):
+                with st.spinner("Generating PDF report..."):
+                    pdf_data = visualizer.generate_pdf_report(
+                        title="Myanmar Constituency Report",
+                        selected_regions=selected_regions
+                    )
+                    
+                    # Create download button for PDF
+                    region_suffix = f"_{'+'.join(selected_regions)}" if selected_regions else "_all_regions"
+                    filename = f"myanmar_constituencies{region_suffix}.pdf"
+                    
+                    st.download_button(
+                        label="⬇️ Download PDF Report",
+                        data=pdf_data,
+                        file_name=filename,
+                        mime="application/pdf"
+                    )
+                    st.success("PDF report generated successfully!")
+        except Exception as e:
+            st.error(f"Error generating PDF: {str(e)}")
+            with st.expander("🔧 Technical Details"):
+                st.code(str(e))
+    
+    with col3:
         if st.button("📋 Copy to Clipboard"):
             st.success("Table data would be copied to clipboard (feature to be implemented)")
     

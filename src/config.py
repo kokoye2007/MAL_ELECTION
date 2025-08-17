@@ -4,6 +4,11 @@ Configuration settings for Myanmar Election Data Visualization
 """
 
 from pathlib import Path
+import os
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 # Base paths
 BASE_DIR = Path(__file__).parent.parent
@@ -78,3 +83,40 @@ VALIDATION_RULES = {
     "representatives_per_constituency": 1,
     "required_fields": ["id", "state_region_mm", "constituency_mm", "representatives"]
 }
+
+# API Configuration
+API_KEYS = {
+    "TOMTOM_API_KEY": os.getenv("TOMTOM_API_KEY"),
+    "MAPBOX_API_KEY": os.getenv("MAPBOX_API_KEY"), 
+    "HERE_API_KEY": os.getenv("HERE_API_KEY")
+}
+
+# Map Configuration from Environment
+MAP_CONFIG = {
+    "DEFAULT_ZOOM_LEVEL": int(os.getenv("DEFAULT_ZOOM_LEVEL", "6")),
+    "DEFAULT_MAP_PROVIDER": os.getenv("DEFAULT_MAP_PROVIDER", "auto"),
+    "HEAT_MAP_RADIUS": int(os.getenv("HEAT_MAP_RADIUS", "20")),
+    "HEAT_MAP_BLUR": int(os.getenv("HEAT_MAP_BLUR", "10")),
+    "HEAT_MAP_MIN_OPACITY": float(os.getenv("HEAT_MAP_MIN_OPACITY", "0.15")),
+    "HEAT_MAP_INTENSITY_SCALE": float(os.getenv("HEAT_MAP_INTENSITY_SCALE", "0.8")),
+    "CUSTOM_MAP_SERVER_URL": os.getenv("CUSTOM_MAP_SERVER_URL")
+}
+
+# Application Settings
+APP_CONFIG = {
+    "DEBUG_MODE": os.getenv("DEBUG_MODE", "false").lower() == "true",
+    "ENABLE_PERFORMANCE_MONITORING": os.getenv("ENABLE_PERFORMANCE_MONITORING", "true").lower() == "true",
+    "ENABLE_CACHING": os.getenv("ENABLE_CACHING", "true").lower() == "true",
+    "CACHE_TTL_SECONDS": int(os.getenv("CACHE_TTL_SECONDS", "3600"))
+}
+
+def get_api_key(service: str) -> str:
+    """Get API key for a specific service with validation."""
+    key = API_KEYS.get(f"{service.upper()}_API_KEY")
+    if not key:
+        print(f"Warning: {service} API key not found in environment variables")
+    return key
+
+def has_api_key(service: str) -> bool:
+    """Check if API key is available for a service."""
+    return bool(API_KEYS.get(f"{service.upper()}_API_KEY"))
