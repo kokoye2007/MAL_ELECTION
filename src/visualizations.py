@@ -185,14 +185,14 @@ class MyanmarElectionVisualizer:
     
     def create_interactive_map(self, selected_regions: Optional[List[str]] = None, 
                              zoom_level: int = 6, render_mode: str = "auto", 
-                             base_map_provider: str = "auto", heat_map_mode: bool = False) -> folium.Map:
+                             base_map_provider: str = "cartodb", heat_map_mode: bool = False) -> folium.Map:
         """Create zoom-adaptive interactive map of Myanmar constituencies.
         
         Args:
             selected_regions: Optional list of regions to filter
             zoom_level: Initial zoom level (affects rendering mode)
             render_mode: 'auto', 'regional_counts', 'clustered', 'individual', 'heat_map'
-            base_map_provider: 'auto', 'tomtom', 'mapbox', 'here', 'cartodb', 'osm'
+            base_map_provider: 'cartodb', 'osm', 'google', 'mapbox'
             heat_map_mode: Use heat map instead of count badges for country view
         """
         
@@ -202,9 +202,30 @@ class MyanmarElectionVisualizer:
         else:
             map_data = self.data
         
-        # Center map on Myanmar
-        center_lat = map_data['lat'].mean() if len(map_data) > 0 else 21.9162
-        center_lng = map_data['lng'].mean() if len(map_data) > 0 else 95.9560
+        # Center map based on selected data
+        if len(map_data) > 0:
+            center_lat = map_data['lat'].mean()
+            center_lng = map_data['lng'].mean()
+            
+            # Calculate bounds for filtered regions to adjust zoom
+            if selected_regions and len(selected_regions) > 0:
+                # Calculate bounding box for selected regions
+                lat_range = map_data['lat'].max() - map_data['lat'].min()
+                lng_range = map_data['lng'].max() - map_data['lng'].min()
+                
+                # Adjust zoom level based on geographic spread
+                max_range = max(lat_range, lng_range)
+                if max_range < 1.0:  # Very small area
+                    zoom_level = min(10, zoom_level + 2)
+                elif max_range < 3.0:  # Medium area  
+                    zoom_level = min(9, zoom_level + 1)
+                elif max_range < 6.0:  # Large area
+                    zoom_level = max(7, zoom_level)
+                # For very large areas, keep original zoom
+        else:
+            # Default Myanmar center
+            center_lat = 21.9162
+            center_lng = 95.9560
         
         # Determine rendering mode based on zoom level for Auto mode
         if render_mode == "auto":
@@ -318,8 +339,17 @@ class MyanmarElectionVisualizer:
     def _add_heat_map(self, map_obj: folium.Map, data: pd.DataFrame):
         """Add heat map layer for constituency density visualization with proper scaling."""
         
+        # Validate input data
+        if data.empty or len(data) == 0:
+            return  # Skip heatmap if no data
+        
+        # Filter out rows with invalid coordinates
+        valid_data = data.dropna(subset=['lat', 'lng', 'state_region_en'])
+        if valid_data.empty:
+            return  # Skip heatmap if no valid coordinates
+        
         # Calculate regional constituency counts for meaningful weights
-        regional_counts = data.groupby('state_region_en').size()
+        regional_counts = valid_data.groupby('state_region_en').size()
         
         # Calculate weight statistics for proper scaling
         min_count = regional_counts.min()
@@ -330,18 +360,23 @@ class MyanmarElectionVisualizer:
         region_weight_map = {}
         for region, count in regional_counts.items():
             # Normalize to 0.1-1.0 range for better color distribution
-            normalized_weight = 0.1 + (count - min_count) / (max_count - min_count) * 0.9
+            # Handle case where max_count == min_count (single region or all regions have same count)
+            if max_count == min_count:
+                normalized_weight = 0.6  # Use middle value when no variation
+            else:
+                normalized_weight = 0.1 + (count - min_count) / (max_count - min_count) * 0.9
             region_weight_map[region] = normalized_weight * MAP_CONFIG["HEAT_MAP_INTENSITY_SCALE"]
         
-        # Prepare heat map data with proper weights
+        # Prepare heat map data with proper weights using cleaned data
         heat_data = []
-        for _, row in data.iterrows():
-            if pd.notna(row['lat']) and pd.notna(row['lng']):
-                # Use regional density as weight
-                weight = region_weight_map.get(row['state_region_en'], 0.1)
+        for _, row in valid_data.iterrows():
+            # Use regional density as weight
+            weight = region_weight_map.get(row['state_region_en'], 0.1)
+            # Ensure weight is not NaN and is a valid number
+            if pd.notna(weight) and weight > 0:
                 heat_data.append([row['lat'], row['lng'], weight])
         
-        if heat_data:
+        if heat_data and len(heat_data) > 0:
             # Create perceptually uniform color gradient
             heat_map = HeatMap(
                 heat_data,
@@ -391,18 +426,10 @@ class MyanmarElectionVisualizer:
             map_obj.get_root().html.add_child(folium.Element(info_html))
     
     def _add_clustered_markers(self, map_obj: folium.Map, data: pd.DataFrame):
-        """Add clustered markers for medium zoom view."""
+        """Add clustered township boundaries for medium zoom view."""
         
-        # Create marker cluster
-        marker_cluster = MarkerCluster(
-            name="Constituencies",
-            overlay=True,
-            control=True,
-            show_coverage_on_hover=False,
-            maxClusterRadius=30
-        ).add_to(map_obj)
-        
-        # Add markers to cluster
+        # For clustered view, we'll show simplified boundaries without clustering
+        # since polygon clustering is complex - instead show smaller polygons
         for _, row in data.iterrows():
             if pd.notna(row['lat']) and pd.notna(row['lng']):
                 
@@ -413,82 +440,88 @@ class MyanmarElectionVisualizer:
                     <p><strong>State/Region:</strong> {row['state_region_en']}</p>
                     <p><strong>Representatives:</strong> {row['representatives']}</p>
                     <p><strong>Areas:</strong> {row['areas_included_en']}</p>
+                    <hr style="margin: 8px 0;">
+                    <p style="font-size: 11px; color: #666;">Constituency Pin Point</p>
                 </div>
                 """
                 
                 color = self._get_region_color(row['state_region_en'])
                 
-                folium.CircleMarker(
-                    location=[row['lat'], row['lng']],
-                    radius=8,
-                    popup=folium.Popup(popup_html, max_width=300),
-                    color=color,
-                    fill=True,
-                    fillColor=color,
-                    fillOpacity=0.7,
-                    weight=2
-                ).add_to(marker_cluster)
-    
-    def _add_individual_markers(self, map_obj: folium.Map, data: pd.DataFrame):
-        """Add individual markers for zoomed in view (original implementation)."""
-        
-        for _, row in data.iterrows():
-            if pd.notna(row['lat']) and pd.notna(row['lng']):
-                
-                popup_html = f"""
-                <div style="font-family: Arial; font-size: 12px; width: 200px;">
-                    <h4>{row['constituency_en']}</h4>
-                    <p><strong>Myanmar:</strong> {row['constituency_mm']}</p>
-                    <p><strong>State/Region:</strong> {row['state_region_en']}</p>
-                    <p><strong>Representatives:</strong> {row['representatives']}</p>
-                    <p><strong>Areas:</strong> {row['areas_included_en']}</p>
-                </div>
-                """
-                
-                color = self._get_region_color(row['state_region_en'])
-                
+                # Create pin point marker for constituency location 
                 folium.CircleMarker(
                     location=[row['lat'], row['lng']],
                     radius=6,
                     popup=folium.Popup(popup_html, max_width=300),
                     color=color,
+                    weight=1,
+                    fill=True,
+                    fillColor=color,
+                    fillOpacity=0.6,
+                    opacity=0.8
+                ).add_to(map_obj)
+    
+    def _add_individual_markers(self, map_obj: folium.Map, data: pd.DataFrame):
+        """Add individual pin point markers for zoomed in view."""
+        
+        for _, row in data.iterrows():
+            if pd.notna(row['lat']) and pd.notna(row['lng']):
+                
+                popup_html = f"""
+                <div style="font-family: Arial; font-size: 12px; width: 200px;">
+                    <h4>{row['constituency_en']}</h4>
+                    <p><strong>Myanmar:</strong> {row['constituency_mm']}</p>
+                    <p><strong>State/Region:</strong> {row['state_region_en']}</p>
+                    <p><strong>Representatives:</strong> {row['representatives']}</p>
+                    <p><strong>Areas:</strong> {row['areas_included_en']}</p>
+                    <hr style="margin: 8px 0;">
+                    <p style="font-size: 11px; color: #666;">Constituency Location</p>
+                </div>
+                """
+                
+                color = self._get_region_color(row['state_region_en'])
+                
+                # Create pin point marker for constituency location
+                folium.CircleMarker(
+                    location=[row['lat'], row['lng']],
+                    radius=8,
+                    popup=folium.Popup(popup_html, max_width=300),
+                    color=color,
+                    weight=2,
                     fill=True,
                     fillColor=color,
                     fillOpacity=0.7,
-                    weight=2
+                    opacity=1.0
                 ).add_to(map_obj)
     
+    
     def _get_base_map_tiles(self, provider: str, zoom_level: int) -> Dict:
-        """Get base map tile configuration based on provider and zoom level.
+        """Get base map tile configuration based on provider.
         
         Args:
-            provider: Map provider ('auto', 'tomtom', 'mapbox', 'here', 'cartodb', 'osm')
-            zoom_level: Current zoom level
+            provider: Map provider ('cartodb', 'osm', 'google', 'mapbox')
+            zoom_level: Current zoom level (unused, kept for compatibility)
             
         Returns:
             Dictionary with tiles configuration
         """
         
-        # Auto selection based on zoom level
-        if provider == "auto":
-            if zoom_level <= 6:
-                provider = "cartodb"  # Clean for country view
-            else:
-                provider = "osm"      # Detailed for local view
-        
         # Provider-specific configurations
         tiles_configs = {
             "cartodb": {
                 "tiles": "CartoDB Positron",
-                "attr": "CartoDB"
+                "attr": "© CartoDB, © OpenStreetMap contributors"
             },
             "osm": {
                 "tiles": "OpenStreetMap", 
-                "attr": "OpenStreetMap"
+                "attr": "© OpenStreetMap contributors"
+            },
+            "google": {
+                "tiles": "https://mt1.google.com/vt/lyrs=r&x={x}&y={y}&z={z}",
+                "attr": "© Google Maps"
             }
         }
         
-        # Return configuration with fallback
+        # Return configuration with fallback to cartodb
         return tiles_configs.get(provider, tiles_configs["cartodb"])
     
     

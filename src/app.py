@@ -51,14 +51,6 @@ def create_sidebar(visualizer: MyanmarElectionVisualizer):
     
     st.sidebar.title("🗳️ Navigation")
     
-    # Language toggle (placeholder for future implementation)
-    language = st.sidebar.selectbox(
-        "Language / ဘာသာစကား",
-        ["English", "မြန်မာ"],
-        index=0,
-        help="Switch between English and Myanmar languages"
-    )
-    
     # Page navigation
     page = st.sidebar.selectbox(
         "Select Page",
@@ -129,7 +121,7 @@ def create_sidebar(visualizer: MyanmarElectionVisualizer):
         - PDF generation may take 10-15 seconds
         """)
     
-    return page, selected_regions, search_term, language
+    return page, selected_regions, search_term
 
 
 def show_overview_page(visualizer: MyanmarElectionVisualizer):
@@ -137,8 +129,8 @@ def show_overview_page(visualizer: MyanmarElectionVisualizer):
     
     # Bilingual title
     display_bilingual_title(
-        "Myanmar Election Data Overview", 
-        "မြန်မာနိုင်ငံ ရွေးကောက်ပွဲ ဒေတာ ခြုံငုံသုံးမြင်ကွင်း"
+        "Overview", 
+        "ခြုံငုံသုံးမြင်ကွင်း"
     )
     
     # Summary cards
@@ -200,8 +192,8 @@ def show_map_page(visualizer: MyanmarElectionVisualizer, selected_regions):
     """Display enhanced interactive map page with zoom-adaptive rendering."""
     
     display_bilingual_title(
-        "Enhanced Interactive Constituency Map", 
-        "အပြန်အလှန်တုံ့ပြန်သော မဲဆန္ဒနယ် မြေပုံ"
+        "Interactive Map", 
+        "မြေပုံ"
     )
     
     # Map configuration sidebar
@@ -244,22 +236,22 @@ def show_map_page(visualizer: MyanmarElectionVisualizer, selected_regions):
         st.markdown("### 🎨 Base Map Provider")
         base_map_provider = st.selectbox(
             "Choose Base Map",
-            options=["auto", "cartodb", "osm"],
+            options=["cartodb", "osm", "google"],
             index=0,
             help="""
-            - Auto: Automatically choose based on zoom level
-            - CartoDB: Clean, minimal style (best for country view)
-            - OSM: OpenStreetMap with detailed streets
+            - CartoDB: Clean, minimal style (default, best for data visualization)
+            - OSM: OpenStreetMap with detailed street-level mapping
+            - Google: Google Maps satellite and street view
             """
         )
         
         # Map provider info
-        if base_map_provider == "auto":
-            st.info("**Auto Mode**: Uses CartoDB for country view (≤6), OSM for detailed view (7+)")
-        elif base_map_provider == "cartodb":
-            st.info("**CartoDB**: Clean, minimal design ideal for data visualization")
+        if base_map_provider == "cartodb":
+            st.info("**CartoDB**: Clean, minimal design ideal for data visualization (Default)")
         elif base_map_provider == "osm":
             st.info("**OpenStreetMap**: Detailed street-level mapping with community data")
+        elif base_map_provider == "google":
+            st.info("**Google Maps**: Satellite imagery and familiar street mapping")
     
     # Map usage instructions  
     st.markdown("""
@@ -276,6 +268,8 @@ def show_map_page(visualizer: MyanmarElectionVisualizer, selected_regions):
         st.session_state.map_zoom_level = zoom_level
     if 'map_render_mode' not in st.session_state:
         st.session_state.map_render_mode = render_mode
+    if 'current_display_mode' not in st.session_state:
+        st.session_state.current_display_mode = "Auto (Heat Map)"
     
     # Auto mode logic: determine actual render mode based on zoom
     actual_render_mode = render_mode
@@ -299,6 +293,10 @@ def show_map_page(visualizer: MyanmarElectionVisualizer, selected_regions):
         else:
             actual_render_mode = "individual"
             mode_name = "Individual Markers"
+        
+        # Update session state with current mode
+        st.session_state.current_display_mode = f"Auto ({mode_name})"
+        st.session_state.map_zoom_level = current_zoom_for_map
         
         st.caption(f"📍 **Auto Mode Active**: {mode_name} (Zoom {current_zoom_for_map})")
     
@@ -396,16 +394,9 @@ def show_map_page(visualizer: MyanmarElectionVisualizer, selected_regions):
             st.metric("Total Constituencies", len(visualizer.data))
     
     with col2:
-        # Display current rendering mode
+        # Display current rendering mode from session state
         if render_mode == "auto":
-            if zoom_level <= 6:
-                display_mode = "Auto (Heat Map)"
-            elif zoom_level <= 8:
-                display_mode = "Auto (Regional Counts)"
-            elif zoom_level <= 10:
-                display_mode = "Auto (Clustered)"
-            else:
-                display_mode = "Auto (Individual)"
+            display_mode = st.session_state.get('current_display_mode', 'Auto (Heat Map)')
         else:
             render_mode_display = {
                 "regional_counts": "Regional Counts",
@@ -413,25 +404,28 @@ def show_map_page(visualizer: MyanmarElectionVisualizer, selected_regions):
                 "clustered": "Clustered View", 
                 "individual": "Individual Markers"
             }
-            display_mode = render_mode_display.get(render_mode, render_mode)
+            display_mode = render_mode_display.get(actual_render_mode, actual_render_mode)
         
         st.metric("Rendering Mode", display_mode)
     
     with col3:
+        # Use current zoom from session state
+        current_zoom = st.session_state.get('map_zoom_level', zoom_level)
         zoom_level_desc = {
             4: "Country", 5: "Country", 6: "Country",
             7: "Regional", 8: "Regional", 9: "Regional", 
             10: "Local", 11: "Local", 12: "Local"
         }
-        st.metric("Zoom Level", f"{zoom_level} ({zoom_level_desc.get(zoom_level, 'Custom')})")
+        st.metric("Zoom Level", f"{current_zoom} ({zoom_level_desc.get(current_zoom, 'Custom')})")
     
     # Performance tip
     if render_mode == "individual" and zoom_level <= 6:
         st.warning("💡 **Performance Tip**: Individual marker mode at low zoom levels may be slow. Consider using 'Auto' mode for better performance.")
     
-    # Region statistics
+    # Region statistics with auto-zoom info
     if selected_regions:
-        st.markdown(f"**Filtered View**: {', '.join(selected_regions)}")
+        zoom_info = "📍 Map auto-zoomed to selected regions" if len(selected_regions) <= 3 else "🗺️ Map centered on selected regions"
+        st.markdown(f"**Filtered View**: {', '.join(selected_regions)} • {zoom_info}")
     else:
         st.markdown("**View**: All 15 states and regions across Myanmar")
 
@@ -440,8 +434,8 @@ def show_search_page(visualizer: MyanmarElectionVisualizer, selected_regions, se
     """Display constituency search and table page."""
     
     display_bilingual_title(
-        "Constituency Search & Directory", 
-        "မဲဆန္ဒနယ် ရှာဖွေခြင်းနှင့် စာရင်း"
+        "Search", 
+        "ရှာဖွေရန်"
     )
     
     # Search results
@@ -528,8 +522,8 @@ def show_analysis_page(visualizer: MyanmarElectionVisualizer, selected_regions):
     """Display detailed analysis page."""
     
     display_bilingual_title(
-        "Detailed Analysis & Insights", 
-        "အသေးစိတ် ခွဲခြမ်းစိတ်ဖြာမှုနှင့် ထိုးထွင်းသိမြင်မှု"
+        "Analysis", 
+        "ခွဲခြမ်းစိတ်ဖြာမှု"
     )
     
     # Analysis selector
@@ -595,7 +589,7 @@ def main():
         st.stop()
     
     # Create sidebar and get user inputs
-    page, selected_regions, search_term, language = create_sidebar(visualizer)
+    page, selected_regions, search_term = create_sidebar(visualizer)
     
     # Display appropriate page
     if page == "📊 Overview":

@@ -95,8 +95,8 @@ API_KEYS = {
 MAP_CONFIG = {
     "DEFAULT_ZOOM_LEVEL": int(os.getenv("DEFAULT_ZOOM_LEVEL", "6")),
     "DEFAULT_MAP_PROVIDER": os.getenv("DEFAULT_MAP_PROVIDER", "auto"),
-    "HEAT_MAP_RADIUS": int(os.getenv("HEAT_MAP_RADIUS", "20")),
-    "HEAT_MAP_BLUR": int(os.getenv("HEAT_MAP_BLUR", "10")),
+    "HEAT_MAP_RADIUS": int(os.getenv("HEAT_MAP_RADIUS", "15")),
+    "HEAT_MAP_BLUR": int(os.getenv("HEAT_MAP_BLUR", "8")),
     "HEAT_MAP_MIN_OPACITY": float(os.getenv("HEAT_MAP_MIN_OPACITY", "0.15")),
     "HEAT_MAP_INTENSITY_SCALE": float(os.getenv("HEAT_MAP_INTENSITY_SCALE", "0.8")),
     "CUSTOM_MAP_SERVER_URL": os.getenv("CUSTOM_MAP_SERVER_URL")
