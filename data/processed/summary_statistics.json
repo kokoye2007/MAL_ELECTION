@@ -1,0 +1,75 @@
+{
+  "total_constituencies": 330,
+  "total_representatives": 330,
+  "states_regions": {
+    "total": 15,
+    "breakdown": {
+      "Ayeyarwady Region": {
+        "constituencies": 26,
+        "representatives": 26
+      },
+      "Bago Region": {
+        "constituencies": 28,
+        "representatives": 28
+      },
+      "Chin State": {
+        "constituencies": 9,
+        "representatives": 9
+      },
+      "Kachin State": {
+        "constituencies": 18,
+        "representatives": 18
+      },
+      "Kayah State": {
+        "constituencies": 7,
+        "representatives": 7
+      },
+      "Kayin State": {
+        "constituencies": 7,
+        "representatives": 7
+      },
+      "Magway Region": {
+        "constituencies": 25,
+        "representatives": 25
+      },
+      "Mandalay Region": {
+        "constituencies": 28,
+        "representatives": 28
+      },
+      "Mon State": {
+        "constituencies": 10,
+        "representatives": 10
+      },
+      "Naypyitaw Union Territory": {
+        "constituencies": 8,
+        "representatives": 8
+      },
+      "Rakhine State": {
+        "constituencies": 17,
+        "representatives": 17
+      },
+      "Sagaing Region": {
+        "constituencies": 37,
+        "representatives": 37
+      },
+      "Shan State": {
+        "constituencies": 55,
+        "representatives": 55
+      },
+      "Tanintharyi Region": {
+        "constituencies": 10,
+        "representatives": 10
+      },
+      "Yangon Region": {
+        "constituencies": 45,
+        "representatives": 45
+      }
+    }
+  },
+  "assembly_types": {
+    "pyithu": 330
+  },
+  "electoral_system": {
+    "FPTP": 330
+  }
+}
