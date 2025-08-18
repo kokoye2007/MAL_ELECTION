@@ -123,9 +123,10 @@ def load_extended_assemblies_data(connection_string):
         
         # Extended data for other assemblies based on real Myanmar structure
         with conn.cursor() as cursor:
-            # Clear existing extended assembly data first
-            cursor.execute("DELETE FROM constituencies WHERE assembly_type != 'PTHT' AND election_year = 2025")
-            logger.info("🗑️ Cleared existing extended assembly data")
+            # Clear existing extended assembly data first - be more explicit
+            cursor.execute("DELETE FROM constituencies WHERE assembly_type IN ('AMTHT', 'TPHT', 'TPTYT') AND election_year = 2025")
+            cursor.execute("DELETE FROM constituencies WHERE state_region_en = 'Military Administration' AND election_year = 2025")
+            logger.info("🗑️ Cleared existing extended assembly data and military constituencies")
             
             # Generate comprehensive Amyotha Hluttaw constituencies from existing regions
             cursor.execute("""
@@ -153,23 +154,28 @@ def load_extended_assemblies_data(connection_string):
                     amyotha_constituencies = 6
                 
                 for i in range(1, amyotha_constituencies + 1):
-                    state_abbrev = ''.join([word[0].upper() for word in region_en.split()[:2]])
-                    code = f"{state_abbrev}-A{i:02d}"
-                    name_en = f"{region_en} Upper House {i}"
-                    name_mm = f"{region_mm} အမျိုးသားလွှတ်တော် {i}"
-                    
-                    cursor.execute("""
-                        INSERT INTO constituencies (
-                            constituency_code, constituency_en, constituency_mm,
-                            state_region_en, state_region_mm, assembly_type,
-                            representatives, electoral_system, lat, lng,
-                            coordinate_source, validation_status, election_year
-                        ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
-                    """, (
-                        code, name_en, name_mm, region_en, region_mm, 'AMTHT',
-                        1, 'FPTP', lat, lng, 'generated', 'estimated', 2025
-                    ))
-                    amyotha_count += 1
+                    try:
+                        state_abbrev = ''.join([word[0].upper() for word in region_en.split()[:2]])
+                        code = f"{state_abbrev}-A{i:02d}"
+                        name_en = f"{region_en} Upper House {i}"
+                        name_mm = f"{region_mm} အမျိုးသားလွှတ်တော် {i}"
+                        
+                        cursor.execute("""
+                            INSERT INTO constituencies (
+                                constituency_code, constituency_en, constituency_mm,
+                                state_region_en, state_region_mm, assembly_type,
+                                representatives, electoral_system, lat, lng,
+                                coordinate_source, validation_status, election_year
+                            ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+                        """, (
+                            code, name_en, name_mm, region_en, region_mm, 'AMTHT',
+                            1, 'FPTP', lat, lng, 'generated', 'estimated', 2025
+                        ))
+                        amyotha_count += 1
+                    except psycopg2.IntegrityError as e:
+                        logger.warning(f"⚠️ Duplicate constituency code {code} for AMTHT: {e}")
+                        conn.rollback()
+                        continue
             
             conn.commit()
             logger.info(f"✅ Added {amyotha_count} Amyotha Hluttaw constituencies")
@@ -201,22 +207,27 @@ def load_extended_assemblies_data(connection_string):
                 else:
                     region_constituencies = 12  # Increased for smaller regions
                 for i in range(1, region_constituencies + 1):
-                    code = f"{region_en.replace(' ', '')}-S{i:02d}"
-                    name_en = f"{region_en} State/Regional {i}"
-                    name_mm = f"{region_mm} ပြည်နယ်/တိုင်း {i}"
-                    
-                    cursor.execute("""
-                        INSERT INTO constituencies (
-                            constituency_code, constituency_en, constituency_mm,
-                            state_region_en, state_region_mm, assembly_type,
-                            representatives, electoral_system, lat, lng,
-                            coordinate_source, validation_status, election_year
-                        ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
-                    """, (
-                        code, name_en, name_mm, region_en, region_mm, 'TPHT',
-                        1, 'FPTP', lat, lng, 'generated', 'estimated', 2025
-                    ))
-                    tpht_count += 1
+                    try:
+                        code = f"{region_en.replace(' ', '')}-S{i:02d}"
+                        name_en = f"{region_en} State/Regional {i}"
+                        name_mm = f"{region_mm} ပြည်နယ်/တိုင်း {i}"
+                        
+                        cursor.execute("""
+                            INSERT INTO constituencies (
+                                constituency_code, constituency_en, constituency_mm,
+                                state_region_en, state_region_mm, assembly_type,
+                                representatives, electoral_system, lat, lng,
+                                coordinate_source, validation_status, election_year
+                            ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+                        """, (
+                            code, name_en, name_mm, region_en, region_mm, 'TPHT',
+                            1, 'FPTP', lat, lng, 'generated', 'estimated', 2025
+                        ))
+                        tpht_count += 1
+                    except psycopg2.IntegrityError as e:
+                        logger.warning(f"⚠️ Duplicate constituency code {code} for TPHT: {e}")
+                        conn.rollback()
+                        continue
             
             # Create Ethnic constituencies (TPTYT) - More comprehensive coverage
             ethnic_regions = [
@@ -239,24 +250,29 @@ def load_extended_assemblies_data(connection_string):
                 else:
                     ethnic_constituencies = 5  # Other ethnic states
                 for i in range(1, ethnic_constituencies + 1):
-                    code = f"{region_en.split()[0]}-E{i:02d}"
-                    name_en = f"{region_en} Ethnic {i}"
-                    name_mm = f"{region_mm} တိုင်းရင်းသား {i}"
-                    
-                    cursor.execute("""
-                        INSERT INTO constituencies (
-                            constituency_code, constituency_en, constituency_mm,
-                            state_region_en, state_region_mm, assembly_type,
-                            representatives, electoral_system, lat, lng,
-                            coordinate_source, validation_status, election_year,
-                            ethnic_group
-                        ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
-                    """, (
-                        code, name_en, name_mm, region_en, region_mm, 'TPTYT',
-                        1, 'FPTP', lat, lng, 'generated', 'estimated', 2025,
-                        'Various ethnic minorities'
-                    ))
-                    tptyt_count += 1
+                    try:
+                        code = f"{region_en.split()[0]}-E{i:02d}"
+                        name_en = f"{region_en} Ethnic {i}"
+                        name_mm = f"{region_mm} တိုင်းရင်းသား {i}"
+                        
+                        cursor.execute("""
+                            INSERT INTO constituencies (
+                                constituency_code, constituency_en, constituency_mm,
+                                state_region_en, state_region_mm, assembly_type,
+                                representatives, electoral_system, lat, lng,
+                                coordinate_source, validation_status, election_year,
+                                ethnic_group
+                            ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+                        """, (
+                            code, name_en, name_mm, region_en, region_mm, 'TPTYT',
+                            1, 'FPTP', lat, lng, 'generated', 'estimated', 2025,
+                            'Various ethnic minorities'
+                        ))
+                        tptyt_count += 1
+                    except psycopg2.IntegrityError as e:
+                        logger.warning(f"⚠️ Duplicate constituency code {code} for TPTYT: {e}")
+                        conn.rollback()
+                        continue
             
             # Add Military-appointed constituencies for completeness (25% of total seats)
             military_count = 0
@@ -270,24 +286,29 @@ def load_extended_assemblies_data(connection_string):
             for region_en, region_mm, lat, lng in military_regions:
                 military_constituencies = 50  # Each military branch gets constituencies
                 for i in range(1, military_constituencies + 1):
-                    code = f"MIL-{region_en.split()[2][0] if len(region_en.split()) > 2 else region_en.split()[0][0]}{i:02d}"
-                    name_en = f"{region_en} Constituency {i}"
-                    name_mm = f"{region_mm} မဲဆန္ဒနယ် {i}"
-                    
-                    cursor.execute("""
-                        INSERT INTO constituencies (
-                            constituency_code, constituency_en, constituency_mm,
-                            state_region_en, state_region_mm, assembly_type,
-                            representatives, electoral_system, lat, lng,
-                            coordinate_source, validation_status, election_year,
-                            areas_included_en, areas_included_mm
-                        ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
-                    """, (
-                        code, name_en, name_mm, 'Military Administration', 'စစ်အုပ်ချုပ်ရေး', 'PTHT',
-                        1, 'Appointed', lat, lng, 'manual', 'special', 2025,
-                        'Military administrative area', 'စစ်အုပ်ချုပ်ရေးနယ်မြေ'
-                    ))
-                    military_count += 1
+                    try:
+                        code = f"MIL-{region_en.split()[2][0] if len(region_en.split()) > 2 else region_en.split()[0][0]}{i:02d}"
+                        name_en = f"{region_en} Constituency {i}"
+                        name_mm = f"{region_mm} မဲဆန္ဒနယ် {i}"
+                        
+                        cursor.execute("""
+                            INSERT INTO constituencies (
+                                constituency_code, constituency_en, constituency_mm,
+                                state_region_en, state_region_mm, assembly_type,
+                                representatives, electoral_system, lat, lng,
+                                coordinate_source, validation_status, election_year,
+                                areas_included_en, areas_included_mm
+                            ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+                        """, (
+                            code, name_en, name_mm, 'Military Administration', 'စစ်အুপ်ချုပ်ရေး', 'PTHT',
+                            1, 'Appointed', lat, lng, 'manual', 'special', 2025,
+                            'Military administrative area', 'စစ်အုပ်ချုပ်ရေးনယ်မြေ'
+                        ))
+                        military_count += 1
+                    except psycopg2.IntegrityError as e:
+                        logger.warning(f"⚠️ Duplicate constituency code {code} for Military: {e}")
+                        conn.rollback()
+                        continue
             
             conn.commit()
             logger.info(f"✅ Added {tpht_count} State/Regional constituencies")
