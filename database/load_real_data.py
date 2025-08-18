@@ -123,6 +123,10 @@ def load_extended_assemblies_data(connection_string):
         
         # Extended data for other assemblies based on real Myanmar structure
         with conn.cursor() as cursor:
+            # Clear existing extended assembly data first
+            cursor.execute("DELETE FROM constituencies WHERE assembly_type != 'PTHT' AND election_year = 2025")
+            logger.info("🗑️ Cleared existing extended assembly data")
+            
             # Generate comprehensive Amyotha Hluttaw constituencies from existing regions
             cursor.execute("""
                 SELECT DISTINCT state_region_en, state_region_mm, 
