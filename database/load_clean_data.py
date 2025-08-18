@@ -111,7 +111,7 @@ def load_real_constituencies_only(connection_string):
                             str(row['electoral_system']),
                             float(row['lat']),
                             float(row['lng']),
-                            'processed_csv',
+                            'manual',
                             'verified',
                             2025
                         ))
