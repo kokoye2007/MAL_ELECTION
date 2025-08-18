@@ -154,9 +154,16 @@ def load_extended_assemblies_data(connection_string):
                     amyotha_constituencies = 6
                 
                 for i in range(1, amyotha_constituencies + 1):
-                    try:
-                        state_abbrev = ''.join([word[0].upper() for word in region_en.split()[:2]])
-                        code = f"{state_abbrev}-A{i:02d}"
+                    state_abbrev = ''.join([word[0].upper() for word in region_en.split()[:2]])
+                    code = f"{state_abbrev}-A{i:02d}"
+                    
+                    # Check if constituency already exists
+                    cursor.execute("""
+                        SELECT COUNT(*) FROM constituencies 
+                        WHERE constituency_code = %s AND assembly_type = %s AND election_year = %s
+                    """, (code, 'AMTHT', 2025))
+                    
+                    if cursor.fetchone()[0] == 0:  # Doesn't exist, safe to insert
                         name_en = f"{region_en} Upper House {i}"
                         name_mm = f"{region_mm} အမျိုးသားလွှတ်တော် {i}"
                         
@@ -172,10 +179,8 @@ def load_extended_assemblies_data(connection_string):
                             1, 'FPTP', lat, lng, 'generated', 'estimated', 2025
                         ))
                         amyotha_count += 1
-                    except psycopg2.IntegrityError as e:
-                        logger.warning(f"⚠️ Duplicate constituency code {code} for AMTHT: {e}")
-                        conn.rollback()
-                        continue
+                    else:
+                        logger.debug(f"⚠️ Skipping existing constituency code {code} for AMTHT")
             
             conn.commit()
             logger.info(f"✅ Added {amyotha_count} Amyotha Hluttaw constituencies")
@@ -323,7 +328,6 @@ def load_extended_assemblies_data(connection_string):
                         military_count += 1
                     except psycopg2.IntegrityError as e:
                         logger.warning(f"⚠️ Duplicate constituency code {code} for Military: {e}")
-                        conn.rollback()
                         continue
             
             conn.commit()
