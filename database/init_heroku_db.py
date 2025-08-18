@@ -110,45 +110,43 @@ def create_tables(connection_string):
         logger.error(f"❌ Error creating tables: {e}")
         return False
 
-def load_real_data(connection_string):
-    """Load real Myanmar constituency data."""
+def load_clean_data(connection_string):
+    """Load ONLY real Myanmar constituency data from CSV - no synthetic data."""
     try:
-        # Import and run the real data loader
-        from load_real_data import load_constituencies_data, load_extended_assemblies_data, verify_data_load
+        # Import and run the clean data loader
+        from load_clean_data import clean_database, load_real_constituencies_only
         
-        logger.info("📊 Loading real Myanmar Election data...")
+        logger.info("📊 Loading CLEAN real Myanmar Election data...")
         
-        # Check if data already exists
+        # Check if clean data already loaded
         conn = psycopg2.connect(connection_string)
         with conn.cursor() as cursor:
             cursor.execute("SELECT COUNT(*) FROM constituencies WHERE election_year = 2025")
             count = cursor.fetchone()[0]
-        conn.close()
+            
+            # If we have exactly 330 constituencies, assume clean data already loaded
+            if count == 330:
+                logger.info(f"✅ Database already contains {count} clean REAL constituencies")
+                conn.close()
+                return True
+            # If we have other counts, clean and reload
+            elif count > 0:
+                logger.info(f"🧹 Found {count} constituencies, cleaning for fresh load...")
+                conn.close()
+                if not clean_database(connection_string):
+                    logger.error("❌ Failed to clean database")
+                    return False
         
-        if count > 0:
-            logger.info(f"✅ Database already contains {count} constituencies")
-            return True
-        
-        # Load constituency data from CSV
-        if not load_constituencies_data(connection_string):
-            logger.error("❌ Failed to load constituency data")
+        # Load only real constituency data from CSV (330 PTHT constituencies)
+        if not load_real_constituencies_only(connection_string):
+            logger.error("❌ Failed to load real constituency data")
             return False
         
-        # Load extended assembly data to reach 835+ constituencies
-        if not load_extended_assemblies_data(connection_string):
-            logger.error("❌ Failed to load extended assembly data")
-            return False
-        
-        # Verify data load
-        if not verify_data_load(connection_string):
-            logger.error("❌ Data verification failed")
-            return False
-        
-        logger.info("🎉 Successfully loaded all real Myanmar Election data!")
+        logger.info("🎉 Successfully loaded 330 REAL Myanmar constituencies!")
         return True
         
     except Exception as e:
-        logger.error(f"❌ Error loading real data: {e}")
+        logger.error(f"❌ Error loading clean data: {e}")
         # Fallback to basic sample data
         logger.info("⚠️ Falling back to minimal sample data...")
         return load_minimal_sample_data(connection_string)
@@ -202,9 +200,9 @@ def main():
         logger.error("❌ Failed to create database tables")
         sys.exit(1)
     
-    # Load real Myanmar Election data
-    if not load_real_data(database_url):
-        logger.error("❌ Failed to load real data")
+    # Load clean Myanmar Election data (real data only)
+    if not load_clean_data(database_url):
+        logger.error("❌ Failed to load clean data")
         sys.exit(1)
     
     logger.info("🎉 Heroku database initialization completed successfully!")

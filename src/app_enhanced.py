@@ -1037,7 +1037,7 @@ def create_sidebar(db):
     selected_assemblies = st.sidebar.multiselect(
         "Assemblies to Display",
         options=list(assembly_options.keys()),
-        default=["PTHT", "AMTHT", "TPHT", "TPTYT"],
+        default=["PTHT"],  # Only real data available
         format_func=lambda x: assembly_options[x],
         help="Select one or more assemblies to view their constituencies"
     )
