@@ -109,6 +109,7 @@ def configure_page():
             - Amyotha Hluttaw (AMTHT): 116 constituencies  
             - State/Regional (TPHT): 360 constituencies
             - Ethnic Affairs (TPTYT): 29 constituencies
+            - **Total: 835 constituencies**
             
             **Data Source:** Myanmar Election Commission + Docker PostgreSQL
             '''
@@ -1022,49 +1023,58 @@ def create_sidebar(db):
     
     st.sidebar.markdown("---")
     
-    # 3. Function Combo Box (Assembly Selection + Map Performance + Search Options)
-    with st.sidebar.expander("🔧 Function Controls", expanded=False):
+    # 3. Assembly Selection (prominent placement)
+    st.sidebar.markdown("### 🏛️ Assembly Selection")
+    st.sidebar.markdown("*Choose which assemblies to analyze*")
+    
+    assembly_options = {
+        "PTHT": get_text("assemblies.PTHT"),
+        "AMTHT": get_text("assemblies.AMTHT"), 
+        "TPHT": get_text("assemblies.TPHT"),
+        "TPTYT": get_text("assemblies.TPTYT")
+    }
+    
+    selected_assemblies = st.sidebar.multiselect(
+        "Assemblies to Display",
+        options=list(assembly_options.keys()),
+        default=["PTHT", "AMTHT", "TPHT", "TPTYT"],
+        format_func=lambda x: assembly_options[x],
+        help="Select one or more assemblies to view their constituencies"
+    )
+    
+    # Show quick constituency count
+    if selected_assemblies:
+        # Get a quick count from database
+        df_preview = db.get_constituencies(selected_assemblies)
+        constituency_count = len(df_preview)
+        st.sidebar.success(f"📊 {constituency_count} constituencies selected")
+    else:
+        st.sidebar.warning("⚠️ No assemblies selected")
+    
+    # Region filter
+    if selected_assemblies:
+        all_regions = db.get_states_regions()
+        selected_regions = st.sidebar.multiselect(
+            "States/Regions",
+            options=all_regions,
+            default=[],
+            help="Filter by specific states or regions"
+        )
+    else:
+        selected_regions = []
         
-        # Assembly Selection sub-expander
-        with st.expander("🏛️ Assembly Selection", expanded=False):
-            st.markdown("*Choose which assemblies to analyze*")
-            
-            assembly_options = {
-                "PTHT": get_text("assemblies.PTHT"),
-                "AMTHT": get_text("assemblies.AMTHT"), 
-                "TPHT": get_text("assemblies.TPHT"),
-                "TPTYT": get_text("assemblies.TPTYT")
-            }
-            
-            selected_assemblies = st.multiselect(
-                "Assemblies to Display",
-                options=list(assembly_options.keys()),
-                default=["PTHT"],
-                format_func=lambda x: assembly_options[x],
-                help="Select one or more assemblies to view their constituencies",
-                label_visibility="collapsed"
-            )
-            
-            # Region filter
-            if selected_assemblies:
-                all_regions = db.get_states_regions()
-                selected_regions = st.multiselect(
-                    "States/Regions",
-                    options=all_regions,
-                    default=[],
-                    help="Filter by specific states or regions"
-                )
-            else:
-                selected_regions = []
-                
-            # Electoral system filter
-            electoral_systems = st.multiselect(
-                "Electoral Systems",
-                options=["FPTP", "PR"],
-                default=["FPTP", "PR"],
-                help="First Past the Post (FPTP) or Proportional Representation (PR)"
-            )
-        
+    # Electoral system filter
+    electoral_systems = st.sidebar.multiselect(
+        "Electoral Systems",
+        options=["FPTP", "PR"],
+        default=["FPTP", "PR"],
+        help="First Past the Post (FPTP) or Proportional Representation (PR)"
+    )
+    
+    st.sidebar.markdown("---")
+    
+    # 4. Function Combo Box (Map Performance + Search Options)
+    with st.sidebar.expander("🔧 Advanced Controls", expanded=False):
         # Map Performance sub-expander
         with st.expander("⚡ Map Performance", expanded=False):
             st.markdown("*Optimize map rendering and performance*")
@@ -1162,7 +1172,7 @@ def create_sidebar(db):
             - 📍 **OpenStreetMap** - Additional geographic coordinates
             
             **Data Coverage:**
-            - 835+ constituencies across 4 assemblies
+            - 835 constituencies across 4 assemblies (PTHT: 330, AMTHT: 116, TPHT: 360, TPTYT: 29)
             - Bilingual constituency names (English/Myanmar)
             - Geographic coordinates and boundary data
             - Electoral system classifications
@@ -1848,11 +1858,44 @@ def main():
         # Show navigation guide
         show_navigation_guide()
         
-        # Get statistics
-        stats = db.get_assembly_statistics()
+        # Get statistics with assembly filtering
+        if selected_assemblies:
+            # Get filtered constituency data
+            df = db.get_constituencies(selected_assemblies)
+            
+            # Calculate filtered statistics
+            stats = {
+                'total_constituencies': len(df),
+                'total_representatives': df['representatives'].sum() if not df.empty else 0,
+                'mapped_constituencies': df['lat'].notna().sum() if not df.empty else 0,
+                'assembly_breakdown': []
+            }
+            
+            # Create assembly breakdown from filtered data
+            if not df.empty:
+                for assembly_type in df['assembly_type'].unique():
+                    assembly_data = df[df['assembly_type'] == assembly_type]
+                    stats['assembly_breakdown'].append({
+                        'assembly_type': assembly_type,
+                        'constituencies': len(assembly_data),
+                        'total_representatives': assembly_data['representatives'].sum(),
+                        'mapped_count': assembly_data['lat'].notna().sum()
+                    })
+        else:
+            # No assemblies selected - show empty stats
+            stats = {
+                'total_constituencies': 0,
+                'total_representatives': 0,
+                'mapped_constituencies': 0,
+                'assembly_breakdown': []
+            }
         
-        # Display metrics
+        # Display metrics with assembly filter info
         st.subheader(get_text("overview.metrics_title"))
+        if selected_assemblies:
+            st.info(f"📊 Showing statistics for: {', '.join(selected_assemblies)}")
+        else:
+            st.warning("⚠️ No assemblies selected. Please select assemblies from the sidebar.")
         display_assembly_metrics(stats)
         
         # Assembly comparison chart
@@ -2049,6 +2092,7 @@ def main():
             - **AMTHT:** Amyotha Hluttaw (Upper House) - 116 constituencies  
             - **TPHT:** State/Regional Assemblies - 360 constituencies
             - **TPTYT:** Ethnic Affairs - 29 constituencies
+            - **Total: 835 constituencies across all assemblies**
             """)
         
         # Load all data for comparison
