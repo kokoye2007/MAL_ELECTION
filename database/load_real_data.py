@@ -211,7 +211,9 @@ def load_extended_assemblies_data(connection_string):
                 else:  # Very small regions
                     region_constituencies = 6
                 for i in range(1, region_constituencies + 1):
-                    code = f"{region_en.replace(' ', '')}-S{i:02d}"
+                    # Create shorter codes for database constraint (max 20 chars)
+                    region_abbrev = ''.join([word[0].upper() for word in region_en.split()[:2]])
+                    code = f"{region_abbrev}-S{i:02d}"
                     
                     # Check if constituency already exists
                     cursor.execute("""
