@@ -110,68 +110,79 @@ def create_tables(connection_string):
         logger.error(f"❌ Error creating tables: {e}")
         return False
 
-def load_sample_data(connection_string):
-    """Load sample constituency data for demonstration."""
+def load_real_data(connection_string):
+    """Load real Myanmar constituency data."""
+    try:
+        # Import and run the real data loader
+        from load_real_data import load_constituencies_data, load_extended_assemblies_data, verify_data_load
+        
+        logger.info("📊 Loading real Myanmar Election data...")
+        
+        # Check if data already exists
+        conn = psycopg2.connect(connection_string)
+        with conn.cursor() as cursor:
+            cursor.execute("SELECT COUNT(*) FROM constituencies WHERE election_year = 2025")
+            count = cursor.fetchone()[0]
+        conn.close()
+        
+        if count > 0:
+            logger.info(f"✅ Database already contains {count} constituencies")
+            return True
+        
+        # Load constituency data from CSV
+        if not load_constituencies_data(connection_string):
+            logger.error("❌ Failed to load constituency data")
+            return False
+        
+        # Load extended assembly data to reach 835+ constituencies
+        if not load_extended_assemblies_data(connection_string):
+            logger.error("❌ Failed to load extended assembly data")
+            return False
+        
+        # Verify data load
+        if not verify_data_load(connection_string):
+            logger.error("❌ Data verification failed")
+            return False
+        
+        logger.info("🎉 Successfully loaded all real Myanmar Election data!")
+        return True
+        
+    except Exception as e:
+        logger.error(f"❌ Error loading real data: {e}")
+        # Fallback to basic sample data
+        logger.info("⚠️ Falling back to minimal sample data...")
+        return load_minimal_sample_data(connection_string)
+
+def load_minimal_sample_data(connection_string):
+    """Fallback: Load minimal sample data if real data loading fails."""
     try:
         conn = psycopg2.connect(connection_string)
         
-        # Sample data for demonstration
+        # Minimal sample data for emergency fallback
         sample_data = [
-            {
-                'constituency_code': 'YGN-001',
-                'constituency_en': 'Yangon (1)',
-                'constituency_mm': 'ရန်ကုန် (၁)',
-                'state_region_en': 'Yangon Region',
-                'state_region_mm': 'ရန်ကုန်တိုင်းဒေသကြီး',
-                'assembly_type': 'PTHT',
-                'representatives': 1,
-                'lat': 16.8661,
-                'lng': 96.1951,
-                'areas_included_en': 'Downtown Yangon',
-                'coordinate_source': 'manual'
-            },
-            {
-                'constituency_code': 'MDY-001', 
-                'constituency_en': 'Mandalay (1)',
-                'constituency_mm': 'မန္တလေး (၁)',
-                'state_region_en': 'Mandalay Region',
-                'state_region_mm': 'မန္တလေးတိုင်းဒေသကြီး',
-                'assembly_type': 'PTHT',
-                'representatives': 1,
-                'lat': 21.9588,
-                'lng': 96.0891,
-                'areas_included_en': 'Central Mandalay',
-                'coordinate_source': 'manual'
-            }
+            ('YGN-001', 'Yangon (1)', 'ရန်ကုန် (၁)', 'Yangon Region', 'ရန်ကုန်တိုင်းဒေသကြီး', 'PTHT', 1, 16.8661, 96.1951),
+            ('MDY-001', 'Mandalay (1)', 'မန္တလေး (၁)', 'Mandalay Region', 'မန္တလေးတိုင်းဒေသကြီး', 'PTHT', 1, 21.9588, 96.0891),
+            ('NPT-001', 'Naypyidaw (1)', 'နေပြည်တော် (၁)', 'Naypyidaw', 'နေပြည်တော်', 'PTHT', 1, 19.7633, 96.0785),
         ]
         
         with conn.cursor() as cursor:
-            # Check if data already exists
-            cursor.execute("SELECT COUNT(*) FROM constituencies WHERE election_year = 2025")
-            count = cursor.fetchone()[0]
+            for code, name_en, name_mm, region_en, region_mm, assembly, reps, lat, lng in sample_data:
+                cursor.execute("""
+                    INSERT INTO constituencies (
+                        constituency_code, constituency_en, constituency_mm,
+                        state_region_en, state_region_mm, assembly_type,
+                        representatives, lat, lng, coordinate_source, validation_status, election_year
+                    ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+                """, (code, name_en, name_mm, region_en, region_mm, assembly, reps, lat, lng, 'manual', 'verified', 2025))
             
-            if count == 0:
-                for data in sample_data:
-                    cursor.execute("""
-                        INSERT INTO constituencies (
-                            constituency_code, constituency_en, constituency_mm,
-                            state_region_en, state_region_mm, assembly_type,
-                            representatives, lat, lng, areas_included_en, coordinate_source
-                        ) VALUES (%(constituency_code)s, %(constituency_en)s, %(constituency_mm)s,
-                                %(state_region_en)s, %(state_region_mm)s, %(assembly_type)s,
-                                %(representatives)s, %(lat)s, %(lng)s, %(areas_included_en)s, %(coordinate_source)s)
-                    """, data)
-                
-                conn.commit()
-                logger.info(f"✅ Loaded {len(sample_data)} sample constituencies")
-            else:
-                logger.info(f"✅ Database already contains {count} constituencies")
-            
+            conn.commit()
+            logger.info(f"✅ Loaded {len(sample_data)} minimal sample constituencies")
+        
         conn.close()
         return True
         
     except Exception as e:
-        logger.error(f"❌ Error loading sample data: {e}")
+        logger.error(f"❌ Error loading minimal sample data: {e}")
         return False
 
 def main():
@@ -191,9 +202,9 @@ def main():
         logger.error("❌ Failed to create database tables")
         sys.exit(1)
     
-    # Load sample data
-    if not load_sample_data(database_url):
-        logger.error("❌ Failed to load sample data")
+    # Load real Myanmar Election data
+    if not load_real_data(database_url):
+        logger.error("❌ Failed to load real data")
         sys.exit(1)
     
     logger.info("🎉 Heroku database initialization completed successfully!")

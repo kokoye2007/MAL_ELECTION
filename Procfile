@@ -1,1 +1,2 @@
+release: python database/init_heroku_db.py
 web: streamlit run src/app_enhanced.py --server.port=$PORT --server.address=0.0.0.0 --server.headless=true --server.enableCORS=false --server.enableXsrfProtection=false
