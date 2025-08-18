@@ -1,0 +1,64 @@
+{
+  "name": "Myanmar Election Visualization 2025",
+  "description": "Interactive web application for visualizing Myanmar's 2025 electoral constituencies across all assemblies with bilingual support and historical data.",
+  "keywords": [
+    "myanmar",
+    "election",
+    "visualization",
+    "streamlit",
+    "politics",
+    "democracy",
+    "data-visualization"
+  ],
+  "website": "https://github.com/kokoye2007/myanmar-election-viz",
+  "repository": "https://github.com/kokoye2007/myanmar-election-viz",
+  "logo": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Flag_of_Myanmar.svg",
+  "success_url": "/",
+  "stack": "heroku-22",
+  "buildpacks": [
+    {
+      "url": "heroku/python"
+    }
+  ],
+  "formation": {
+    "web": {
+      "quantity": 1,
+      "size": "basic"
+    }
+  },
+  "addons": [
+    {
+      "plan": "heroku-postgresql:essential-0",
+      "as": "DATABASE"
+    }
+  ],
+  "env": {
+    "ENVIRONMENT": {
+      "description": "Application environment",
+      "value": "production"
+    },
+    "DEBUG_MODE": {
+      "description": "Enable debug mode",
+      "value": "false"
+    },
+    "ENABLE_CACHING": {
+      "description": "Enable application caching",
+      "value": "true"
+    },
+    "DEFAULT_MAP_PROVIDER": {
+      "description": "Default map tile provider",
+      "value": "cartodb"
+    },
+    "STREAMLIT_SERVER_HEADLESS": {
+      "description": "Run Streamlit in headless mode",
+      "value": "true"
+    },
+    "STREAMLIT_BROWSER_GATHER_USAGE_STATS": {
+      "description": "Disable Streamlit usage stats",
+      "value": "false"
+    }
+  },
+  "scripts": {
+    "postdeploy": "python database/init_heroku_db.py"
+  }
+}

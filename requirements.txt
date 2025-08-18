@@ -3,19 +3,22 @@ pandas>=2.0.0
 numpy>=1.24.0
 openpyxl>=3.1.0
 
+# Database connectivity
+psycopg2-binary>=2.9.9
+sqlalchemy>=2.0.0
+
 # Visualization libraries
 streamlit>=1.48.0
 plotly>=5.17.0
 folium>=0.20.0
 streamlit-folium>=0.25.0
 
-# Geographic data processing
-geopandas>=1.1.0
+# Geographic data processing (minimal for Heroku)
+geopandas>=0.13.0
 shapely>=2.0.0
 
 # Utilities
 python-dotenv>=1.0.0
-xlsxwriter>=3.2.0
 requests>=2.31.0
 
 # PDF and reporting
@@ -26,11 +29,8 @@ Pillow>=10.0.0
 # Enhanced mapping
 geojson>=3.0.0
 
-# Development dependencies
-pytest>=7.4.0
-black>=23.7.0
-flake8>=6.0.0
+# Health checks and monitoring
+psutil>=5.9.0
 
-# Optional: For future React development
-# nodejs
-# npm
+# Production server
+gunicorn>=21.2.0

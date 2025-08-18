@@ -1,0 +1,54 @@
+# Development Docker Compose - Faster startup for testing
+version: '3.8'
+
+services:
+  # PostgreSQL database for structured data
+  postgres:
+    image: postgis/postgis:15-3.4
+    container_name: myanmar-election-db-dev
+    environment:
+      POSTGRES_DB: myanmar_election
+      POSTGRES_USER: election_user
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-election_dev_2025}
+    ports:
+      - "5432:5432"
+    restart: unless-stopped
+    networks:
+      - election-network
+    volumes:
+      # Mount initialization scripts
+      - ./database/init:/docker-entrypoint-initdb.d:ro
+    # Use tmpfs for faster development (data is not persistent)
+    tmpfs:
+      - /var/lib/postgresql/data
+
+  # Myanmar Election App (development mode)
+  myanmar-election-viz:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: myanmar-election-app-dev
+    depends_on:
+      - postgres
+    environment:
+      - ENVIRONMENT=development
+      - DATABASE_URL=postgresql://election_user:${POSTGRES_PASSWORD:-election_dev_2025}@postgres:5432/myanmar_election
+      - DEBUG_MODE=true
+      - ENABLE_CACHING=false  # Disable for development
+      - DEFAULT_MAP_PROVIDER=cartodb
+    ports:
+      - "8501:8501"
+    volumes:
+      # Mount source code for live editing
+      - ./src:/app/src
+      - ./data:/app/data:ro
+      - ./database:/app/database
+    restart: unless-stopped
+    networks:
+      - election-network
+    # Override CMD for development - use optimized enhanced app
+    command: ["streamlit", "run", "src/app_enhanced.py", "--server.port=8501", "--server.address=0.0.0.0", "--server.runOnSave=true"]
+
+networks:
+  election-network:
+    driver: bridge
