@@ -181,34 +181,45 @@ def load_extended_assemblies_data(connection_string):
             logger.info(f"✅ Added {amyotha_count} Amyotha Hluttaw constituencies")
         
         
-        # Generate State/Regional and Ethnic constituencies
+        # Generate State/Regional constituencies (TPHT) - single pass to avoid duplicates
         with conn.cursor() as cursor:
-            # Get existing Pyithu constituencies to create State/Regional equivalents
+            # Get unique regions from existing Pyithu constituencies
             cursor.execute("""
-                SELECT DISTINCT state_region_en, state_region_mm, lat, lng 
+                SELECT DISTINCT state_region_en, state_region_mm, 
+                       AVG(lat) as avg_lat, AVG(lng) as avg_lng,
+                       COUNT(*) as pyithu_count
                 FROM constituencies 
                 WHERE assembly_type = 'PTHT' AND election_year = 2025
+                GROUP BY state_region_en, state_region_mm
                 ORDER BY state_region_en
             """)
             regions = cursor.fetchall()
             
-            # Create State/Regional constituencies (TPHT) - approximately 360 total
+            # Create State/Regional constituencies (TPHT) - based on actual region data
             tpht_count = 0
             for region in regions:
-                region_en, region_mm, lat, lng = region
-                # Each region gets multiple state/regional constituencies based on population
-                # Larger regions get more constituencies
-                if 'Yangon' in region_en or 'Mandalay' in region_en:
-                    region_constituencies = 15  # Major cities
-                elif 'Shan' in region_en or 'Sagaing' in region_en:
-                    region_constituencies = 12  # Large states
-                elif 'Bago' in region_en or 'Ayeyarwady' in region_en:
-                    region_constituencies = 10  # Medium regions
-                else:
-                    region_constituencies = 12  # Increased for smaller regions
+                region_en, region_mm, lat, lng, pyithu_count = region
+                # Scale state/regional constituencies based on actual Pyithu count
+                if pyithu_count >= 40:  # Large regions like Yangon/Mandalay
+                    region_constituencies = 15  
+                elif pyithu_count >= 25:  # Medium-large regions  
+                    region_constituencies = 12  
+                elif pyithu_count >= 15:  # Medium regions
+                    region_constituencies = 10  
+                elif pyithu_count >= 10:  # Smaller regions
+                    region_constituencies = 8
+                else:  # Very small regions
+                    region_constituencies = 6
                 for i in range(1, region_constituencies + 1):
-                    try:
-                        code = f"{region_en.replace(' ', '')}-S{i:02d}"
+                    code = f"{region_en.replace(' ', '')}-S{i:02d}"
+                    
+                    # Check if constituency already exists
+                    cursor.execute("""
+                        SELECT COUNT(*) FROM constituencies 
+                        WHERE constituency_code = %s AND assembly_type = %s AND election_year = %s
+                    """, (code, 'TPHT', 2025))
+                    
+                    if cursor.fetchone()[0] == 0:  # Doesn't exist, safe to insert
                         name_en = f"{region_en} State/Regional {i}"
                         name_mm = f"{region_mm} ပြည်နယ်/တိုင်း {i}"
                         
@@ -224,10 +235,8 @@ def load_extended_assemblies_data(connection_string):
                             1, 'FPTP', lat, lng, 'generated', 'estimated', 2025
                         ))
                         tpht_count += 1
-                    except psycopg2.IntegrityError as e:
-                        logger.warning(f"⚠️ Duplicate constituency code {code} for TPHT: {e}")
-                        conn.rollback()
-                        continue
+                    else:
+                        logger.debug(f"⚠️ Skipping existing constituency code {code} for TPHT")
             
             # Create Ethnic constituencies (TPTYT) - More comprehensive coverage
             ethnic_regions = [
@@ -250,8 +259,15 @@ def load_extended_assemblies_data(connection_string):
                 else:
                     ethnic_constituencies = 5  # Other ethnic states
                 for i in range(1, ethnic_constituencies + 1):
-                    try:
-                        code = f"{region_en.split()[0]}-E{i:02d}"
+                    code = f"{region_en.split()[0]}-E{i:02d}"
+                    
+                    # Check if constituency already exists
+                    cursor.execute("""
+                        SELECT COUNT(*) FROM constituencies 
+                        WHERE constituency_code = %s AND assembly_type = %s AND election_year = %s
+                    """, (code, 'TPTYT', 2025))
+                    
+                    if cursor.fetchone()[0] == 0:  # Doesn't exist, safe to insert
                         name_en = f"{region_en} Ethnic {i}"
                         name_mm = f"{region_mm} တိုင်းရင်းသား {i}"
                         
@@ -269,10 +285,8 @@ def load_extended_assemblies_data(connection_string):
                             'Various ethnic minorities'
                         ))
                         tptyt_count += 1
-                    except psycopg2.IntegrityError as e:
-                        logger.warning(f"⚠️ Duplicate constituency code {code} for TPTYT: {e}")
-                        conn.rollback()
-                        continue
+                    else:
+                        logger.debug(f"⚠️ Skipping existing constituency code {code} for TPTYT")
             
             # Add Military-appointed constituencies for completeness (25% of total seats)
             military_count = 0
