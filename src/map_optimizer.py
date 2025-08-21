@@ -510,8 +510,84 @@ def create_performance_optimized_map(
         st.warning("No data available for selected filters")
         return None
         
-    # Filter only mapped constituencies
-    mapped_df = data[data['lat'].notna() & data['lng'].notna()].copy()
+    # Initialize boundary renderer for MIMU coordinate lookup
+    try:
+        boundary_renderer = BoundaryRenderer()
+        
+        # Create MIMU coordinate lookup for accurate pin points
+        mimu_coords = {}
+        boundaries = boundary_renderer.load_township_boundaries()
+        if boundaries:
+            for feature in boundaries.get('features', []):
+                properties = feature.get('properties', {})
+                ts_name = properties.get('TS', '').lower().strip()
+                ts_pcode = properties.get('TS_PCODE', '').strip()
+                
+                if ts_name and ts_pcode:
+                    # Calculate centroid from geometry
+                    geometry = feature.get('geometry', {})
+                    centroid = None
+                    
+                    if geometry.get('type') == 'MultiPolygon':
+                        coords = geometry.get('coordinates', [])
+                        if coords and coords[0] and coords[0][0]:
+                            ring = coords[0][0]
+                            lat_sum = sum(point[1] for point in ring)
+                            lng_sum = sum(point[0] for point in ring)
+                            count = len(ring)
+                            centroid = (lat_sum / count, lng_sum / count)
+                    elif geometry.get('type') == 'Polygon':
+                        coords = geometry.get('coordinates', [])
+                        if coords and coords[0]:
+                            ring = coords[0]
+                            lat_sum = sum(point[1] for point in ring)
+                            lng_sum = sum(point[0] for point in ring)
+                            count = len(ring)
+                            centroid = (lat_sum / count, lng_sum / count)
+                    
+                    if centroid:
+                        # Store by both name and PCODE for matching flexibility
+                        mimu_coords[ts_name] = centroid
+                        mimu_coords[ts_pcode] = centroid
+                        # Also try without "Township" suffix
+                        clean_name = ts_name.replace(' township', '').replace(' town', '').strip()
+                        if clean_name != ts_name:
+                            mimu_coords[clean_name] = centroid
+                            
+        print(f"📍 MIMU coordinate lookup created with {len(mimu_coords)} entries")
+    except:
+        boundary_renderer = None
+        mimu_coords = {}
+        
+    # Populate missing coordinates from MIMU data
+    data_copy = data.copy()
+    mimu_matches = 0
+    
+    for idx, row in data_copy.iterrows():
+        # If coordinates are missing or invalid, try MIMU lookup
+        if pd.isna(row.get('lat')) or pd.isna(row.get('lng')):
+            tsp_pcode = row.get('tsp_pcode', '')
+            constituency_name = str(row.get('township_name_en', row.get('constituency_en', ''))).lower().replace(' township', '').strip()
+            
+            mimu_coord = None
+            if tsp_pcode and tsp_pcode in mimu_coords:
+                mimu_coord = mimu_coords[tsp_pcode]
+                print(f"📍 MIMU match by PCODE: {row.get('constituency_en', '')} -> {tsp_pcode}")
+                mimu_matches += 1
+            elif constituency_name in mimu_coords:
+                mimu_coord = mimu_coords[constituency_name]
+                print(f"📍 MIMU match by name: {constituency_name}")
+                mimu_matches += 1
+            
+            if mimu_coord:
+                data_copy.loc[idx, 'lat'] = mimu_coord[0]
+                data_copy.loc[idx, 'lng'] = mimu_coord[1]
+    
+    if mimu_matches > 0:
+        print(f"✅ Populated {mimu_matches} coordinates from MIMU data")
+    
+    # Filter only mapped constituencies 
+    mapped_df = data_copy[data_copy['lat'].notna() & data_copy['lng'].notna()].copy()
     
     if mapped_df.empty:
         st.warning("No mapped constituencies found for selected filters")
@@ -528,18 +604,13 @@ def create_performance_optimized_map(
         tiles='CartoDB Positron'
     )
     
-    # Initialize boundary renderer
-    try:
-        boundary_renderer = BoundaryRenderer()
-        
-        # Add boundary layers if requested
+    # Add boundary layers if requested  
+    if boundary_renderer:
         if show_state_boundaries:
             boundary_renderer.add_state_boundaries(m, zoom_level=zoom_level)
         
         if show_township_boundaries:
             boundary_renderer.add_township_boundaries(m, zoom_level=zoom_level, constituency_data=mapped_df, opacity=boundary_opacity)
-    except NameError:
-        print("Warning: BoundaryRenderer not available")
     
     # Assembly colors
     assembly_colors = {
@@ -561,6 +632,13 @@ def create_performance_optimized_map(
         marker_cluster = MarkerCluster(name=f"{assembly} Constituencies").add_to(m)
         
         for _, row in assembly_data.iterrows():
+            # Coordinates should already be populated from MIMU lookup above
+            lat, lng = row['lat'], row['lng']
+            
+            # Check if coordinates came from MIMU or CSV
+            tsp_pcode = row.get('tsp_pcode', '')
+            coord_source = "MIMU" if tsp_pcode and tsp_pcode in mimu_coords else "CSV"
+            
             popup_html = f"""
             <div style="font-family: Arial; width: 250px;">
                 <h4 style="margin: 0; color: {color};">{assembly}</h4>
@@ -570,12 +648,13 @@ def create_performance_optimized_map(
                 <b>State/Region:</b> {row['state_region_en']}<br>
                 <b>Electoral System:</b> {row.get('electoral_system', 'N/A')}<br>
                 <b>Representatives:</b> {row.get('representatives', 1)}<br>
-                <b>Code:</b> {row.get('constituency_code', 'N/A')}
+                <b>Code:</b> {row.get('constituency_code', row.get('tsp_pcode', 'N/A'))}<br>
+                <b>Coordinates:</b> {coord_source}
             </div>
             """
             
             folium.CircleMarker(
-                location=[row['lat'], row['lng']],
+                location=[lat, lng],
                 radius=6 if assembly == 'PTHT' else 8,  # Slightly larger for other assemblies
                 popup=folium.Popup(popup_html, max_width=300),
                 color=color,

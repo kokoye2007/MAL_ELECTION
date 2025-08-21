@@ -84,25 +84,47 @@ class DatabaseConnector:
     def _load_csv_fallback(_self, assembly_types: Optional[List[str]] = None) -> pd.DataFrame:
         """Load data from CSV when database is unavailable."""
         try:
-            csv_path = "/app/data/processed/myanmar_constituencies.csv"
+            # Try comprehensive data first (new), then legacy CSV
+            csv_path = "/app/data/processed/myanmar_election_2025_complete.csv"
             if not os.path.exists(csv_path):
-                csv_path = "data/processed/myanmar_constituencies.csv"
+                csv_path = "data/processed/myanmar_election_2025_complete.csv"
+            
+            if not os.path.exists(csv_path):
+                # Fallback to legacy CSV
+                csv_path = "/app/data/processed/myanmar_constituencies.csv"
+                if not os.path.exists(csv_path):
+                    csv_path = "data/processed/myanmar_constituencies.csv"
+            
+            if not os.path.exists(csv_path):
+                st.error("❌ No CSV data files found")
+                return pd.DataFrame()
             
             df = pd.read_csv(csv_path)
+            print(f"📊 Loaded {len(df)} constituencies from CSV fallback: {csv_path}")
             
-            # Fix assembly type mapping
-            assembly_mapping = {
-                'pyithu': 'PTHT',
-                'amyotha': 'AMTHT', 
-                'state_regional': 'TPHT'
-            }
-            df['assembly_type'] = df['assembly_type'].map(assembly_mapping).fillna(df['assembly_type'])
+            # Handle legacy CSV format if needed
+            if 'assembly_type' in df.columns and df['assembly_type'].iloc[0] == 'pyithu':
+                # This is legacy format, apply mapping
+                assembly_mapping = {
+                    'pyithu': 'PTHT',
+                    'amyotha': 'AMTHT', 
+                    'state_regional': 'TPHT'
+                }
+                df['assembly_type'] = df['assembly_type'].map(assembly_mapping).fillna(df['assembly_type'])
+                print("🔄 Applied legacy assembly type mapping")
+            
+            # Add missing coordinate columns if not present
+            if 'lat' not in df.columns and 'lng' not in df.columns:
+                # This means we're using the new comprehensive data, need to add coordinates
+                df['lat'] = None
+                df['lng'] = None
+                print("⚠️ New data format detected, coordinates will be populated from MIMU")
             
             # Filter by assembly types if specified
             if assembly_types:
                 df = df[df['assembly_type'].isin(assembly_types)]
             
-            st.info(f"📁 Using CSV data: {len(df)} constituencies loaded")
+            st.info(f"📁 Using CSV data: {len(df)} constituencies loaded from {csv_path.split('/')[-1]}")
             return df
             
         except Exception as e:

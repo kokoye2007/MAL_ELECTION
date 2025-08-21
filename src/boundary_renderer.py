@@ -375,3 +375,45 @@ class BoundaryRenderer:
         ).add_to(map_obj)
         
         return True
+    
+    def get_mimu_coordinates(self, tsp_pcode: str) -> Optional[Tuple[float, float]]:
+        """Get centroid coordinates from MIMU boundary for accurate pin point positioning.
+        
+        Args:
+            tsp_pcode: Township PCODE to match
+            
+        Returns:
+            (lat, lng) tuple if boundary found, None otherwise
+        """
+        boundaries = self.load_township_boundaries()
+        if not boundaries:
+            return None
+            
+        # Find matching township boundary
+        for feature in boundaries.get('features', []):
+            properties = feature.get('properties', {})
+            if properties.get('TS_PCODE') == tsp_pcode:
+                # Calculate centroid from geometry
+                geometry = feature.get('geometry', {})
+                if geometry.get('type') == 'MultiPolygon':
+                    coords = geometry.get('coordinates', [])
+                    if coords and coords[0] and coords[0][0]:
+                        # Get first polygon's first ring
+                        ring = coords[0][0]
+                        # Calculate centroid
+                        lat_sum = sum(point[1] for point in ring)
+                        lng_sum = sum(point[0] for point in ring)
+                        count = len(ring)
+                        return (lat_sum / count, lng_sum / count)
+                elif geometry.get('type') == 'Polygon':
+                    coords = geometry.get('coordinates', [])
+                    if coords and coords[0]:
+                        # Get first ring
+                        ring = coords[0]
+                        # Calculate centroid
+                        lat_sum = sum(point[1] for point in ring)
+                        lng_sum = sum(point[0] for point in ring)
+                        count = len(ring)
+                        return (lat_sum / count, lng_sum / count)
+                
+        return None

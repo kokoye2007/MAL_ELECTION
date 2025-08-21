@@ -1301,8 +1301,21 @@ def create_sidebar(db):
     
     # Version and Update Information
     st.sidebar.markdown("### ℹ️ Version Info")
-    st.sidebar.markdown("**Version:** Heroku v37")
-    st.sidebar.markdown("**Last Updated:** August 22, 2025 at 04:18 AM MMT")
+    # Dynamic version with git hash and Yangon timezone
+    import subprocess
+    from datetime import datetime, timezone, timedelta
+    
+    try:
+        git_hash = subprocess.check_output(['git', 'rev-parse', '--short', 'HEAD']).decode().strip()
+    except:
+        git_hash = "89cdcc1"  # Fallback
+    
+    # Yangon timezone (+6:30)
+    yangon_tz = timezone(timedelta(hours=6, minutes=30))
+    current_time = datetime.now(yangon_tz)
+    
+    st.sidebar.markdown(f"**Version:** Heroku v40-{git_hash}")
+    st.sidebar.markdown(f"**Last Updated:** {current_time.strftime('%B %d, %Y at %I:%M %p MMT')}")
     st.sidebar.markdown("**Features:** Pin Points + Boundary Layers")
     
     st.sidebar.markdown("---")
@@ -2095,7 +2108,7 @@ def main():
                             with col2:
                                 st.markdown(f"**State/Region:** {row['state_region_en']}")
                                 st.markdown(f"**Assembly:** {row['assembly_type']}")
-                                st.markdown(f"**Electoral System:** {row.get('electoral_system', 'N/A')}")
+                                st.markdown(f"**Electoral System:** {row.get('electoral_system_en', row.get('electoral_system', 'N/A'))}")
                                 st.markdown(f"**Representatives:** {row.get('representatives', 1)}")
                                 
                                 # Show coordinates if available
