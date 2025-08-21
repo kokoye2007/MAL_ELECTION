@@ -133,6 +133,25 @@ def extract_comprehensive_data():
         'တိုင်းရင်းသား(FPTP)': 'TPTYT'
     }
     
+    # State/Region name mapping from Myanmar to English
+    state_mapping = {
+        'ကချင်ပြည်နယ်': 'Kachin State',
+        'ကယားပြည်နယ်': 'Kayah State', 
+        'ကရင်ပြည်နယ်': 'Kayin State',
+        'ချင်းပြည်နယ်': 'Chin State',
+        'စစ်ကိုင်းတိုင်းဒေသကြီး': 'Sagaing Region',
+        'တနင်္သာရီတိုင်းဒေသကြီး': 'Tanintharyi Region',
+        'ပဲခူးတိုင်းဒေသကြီး': 'Bago Region',
+        'မကွေးတိုင်းဒေသကြီး': 'Magway Region',
+        'မန္တလေးတိုင်းဒေသကြီး': 'Mandalay Region',
+        'မွန်ပြည်နယ်': 'Mon State',
+        'ရခိုင်ပြည်နယ်': 'Rakhine State',
+        'ရန်ကုန်တိုင်းဒေသကြီး': 'Yangon Region',
+        'ရှမ်းပြည်နယ်': 'Shan State',
+        'ဧရာဝတီတိုင်းဒေသကြီး': 'Ayeyarwady Region',
+        'နေပြည်တော်': 'Naypyidaw Union Territory'
+    }
+    
     all_constituencies = []
     constituency_id = 1
     
@@ -189,12 +208,29 @@ def extract_comprehensive_data():
                     # Calculate coordinates using multi-township logic
                     lat, lng, coordinate_source = calculate_multi_township_coordinates(tsp_pcode_field, mimu_coords)
                     
+                    # Generate proper constituency names based on township and areas
+                    township_en = str(row.get('Township_Name_Eng', ''))
+                    township_mm = str(row.get('မြို့နယ်', ''))
+                    areas_info = str(row.get('မဲဆန္ဒနယ်မြေတွင်ပါဝင်သည့်နယ်မြေများ', ''))
+                    
+                    # Create English constituency name
+                    if township_en and township_en != 'nan':
+                        constituency_en = f"{township_en} Constituency"
+                    else:
+                        constituency_en = f"{assembly_type} Constituency {constituency_id}"
+                    
+                    # Create Myanmar constituency name
+                    if township_mm and township_mm != 'nan':
+                        constituency_mm = f"{township_mm}မဲဆန္ဒနယ်"
+                    else:
+                        constituency_mm = f"{assembly_type} မဲဆန်ဒနယ် {constituency_id}"
+                    
                     # Build constituency record
                     constituency = {
                         'id': constituency_id,
-                        'constituency_en': str(row.get(constituency_col, f'{assembly_type} Constituency {constituency_id}')),
-                        'constituency_mm': str(row.get(constituency_col, f'{assembly_type} မဲဆန်ဒနယ် {constituency_id}')),
-                        'state_region_en': str(row.get(state_col, 'Unknown State')),
+                        'constituency_en': constituency_en,
+                        'constituency_mm': constituency_mm,
+                        'state_region_en': state_mapping.get(str(row.get(state_col, '')), 'Unknown State'),
                         'state_region_mm': str(row.get(state_col, 'အမည်မသိပြည်နယ်')),
                         'assembly_type': assembly_type,
                         'areas_included_en': str(row.get('မဲဆန္ဒနယ်မြေတွင်ပါဝင်သည့်နယ်မြေများ', '')),
