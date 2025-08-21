@@ -4,38 +4,61 @@ A comprehensive data visualization platform for Myanmar's 2025 electoral system,
 
 ## Overview
 
-This project visualizes Myanmar's electoral constituencies across three levels of government:
-- **Pyithu Hluttaw** (Lower House): 330 constituencies
-- **Amyotha Hluttaw** (Upper House): 110 constituencies  
-- **State/Regional Assemblies**: 398+ constituencies
+This project visualizes Myanmar's 2025 electoral constituencies with authentic data from the Myanmar Election Commission:
+- **Pyithu Hluttaw** (Lower House): 330 constituencies (real official data)
+- **Geographic Coverage**: 100% mapping coverage with verified coordinates
+- **Data Integrity**: Only verified, official constituency data (no synthetic data)
 
 ## Features
 
-### Phase 1: Python MVP (Current)
-- 📊 Statistical charts (parliament composition, regional distribution)
-- 🗺️ Interactive maps with constituency boundaries
-- 🔍 Search and filter functionality
-- 📱 Responsive design for mobile devices
-
-### Phase 2: React Platform (Planned)
-- 🎨 Enhanced interactive visualizations with D3.js
-- 🌐 Bilingual support (Myanmar/English)
-- 📤 Export functionality (PDF, PNG, SVG)
-- ♿ Full accessibility compliance
+### Current Features
+- 📊 **Statistical Dashboard**: Real-time constituency statistics and regional distribution
+- 🗺️ **Interactive Maps**: Zoom-adaptive rendering with constituency pin points
+- 🏛️ **Assembly Selection**: Prominent sidebar dropdown with real-time filtering
+- 🔍 **Search Functionality**: Find constituencies by name or region
+- 🌐 **Bilingual Support**: Myanmar/English language switching
+- 📱 **Responsive Design**: Mobile-optimized interface
+- 🐳 **Docker Deployment**: Full containerization for development and production
+- ☁️ **Heroku Integration**: Production deployment with PostgreSQL database
 
 ## Tech Stack
 
-### Current (Python MVP)
-- **Framework**: Streamlit
-- **Visualization**: Plotly, Folium
+### Technology Stack
+- **Framework**: Streamlit (Enhanced Multi-page Application)
+- **Database**: PostgreSQL with PostGIS (local + Heroku)
+- **Visualization**: Plotly (charts), Folium (interactive maps)
 - **Data Processing**: Pandas, GeoPandas
-- **Deployment**: Streamlit Cloud
+- **Containerization**: Docker + Docker Compose
+- **Production**: Heroku with release phase database initialization
+- **Development**: Local Docker environment with data persistence
 
-### Future (React Platform)
-- **Frontend**: React + TypeScript
-- **Visualization**: D3.js, Leaflet, Recharts
-- **Styling**: Tailwind CSS
-- **Deployment**: Vercel
+## Quick Start
+
+### Production Application
+Visit the live application: **[myanmar-election-2025-df34bedd7e69.herokuapp.com](https://myanmar-election-2025-df34bedd7e69.herokuapp.com)**
+
+### Local Development
+```bash
+# 1. Clone the repository
+git clone [repository-url]
+cd myanmar-election-viz
+
+# 2. Start Docker environment
+docker-compose up -d postgres myanmar-election-viz
+
+# 3. Load clean data (if needed)
+source venv/bin/activate
+DATABASE_URL='postgresql://election_user:election_pass_2025@localhost:5432/myanmar_election' python database/load_clean_data.py
+
+# 4. Access application
+open http://localhost:8501
+```
+
+### Current Data Status
+- **Total Constituencies**: 330 (all PTHT - Pyithu Hluttaw)
+- **Assembly Selection**: Default shows PTHT only (real data available)
+- **Mapping Coverage**: 100% with verified coordinates
+- **Data Source**: Official Myanmar Election Commission CSV
 
 ## Data Structure
 
