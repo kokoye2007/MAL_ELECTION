@@ -16,7 +16,7 @@ logger = logging.getLogger(__name__)
 
 
 class GeoNodeBoundaryService:
-    """Service for fetching boundary data from Myanmar GeoNode"""
+    """Service for fetching boundary data from Myanmar GeoNode and local files"""
     
     def __init__(self, cache_dir: Path = None):
         """Initialize the boundary service
@@ -31,6 +31,10 @@ class GeoNodeBoundaryService:
         
         # Cache for loaded boundaries
         self._boundary_cache = {}
+        
+        # Local GeoJSON files
+        self.local_geojson_dir = Path("data/geojson")
+        self.township_geojson_path = self.local_geojson_dir / "myanmar_townships_mimu.geojson"
         
     def search_boundaries(self, 
                          category: str = "boundaries",
@@ -79,12 +83,41 @@ class GeoNodeBoundaryService:
             logger.error(f"Error searching boundaries: {e}")
             return []
     
+    def load_local_township_boundaries(self) -> Optional[Dict]:
+        """Load township boundaries from local GeoJSON file
+        
+        Returns:
+            GeoJSON with township boundaries
+        """
+        try:
+            if not self.township_geojson_path.exists():
+                logger.warning(f"Local township GeoJSON not found: {self.township_geojson_path}")
+                return None
+            
+            with open(self.township_geojson_path, 'r', encoding='utf-8') as f:
+                geojson_data = json.load(f)
+            
+            logger.info(f"Loaded {len(geojson_data.get('features', []))} township boundaries from local file")
+            return geojson_data
+            
+        except Exception as e:
+            logger.error(f"Error loading local township boundaries: {e}")
+            return None
+    
     def get_township_boundaries(self) -> Optional[Dict]:
         """Get Myanmar township boundaries
         
         Returns:
             GeoJSON with township boundaries
         """
+        # Try local file first
+        local_data = self.load_local_township_boundaries()
+        if local_data:
+            return local_data
+        
+        # Fallback to remote API
+        logger.info("Local township data not available, trying remote API...")
+        
         # Look for township boundary layers
         layers = self.search_boundaries()
         
@@ -178,9 +211,9 @@ class GeoNodeBoundaryService:
                 pcode_index = {}
                 for feature in township_data.get("features", []):
                     props = feature.get("properties", {})
-                    # Try different Pcode field names
-                    for field in ["TS_PCODE", "Tsp_Pcode", "PCODE", "pcode"]:
-                        if field in props:
+                    # Try different Pcode field names - prioritize our local structure
+                    for field in ["TS_PCODE", "Tsp_Pcode", "PCODE", "pcode", "tsp_pcode"]:
+                        if field in props and props[field]:
                             pcode_index[props[field]] = feature
                             break
                             
@@ -287,6 +320,36 @@ class BoundaryMatcher:
     def __init__(self, boundary_service: GeoNodeBoundaryService):
         self.boundary_service = boundary_service
         self.match_cache = {}
+        
+    def update_constituency_coordinates(self, constituencies: List[Dict]) -> List[Dict]:
+        """Update constituency coordinates based on boundary centroids
+        
+        Args:
+            constituencies: List of constituency dictionaries
+            
+        Returns:
+            Updated constituencies with improved coordinates
+        """
+        updated_count = 0
+        
+        for constituency in constituencies:
+            tsp_pcode = constituency.get('tsp_pcode', '')
+            if not tsp_pcode:
+                continue
+                
+            # Get boundary for this township
+            boundary = self.match_constituency(tsp_pcode)
+            if boundary and boundary.get('geometry'):
+                # Calculate centroid
+                lng, lat = self.calculate_centroid(boundary['geometry'])
+                if lng and lat:
+                    constituency['lat'] = lat
+                    constituency['lng'] = lng
+                    constituency['coordinate_source'] = 'boundary_centroid'
+                    updated_count += 1
+        
+        logger.info(f"Updated coordinates for {updated_count} constituencies based on boundary data")
+        return constituencies
         
     def match_constituency(self, 
                           tsp_pcode: str,

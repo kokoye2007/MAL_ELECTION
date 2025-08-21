@@ -55,8 +55,9 @@ class DatabaseConnector:
                 SELECT 
                     id, constituency_code, constituency_en, constituency_mm,
                     state_region_en, state_region_mm, assembly_type, electoral_system,
-                    representatives, lat, lng, areas_included_en, areas_included_mm,
-                    ethnic_group, coordinate_source, validation_status, election_year,
+                    representatives, lat, lng, township_name_eng, township_name_mm,
+                    constituency_areas_mm, tsp_pcode, boundary_codes,
+                    coordinate_source, validation_status, election_year,
                     created_at, updated_at
                 FROM constituencies 
                 WHERE election_year = 2025

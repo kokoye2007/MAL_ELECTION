@@ -41,6 +41,7 @@ class Constituency:
     constituency_name_mm: str
     constituency_areas_mm: str
     state_region_mm: str
+    state_region_en: str
     tsp_pcode: str
     assembly_type: str
     electoral_system: str
@@ -124,13 +125,16 @@ class DataCleaner:
                 if pd.isna(row.get('Unnamed: 0')):
                     continue
                     
+                state_region_mm = str(row.get('တိုင်း/ပြည်နယ်', ''))
+                
                 constituency = Constituency(
                     id=int(row.get('Unnamed: 0', idx)),
                     township_name_eng=str(row.get('township_name_eng', '')),
                     township_name_mm=str(row.get('မြို့နယ်', '')),
                     constituency_name_mm=str(row.get('မဲဆန္ဒနယ်', '')),
                     constituency_areas_mm=str(row.get('မဲဆန္ဒနယ်မြေတွင်ပါဝင်သည့်နယ်မြေများ', '')),
-                    state_region_mm=str(row.get('တိုင်း/ပြည်နယ်', '')),
+                    state_region_mm=state_region_mm,
+                    state_region_en=self.state_region_mapping.get(state_region_mm, state_region_mm),
                     tsp_pcode=str(row.get('tsp_pcode', '')),
                     assembly_type=self._map_assembly_type(assembly_type),
                     electoral_system=electoral_system,
