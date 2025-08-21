@@ -110,6 +110,9 @@ class MapRenderingOptimizer:
         # Add performance info
         self._add_performance_info(base_map, filtered_data, optimal_mode)
         
+        # Add single layer control to avoid duplicates
+        folium.LayerControl(position='topright', collapsed=False).add_to(base_map)
+        
         return base_map
     
     def _prepare_data(self, data: pd.DataFrame, assembly_types: List[str]) -> pd.DataFrame:
@@ -311,7 +314,7 @@ class MapRenderingOptimizer:
                     fillOpacity=0.7
                 ).add_to(marker_cluster)
         
-        folium.LayerControl().add_to(map_obj)
+        # Layer control removed to prevent duplicates
     
     def _add_simplified_markers(
         self, 
@@ -370,7 +373,7 @@ class MapRenderingOptimizer:
             
             feature_group.add_to(map_obj)
         
-        folium.LayerControl().add_to(map_obj)
+        # Layer control removed to prevent duplicates
     
     def _add_full_markers(
         self, 

@@ -252,9 +252,7 @@ class BoundaryRenderer:
         del boundaries
         gc.collect()
         
-        # Create boundary feature group with unique identifier
-        import uuid
-        unique_id = str(uuid.uuid4())[:8]
+        # Create boundary feature group
         boundary_group = folium.FeatureGroup(name="Township Boundaries", show=False)
         
         try:
@@ -279,7 +277,7 @@ class BoundaryRenderer:
                 show=False  # Start hidden to avoid conflicts
             ).add_to(boundary_group)
             
-            # Add to map without layer control to avoid conflicts
+            # Add to map (layer control managed centrally)
             boundary_group.add_to(map_obj)
             logger.info(f"Added township boundaries at zoom level {zoom_level}")
             
@@ -299,9 +297,7 @@ class BoundaryRenderer:
         if not boundaries:
             return
         
-        # Create boundary feature group with unique identifier
-        import uuid
-        unique_id = str(uuid.uuid4())[:8]
+        # Create boundary feature group
         boundary_group = folium.FeatureGroup(name="State/Region Boundaries", show=True)
         
         try:
@@ -323,7 +319,7 @@ class BoundaryRenderer:
                 show=True  # Show state boundaries by default
             ).add_to(boundary_group)
             
-            # Add to map without layer control to avoid conflicts
+            # Add to map (layer control managed centrally)
             boundary_group.add_to(map_obj)
             logger.info(f"Added state boundaries at zoom level {zoom_level}")
             
