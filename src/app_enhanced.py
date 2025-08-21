@@ -1301,8 +1301,8 @@ def create_sidebar(db):
     
     # Version and Update Information
     st.sidebar.markdown("### ℹ️ Version Info")
-    st.sidebar.markdown("**Version:** 2.1.0")
-    st.sidebar.markdown("**Last Updated:** August 21, 2025")
+    st.sidebar.markdown("**Version:** Heroku v37")
+    st.sidebar.markdown("**Last Updated:** August 22, 2025 at 04:18 AM MMT")
     st.sidebar.markdown("**Features:** Pin Points + Boundary Layers")
     
     st.sidebar.markdown("---")

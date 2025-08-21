@@ -77,7 +77,36 @@ class DatabaseConnector:
             return df
             
         except Exception as e:
-            st.error(f"Database connection error: {e}")
+            st.warning(f"Database connection error, using CSV fallback: {e}")
+            return _self._load_csv_fallback(assembly_types)
+    
+    @st.cache_data(ttl=300)        
+    def _load_csv_fallback(_self, assembly_types: Optional[List[str]] = None) -> pd.DataFrame:
+        """Load data from CSV when database is unavailable."""
+        try:
+            csv_path = "/app/data/processed/myanmar_constituencies.csv"
+            if not os.path.exists(csv_path):
+                csv_path = "data/processed/myanmar_constituencies.csv"
+            
+            df = pd.read_csv(csv_path)
+            
+            # Fix assembly type mapping
+            assembly_mapping = {
+                'pyithu': 'PTHT',
+                'amyotha': 'AMTHT', 
+                'state_regional': 'TPHT'
+            }
+            df['assembly_type'] = df['assembly_type'].map(assembly_mapping).fillna(df['assembly_type'])
+            
+            # Filter by assembly types if specified
+            if assembly_types:
+                df = df[df['assembly_type'].isin(assembly_types)]
+            
+            st.info(f"📁 Using CSV data: {len(df)} constituencies loaded")
+            return df
+            
+        except Exception as e:
+            st.error(f"CSV fallback failed: {e}")
             return pd.DataFrame()
             
     @st.cache_data(ttl=300)

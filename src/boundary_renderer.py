@@ -235,25 +235,23 @@ class BoundaryRenderer:
             zoom_level: Current zoom level for optimization
             constituency_data: Constituency data for matching
         """
-        # Only show township boundaries at appropriate zoom levels
-        if zoom_level < 8:
-            return
+        # Show township boundaries at all zoom levels (removed restriction)
+        # if zoom_level < 8:
+        #     return
             
         boundaries = self.load_township_boundaries()
         if not boundaries:
             return
             
-        # Optimize for zoom level and memory usage
-        optimized_boundaries = self.optimize_geojson_for_zoom(boundaries, zoom_level)
-        if not optimized_boundaries:
-            return
+        # Skip optimization to ensure boundaries always show
+        optimized_boundaries = boundaries
         
         # Free original boundaries from memory
         del boundaries
         gc.collect()
         
         # Create boundary feature group
-        boundary_group = folium.FeatureGroup(name="Township Boundaries", show=False)
+        boundary_group = folium.FeatureGroup(name="Township Boundaries", show=True)
         
         try:
             # Add GeoJSON layer with styling

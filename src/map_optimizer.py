@@ -525,7 +525,7 @@ def create_performance_optimized_map(
     m = folium.Map(
         location=[center_lat, center_lng],
         zoom_start=zoom_level,
-        tiles='OpenStreetMap'
+        tiles='CartoDB Positron'
     )
     
     # Initialize boundary renderer
