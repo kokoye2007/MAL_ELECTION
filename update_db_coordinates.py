@@ -144,8 +144,10 @@ def update_database_coordinates():
                     """, (new_lat, new_lng, const_id))
                     
                     if current_lat and current_lng:
-                        # Calculate improvement
-                        distance_change = ((new_lat - current_lat)**2 + (new_lng - current_lng)**2)**0.5
+                        # Calculate improvement (convert Decimal to float for calculation)
+                        lat_diff = float(new_lat) - float(current_lat)
+                        lng_diff = float(new_lng) - float(current_lng)
+                        distance_change = (lat_diff**2 + lng_diff**2)**0.5
                         if distance_change > 0.01:  # Significant improvement (>0.01 degrees ≈ 1km)
                             improved_count += 1
                     else:
