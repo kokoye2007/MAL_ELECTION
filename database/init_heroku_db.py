@@ -111,42 +111,38 @@ def create_tables(connection_string):
         return False
 
 def load_clean_data(connection_string):
-    """Load ONLY real Myanmar constituency data from CSV - no synthetic data."""
+    """Load comprehensive Myanmar constituency data with MIMU coordinates."""
     try:
-        # Import and run the clean data loader
-        from load_clean_data import clean_database, load_real_constituencies_only
+        # Import and run the comprehensive data loader
+        from load_comprehensive_data import clean_database, load_comprehensive_data
         
-        logger.info("📊 Loading CLEAN real Myanmar Election data...")
+        logger.info("📊 Loading comprehensive Myanmar Election data with MIMU coordinates...")
         
-        # Check if clean data already loaded
+        # Always clean and reload for comprehensive data
         conn = psycopg2.connect(connection_string)
         with conn.cursor() as cursor:
             cursor.execute("SELECT COUNT(*) FROM constituencies WHERE election_year = 2025")
             count = cursor.fetchone()[0]
             
-            # If we have exactly 330 constituencies, assume clean data already loaded
-            if count == 330:
-                logger.info(f"✅ Database already contains {count} clean REAL constituencies")
-                conn.close()
-                return True
-            # If we have other counts, clean and reload
-            elif count > 0:
-                logger.info(f"🧹 Found {count} constituencies, cleaning for fresh load...")
+            if count > 0:
+                logger.info(f"🧹 Found {count} constituencies, cleaning for fresh comprehensive load...")
                 conn.close()
                 if not clean_database(connection_string):
                     logger.error("❌ Failed to clean database")
                     return False
+            else:
+                conn.close()
         
-        # Load only real constituency data from CSV (330 PTHT constituencies)
-        if not load_real_constituencies_only(connection_string):
-            logger.error("❌ Failed to load real constituency data")
+        # Load comprehensive constituency data with MIMU coordinates
+        if not load_comprehensive_data(connection_string):
+            logger.error("❌ Failed to load comprehensive data")
             return False
         
-        logger.info("🎉 Successfully loaded 330 REAL Myanmar constituencies!")
+        logger.info("🎉 Successfully loaded comprehensive Myanmar constituencies with MIMU coordinates!")
         return True
         
     except Exception as e:
-        logger.error(f"❌ Error loading clean data: {e}")
+        logger.error(f"❌ Error loading comprehensive data: {e}")
         # Fallback to basic sample data
         logger.info("⚠️ Falling back to minimal sample data...")
         return load_minimal_sample_data(connection_string)
@@ -200,7 +196,7 @@ def main():
         logger.error("❌ Failed to create database tables")
         sys.exit(1)
     
-    # Load clean Myanmar Election data (real data only)
+    # Load comprehensive Myanmar Election data with MIMU coordinates
     if not load_clean_data(database_url):
         logger.error("❌ Failed to load clean data")
         sys.exit(1)
