@@ -27,7 +27,7 @@ class BoundaryRenderer:
         """
         self.geojson_dir = geojson_dir or Path("data/geojson")
         self.township_boundaries_path = self.geojson_dir / "myanmar_townships_mimu.geojson"
-        self.state_boundaries_path = self.geojson_dir / "myanmar_states.geojson"
+        self.state_boundaries_path = self.geojson_dir / "myanmar_gadm.json"
         
         # Boundary styling configuration
         self.boundary_styles = {
@@ -252,7 +252,9 @@ class BoundaryRenderer:
         del boundaries
         gc.collect()
         
-        # Create boundary feature group
+        # Create boundary feature group with unique identifier
+        import uuid
+        unique_id = str(uuid.uuid4())[:8]
         boundary_group = folium.FeatureGroup(name="Township Boundaries", show=False)
         
         try:
@@ -273,9 +275,11 @@ class BoundaryRenderer:
                     fields=['TS', 'TS_MMR'],
                     aliases=['Township:', 'မြို့နယ်:'],
                     labels=True
-                )
+                ),
+                show=False  # Start hidden to avoid conflicts
             ).add_to(boundary_group)
             
+            # Add to map without layer control to avoid conflicts
             boundary_group.add_to(map_obj)
             logger.info(f"Added township boundaries at zoom level {zoom_level}")
             
@@ -295,7 +299,9 @@ class BoundaryRenderer:
         if not boundaries:
             return
         
-        # Create boundary feature group  
+        # Create boundary feature group with unique identifier
+        import uuid
+        unique_id = str(uuid.uuid4())[:8]
         boundary_group = folium.FeatureGroup(name="State/Region Boundaries", show=True)
         
         try:
@@ -304,18 +310,20 @@ class BoundaryRenderer:
                 boundaries,
                 style_function=lambda feature: self.boundary_styles['state'],
                 popup=folium.GeoJsonPopup(
-                    fields=['name'],
+                    fields=['NAME_1'],
                     aliases=['State/Region'], 
                     labels=True,
                     max_width=250
                 ),
                 tooltip=folium.GeoJsonTooltip(
-                    fields=['name'],
+                    fields=['NAME_1'],
                     aliases=['State/Region:'],
                     labels=True
-                )
+                ),
+                show=True  # Show state boundaries by default
             ).add_to(boundary_group)
             
+            # Add to map without layer control to avoid conflicts
             boundary_group.add_to(map_obj)
             logger.info(f"Added state boundaries at zoom level {zoom_level}")
             
