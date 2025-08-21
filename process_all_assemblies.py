@@ -141,7 +141,7 @@ def process_all_assemblies():
     """Process all assembly types from Excel file"""
     print("🗳️ Processing All Assembly Types from 2025 Election Data\\n")
     
-    excel_path = Path("../UPDATE/2025-ELECTION-PLAN-DATA-FINAL.xlsx")
+    excel_path = Path("data/2025-ELECTION-PLAN-DATA-FINAL.xlsx")
     
     if not excel_path.exists():
         print(f"❌ Excel file not found: {excel_path}")

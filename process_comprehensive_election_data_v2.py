@@ -125,7 +125,7 @@ def process_comprehensive_election_data():
     """Process all sheets from the comprehensive Excel file"""
     print("🗳️ Processing Comprehensive 2025 Election Data\\n")
     
-    excel_path = Path("../UPDATE/2025-ELECTION-PLAN-DATA-FINAL.xlsx")
+    excel_path = Path("data/2025-ELECTION-PLAN-DATA-FINAL.xlsx")
     
     if not excel_path.exists():
         print(f"❌ Excel file not found: {excel_path}")
