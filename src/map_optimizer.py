@@ -505,22 +505,86 @@ def create_performance_optimized_map(
     show_state_boundaries: bool = True,
     boundary_opacity: float = 0.6
 ) -> folium.Map:
-    """Create a performance-optimized map for large constituency datasets.
-    
-    Args:
-        data: Constituency dataframe
-        assembly_types: List of assembly types to display
-        zoom_level: Initial zoom level
-        performance_mode: Performance optimization level (fast, balanced, quality)
-        show_township_boundaries: Show township boundary polygons
-        show_state_boundaries: Show state/region boundary outlines
-        boundary_opacity: Transparency level for boundary lines
+    """Create interactive map with multi-assembly support and boundary layers."""
+    if data.empty:
+        st.warning("No data available for selected filters")
+        return None
         
-    Returns:
-        Optimized folium map object
-    """
-    optimizer = MapRenderingOptimizer()
-    return optimizer.create_optimized_map(
-        data, assembly_types, zoom_level, "auto", performance_mode,
-        show_township_boundaries, show_state_boundaries, boundary_opacity
+    # Filter only mapped constituencies
+    mapped_df = data[data['lat'].notna() & data['lng'].notna()].copy()
+    
+    if mapped_df.empty:
+        st.warning("No mapped constituencies found for selected filters")
+        return None
+    
+    # Calculate map center
+    center_lat = mapped_df['lat'].median()
+    center_lng = mapped_df['lng'].median()
+    
+    # Create map
+    m = folium.Map(
+        location=[center_lat, center_lng],
+        zoom_start=zoom_level,
+        tiles='OpenStreetMap'
     )
+    
+    # Initialize boundary renderer
+    try:
+        boundary_renderer = BoundaryRenderer()
+        
+        # Add boundary layers if requested
+        if show_state_boundaries:
+            boundary_renderer.add_state_boundaries(m, zoom_level=zoom_level)
+        
+        if show_township_boundaries:
+            boundary_renderer.add_township_boundaries(m, zoom_level=zoom_level, constituency_data=mapped_df, opacity=boundary_opacity)
+    except NameError:
+        print("Warning: BoundaryRenderer not available")
+    
+    # Assembly colors
+    assembly_colors = {
+        'PTHT': '#2E86AB',
+        'AMTHT': '#A23B72', 
+        'TPHT': '#F18F01',
+        'TPTYT': '#C73E1D'
+    }
+    
+    # Add markers by assembly type
+    for assembly in assembly_types:
+        assembly_data = mapped_df[mapped_df['assembly_type'] == assembly]
+        if assembly_data.empty:
+            continue
+            
+        color = assembly_colors.get(assembly, '#666666')
+        
+        # Create marker cluster for each assembly
+        marker_cluster = MarkerCluster(name=f"{assembly} Constituencies").add_to(m)
+        
+        for _, row in assembly_data.iterrows():
+            popup_html = f"""
+            <div style="font-family: Arial; width: 250px;">
+                <h4 style="margin: 0; color: {color};">{assembly}</h4>
+                <hr style="margin: 5px 0;">
+                <b>English:</b> {row['constituency_en']}<br>
+                <b>Myanmar:</b> {row.get('constituency_mm', 'N/A')}<br>
+                <b>State/Region:</b> {row['state_region_en']}<br>
+                <b>Electoral System:</b> {row.get('electoral_system', 'N/A')}<br>
+                <b>Representatives:</b> {row.get('representatives', 1)}<br>
+                <b>Code:</b> {row.get('constituency_code', 'N/A')}
+            </div>
+            """
+            
+            folium.CircleMarker(
+                location=[row['lat'], row['lng']],
+                radius=6 if assembly == 'PTHT' else 8,  # Slightly larger for other assemblies
+                popup=folium.Popup(popup_html, max_width=300),
+                color=color,
+                fillColor=color,
+                weight=2,
+                fillOpacity=0.7
+            ).add_to(marker_cluster)
+    
+    # Add layer control
+    folium.LayerControl().add_to(m)
+    
+    return m
