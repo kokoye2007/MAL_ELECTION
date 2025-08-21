@@ -78,8 +78,11 @@ def main():
     
     # Layer controls
     st.sidebar.subheader("Layer Options")
-    show_boundaries = st.sidebar.checkbox("Show MIMU Township Boundaries", value=True)
+    show_boundaries = st.sidebar.checkbox("Show MIMU Township Boundaries (Colored)", value=True, 
+                                          help="Township boundaries colored by constituency assembly type")
     show_pinpoints = st.sidebar.checkbox("Show Constituency Pinpoints", value=True)
+    show_selection_boxes = False  # Deprecated - we're coloring boundaries instead
+    area_radius = 3  # Not used anymore
     
     # Map settings
     st.sidebar.subheader("Map Settings")
@@ -98,6 +101,8 @@ def main():
                 zoom_level=zoom_level,
                 show_boundaries=show_boundaries,
                 show_pinpoints=show_pinpoints,
+                show_selection_boxes=show_selection_boxes,
+                area_radius_km=area_radius,
                 assembly_filter=selected_assemblies
             )
             
@@ -151,9 +156,16 @@ def main():
     with st.expander("🔍 Technical Implementation Details"):
         st.markdown("""
         **Multi-Layer Architecture:**
-        - **Layer 1**: MIMU Township Boundaries (GeoJSON polygons)
+        - **Layer 1**: MIMU Township Boundaries (GeoJSON polygons) - Colored by assembly type
         - **Layer 2**: Constituency Pinpoints (CircleMarkers)
         - **Layer Control**: Interactive toggling of layers
+        
+        **Boundary Coloring:**
+        - Township boundaries are automatically colored based on their constituency's assembly type
+        - Red boundaries: PTHT constituencies
+        - Blue boundaries: AMTHT constituencies
+        - Green boundaries: TPHT constituencies
+        - Gray boundaries: Townships without constituencies
         
         **Coordinate Mapping:**
         - `mimu_boundary_centroid`: Single township constituencies

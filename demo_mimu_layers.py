@@ -46,8 +46,9 @@ def main():
         constituencies_data=demo_data,
         center_coords=(21.9162, 95.9560),  # Myanmar center
         zoom_level=7,
-        show_boundaries=True,
+        show_boundaries=True,  # Township boundaries colored by assembly type
         show_pinpoints=True,
+        show_selection_boxes=False,  # Not needed - boundaries are colored instead
         assembly_filter=['PTHT', 'AMTHT', 'TPHT']  # Show main assemblies
     )
     
@@ -74,10 +75,11 @@ def main():
     # Print summary
     print("\n📋 Demo Summary:")
     print("=" * 50)
-    print("✅ Multi-layer map with pinpoint markers and MIMU boundaries")
+    print("✅ Multi-layer map with pinpoint markers and colored MIMU boundaries")
+    print("✅ Township boundaries colored by constituency assembly type")
     print("✅ Interactive layer controls for toggling boundaries/pinpoints")
-    print("✅ Assembly-specific color coding and filtering")
-    print("✅ MIMU township boundary integration")
+    print("✅ Assembly-specific color coding (Red=PTHT, Blue=AMTHT, Green=TPHT)")
+    print("✅ MIMU township boundary integration with transparent fills")
     print("✅ Multi-township coordinate averaging")
     
     mapped_count = demo_data['lat'].notna().sum()

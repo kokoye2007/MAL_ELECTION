@@ -61,6 +61,8 @@ class MyanmarElectionLayeredVisualizer:
         zoom_level: int = 7,
         show_boundaries: bool = True,
         show_pinpoints: bool = True,
+        show_selection_boxes: bool = True,
+        area_radius_km: float = 3,
         assembly_filter: List[str] = None,
         boundary_style: Dict = None,
         pinpoint_style: Dict = None
@@ -73,6 +75,8 @@ class MyanmarElectionLayeredVisualizer:
             zoom_level: Initial zoom level
             show_boundaries: Whether to show MIMU township boundaries
             show_pinpoints: Whether to show constituency pinpoint markers
+            show_selection_boxes: Whether to show transparent circular constituency areas
+            area_radius_km: Radius in kilometers for constituency areas
             assembly_filter: List of assembly types to display
             boundary_style: Custom styling for boundary layer
             pinpoint_style: Custom styling for pinpoint markers
@@ -95,33 +99,36 @@ class MyanmarElectionLayeredVisualizer:
         else:
             filtered_data = constituencies_data
         
-        # Layer 1: MIMU Township Boundaries
+        # Layer 1: MIMU Township Boundaries (colored by assembly types)
         if show_boundaries and self.mimu_boundaries:
-            self._add_mimu_boundaries_layer(m, boundary_style or {})
+            self._add_mimu_boundaries_layer(m, boundary_style or {}, filtered_data)
         
         # Layer 2: Constituency Pinpoint Markers
         if show_pinpoints and len(filtered_data) > 0:
-            self._add_constituency_pinpoints_layer(m, filtered_data, pinpoint_style or {})
+            self._add_constituency_pinpoints_layer(m, filtered_data, pinpoint_style or {}, show_selection_boxes, area_radius_km)
         
         # Add layer control
         folium.LayerControl().add_to(m)
         
         return m
     
-    def _add_mimu_boundaries_layer(self, map_obj: folium.Map, style: Dict):
-        """Add MIMU township boundaries as a separate layer."""
-        # Default boundary styling
-        default_style = {
-            'fillColor': 'lightblue',
-            'color': 'blue',
-            'weight': 1,
-            'fillOpacity': 0.1,
-            'opacity': 0.3
-        }
-        boundary_style = {**default_style, **style}
-        
+    def _add_mimu_boundaries_layer(self, map_obj: folium.Map, style: Dict, constituencies_data: pd.DataFrame = None):
+        """Add MIMU township boundaries as a separate layer, colored by constituency assembly types."""
         # Create boundary feature group
         boundary_group = folium.FeatureGroup(name="Township Boundaries (MIMU)")
+        
+        # Create a mapping of township codes to assembly types
+        tsp_assembly_map = {}
+        if constituencies_data is not None and not constituencies_data.empty:
+            for _, row in constituencies_data.iterrows():
+                tsp_codes = str(row.get('tsp_pcode', '')).split('+') if row.get('tsp_pcode') else []
+                assembly_type = row.get('assembly_type', '')
+                for code in tsp_codes:
+                    code = code.strip()
+                    if code and assembly_type:
+                        # If multiple assemblies in same township, prioritize PTHT > AMTHT > TPHT
+                        if code not in tsp_assembly_map or assembly_type == 'PTHT':
+                            tsp_assembly_map[code] = assembly_type
         
         # Add each township boundary
         for feature in self.mimu_boundaries.get('features', []):
@@ -131,13 +138,37 @@ class MyanmarElectionLayeredVisualizer:
             tsp_name_mm = props.get('TS_MMR', 'အမည်မသိမြို့နယ်')
             state_name = props.get('ST', 'Unknown State')
             
+            # Get assembly type for this township
+            assembly_type = tsp_assembly_map.get(tsp_pcode, None)
+            
+            # Determine boundary color based on assembly type
+            if assembly_type:
+                boundary_color = self._get_assembly_color(assembly_type)
+                fill_opacity = 0.3  # More visible when colored
+                border_opacity = 0.6
+            else:
+                boundary_color = 'gray'
+                fill_opacity = 0.05  # Very light for non-constituency townships
+                border_opacity = 0.2
+            
+            # Create boundary styling
+            boundary_style = {
+                'fillColor': boundary_color,
+                'color': boundary_color,
+                'weight': 2 if assembly_type else 1,
+                'fillOpacity': fill_opacity,
+                'opacity': border_opacity
+            }
+            
             # Create popup content for township
+            assembly_info = f"<p style='margin: 3px 0;'><strong>Assembly:</strong> {assembly_type}</p>" if assembly_type else ""
             popup_content = f"""
             <div style="font-family: Arial; font-size: 12px; width: 200px;">
-                <h4 style="color: #1e40af; margin: 5px 0;">{tsp_name_en}</h4>
+                <h4 style="color: {boundary_color if assembly_type else '#1e40af'}; margin: 5px 0;">{tsp_name_en}</h4>
                 <p style="margin: 3px 0;"><strong>မြန်မာ:</strong> {tsp_name_mm}</p>
                 <p style="margin: 3px 0;"><strong>MIMU Code:</strong> {tsp_pcode}</p>
                 <p style="margin: 3px 0;"><strong>State/Region:</strong> {state_name}</p>
+                {assembly_info}
                 <hr style="margin: 5px 0;">
                 <p style="font-size: 10px; color: #666;">MIMU Township Boundary</p>
             </div>
@@ -153,7 +184,7 @@ class MyanmarElectionLayeredVisualizer:
         
         boundary_group.add_to(map_obj)
     
-    def _add_constituency_pinpoints_layer(self, map_obj: folium.Map, data: pd.DataFrame, style: Dict):
+    def _add_constituency_pinpoints_layer(self, map_obj: folium.Map, data: pd.DataFrame, style: Dict, show_selection_boxes: bool = True, area_radius_km: float = 3):
         """Add constituency pinpoint markers as a separate layer."""
         # Default pinpoint styling
         default_style = {
@@ -199,7 +230,7 @@ class MyanmarElectionLayeredVisualizer:
                 """
                 
                 # Add pinpoint marker
-                folium.CircleMarker(
+                marker = folium.CircleMarker(
                     location=[row['lat'], row['lng']],
                     radius=pinpoint_style['radius'],
                     color=color,
@@ -209,7 +240,9 @@ class MyanmarElectionLayeredVisualizer:
                     fillOpacity=pinpoint_style['fill_opacity'],
                     popup=folium.Popup(popup_content, max_width=400),
                     tooltip=f"{row.get('constituency_en', 'Unknown')} ({assembly_type})"
-                ).add_to(assembly_groups[assembly_type])
+                )
+                
+                marker.add_to(assembly_groups[assembly_type])
         
         # Add all assembly groups to map
         for group in assembly_groups.values():
@@ -226,6 +259,26 @@ class MyanmarElectionLayeredVisualizer:
             'TPTYT': '#7c2d12'     # Brown for Ethnic constituencies
         }
         return color_mapping.get(assembly_type, '#6b7280')  # Default gray
+    
+    def _create_selection_area(self, lat: float, lng: float, color: str, radius_km: float = 5) -> folium.Circle:
+        """Create a transparent circular area around a constituency marker."""
+        # Convert radius from km to meters for folium
+        radius_meters = radius_km * 1000
+        
+        # Create transparent circle with assembly color
+        selection_area = folium.Circle(
+            location=[lat, lng],
+            radius=radius_meters,
+            color=color,
+            weight=2,
+            opacity=0.6,  # Border opacity
+            fillColor=color,
+            fillOpacity=0.2,  # Transparent fill similar to boundaries
+            popup=None,
+            tooltip="Constituency area"
+        )
+        
+        return selection_area
     
     def create_assembly_comparison_map(
         self,
@@ -267,6 +320,7 @@ class MyanmarElectionLayeredVisualizer:
                 # Add markers for this assembly type
                 for _, row in assembly_data.iterrows():
                     if pd.notna(row.get('lat')) and pd.notna(row.get('lng')):
+                        # Add marker
                         folium.CircleMarker(
                             location=[row['lat'], row['lng']],
                             radius=5,
@@ -343,6 +397,6 @@ class MyanmarElectionLayeredVisualizer:
                 ).add_to(m)
         
         # Add constituency pinpoints
-        self._add_constituency_pinpoints_layer(m, constituencies_data, {})
+        self._add_constituency_pinpoints_layer(m, constituencies_data, {}, True, 3)
         
         return m
