@@ -1300,7 +1300,7 @@ def create_sidebar(db):
     st.sidebar.markdown("---")
     st.sidebar.markdown("*📊 Myanmar Election Data Visualization - 2025 Enhanced | Built with ❤️ for transparency*")
     
-    return page, selected_assemblies, selected_regions, electoral_systems, search_term, performance_mode, render_mode
+    return page, selected_assemblies, selected_regions, electoral_systems, search_term, performance_mode, render_mode, show_township_boundaries, show_state_boundaries, boundary_opacity
 
 def display_assembly_metrics(stats):
     """Display assembly overview metrics."""
@@ -1876,7 +1876,7 @@ def main():
     db = get_database()
     
     # Create sidebar
-    page, selected_assemblies, selected_regions, electoral_systems, search_term, performance_mode, render_mode = create_sidebar(db)
+    page, selected_assemblies, selected_regions, electoral_systems, search_term, performance_mode, render_mode, show_township_boundaries, show_state_boundaries, boundary_opacity = create_sidebar(db)
     
     # Create page mapping to handle translations
     page_mappings = {
