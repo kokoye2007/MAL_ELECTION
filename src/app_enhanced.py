@@ -1501,12 +1501,20 @@ def create_interactive_map(df, assembly_types, show_township_boundaries=False, s
     # Initialize boundary renderer
     boundary_renderer = BoundaryRenderer()
     
-    # Add boundary layers if requested
-    if show_state_boundaries:
-        boundary_renderer.add_state_boundaries(m, zoom_level=6)
-    
-    if show_township_boundaries:
-        boundary_renderer.add_township_boundaries(m, zoom_level=8, constituency_data=mapped_df, opacity=boundary_opacity)
+    # Add boundary layers if requested (with error handling for performance)
+    try:
+        if show_state_boundaries:
+            boundary_renderer.add_state_boundaries(m, zoom_level=6)
+        
+        if show_township_boundaries:
+            # Show loading message for large boundary file
+            boundary_loading = st.empty()
+            boundary_loading.info("🗺️ Loading township boundaries...")
+            boundary_renderer.add_township_boundaries(m, zoom_level=8, constituency_data=mapped_df, opacity=boundary_opacity)
+            boundary_loading.empty()
+    except Exception as e:
+        st.warning(f"⚠️ Boundary data loading issue (map will still work without boundaries): {e}")
+        logger.warning(f"Boundary loading failed: {e}")
     
     # Assembly colors
     assembly_colors = {

@@ -45,22 +45,26 @@ class BoundaryRenderer:
             }
         }
     
-    @st.cache_data(ttl=600)  # Cache for 10 minutes
-    def load_township_boundaries(_self) -> Dict:
+    def load_township_boundaries(self) -> Dict:
         """Load township boundary GeoJSON with caching
         
         Returns:
             Dictionary containing GeoJSON data
         """
         try:
-            if not _self.township_boundaries_path.exists():
-                logger.warning(f"Township boundaries not found: {_self.township_boundaries_path}")
+            if not self.township_boundaries_path.exists():
+                logger.warning(f"Township boundaries not found: {self.township_boundaries_path}")
                 return {}
+            
+            # Add file size check for performance warning
+            file_size = self.township_boundaries_path.stat().st_size / (1024 * 1024)  # MB
+            if file_size > 10:
+                logger.info(f"Loading large boundary file ({file_size:.1f}MB), this may take a moment...")
                 
-            with open(_self.township_boundaries_path, 'r', encoding='utf-8') as f:
+            with open(self.township_boundaries_path, 'r', encoding='utf-8') as f:
                 geojson_data = json.load(f)
             
-            logger.info(f"Loaded {len(geojson_data.get('features', []))} township boundaries")
+            logger.info(f"Loaded {len(geojson_data.get('features', []))} township boundaries ({file_size:.1f}MB)")
             return geojson_data
             
         except Exception as e:
