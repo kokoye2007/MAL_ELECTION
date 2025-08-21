@@ -1087,7 +1087,7 @@ def create_sidebar(db):
     
     show_state_boundaries = st.sidebar.checkbox(
         "Show State/Region Boundaries", 
-        value=True,
+        value=False,
         help="Display state and region boundary outlines"
     )
     
@@ -1193,8 +1193,8 @@ def create_sidebar(db):
         with st.expander("📊 Data Source & Processing", expanded=False):
             st.markdown("""
             **Data Preparation & Cleaning:**
-            - 🧹 **Clean Text** - Data cleaning and normalization
-            - 🗣️ **NLS (National Language Services)** - Myanmar language processing
+            - 🧹 **Burma Data** - Data cleaning and normalization
+            - 🗣️ **Nyi Lynn Seck** - Myanmar language processing
             
             **Data Sources:**
             - 🗳️ **UEC (Union Election Commission)** - Official election data
@@ -1213,7 +1213,7 @@ def create_sidebar(db):
             st.markdown("""
             **Site Development:**
             - 💻 **OSS (Open Source Software)** - Framework and libraries
-            - 👨‍💻 **Clean Text | Nyi Lynn Seck** - System design, development & implementation
+            - 👨‍💻 **Burma Data | Nyi Lynn Seck** - System design, development & implementation
             
             **Key Features Developed:**
             - Multi-assembly data visualization system
@@ -1233,7 +1233,7 @@ def create_sidebar(db):
             **Website & Application License:**
             - 📖 **Creative Commons Attribution 4.0 (CC BY 4.0)**
             - ✅ **Free to use, share, and adapt** with proper attribution
-            - 🔗 **Attribution Required:** Credit to Clean Text | Nyi Lynn Seck and data sources
+            - 🔗 **Attribution Required:** Credit to Burma Data | Nyi Lynn Seck and data sources
             - 🌐 **Non-commercial and educational use encouraged**
             
             **Data Usage License:**
@@ -1296,6 +1296,14 @@ def create_sidebar(db):
             - 📧 **Contact:** For data corrections or technical issues
             - 🏛️ **Compliance:** Follows Myanmar digital governance guidelines
             """)
+    
+    st.sidebar.markdown("---")
+    
+    # Version and Update Information
+    st.sidebar.markdown("### ℹ️ Version Info")
+    st.sidebar.markdown("**Version:** 2.1.0")
+    st.sidebar.markdown("**Last Updated:** August 21, 2025")
+    st.sidebar.markdown("**Features:** Pin Points + Boundary Layers")
     
     st.sidebar.markdown("---")
     st.sidebar.markdown("*📊 Myanmar Election Data Visualization - 2025 Enhanced | Built with ❤️ for transparency*")

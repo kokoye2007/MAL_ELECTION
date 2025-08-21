@@ -99,7 +99,7 @@ class BoundaryRenderer:
         Returns:
             Optimized GeoJSON data
         """
-        if not geojson_data or zoom_level < 8:
+        if not geojson_data or zoom_level < 6:
             # Don't show detailed boundaries at country/regional level
             return {}
         
@@ -236,7 +236,7 @@ class BoundaryRenderer:
             constituency_data: Constituency data for matching
         """
         # Only show township boundaries at appropriate zoom levels
-        if zoom_level < 8:
+        if zoom_level < 6:
             return
             
         boundaries = self.load_township_boundaries()
@@ -253,7 +253,7 @@ class BoundaryRenderer:
         gc.collect()
         
         # Create boundary feature group
-        boundary_group = folium.FeatureGroup(name="Township Boundaries", show=False)
+        boundary_group = folium.FeatureGroup(name="Township Boundaries", show=True)
         
         try:
             # Add GeoJSON layer with styling
@@ -274,7 +274,7 @@ class BoundaryRenderer:
                     aliases=['Township:', 'မြို့နယ်:'],
                     labels=True
                 ),
-                show=False  # Start hidden to avoid conflicts
+                show=True  # Show by default
             ).add_to(boundary_group)
             
             # Add to map (layer control managed centrally)
