@@ -18,6 +18,7 @@ import json
 sys.path.append(str(Path(__file__).parent))
 
 from database import get_database
+from boundary_renderer import BoundaryRenderer
 from streamlit_folium import st_folium
 import folium
 from folium.plugins import MarkerCluster
@@ -38,9 +39,10 @@ try:
 except (ImportError, KeyError) as e:
     print(f"Warning: Could not import map_optimizer: {e}")
     # Fallback function
-    def create_performance_optimized_map(data, assembly_types, zoom_level=6, performance_mode="balanced"):
+    def create_performance_optimized_map(data, assembly_types, zoom_level=6, performance_mode="balanced", 
+                                       show_township_boundaries=False, show_state_boundaries=True, boundary_opacity=0.6):
         """Fallback map creation function."""
-        return create_interactive_map(data, assembly_types)
+        return create_interactive_map(data, assembly_types, show_township_boundaries, show_state_boundaries, boundary_opacity)
 
 # Load language data
 def load_languages():
@@ -1073,7 +1075,35 @@ def create_sidebar(db):
     
     st.sidebar.markdown("---")
     
-    # 4. Function Combo Box (Map Performance + Search Options)
+    # 4. Map Display Options
+    st.sidebar.markdown("### 🗺️ Map Display")
+    
+    # Boundary layer toggles
+    show_township_boundaries = st.sidebar.checkbox(
+        "Show Township Boundaries",
+        value=False,
+        help="Display township boundary polygons (recommended for zoom level 8+)"
+    )
+    
+    show_state_boundaries = st.sidebar.checkbox(
+        "Show State/Region Boundaries", 
+        value=True,
+        help="Display state and region boundary outlines"
+    )
+    
+    # Map style options
+    boundary_opacity = st.sidebar.slider(
+        "Boundary Opacity",
+        min_value=0.1,
+        max_value=1.0,
+        value=0.6,
+        step=0.1,
+        help="Adjust transparency of boundary lines"
+    )
+    
+    st.sidebar.markdown("---")
+    
+    # 5. Function Combo Box (Map Performance + Search Options)
     with st.sidebar.expander("🔧 Advanced Controls", expanded=False):
         # Map Performance sub-expander
         with st.expander("⚡ Map Performance", expanded=False):
@@ -1386,8 +1416,8 @@ def create_assembly_comparison_chart(stats):
     
     return fig
 
-def create_interactive_map(df, assembly_types):
-    """Create interactive map with multi-assembly support."""
+def create_interactive_map(df, assembly_types, show_township_boundaries=False, show_state_boundaries=True, boundary_opacity=0.6):
+    """Create interactive map with multi-assembly support and boundary layers."""
     if df.empty:
         st.warning("No data available for selected filters")
         return None
@@ -1409,6 +1439,16 @@ def create_interactive_map(df, assembly_types):
         zoom_start=6,
         tiles='OpenStreetMap'
     )
+    
+    # Initialize boundary renderer
+    boundary_renderer = BoundaryRenderer()
+    
+    # Add boundary layers if requested
+    if show_state_boundaries:
+        boundary_renderer.add_state_boundaries(m, zoom_level=6)
+    
+    if show_township_boundaries:
+        boundary_renderer.add_township_boundaries(m, zoom_level=8, constituency_data=mapped_df, opacity=boundary_opacity)
     
     # Assembly colors
     assembly_colors = {
@@ -1962,7 +2002,10 @@ def main():
                 df, 
                 selected_assemblies, 
                 zoom_level=6, 
-                performance_mode=performance_mode
+                performance_mode=performance_mode,
+                show_township_boundaries=show_township_boundaries,
+                show_state_boundaries=show_state_boundaries,
+                boundary_opacity=boundary_opacity
             )
             
             if map_obj:
