@@ -1,0 +1,3430 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_559b1995a351fd913f95a56d25f2e9b7 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_559b1995a351fd913f95a56d25f2e9b7" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_559b1995a351fd913f95a56d25f2e9b7 = L.map(
+                "map_559b1995a351fd913f95a56d25f2e9b7",
+                {
+                    center: [21.9162, 95.956],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 7,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_694a45e28d0c4327feca7aee0b331be9 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_694a45e28d0c4327feca7aee0b331be9.addTo(map_559b1995a351fd913f95a56d25f2e9b7);
+        
+    
+            var feature_group_f12d2edc86943e064f016f38b10af81b = L.featureGroup(
+                {
+}
+            );
+        
+    
+            var circle_marker_08a3188b2fb6d2c1fb991408b3d666b0 = L.circleMarker(
+                [25.988746540984515, 98.379496098296],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_f291d5287c9f4de75f4d928946b50eaa = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b60042abe59903a60765fa22cea080b7 = $(`<div id="html_b60042abe59903a60765fa22cea080b7" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_f291d5287c9f4de75f4d928946b50eaa.setContent(html_b60042abe59903a60765fa22cea080b7);
+            
+        
+
+        circle_marker_08a3188b2fb6d2c1fb991408b3d666b0.bindPopup(popup_f291d5287c9f4de75f4d928946b50eaa)
+        ;
+
+        
+    
+    
+            circle_marker_08a3188b2fb6d2c1fb991408b3d666b0.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a9b22fd35a23de235edd0eff92cef74d = L.circleMarker(
+                [26.4044291556262, 98.3955465436988],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_9c53fedb10fa6db071e6357ab6a01548 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9fa855344d55635619ca2befaca88668 = $(`<div id="html_9fa855344d55635619ca2befaca88668" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_9c53fedb10fa6db071e6357ab6a01548.setContent(html_9fa855344d55635619ca2befaca88668);
+            
+        
+
+        circle_marker_a9b22fd35a23de235edd0eff92cef74d.bindPopup(popup_9c53fedb10fa6db071e6357ab6a01548)
+        ;
+
+        
+    
+    
+            circle_marker_a9b22fd35a23de235edd0eff92cef74d.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a116693178f1d798e6d83668412ab6b8 = L.circleMarker(
+                [26.39642827602829, 96.61235726079774],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_cc294c78de85812b98d5ab0a3a6bcddb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1b68bfdc55d41f0f5eea2cad07158c45 = $(`<div id="html_1b68bfdc55d41f0f5eea2cad07158c45" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_cc294c78de85812b98d5ab0a3a6bcddb.setContent(html_1b68bfdc55d41f0f5eea2cad07158c45);
+            
+        
+
+        circle_marker_a116693178f1d798e6d83668412ab6b8.bindPopup(popup_cc294c78de85812b98d5ab0a3a6bcddb)
+        ;
+
+        
+    
+    
+            circle_marker_a116693178f1d798e6d83668412ab6b8.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_81014d5689a42207481d638cfe4f4947 = L.circleMarker(
+                [27.1528018823551, 98.38720658718071],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_f13975a7fd7ab321fc3d95f024a883b0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ec2ce4e4b8f82e4da987edd6b043a863 = $(`<div id="html_ec2ce4e4b8f82e4da987edd6b043a863" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_f13975a7fd7ab321fc3d95f024a883b0.setContent(html_ec2ce4e4b8f82e4da987edd6b043a863);
+            
+        
+
+        circle_marker_81014d5689a42207481d638cfe4f4947.bindPopup(popup_f13975a7fd7ab321fc3d95f024a883b0)
+        ;
+
+        
+    
+    
+            circle_marker_81014d5689a42207481d638cfe4f4947.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_64f7815d623e3de8f6f59bd67a19ffaf = L.circleMarker(
+                [26.438490784230567, 97.63869412072157],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_c999b512231c54e87627acd55ff0dc51 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_97c05e38e58545acbac0ae194008c673 = $(`<div id="html_97c05e38e58545acbac0ae194008c673" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_c999b512231c54e87627acd55ff0dc51.setContent(html_97c05e38e58545acbac0ae194008c673);
+            
+        
+
+        circle_marker_64f7815d623e3de8f6f59bd67a19ffaf.bindPopup(popup_c999b512231c54e87627acd55ff0dc51)
+        ;
+
+        
+    
+    
+            circle_marker_64f7815d623e3de8f6f59bd67a19ffaf.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6b9b1f41ed80ff2fcdd0e54d6c32d712 = L.circleMarker(
+                [27.95719878170902, 97.77588466384064],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_5502ef5c3f52fba43a69a196cfe6f733 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d48d70546cbf75c4f34a57748b0a2ab3 = $(`<div id="html_d48d70546cbf75c4f34a57748b0a2ab3" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_5502ef5c3f52fba43a69a196cfe6f733.setContent(html_d48d70546cbf75c4f34a57748b0a2ab3);
+            
+        
+
+        circle_marker_6b9b1f41ed80ff2fcdd0e54d6c32d712.bindPopup(popup_5502ef5c3f52fba43a69a196cfe6f733)
+        ;
+
+        
+    
+    
+            circle_marker_6b9b1f41ed80ff2fcdd0e54d6c32d712.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1972c1b8e5e76130b1788bcc536e0f89 = L.circleMarker(
+                [27.310160042555268, 97.4054441509236],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_795589d844125c01f1258eef8c8fd72e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_db86d8972fd670cd311bccf26dc219b9 = $(`<div id="html_db86d8972fd670cd311bccf26dc219b9" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_795589d844125c01f1258eef8c8fd72e.setContent(html_db86d8972fd670cd311bccf26dc219b9);
+            
+        
+
+        circle_marker_1972c1b8e5e76130b1788bcc536e0f89.bindPopup(popup_795589d844125c01f1258eef8c8fd72e)
+        ;
+
+        
+    
+    
+            circle_marker_1972c1b8e5e76130b1788bcc536e0f89.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e042272cfe6007a630955783eddab939 = L.circleMarker(
+                [27.232348256954484, 97.72678485977264],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_f9db8e3f0ccec990a8fdd9a7ca0e8c0e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b73349c7a669ca0a400ab94a40625f6a = $(`<div id="html_b73349c7a669ca0a400ab94a40625f6a" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_f9db8e3f0ccec990a8fdd9a7ca0e8c0e.setContent(html_b73349c7a669ca0a400ab94a40625f6a);
+            
+        
+
+        circle_marker_e042272cfe6007a630955783eddab939.bindPopup(popup_f9db8e3f0ccec990a8fdd9a7ca0e8c0e)
+        ;
+
+        
+    
+    
+            circle_marker_e042272cfe6007a630955783eddab939.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_80906c29061bcdf07b8b00f2fb873a35 = L.circleMarker(
+                [24.1154319720698, 97.03276192680636],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_5f01f90c88ec21965e051bbbc86ff169 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_174e4e92139f279f5c31ca26a11ab1ef = $(`<div id="html_174e4e92139f279f5c31ca26a11ab1ef" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_5f01f90c88ec21965e051bbbc86ff169.setContent(html_174e4e92139f279f5c31ca26a11ab1ef);
+            
+        
+
+        circle_marker_80906c29061bcdf07b8b00f2fb873a35.bindPopup(popup_5f01f90c88ec21965e051bbbc86ff169)
+        ;
+
+        
+    
+    
+            circle_marker_80906c29061bcdf07b8b00f2fb873a35.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_da8749b6eae113518dc107747c918ab5 = L.circleMarker(
+                [23.872200762414387, 97.41303735691876],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_e5e9c75a4674328e06e5b4e38975571c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_beee1be3eac7ef8ceb5329f4c49d9058 = $(`<div id="html_beee1be3eac7ef8ceb5329f4c49d9058" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_e5e9c75a4674328e06e5b4e38975571c.setContent(html_beee1be3eac7ef8ceb5329f4c49d9058);
+            
+        
+
+        circle_marker_da8749b6eae113518dc107747c918ab5.bindPopup(popup_e5e9c75a4674328e06e5b4e38975571c)
+        ;
+
+        
+    
+    
+            circle_marker_da8749b6eae113518dc107747c918ab5.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2214bcdf06f7753aa5d016b7fb144736 = L.circleMarker(
+                [24.572445693134597, 97.41162135053034],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_d586c03720c2e820a951c61bdcf5a073 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_372d6a40882e233b8df3baa21fa40cc2 = $(`<div id="html_372d6a40882e233b8df3baa21fa40cc2" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_d586c03720c2e820a951c61bdcf5a073.setContent(html_372d6a40882e233b8df3baa21fa40cc2);
+            
+        
+
+        circle_marker_2214bcdf06f7753aa5d016b7fb144736.bindPopup(popup_d586c03720c2e820a951c61bdcf5a073)
+        ;
+
+        
+    
+    
+            circle_marker_2214bcdf06f7753aa5d016b7fb144736.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_bb868da78ab9eb987037004fdb5483d0 = L.circleMarker(
+                [24.344310937364927, 96.76282299171793],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_f297f3a61ab275f58c93addfa525a292 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_2dccab005b8d659b76f731e043145647 = $(`<div id="html_2dccab005b8d659b76f731e043145647" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_f297f3a61ab275f58c93addfa525a292.setContent(html_2dccab005b8d659b76f731e043145647);
+            
+        
+
+        circle_marker_bb868da78ab9eb987037004fdb5483d0.bindPopup(popup_f297f3a61ab275f58c93addfa525a292)
+        ;
+
+        
+    
+    
+            circle_marker_bb868da78ab9eb987037004fdb5483d0.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1d3d2e1e7230f649cd39138f1c2a27e1 = L.circleMarker(
+                [25.7098992896392, 96.42890606629506],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_6c8835784bb8019dfd36577143baa5d5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_12812d64551cc455f6029516a0ac1e4b = $(`<div id="html_12812d64551cc455f6029516a0ac1e4b" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_6c8835784bb8019dfd36577143baa5d5.setContent(html_12812d64551cc455f6029516a0ac1e4b);
+            
+        
+
+        circle_marker_1d3d2e1e7230f649cd39138f1c2a27e1.bindPopup(popup_6c8835784bb8019dfd36577143baa5d5)
+        ;
+
+        
+    
+    
+            circle_marker_1d3d2e1e7230f649cd39138f1c2a27e1.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_eb01ebf0f826be22064645319301aeba = L.circleMarker(
+                [25.307929312729225, 96.8580352490402],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_5a6432800df86f8f2decf7fe96d9171a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d0d3cb1c1a72b7f63b48bc3045239064 = $(`<div id="html_d0d3cb1c1a72b7f63b48bc3045239064" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_5a6432800df86f8f2decf7fe96d9171a.setContent(html_d0d3cb1c1a72b7f63b48bc3045239064);
+            
+        
+
+        circle_marker_eb01ebf0f826be22064645319301aeba.bindPopup(popup_5a6432800df86f8f2decf7fe96d9171a)
+        ;
+
+        
+    
+    
+            circle_marker_eb01ebf0f826be22064645319301aeba.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_728d77272fa3a527799d03e03b906d8a = L.circleMarker(
+                [24.97116153248121, 96.3593495917744],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_c00be0308a25c5ff112dde0320f84240 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d151a57a2cb1aaecf14cd9e3761c10f8 = $(`<div id="html_d151a57a2cb1aaecf14cd9e3761c10f8" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_c00be0308a25c5ff112dde0320f84240.setContent(html_d151a57a2cb1aaecf14cd9e3761c10f8);
+            
+        
+
+        circle_marker_728d77272fa3a527799d03e03b906d8a.bindPopup(popup_c00be0308a25c5ff112dde0320f84240)
+        ;
+
+        
+    
+    
+            circle_marker_728d77272fa3a527799d03e03b906d8a.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8d36ad73cf0fa24140760e24bce7c6ed = L.circleMarker(
+                [25.28272177518493, 97.1708170068756],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_9079b73e525efa33cfea4b358bf124d9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8e52c96d8fe213714a2327e1c9a8d7fe = $(`<div id="html_8e52c96d8fe213714a2327e1c9a8d7fe" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_9079b73e525efa33cfea4b358bf124d9.setContent(html_8e52c96d8fe213714a2327e1c9a8d7fe);
+            
+        
+
+        circle_marker_8d36ad73cf0fa24140760e24bce7c6ed.bindPopup(popup_9079b73e525efa33cfea4b358bf124d9)
+        ;
+
+        
+    
+    
+            circle_marker_8d36ad73cf0fa24140760e24bce7c6ed.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7678d283765a2b7f7215f4703d47904b = L.circleMarker(
+                [25.28847710622453, 97.65781606075076],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_60595fa5aaf963b49de15d2a9f535087 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_358d3a84b96cdbb21f806c3073defbcf = $(`<div id="html_358d3a84b96cdbb21f806c3073defbcf" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_60595fa5aaf963b49de15d2a9f535087.setContent(html_358d3a84b96cdbb21f806c3073defbcf);
+            
+        
+
+        circle_marker_7678d283765a2b7f7215f4703d47904b.bindPopup(popup_60595fa5aaf963b49de15d2a9f535087)
+        ;
+
+        
+    
+    
+            circle_marker_7678d283765a2b7f7215f4703d47904b.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a947ae752cb36d9ae70fe79a2d1af905 = L.circleMarker(
+                [26.210221964563605, 97.94820830982864],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_871e3698ba96e23c03808a3cc7e883d2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1f43096f30e1e1d952de9132e40661a5 = $(`<div id="html_1f43096f30e1e1d952de9132e40661a5" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_871e3698ba96e23c03808a3cc7e883d2.setContent(html_1f43096f30e1e1d952de9132e40661a5);
+            
+        
+
+        circle_marker_a947ae752cb36d9ae70fe79a2d1af905.bindPopup(popup_871e3698ba96e23c03808a3cc7e883d2)
+        ;
+
+        
+    
+    
+            circle_marker_a947ae752cb36d9ae70fe79a2d1af905.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2ca9ae7c5347757bbc3719a78f5007c3 = L.circleMarker(
+                [19.495264957027324, 97.10378923906374],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_b9c7726ea01ad5ca9f99aa1b41285b3f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9f4929881e0e1a2e42dd5f5bc4014bc2 = $(`<div id="html_9f4929881e0e1a2e42dd5f5bc4014bc2" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_b9c7726ea01ad5ca9f99aa1b41285b3f.setContent(html_9f4929881e0e1a2e42dd5f5bc4014bc2);
+            
+        
+
+        circle_marker_2ca9ae7c5347757bbc3719a78f5007c3.bindPopup(popup_b9c7726ea01ad5ca9f99aa1b41285b3f)
+        ;
+
+        
+    
+    
+            circle_marker_2ca9ae7c5347757bbc3719a78f5007c3.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6b3d60c0f724da4b29a6e5c09c8c3402 = L.circleMarker(
+                [19.25949870431272, 97.03031545015985],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_bcd0182380b5379ba67a814ac0c2cceb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_657f3c55c077a2f3af76094480d21ee7 = $(`<div id="html_657f3c55c077a2f3af76094480d21ee7" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_bcd0182380b5379ba67a814ac0c2cceb.setContent(html_657f3c55c077a2f3af76094480d21ee7);
+            
+        
+
+        circle_marker_6b3d60c0f724da4b29a6e5c09c8c3402.bindPopup(popup_bcd0182380b5379ba67a814ac0c2cceb)
+        ;
+
+        
+    
+    
+            circle_marker_6b3d60c0f724da4b29a6e5c09c8c3402.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_68417eee2d182226f0e8adcc282f412e = L.circleMarker(
+                [18.86899834730752, 97.18578277771802],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_757fa6d389a479736f9f8c6f050e513e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_148bfef99e6d4af000f7fff32757378b = $(`<div id="html_148bfef99e6d4af000f7fff32757378b" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_757fa6d389a479736f9f8c6f050e513e.setContent(html_148bfef99e6d4af000f7fff32757378b);
+            
+        
+
+        circle_marker_68417eee2d182226f0e8adcc282f412e.bindPopup(popup_757fa6d389a479736f9f8c6f050e513e)
+        ;
+
+        
+    
+    
+            circle_marker_68417eee2d182226f0e8adcc282f412e.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_bc1b76b3b16cd3762750b8a09cd14b0b = L.circleMarker(
+                [19.141541405504803, 97.5419774540231],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_931ac4cdabe2df5da64a881195462287 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0239e956d8c61b95217ad9305c4c2aeb = $(`<div id="html_0239e956d8c61b95217ad9305c4c2aeb" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_931ac4cdabe2df5da64a881195462287.setContent(html_0239e956d8c61b95217ad9305c4c2aeb);
+            
+        
+
+        circle_marker_bc1b76b3b16cd3762750b8a09cd14b0b.bindPopup(popup_931ac4cdabe2df5da64a881195462287)
+        ;
+
+        
+    
+    
+            circle_marker_bc1b76b3b16cd3762750b8a09cd14b0b.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_59dc04c354ce3e6fac73d6dc5f7cc056 = L.circleMarker(
+                [18.70655102890606, 97.5889522795169],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_37a9018b0313c65f3fe4198166e0d8db = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_39d527e12b87d3c2392ea4edf840c675 = $(`<div id="html_39d527e12b87d3c2392ea4edf840c675" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_37a9018b0313c65f3fe4198166e0d8db.setContent(html_39d527e12b87d3c2392ea4edf840c675);
+            
+        
+
+        circle_marker_59dc04c354ce3e6fac73d6dc5f7cc056.bindPopup(popup_37a9018b0313c65f3fe4198166e0d8db)
+        ;
+
+        
+    
+    
+            circle_marker_59dc04c354ce3e6fac73d6dc5f7cc056.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4da57f4154c7978a90b2be612e1baef3 = L.circleMarker(
+                [19.5749665284892, 97.64006620095267],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_42198124fae876fe5a0a22e3e068e7c5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d5c77b7402a7666cd60cf8911ec99a5b = $(`<div id="html_d5c77b7402a7666cd60cf8911ec99a5b" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_42198124fae876fe5a0a22e3e068e7c5.setContent(html_d5c77b7402a7666cd60cf8911ec99a5b);
+            
+        
+
+        circle_marker_4da57f4154c7978a90b2be612e1baef3.bindPopup(popup_42198124fae876fe5a0a22e3e068e7c5)
+        ;
+
+        
+    
+    
+            circle_marker_4da57f4154c7978a90b2be612e1baef3.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_23047351407b5fd28e3a64b7bd11b43f = L.circleMarker(
+                [19.69620424453538, 97.32461668558788],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_0524c848ae6cd5bb5f8807841b2f8f8c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fb193573f4829ea2812a04333a677fa7 = $(`<div id="html_fb193573f4829ea2812a04333a677fa7" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_0524c848ae6cd5bb5f8807841b2f8f8c.setContent(html_fb193573f4829ea2812a04333a677fa7);
+            
+        
+
+        circle_marker_23047351407b5fd28e3a64b7bd11b43f.bindPopup(popup_0524c848ae6cd5bb5f8807841b2f8f8c)
+        ;
+
+        
+    
+    
+            circle_marker_23047351407b5fd28e3a64b7bd11b43f.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_32b9c57064d6f656579704fbafca3368 = L.circleMarker(
+                [16.540488871175565, 98.12258268207177],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_a34cde1871d4f2aa68e9826986d0e105 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fb63ca4013c7f9c41975f17932b95fc5 = $(`<div id="html_fb63ca4013c7f9c41975f17932b95fc5" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_a34cde1871d4f2aa68e9826986d0e105.setContent(html_fb63ca4013c7f9c41975f17932b95fc5);
+            
+        
+
+        circle_marker_32b9c57064d6f656579704fbafca3368.bindPopup(popup_a34cde1871d4f2aa68e9826986d0e105)
+        ;
+
+        
+    
+    
+            circle_marker_32b9c57064d6f656579704fbafca3368.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0086d13a420fadbf0e3e4dd458dc4ea8 = L.circleMarker(
+                [15.843176084604078, 98.2095703855888],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_a2d460361af5dd781ed5c3e618a6a7df = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8477f24a51f09cbccbe75415d2fa0354 = $(`<div id="html_8477f24a51f09cbccbe75415d2fa0354" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_a2d460361af5dd781ed5c3e618a6a7df.setContent(html_8477f24a51f09cbccbe75415d2fa0354);
+            
+        
+
+        circle_marker_0086d13a420fadbf0e3e4dd458dc4ea8.bindPopup(popup_a2d460361af5dd781ed5c3e618a6a7df)
+        ;
+
+        
+    
+    
+            circle_marker_0086d13a420fadbf0e3e4dd458dc4ea8.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_24a9d92829faec1154228a59ab43b2bc = L.circleMarker(
+                [18.015909642364377, 97.327603664839],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_91760b5944f2f79d539fe7a471344b26 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1fa7d9ce8ac9cc0465ea993166b35193 = $(`<div id="html_1fa7d9ce8ac9cc0465ea993166b35193" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_91760b5944f2f79d539fe7a471344b26.setContent(html_1fa7d9ce8ac9cc0465ea993166b35193);
+            
+        
+
+        circle_marker_24a9d92829faec1154228a59ab43b2bc.bindPopup(popup_91760b5944f2f79d539fe7a471344b26)
+        ;
+
+        
+    
+    
+            circle_marker_24a9d92829faec1154228a59ab43b2bc.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_17b06ced643d42088958461ed373a6a7 = L.circleMarker(
+                [16.52129391125895, 97.81008352345764],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_88533c28fcd4228566135d10882ff65d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_eb375cb4f2df388a76e6f440de30a340 = $(`<div id="html_eb375cb4f2df388a76e6f440de30a340" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_88533c28fcd4228566135d10882ff65d.setContent(html_eb375cb4f2df388a76e6f440de30a340);
+            
+        
+
+        circle_marker_17b06ced643d42088958461ed373a6a7.bindPopup(popup_88533c28fcd4228566135d10882ff65d)
+        ;
+
+        
+    
+    
+            circle_marker_17b06ced643d42088958461ed373a6a7.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1cc7b2631b84c22e8a09b30dbd0a0d2e = L.circleMarker(
+                [17.169679978598346, 97.94643967888256],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_b776378be829e25125ce63cd5ee94787 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7cc3114280b892b2e1d49a096e32aee5 = $(`<div id="html_7cc3114280b892b2e1d49a096e32aee5" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_b776378be829e25125ce63cd5ee94787.setContent(html_7cc3114280b892b2e1d49a096e32aee5);
+            
+        
+
+        circle_marker_1cc7b2631b84c22e8a09b30dbd0a0d2e.bindPopup(popup_b776378be829e25125ce63cd5ee94787)
+        ;
+
+        
+    
+    
+            circle_marker_1cc7b2631b84c22e8a09b30dbd0a0d2e.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_205e437780bfe4cc38b9760be42339cd = L.circleMarker(
+                [16.550550993315653, 98.55402911924789],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_f1a4c83109d62bac7a9b329e2e545a8b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ff697b2d86a60f0d72550e08137bd6af = $(`<div id="html_ff697b2d86a60f0d72550e08137bd6af" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_f1a4c83109d62bac7a9b329e2e545a8b.setContent(html_ff697b2d86a60f0d72550e08137bd6af);
+            
+        
+
+        circle_marker_205e437780bfe4cc38b9760be42339cd.bindPopup(popup_f1a4c83109d62bac7a9b329e2e545a8b)
+        ;
+
+        
+    
+    
+            circle_marker_205e437780bfe4cc38b9760be42339cd.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7af7ecc75285dbf30d2262b1c65dbbe0 = L.circleMarker(
+                [19.053358929019858, 96.68175164007828],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_e2367aca011e0280808eeb0c2bb01072 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f50052a6445970884a9ee61bcf6b6e89 = $(`<div id="html_f50052a6445970884a9ee61bcf6b6e89" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_e2367aca011e0280808eeb0c2bb01072.setContent(html_f50052a6445970884a9ee61bcf6b6e89);
+            
+        
+
+        circle_marker_7af7ecc75285dbf30d2262b1c65dbbe0.bindPopup(popup_e2367aca011e0280808eeb0c2bb01072)
+        ;
+
+        
+    
+    
+            circle_marker_7af7ecc75285dbf30d2262b1c65dbbe0.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d9b294ce9b339aef320f51f457017819 = L.circleMarker(
+                [23.36641631178672, 93.73021232671488],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_e09765e2abeae47d1bec609459ad5b8d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cf8df8cb4f22594ec1d594dc98fd1162 = $(`<div id="html_cf8df8cb4f22594ec1d594dc98fd1162" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_e09765e2abeae47d1bec609459ad5b8d.setContent(html_cf8df8cb4f22594ec1d594dc98fd1162);
+            
+        
+
+        circle_marker_d9b294ce9b339aef320f51f457017819.bindPopup(popup_e09765e2abeae47d1bec609459ad5b8d)
+        ;
+
+        
+    
+    
+            circle_marker_d9b294ce9b339aef320f51f457017819.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_bbb7e69b5a2dd8cdf2d9322bc27852f7 = L.circleMarker(
+                [23.7241377579609, 93.74268143014793],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_a96ac256e3a631e29a663ad9d7a4431a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_44441a77d97157f9647629aa3216a947 = $(`<div id="html_44441a77d97157f9647629aa3216a947" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_a96ac256e3a631e29a663ad9d7a4431a.setContent(html_44441a77d97157f9647629aa3216a947);
+            
+        
+
+        circle_marker_bbb7e69b5a2dd8cdf2d9322bc27852f7.bindPopup(popup_a96ac256e3a631e29a663ad9d7a4431a)
+        ;
+
+        
+    
+    
+            circle_marker_bbb7e69b5a2dd8cdf2d9322bc27852f7.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7eee365bda0dde2e8e29a480fed47bed = L.circleMarker(
+                [21.347663016093765, 93.14342595418952],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_c153a978c0bb6e750447b66c131a379f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1236369ecc4d85e4e8a7309b39b0d870 = $(`<div id="html_1236369ecc4d85e4e8a7309b39b0d870" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_c153a978c0bb6e750447b66c131a379f.setContent(html_1236369ecc4d85e4e8a7309b39b0d870);
+            
+        
+
+        circle_marker_7eee365bda0dde2e8e29a480fed47bed.bindPopup(popup_c153a978c0bb6e750447b66c131a379f)
+        ;
+
+        
+    
+    
+            circle_marker_7eee365bda0dde2e8e29a480fed47bed.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6d007a16222014f5f14ae9703c4abf21 = L.circleMarker(
+                [23.043179845144152, 93.68389627289024],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_28cd34a221edfd8656d594591ada288d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0be0c449698550c7e96987cdd4c41e0c = $(`<div id="html_0be0c449698550c7e96987cdd4c41e0c" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_28cd34a221edfd8656d594591ada288d.setContent(html_0be0c449698550c7e96987cdd4c41e0c);
+            
+        
+
+        circle_marker_6d007a16222014f5f14ae9703c4abf21.bindPopup(popup_28cd34a221edfd8656d594591ada288d)
+        ;
+
+        
+    
+    
+            circle_marker_6d007a16222014f5f14ae9703c4abf21.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_de3073dc522dfcbd9b3b2b13984d2060 = L.circleMarker(
+                [21.810861800647444, 93.44683544834513],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_1cd4827c0b222e0b7cc999744362765c = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_40c7cf1aff92cb7e4371c5c254eb66ab = $(`<div id="html_40c7cf1aff92cb7e4371c5c254eb66ab" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_1cd4827c0b222e0b7cc999744362765c.setContent(html_40c7cf1aff92cb7e4371c5c254eb66ab);
+            
+        
+
+        circle_marker_de3073dc522dfcbd9b3b2b13984d2060.bindPopup(popup_1cd4827c0b222e0b7cc999744362765c)
+        ;
+
+        
+    
+    
+            circle_marker_de3073dc522dfcbd9b3b2b13984d2060.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8626668e1b6034e01a5e4affeed9585a = L.circleMarker(
+                [20.98309852084196, 93.8358822275494],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_7915594742a10e23172e2ba643ec342d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3fce16b384948c9ae7aa62649790eda1 = $(`<div id="html_3fce16b384948c9ae7aa62649790eda1" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_7915594742a10e23172e2ba643ec342d.setContent(html_3fce16b384948c9ae7aa62649790eda1);
+            
+        
+
+        circle_marker_8626668e1b6034e01a5e4affeed9585a.bindPopup(popup_7915594742a10e23172e2ba643ec342d)
+        ;
+
+        
+    
+    
+            circle_marker_8626668e1b6034e01a5e4affeed9585a.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a772a9bfea5b37e084313cc3f37c6e01 = L.circleMarker(
+                [21.47842212617181, 93.7283888001026],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_5875b0f22a4c96384efabc2d840152df = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_09d78d6ff589b4c509a6a2e9343d216b = $(`<div id="html_09d78d6ff589b4c509a6a2e9343d216b" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_5875b0f22a4c96384efabc2d840152df.setContent(html_09d78d6ff589b4c509a6a2e9343d216b);
+            
+        
+
+        circle_marker_a772a9bfea5b37e084313cc3f37c6e01.bindPopup(popup_5875b0f22a4c96384efabc2d840152df)
+        ;
+
+        
+    
+    
+            circle_marker_a772a9bfea5b37e084313cc3f37c6e01.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e5227f99f6b2e71f4c6deef1fd672c7c = L.circleMarker(
+                [22.5123474240056, 93.33125878764862],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_914af80256bd551f89a105963d842dda = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ea3061f522a48a80604637f11bee922a = $(`<div id="html_ea3061f522a48a80604637f11bee922a" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_914af80256bd551f89a105963d842dda.setContent(html_ea3061f522a48a80604637f11bee922a);
+            
+        
+
+        circle_marker_e5227f99f6b2e71f4c6deef1fd672c7c.bindPopup(popup_914af80256bd551f89a105963d842dda)
+        ;
+
+        
+    
+    
+            circle_marker_e5227f99f6b2e71f4c6deef1fd672c7c.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_411e7ec915ca0230b856c44011d75745 = L.circleMarker(
+                [22.44461731240018, 93.69567937970672],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_a093ec3fb20749d7744f9a3a4567879f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_6073e6a3cf6eb0560447e618152fda78 = $(`<div id="html_6073e6a3cf6eb0560447e618152fda78" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_a093ec3fb20749d7744f9a3a4567879f.setContent(html_6073e6a3cf6eb0560447e618152fda78);
+            
+        
+
+        circle_marker_411e7ec915ca0230b856c44011d75745.bindPopup(popup_a093ec3fb20749d7744f9a3a4567879f)
+        ;
+
+        
+    
+    
+            circle_marker_411e7ec915ca0230b856c44011d75745.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_b505664ef27f35998f6745ccd0e966df = L.circleMarker(
+                [25.30712174228596, 94.944371819062],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_70c3e329c60b9e60a36f8dcb9e9ffcd1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_cfba979b3b7ae31286dd8ef8398ddc1a = $(`<div id="html_cfba979b3b7ae31286dd8ef8398ddc1a" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_70c3e329c60b9e60a36f8dcb9e9ffcd1.setContent(html_cfba979b3b7ae31286dd8ef8398ddc1a);
+            
+        
+
+        circle_marker_b505664ef27f35998f6745ccd0e966df.bindPopup(popup_70c3e329c60b9e60a36f8dcb9e9ffcd1)
+        ;
+
+        
+    
+    
+            circle_marker_b505664ef27f35998f6745ccd0e966df.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_dd73218186513fcdcb8f82972f5e77a0 = L.circleMarker(
+                [26.304783095575747, 95.41255801851236],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_c443d3d116597ed12c8b56525876e3a0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f174a106b0170b83e945d1f465deab65 = $(`<div id="html_f174a106b0170b83e945d1f465deab65" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_c443d3d116597ed12c8b56525876e3a0.setContent(html_f174a106b0170b83e945d1f465deab65);
+            
+        
+
+        circle_marker_dd73218186513fcdcb8f82972f5e77a0.bindPopup(popup_c443d3d116597ed12c8b56525876e3a0)
+        ;
+
+        
+    
+    
+            circle_marker_dd73218186513fcdcb8f82972f5e77a0.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_da0393927d5dbe705cf728ef74d6304d = L.circleMarker(
+                [26.877398370194303, 96.18338567823751],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_70e5093d66789f5cb7b1e5e537db3b3d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1cedc7961fcbcb944c44776f3846d39f = $(`<div id="html_1cedc7961fcbcb944c44776f3846d39f" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_70e5093d66789f5cb7b1e5e537db3b3d.setContent(html_1cedc7961fcbcb944c44776f3846d39f);
+            
+        
+
+        circle_marker_da0393927d5dbe705cf728ef74d6304d.bindPopup(popup_70e5093d66789f5cb7b1e5e537db3b3d)
+        ;
+
+        
+    
+    
+            circle_marker_da0393927d5dbe705cf728ef74d6304d.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f4a37ce07c5478bd1f832c67d7138194 = L.circleMarker(
+                [23.122446569421285, 94.1212777463799],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_2bb3a12da4250f6956173e8814e78b34 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8c6c519e47d483db0b72078cb027c670 = $(`<div id="html_8c6c519e47d483db0b72078cb027c670" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_2bb3a12da4250f6956173e8814e78b34.setContent(html_8c6c519e47d483db0b72078cb027c670);
+            
+        
+
+        circle_marker_f4a37ce07c5478bd1f832c67d7138194.bindPopup(popup_2bb3a12da4250f6956173e8814e78b34)
+        ;
+
+        
+    
+    
+            circle_marker_f4a37ce07c5478bd1f832c67d7138194.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f2a8b96439a3f726c23a5cccd6a329a4 = L.circleMarker(
+                [23.33492440689304, 94.54826659046756],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_47cb283dfe499035185d0cd0f792cadc = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4b7dd9a3bfa4355d1dc468bb8a6ceb9f = $(`<div id="html_4b7dd9a3bfa4355d1dc468bb8a6ceb9f" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_47cb283dfe499035185d0cd0f792cadc.setContent(html_4b7dd9a3bfa4355d1dc468bb8a6ceb9f);
+            
+        
+
+        circle_marker_f2a8b96439a3f726c23a5cccd6a329a4.bindPopup(popup_47cb283dfe499035185d0cd0f792cadc)
+        ;
+
+        
+    
+    
+            circle_marker_f2a8b96439a3f726c23a5cccd6a329a4.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c14f7411f4a7c83361100c38eb27d395 = L.circleMarker(
+                [22.879699173103443, 94.53947977683836],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_d5a410d19537fff425cbd1677210bc24 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c0cf743fea463dd24cd78bef65203836 = $(`<div id="html_c0cf743fea463dd24cd78bef65203836" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_d5a410d19537fff425cbd1677210bc24.setContent(html_c0cf743fea463dd24cd78bef65203836);
+            
+        
+
+        circle_marker_c14f7411f4a7c83361100c38eb27d395.bindPopup(popup_d5a410d19537fff425cbd1677210bc24)
+        ;
+
+        
+    
+    
+            circle_marker_c14f7411f4a7c83361100c38eb27d395.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8aec12de77ccd1008f641a6cd85d5771 = L.circleMarker(
+                [24.1281555451994, 96.44377368815412],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_e885ec9bd7160c38cd4dd4e9cd1f1455 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1b11121ac636f6aa6dc9644860456cc7 = $(`<div id="html_1b11121ac636f6aa6dc9644860456cc7" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_e885ec9bd7160c38cd4dd4e9cd1f1455.setContent(html_1b11121ac636f6aa6dc9644860456cc7);
+            
+        
+
+        circle_marker_8aec12de77ccd1008f641a6cd85d5771.bindPopup(popup_e885ec9bd7160c38cd4dd4e9cd1f1455)
+        ;
+
+        
+    
+    
+            circle_marker_8aec12de77ccd1008f641a6cd85d5771.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e57afc57b1f38ee654301de0c497d42a = L.circleMarker(
+                [23.79305902295419, 96.19823749076453],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_aec4fc3fc429fed0d55f236b08c1f4d5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_afbdfc63f045709bb5c19cbe8f115be2 = $(`<div id="html_afbdfc63f045709bb5c19cbe8f115be2" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_aec4fc3fc429fed0d55f236b08c1f4d5.setContent(html_afbdfc63f045709bb5c19cbe8f115be2);
+            
+        
+
+        circle_marker_e57afc57b1f38ee654301de0c497d42a.bindPopup(popup_aec4fc3fc429fed0d55f236b08c1f4d5)
+        ;
+
+        
+    
+    
+            circle_marker_e57afc57b1f38ee654301de0c497d42a.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_755aafcce3795708841026f65e293783 = L.circleMarker(
+                [24.404830169084462, 95.6858038534746],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_ba914ff9f5d363db75c530bf87925026 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_a1fb3e5bfea8e86f133612717a56c400 = $(`<div id="html_a1fb3e5bfea8e86f133612717a56c400" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_ba914ff9f5d363db75c530bf87925026.setContent(html_a1fb3e5bfea8e86f133612717a56c400);
+            
+        
+
+        circle_marker_755aafcce3795708841026f65e293783.bindPopup(popup_ba914ff9f5d363db75c530bf87925026)
+        ;
+
+        
+    
+    
+            circle_marker_755aafcce3795708841026f65e293783.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6baf0c330f8668afe3acfae641a1298a = L.circleMarker(
+                [24.269881354056743, 96.0972259802979],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_a2fc23127adab2f29d122d45fbb58e42 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0e039eeb729730bb2a536c05aace158a = $(`<div id="html_0e039eeb729730bb2a536c05aace158a" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_a2fc23127adab2f29d122d45fbb58e42.setContent(html_0e039eeb729730bb2a536c05aace158a);
+            
+        
+
+        circle_marker_6baf0c330f8668afe3acfae641a1298a.bindPopup(popup_a2fc23127adab2f29d122d45fbb58e42)
+        ;
+
+        
+    
+    
+            circle_marker_6baf0c330f8668afe3acfae641a1298a.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_39ad2b6411bf61775b9b34c024174615 = L.circleMarker(
+                [23.67955328214561, 95.64195739085638],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_a5d9f43dc5b1f501247dfca978768fd1 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0ec50276935f6b7f66a5b64c3dad1d1b = $(`<div id="html_0ec50276935f6b7f66a5b64c3dad1d1b" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_a5d9f43dc5b1f501247dfca978768fd1.setContent(html_0ec50276935f6b7f66a5b64c3dad1d1b);
+            
+        
+
+        circle_marker_39ad2b6411bf61775b9b34c024174615.bindPopup(popup_a5d9f43dc5b1f501247dfca978768fd1)
+        ;
+
+        
+    
+    
+            circle_marker_39ad2b6411bf61775b9b34c024174615.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2869310a572e754288281fb4efd7fb6a = L.circleMarker(
+                [23.99979821153906, 95.7726153841589],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_d1de2fe1384e067bf8a4b64288c0b186 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ec8eb19e73fab4018af21859540f767f = $(`<div id="html_ec8eb19e73fab4018af21859540f767f" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_d1de2fe1384e067bf8a4b64288c0b186.setContent(html_ec8eb19e73fab4018af21859540f767f);
+            
+        
+
+        circle_marker_2869310a572e754288281fb4efd7fb6a.bindPopup(popup_d1de2fe1384e067bf8a4b64288c0b186)
+        ;
+
+        
+    
+    
+            circle_marker_2869310a572e754288281fb4efd7fb6a.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f2002d6399e08f92f23014b79e8e9204 = L.circleMarker(
+                [24.041432924772835, 95.40319674196066],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_14ec6362c60fa40bd9eb9440906d1ab5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ecdf4459b62861dc7b03e45cc7ff4b17 = $(`<div id="html_ecdf4459b62861dc7b03e45cc7ff4b17" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_14ec6362c60fa40bd9eb9440906d1ab5.setContent(html_ecdf4459b62861dc7b03e45cc7ff4b17);
+            
+        
+
+        circle_marker_f2002d6399e08f92f23014b79e8e9204.bindPopup(popup_14ec6362c60fa40bd9eb9440906d1ab5)
+        ;
+
+        
+    
+    
+            circle_marker_f2002d6399e08f92f23014b79e8e9204.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_614d149ae15425d4c69e434f64d26199 = L.circleMarker(
+                [23.3233760673244, 95.6788976217213],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_4e4593cd2c484af71558ea9f9d173f71 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9f3eddac2da8fca7bd0c5f3653b35160 = $(`<div id="html_9f3eddac2da8fca7bd0c5f3653b35160" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_4e4593cd2c484af71558ea9f9d173f71.setContent(html_9f3eddac2da8fca7bd0c5f3653b35160);
+            
+        
+
+        circle_marker_614d149ae15425d4c69e434f64d26199.bindPopup(popup_4e4593cd2c484af71558ea9f9d173f71)
+        ;
+
+        
+    
+    
+            circle_marker_614d149ae15425d4c69e434f64d26199.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_60034b2b4dbc3d09557b23884ac23af9 = L.circleMarker(
+                [23.48570116815787, 95.20635184225884],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_8254b2ce1c1e37ec36bf1e6497367206 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_dc26415a01fa9d246c196ff670f380db = $(`<div id="html_dc26415a01fa9d246c196ff670f380db" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_8254b2ce1c1e37ec36bf1e6497367206.setContent(html_dc26415a01fa9d246c196ff670f380db);
+            
+        
+
+        circle_marker_60034b2b4dbc3d09557b23884ac23af9.bindPopup(popup_8254b2ce1c1e37ec36bf1e6497367206)
+        ;
+
+        
+    
+    
+            circle_marker_60034b2b4dbc3d09557b23884ac23af9.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0c4d235252b27627d68e7d2e54b094a1 = L.circleMarker(
+                [25.876738940842326, 95.7392192510938],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_357c73706d7fad8ca08da4055c9fc735 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_95deb579e40ea22ec93192dcf668cb5d = $(`<div id="html_95deb579e40ea22ec93192dcf668cb5d" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_357c73706d7fad8ca08da4055c9fc735.setContent(html_95deb579e40ea22ec93192dcf668cb5d);
+            
+        
+
+        circle_marker_0c4d235252b27627d68e7d2e54b094a1.bindPopup(popup_357c73706d7fad8ca08da4055c9fc735)
+        ;
+
+        
+    
+    
+            circle_marker_0c4d235252b27627d68e7d2e54b094a1.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4e56048656b3efb7b0d86c9a68c012d0 = L.circleMarker(
+                [22.02920997467977, 95.79887153077372],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_061621110e92360188e3a9ed0d88c828 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_d78b37f9ff18f4d9d9faabe33027061b = $(`<div id="html_d78b37f9ff18f4d9d9faabe33027061b" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_061621110e92360188e3a9ed0d88c828.setContent(html_d78b37f9ff18f4d9d9faabe33027061b);
+            
+        
+
+        circle_marker_4e56048656b3efb7b0d86c9a68c012d0.bindPopup(popup_061621110e92360188e3a9ed0d88c828)
+        ;
+
+        
+    
+    
+            circle_marker_4e56048656b3efb7b0d86c9a68c012d0.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d1a03730ef219f9f003e00838843db39 = L.circleMarker(
+                [22.010737050489404, 95.51522886557184],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_88cd340e70143d3a188c47e844dca63e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_35bf5aeb7e43234fe79a3f49468f2385 = $(`<div id="html_35bf5aeb7e43234fe79a3f49468f2385" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_88cd340e70143d3a188c47e844dca63e.setContent(html_35bf5aeb7e43234fe79a3f49468f2385);
+            
+        
+
+        circle_marker_d1a03730ef219f9f003e00838843db39.bindPopup(popup_88cd340e70143d3a188c47e844dca63e)
+        ;
+
+        
+    
+    
+            circle_marker_d1a03730ef219f9f003e00838843db39.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a20d21872d469ffe9e7ec284d1e316b4 = L.circleMarker(
+                [21.73646601664656, 95.34262148791532],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_4b19fba009079fc9f31baf3e38729621 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_878ad933065705a681aeb3a90b15aaed = $(`<div id="html_878ad933065705a681aeb3a90b15aaed" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_4b19fba009079fc9f31baf3e38729621.setContent(html_878ad933065705a681aeb3a90b15aaed);
+            
+        
+
+        circle_marker_a20d21872d469ffe9e7ec284d1e316b4.bindPopup(popup_4b19fba009079fc9f31baf3e38729621)
+        ;
+
+        
+    
+    
+            circle_marker_a20d21872d469ffe9e7ec284d1e316b4.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a2ddfb6a863b14d33bd0769e8650b5f1 = L.circleMarker(
+                [24.07748659667541, 94.38183768200032],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_006efc152d7e01a37df2e82f2e8e0cfe = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_bbbea3208a16f5513061805c7402318d = $(`<div id="html_bbbea3208a16f5513061805c7402318d" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_006efc152d7e01a37df2e82f2e8e0cfe.setContent(html_bbbea3208a16f5513061805c7402318d);
+            
+        
+
+        circle_marker_a2ddfb6a863b14d33bd0769e8650b5f1.bindPopup(popup_006efc152d7e01a37df2e82f2e8e0cfe)
+        ;
+
+        
+    
+    
+            circle_marker_a2ddfb6a863b14d33bd0769e8650b5f1.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9613d6c4bec5266c46f722c1fee65836 = L.circleMarker(
+                [21.92173868105052, 95.2535537306302],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_d491fc095e55905182e07c1185e2752f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0a9ce4c5e6c25b9a5a0c1084f53a4433 = $(`<div id="html_0a9ce4c5e6c25b9a5a0c1084f53a4433" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_d491fc095e55905182e07c1185e2752f.setContent(html_0a9ce4c5e6c25b9a5a0c1084f53a4433);
+            
+        
+
+        circle_marker_9613d6c4bec5266c46f722c1fee65836.bindPopup(popup_d491fc095e55905182e07c1185e2752f)
+        ;
+
+        
+    
+    
+            circle_marker_9613d6c4bec5266c46f722c1fee65836.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a63f115381059eecc18f3f0a3708fe5c = L.circleMarker(
+                [22.45068285912668, 95.0950674351267],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_85d82542a423a7a6e1c98e648631f659 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_87a04f0707afb861f266dd5e359e3a1a = $(`<div id="html_87a04f0707afb861f266dd5e359e3a1a" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_85d82542a423a7a6e1c98e648631f659.setContent(html_87a04f0707afb861f266dd5e359e3a1a);
+            
+        
+
+        circle_marker_a63f115381059eecc18f3f0a3708fe5c.bindPopup(popup_85d82542a423a7a6e1c98e648631f659)
+        ;
+
+        
+    
+    
+            circle_marker_a63f115381059eecc18f3f0a3708fe5c.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_20b546cb8262886b795098aca6ebbaeb = L.circleMarker(
+                [22.12589646353422, 95.20652878141289],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_b41de870d4ddf96b641adaf9d82a9ba0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_569d94f06a8e8c49cc301d742150ce58 = $(`<div id="html_569d94f06a8e8c49cc301d742150ce58" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_b41de870d4ddf96b641adaf9d82a9ba0.setContent(html_569d94f06a8e8c49cc301d742150ce58);
+            
+        
+
+        circle_marker_20b546cb8262886b795098aca6ebbaeb.bindPopup(popup_b41de870d4ddf96b641adaf9d82a9ba0)
+        ;
+
+        
+    
+    
+            circle_marker_20b546cb8262886b795098aca6ebbaeb.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a5f0e5848f592b723a39d4828b0d2b34 = L.circleMarker(
+                [22.313497498330804, 95.4607151772474],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_4dbe60a92688cbdc0e3b87084408df75 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_121114e66ad09cb20f480e850c5d7996 = $(`<div id="html_121114e66ad09cb20f480e850c5d7996" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_4dbe60a92688cbdc0e3b87084408df75.setContent(html_121114e66ad09cb20f480e850c5d7996);
+            
+        
+
+        circle_marker_a5f0e5848f592b723a39d4828b0d2b34.bindPopup(popup_4dbe60a92688cbdc0e3b87084408df75)
+        ;
+
+        
+    
+    
+            circle_marker_a5f0e5848f592b723a39d4828b0d2b34.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ec3ef50568f97c1f4b3dc75ca266dc58 = L.circleMarker(
+                [24.201997832428468, 94.8768879762827],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_53210bb618be9c9063df1ac1da0174d2 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8ae382fc9661d256e7804463898b24e5 = $(`<div id="html_8ae382fc9661d256e7804463898b24e5" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_53210bb618be9c9063df1ac1da0174d2.setContent(html_8ae382fc9661d256e7804463898b24e5);
+            
+        
+
+        circle_marker_ec3ef50568f97c1f4b3dc75ca266dc58.bindPopup(popup_53210bb618be9c9063df1ac1da0174d2)
+        ;
+
+        
+    
+    
+            circle_marker_ec3ef50568f97c1f4b3dc75ca266dc58.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_3cb3959751afdaa26378ff64e707c2ab = L.circleMarker(
+                [23.655348368178885, 94.57816435515824],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_ea5b5a8c4ecd90af67abad397ba25622 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_3214fda1600193f2b831adcab0e5f878 = $(`<div id="html_3214fda1600193f2b831adcab0e5f878" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_ea5b5a8c4ecd90af67abad397ba25622.setContent(html_3214fda1600193f2b831adcab0e5f878);
+            
+        
+
+        circle_marker_3cb3959751afdaa26378ff64e707c2ab.bindPopup(popup_ea5b5a8c4ecd90af67abad397ba25622)
+        ;
+
+        
+    
+    
+            circle_marker_3cb3959751afdaa26378ff64e707c2ab.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_2aa16deb0ac5f5bc918766f462810ae2 = L.circleMarker(
+                [22.467920868641617, 94.65106876350376],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_7b785af51f457c3637b51a5271eede83 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_7436b050416cf41d524500db064b5e5a = $(`<div id="html_7436b050416cf41d524500db064b5e5a" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_7b785af51f457c3637b51a5271eede83.setContent(html_7436b050416cf41d524500db064b5e5a);
+            
+        
+
+        circle_marker_2aa16deb0ac5f5bc918766f462810ae2.bindPopup(popup_7b785af51f457c3637b51a5271eede83)
+        ;
+
+        
+    
+    
+            circle_marker_2aa16deb0ac5f5bc918766f462810ae2.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_14bf0b686da499bba570c27dbbaf79b8 = L.circleMarker(
+                [21.9508221959531, 95.01938415288126],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_bf7b580a0668da0940c370c03cbcf5da = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_710fa304892658331b988610a109b960 = $(`<div id="html_710fa304892658331b988610a109b960" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_bf7b580a0668da0940c370c03cbcf5da.setContent(html_710fa304892658331b988610a109b960);
+            
+        
+
+        circle_marker_14bf0b686da499bba570c27dbbaf79b8.bindPopup(popup_bf7b580a0668da0940c370c03cbcf5da)
+        ;
+
+        
+    
+    
+            circle_marker_14bf0b686da499bba570c27dbbaf79b8.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_71153f4cc6d180c38a8400c631cbc2c5 = L.circleMarker(
+                [21.961838479080665, 94.6575089690459],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_7f17af3d958f11e6294b53709e2c537e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_96ccdd5a44d55ef22f592ce19166db33 = $(`<div id="html_96ccdd5a44d55ef22f592ce19166db33" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_7f17af3d958f11e6294b53709e2c537e.setContent(html_96ccdd5a44d55ef22f592ce19166db33);
+            
+        
+
+        circle_marker_71153f4cc6d180c38a8400c631cbc2c5.bindPopup(popup_7f17af3d958f11e6294b53709e2c537e)
+        ;
+
+        
+    
+    
+            circle_marker_71153f4cc6d180c38a8400c631cbc2c5.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1f0ef4cea1d5c1e2e47bf56134708da9 = L.circleMarker(
+                [22.164387895737757, 94.82553439731132],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_4769bf4599aa08684cae31c8fb146090 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_dc95b932030e3a40fc646cb824f1ee8d = $(`<div id="html_dc95b932030e3a40fc646cb824f1ee8d" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_4769bf4599aa08684cae31c8fb146090.setContent(html_dc95b932030e3a40fc646cb824f1ee8d);
+            
+        
+
+        circle_marker_1f0ef4cea1d5c1e2e47bf56134708da9.bindPopup(popup_4769bf4599aa08684cae31c8fb146090)
+        ;
+
+        
+    
+    
+            circle_marker_1f0ef4cea1d5c1e2e47bf56134708da9.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f82fc82527418251b99323d4e1a4fd6c = L.circleMarker(
+                [22.63143285540204, 95.19964929974353],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_07afaec5fa9f615899b3cf70e2883d22 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9846b526f42c5e5d35405a36737e5546 = $(`<div id="html_9846b526f42c5e5d35405a36737e5546" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_07afaec5fa9f615899b3cf70e2883d22.setContent(html_9846b526f42c5e5d35405a36737e5546);
+            
+        
+
+        circle_marker_f82fc82527418251b99323d4e1a4fd6c.bindPopup(popup_07afaec5fa9f615899b3cf70e2883d22)
+        ;
+
+        
+    
+    
+            circle_marker_f82fc82527418251b99323d4e1a4fd6c.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9665e2832e4b488ff2088df9fb231473 = L.circleMarker(
+                [23.107968962781296, 95.13265828584709],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_929ca2029b880d59ea09a9039edd6d35 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e3fc00b8cf2289ac546afedee70bc429 = $(`<div id="html_e3fc00b8cf2289ac546afedee70bc429" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_929ca2029b880d59ea09a9039edd6d35.setContent(html_e3fc00b8cf2289ac546afedee70bc429);
+            
+        
+
+        circle_marker_9665e2832e4b488ff2088df9fb231473.bindPopup(popup_929ca2029b880d59ea09a9039edd6d35)
+        ;
+
+        
+    
+    
+            circle_marker_9665e2832e4b488ff2088df9fb231473.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_bbf6ebf7462c0a4eec6bb3bda4511326 = L.circleMarker(
+                [22.855215119633296, 95.1287957193079],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_e9e39485ceb2e20b8edaff0e967ebe75 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4f100859c2ae0b183198b7cd11d00b6a = $(`<div id="html_4f100859c2ae0b183198b7cd11d00b6a" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_e9e39485ceb2e20b8edaff0e967ebe75.setContent(html_4f100859c2ae0b183198b7cd11d00b6a);
+            
+        
+
+        circle_marker_bbf6ebf7462c0a4eec6bb3bda4511326.bindPopup(popup_e9e39485ceb2e20b8edaff0e967ebe75)
+        ;
+
+        
+    
+    
+            circle_marker_bbf6ebf7462c0a4eec6bb3bda4511326.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_240cc602e1dd5bc1f4d8012d7a5e0939 = L.circleMarker(
+                [22.79146046407494, 95.70198250589334],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_15e9369a215379ea69302c3bcb0f99aa = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_093adc65bffbed03e7b8856828abe981 = $(`<div id="html_093adc65bffbed03e7b8856828abe981" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_15e9369a215379ea69302c3bcb0f99aa.setContent(html_093adc65bffbed03e7b8856828abe981);
+            
+        
+
+        circle_marker_240cc602e1dd5bc1f4d8012d7a5e0939.bindPopup(popup_15e9369a215379ea69302c3bcb0f99aa)
+        ;
+
+        
+    
+    
+            circle_marker_240cc602e1dd5bc1f4d8012d7a5e0939.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_ef513d633d8bb6e9368a70725593c11d = L.circleMarker(
+                [22.581096131701106, 95.70011946175993],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_926604ff857a363c84a9f722e3735199 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5917732d4fcd1e1ea8a84b09836ff6ec = $(`<div id="html_5917732d4fcd1e1ea8a84b09836ff6ec" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_926604ff857a363c84a9f722e3735199.setContent(html_5917732d4fcd1e1ea8a84b09836ff6ec);
+            
+        
+
+        circle_marker_ef513d633d8bb6e9368a70725593c11d.bindPopup(popup_926604ff857a363c84a9f722e3735199)
+        ;
+
+        
+    
+    
+            circle_marker_ef513d633d8bb6e9368a70725593c11d.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_246e6806f7396ba9259f3d611ef9e227 = L.circleMarker(
+                [22.37324236201648, 95.738592137888],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_09cdcc8958fc663f85508a8fc68cd8fb = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f64d9803c0eff02835ff34d07dd15521 = $(`<div id="html_f64d9803c0eff02835ff34d07dd15521" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_09cdcc8958fc663f85508a8fc68cd8fb.setContent(html_f64d9803c0eff02835ff34d07dd15521);
+            
+        
+
+        circle_marker_246e6806f7396ba9259f3d611ef9e227.bindPopup(popup_09cdcc8958fc663f85508a8fc68cd8fb)
+        ;
+
+        
+    
+    
+            circle_marker_246e6806f7396ba9259f3d611ef9e227.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_fc19a15f928f9e1a3b0453247d1904d1 = L.circleMarker(
+                [24.983216587823325, 95.29583985075833],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_1ff82ecfbf2406bf447fd67889eecd2a = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0df7bf7d40a50d3b87ed607be3f5db32 = $(`<div id="html_0df7bf7d40a50d3b87ed607be3f5db32" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_1ff82ecfbf2406bf447fd67889eecd2a.setContent(html_0df7bf7d40a50d3b87ed607be3f5db32);
+            
+        
+
+        circle_marker_fc19a15f928f9e1a3b0453247d1904d1.bindPopup(popup_1ff82ecfbf2406bf447fd67889eecd2a)
+        ;
+
+        
+    
+    
+            circle_marker_fc19a15f928f9e1a3b0453247d1904d1.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_306f503d2c7a591765d770afed9ad2b9 = L.circleMarker(
+                [9.627853533328231, 97.96681722903196],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_b8eddcee8ab23bc325315e9b97ad6722 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_261c580352579be78b670e5dc490241f = $(`<div id="html_261c580352579be78b670e5dc490241f" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_b8eddcee8ab23bc325315e9b97ad6722.setContent(html_261c580352579be78b670e5dc490241f);
+            
+        
+
+        circle_marker_306f503d2c7a591765d770afed9ad2b9.bindPopup(popup_b8eddcee8ab23bc325315e9b97ad6722)
+        ;
+
+        
+    
+    
+            circle_marker_306f503d2c7a591765d770afed9ad2b9.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_a5d97b2b60643f461c6f7282ff3d0187 = L.circleMarker(
+                [13.966130241970486, 98.61966895763022],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_d0e5f83ba7a99ee37e428c8e3d5e7c82 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_5b6a87d3b1deab0d62df6dfffcee0ab0 = $(`<div id="html_5b6a87d3b1deab0d62df6dfffcee0ab0" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_d0e5f83ba7a99ee37e428c8e3d5e7c82.setContent(html_5b6a87d3b1deab0d62df6dfffcee0ab0);
+            
+        
+
+        circle_marker_a5d97b2b60643f461c6f7282ff3d0187.bindPopup(popup_d0e5f83ba7a99ee37e428c8e3d5e7c82)
+        ;
+
+        
+    
+    
+            circle_marker_a5d97b2b60643f461c6f7282ff3d0187.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_d50e3a5e68fdd1635f080930add848e2 = L.circleMarker(
+                [14.125451221257618, 97.80895098528732],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_e98ad27fc8ea250411c0b430e19ac574 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9c3ea134487e600af727fe79b1fcba78 = $(`<div id="html_9c3ea134487e600af727fe79b1fcba78" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_e98ad27fc8ea250411c0b430e19ac574.setContent(html_9c3ea134487e600af727fe79b1fcba78);
+            
+        
+
+        circle_marker_d50e3a5e68fdd1635f080930add848e2.bindPopup(popup_e98ad27fc8ea250411c0b430e19ac574)
+        ;
+
+        
+    
+    
+            circle_marker_d50e3a5e68fdd1635f080930add848e2.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7861721a1adb445520f7a322538ef5de = L.circleMarker(
+                [13.532405944079096, 98.13049351543845],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_f52fd1dd728bae3808ec2e54ee897187 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_41291a5ce92693d51532ffb4e205ff7b = $(`<div id="html_41291a5ce92693d51532ffb4e205ff7b" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_f52fd1dd728bae3808ec2e54ee897187.setContent(html_41291a5ce92693d51532ffb4e205ff7b);
+            
+        
+
+        circle_marker_7861721a1adb445520f7a322538ef5de.bindPopup(popup_f52fd1dd728bae3808ec2e54ee897187)
+        ;
+
+        
+    
+    
+            circle_marker_7861721a1adb445520f7a322538ef5de.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9758861baeab303056c9a98f72d763d5 = L.circleMarker(
+                [13.669576900515205, 98.4051769681493],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_270188f52ca30622a15596adcdfcfea7 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_08060e8a4a0aebb07d10b4b2e6a02393 = $(`<div id="html_08060e8a4a0aebb07d10b4b2e6a02393" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_270188f52ca30622a15596adcdfcfea7.setContent(html_08060e8a4a0aebb07d10b4b2e6a02393);
+            
+        
+
+        circle_marker_9758861baeab303056c9a98f72d763d5.bindPopup(popup_270188f52ca30622a15596adcdfcfea7)
+        ;
+
+        
+    
+    
+            circle_marker_9758861baeab303056c9a98f72d763d5.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_7c26b90c60a2187b239a083d7dbf6604 = L.circleMarker(
+                [10.686552685270026, 98.34107137082952],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_e1bdded767851bef1b875f8fc686ba46 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e37aab65f5cd75b4db2d9bcf0394b556 = $(`<div id="html_e37aab65f5cd75b4db2d9bcf0394b556" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_e1bdded767851bef1b875f8fc686ba46.setContent(html_e37aab65f5cd75b4db2d9bcf0394b556);
+            
+        
+
+        circle_marker_7c26b90c60a2187b239a083d7dbf6604.bindPopup(popup_e1bdded767851bef1b875f8fc686ba46)
+        ;
+
+        
+    
+    
+            circle_marker_7c26b90c60a2187b239a083d7dbf6604.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_69fa47bce4d149f36094efd76b5a3804 = L.circleMarker(
+                [11.429579894449573, 98.0143415983685],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_aa267b8f23a8ce2e242fbc50f1fe11b3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_61e97a1164d520d3f21c05d716291d18 = $(`<div id="html_61e97a1164d520d3f21c05d716291d18" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_aa267b8f23a8ce2e242fbc50f1fe11b3.setContent(html_61e97a1164d520d3f21c05d716291d18);
+            
+        
+
+        circle_marker_69fa47bce4d149f36094efd76b5a3804.bindPopup(popup_aa267b8f23a8ce2e242fbc50f1fe11b3)
+        ;
+
+        
+    
+    
+            circle_marker_69fa47bce4d149f36094efd76b5a3804.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_8f38b3edfdd0f1e64a38461a1b57fd7a = L.circleMarker(
+                [12.416348004390583, 99.17153190942724],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_4eab23e1d7ee3c56b292fedf24ae23d9 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_1edb128a545c7aa99bbe2ecda873fc14 = $(`<div id="html_1edb128a545c7aa99bbe2ecda873fc14" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_4eab23e1d7ee3c56b292fedf24ae23d9.setContent(html_1edb128a545c7aa99bbe2ecda873fc14);
+            
+        
+
+        circle_marker_8f38b3edfdd0f1e64a38461a1b57fd7a.bindPopup(popup_4eab23e1d7ee3c56b292fedf24ae23d9)
+        ;
+
+        
+    
+    
+            circle_marker_8f38b3edfdd0f1e64a38461a1b57fd7a.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_212a66566febafa3e293eaf1473e37af = L.circleMarker(
+                [12.709704605198796, 98.61971587395004],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_ceb8f154f1836522251fe676f03b5c7f = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_0a768d4416538dced3e18cb6047e0d50 = $(`<div id="html_0a768d4416538dced3e18cb6047e0d50" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_ceb8f154f1836522251fe676f03b5c7f.setContent(html_0a768d4416538dced3e18cb6047e0d50);
+            
+        
+
+        circle_marker_212a66566febafa3e293eaf1473e37af.bindPopup(popup_ceb8f154f1836522251fe676f03b5c7f)
+        ;
+
+        
+    
+    
+            circle_marker_212a66566febafa3e293eaf1473e37af.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f13e108d72b32e33dba66432a72c0f13 = L.circleMarker(
+                [12.647459333621416, 98.64087251305612],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_4de096cc9eb139dae905ba838e60eff0 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_536da8438a8104f36c490fe60f31698a = $(`<div id="html_536da8438a8104f36c490fe60f31698a" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_4de096cc9eb139dae905ba838e60eff0.setContent(html_536da8438a8104f36c490fe60f31698a);
+            
+        
+
+        circle_marker_f13e108d72b32e33dba66432a72c0f13.bindPopup(popup_4de096cc9eb139dae905ba838e60eff0)
+        ;
+
+        
+    
+    
+            circle_marker_f13e108d72b32e33dba66432a72c0f13.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_93b1d968703744d8123cf40622e9cb65 = L.circleMarker(
+                [18.38326575266938, 96.85311719282872],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_0a7510f2324163668de020fed602b840 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_4ecfd0c5f390b48244049c6d7f1f29e3 = $(`<div id="html_4ecfd0c5f390b48244049c6d7f1f29e3" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_0a7510f2324163668de020fed602b840.setContent(html_4ecfd0c5f390b48244049c6d7f1f29e3);
+            
+        
+
+        circle_marker_93b1d968703744d8123cf40622e9cb65.bindPopup(popup_0a7510f2324163668de020fed602b840)
+        ;
+
+        
+    
+    
+            circle_marker_93b1d968703744d8123cf40622e9cb65.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_1ea5caeafdb08672fb27451f6db88fa4 = L.circleMarker(
+                [18.198087602279408, 96.33520937433369],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_5d3e097616356544153edff6b2976ca8 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_fbb1049e0840db724b6e6eb62a1e2c31 = $(`<div id="html_fbb1049e0840db724b6e6eb62a1e2c31" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_5d3e097616356544153edff6b2976ca8.setContent(html_fbb1049e0840db724b6e6eb62a1e2c31);
+            
+        
+
+        circle_marker_1ea5caeafdb08672fb27451f6db88fa4.bindPopup(popup_5d3e097616356544153edff6b2976ca8)
+        ;
+
+        
+    
+    
+            circle_marker_1ea5caeafdb08672fb27451f6db88fa4.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_f32822f4c4b58ba7fda7e1b0b46f8d18 = L.circleMarker(
+                [17.916131022924382, 96.7169233046812],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_e26f560d938d73f348ec334a2b591e8b = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_ee3e4bcd06f1fc2ed01dad67967eebb7 = $(`<div id="html_ee3e4bcd06f1fc2ed01dad67967eebb7" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_e26f560d938d73f348ec334a2b591e8b.setContent(html_ee3e4bcd06f1fc2ed01dad67967eebb7);
+            
+        
+
+        circle_marker_f32822f4c4b58ba7fda7e1b0b46f8d18.bindPopup(popup_e26f560d938d73f348ec334a2b591e8b)
+        ;
+
+        
+    
+    
+            circle_marker_f32822f4c4b58ba7fda7e1b0b46f8d18.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_0976fcd943a1137283cd4dab05384bb9 = L.circleMarker(
+                [17.809473130215324, 96.55522886485392],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_7a3e70ee152f5179e73817d016a1c563 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_9c8f375b4455961b528dc8af9e2ee341 = $(`<div id="html_9c8f375b4455961b528dc8af9e2ee341" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_7a3e70ee152f5179e73817d016a1c563.setContent(html_9c8f375b4455961b528dc8af9e2ee341);
+            
+        
+
+        circle_marker_0976fcd943a1137283cd4dab05384bb9.bindPopup(popup_7a3e70ee152f5179e73817d016a1c563)
+        ;
+
+        
+    
+    
+            circle_marker_0976fcd943a1137283cd4dab05384bb9.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_6934e2bc9430aa71117128dce4bc82e4 = L.circleMarker(
+                [17.900922052899826, 96.99611988010744],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_7370805ef9b9a5acea7dff0b8bc9f62e = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_53207ad7d9e3f462094e66ff99356991 = $(`<div id="html_53207ad7d9e3f462094e66ff99356991" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_7370805ef9b9a5acea7dff0b8bc9f62e.setContent(html_53207ad7d9e3f462094e66ff99356991);
+            
+        
+
+        circle_marker_6934e2bc9430aa71117128dce4bc82e4.bindPopup(popup_7370805ef9b9a5acea7dff0b8bc9f62e)
+        ;
+
+        
+    
+    
+            circle_marker_6934e2bc9430aa71117128dce4bc82e4.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_4259b62da5fd7533d3372f16d2e86a8e = L.circleMarker(
+                [18.98692400058786, 96.21351374377096],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_93de358d94c3a15edcf1adf1fb67ad09 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_36a174d0d36a5019f222c1c7c18f0319 = $(`<div id="html_36a174d0d36a5019f222c1c7c18f0319" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_93de358d94c3a15edcf1adf1fb67ad09.setContent(html_36a174d0d36a5019f222c1c7c18f0319);
+            
+        
+
+        circle_marker_4259b62da5fd7533d3372f16d2e86a8e.bindPopup(popup_93de358d94c3a15edcf1adf1fb67ad09)
+        ;
+
+        
+    
+    
+            circle_marker_4259b62da5fd7533d3372f16d2e86a8e.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_9a2bf4c83f23141691a1d0384f2c16af = L.circleMarker(
+                [18.720876936247954, 96.55317566735442],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_cdbc8fd2ce81b5de252b936bd422b332 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_b25ba08f42b16f363e0f71c28e41169d = $(`<div id="html_b25ba08f42b16f363e0f71c28e41169d" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_cdbc8fd2ce81b5de252b936bd422b332.setContent(html_b25ba08f42b16f363e0f71c28e41169d);
+            
+        
+
+        circle_marker_9a2bf4c83f23141691a1d0384f2c16af.bindPopup(popup_cdbc8fd2ce81b5de252b936bd422b332)
+        ;
+
+        
+    
+    
+            circle_marker_9a2bf4c83f23141691a1d0384f2c16af.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_071e8559dc51dfc63da558449e36a113 = L.circleMarker(
+                [18.51764319711076, 96.274912823067],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_68bd32263c1ea48c2923b103c8ac09c5 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_8c63fc7df6d986668df8b02ca1b15ea9 = $(`<div id="html_8c63fc7df6d986668df8b02ca1b15ea9" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_68bd32263c1ea48c2923b103c8ac09c5.setContent(html_8c63fc7df6d986668df8b02ca1b15ea9);
+            
+        
+
+        circle_marker_071e8559dc51dfc63da558449e36a113.bindPopup(popup_68bd32263c1ea48c2923b103c8ac09c5)
+        ;
+
+        
+    
+    
+            circle_marker_071e8559dc51dfc63da558449e36a113.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_33793f9fc718213e16e26253d5738d1c = L.circleMarker(
+                [19.30506426890013, 96.14692511465732],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_adb1e4ce49736c7464959be93204ab01 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_c4f8e3d7ae62e1c10f45d9c64da986e3 = $(`<div id="html_c4f8e3d7ae62e1c10f45d9c64da986e3" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_adb1e4ce49736c7464959be93204ab01.setContent(html_c4f8e3d7ae62e1c10f45d9c64da986e3);
+            
+        
+
+        circle_marker_33793f9fc718213e16e26253d5738d1c.bindPopup(popup_adb1e4ce49736c7464959be93204ab01)
+        ;
+
+        
+    
+    
+            circle_marker_33793f9fc718213e16e26253d5738d1c.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_38d370885799a196223847e20f8cc81e = L.circleMarker(
+                [18.804734885561427, 96.1753687413472],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_44e73f6642925ceb9484660a5c598a61 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_f0c6c9fdcc3fbb4e172d439d70836c1a = $(`<div id="html_f0c6c9fdcc3fbb4e172d439d70836c1a" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_44e73f6642925ceb9484660a5c598a61.setContent(html_f0c6c9fdcc3fbb4e172d439d70836c1a);
+            
+        
+
+        circle_marker_38d370885799a196223847e20f8cc81e.bindPopup(popup_44e73f6642925ceb9484660a5c598a61)
+        ;
+
+        
+    
+    
+            circle_marker_38d370885799a196223847e20f8cc81e.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_e9ae7f7d33d992f23bc832dd9226de56 = L.circleMarker(
+                [18.35013258587579, 95.66889661889208],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_1cb947914df05ddcddf2db28887cf85d = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_e9dd9253b6f6c8aef9e4ad3f1b041f76 = $(`<div id="html_e9dd9253b6f6c8aef9e4ad3f1b041f76" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_1cb947914df05ddcddf2db28887cf85d.setContent(html_e9dd9253b6f6c8aef9e4ad3f1b041f76);
+            
+        
+
+        circle_marker_e9ae7f7d33d992f23bc832dd9226de56.bindPopup(popup_1cb947914df05ddcddf2db28887cf85d)
+        ;
+
+        
+    
+    
+            circle_marker_e9ae7f7d33d992f23bc832dd9226de56.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var circle_marker_c125be91bb3be5d82fd111ce7daec704 = L.circleMarker(
+                [18.499628142461194, 95.68669072719824],
+                {"bubblingMouseEvents": true, "color": "#dc2626", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "#dc2626", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 0.8, "radius": 5, "stroke": true, "weight": 1}
+            ).addTo(feature_group_f12d2edc86943e064f016f38b10af81b);
+        
+    
+        var popup_80672500b97f6e6b737526e1cdfc4ae3 = L.popup({
+  "maxWidth": "100%",
+});
+
+        
+            
+                var html_da1d77a77c8d9c2127c6d13d7be2ac45 = $(`<div id="html_da1d77a77c8d9c2127c6d13d7be2ac45" style="width: 100.0%; height: 100.0%;">ပြည်သူ့လွှတ်တော် (PTHT)</div>`)[0];
+                popup_80672500b97f6e6b737526e1cdfc4ae3.setContent(html_da1d77a77c8d9c2127c6d13d7be2ac45);
+            
+        
+
+        circle_marker_c125be91bb3be5d82fd111ce7daec704.bindPopup(popup_80672500b97f6e6b737526e1cdfc4ae3)
+        ;
+
+        
+    
+    
+            circle_marker_c125be91bb3be5d82fd111ce7daec704.bindTooltip(
+                `<div>
+                     ပြည်သူ့လွှတ်တော်
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            feature_group_f12d2edc86943e064f016f38b10af81b.addTo(map_559b1995a351fd913f95a56d25f2e9b7);
+        
+    
+            var layer_control_94fc81bae849295c0ca6166d568553d3_layers = {
+                base_layers : {
+                    "cartodbpositron" : tile_layer_694a45e28d0c4327feca7aee0b331be9,
+                },
+                overlays :  {
+                    "PTHT (100 constituencies)" : feature_group_f12d2edc86943e064f016f38b10af81b,
+                },
+            };
+            let layer_control_94fc81bae849295c0ca6166d568553d3 = L.control.layers(
+                layer_control_94fc81bae849295c0ca6166d568553d3_layers.base_layers,
+                layer_control_94fc81bae849295c0ca6166d568553d3_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": true,
+  "autoZIndex": true,
+}
+            ).addTo(map_559b1995a351fd913f95a56d25f2e9b7);
+
+        
+</script>
+</html>

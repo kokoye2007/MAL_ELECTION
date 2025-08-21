@@ -10,6 +10,7 @@ import logging
 import psycopg2
 from psycopg2.extras import RealDictCursor
 import pandas as pd
+import json
 from pathlib import Path
 
 # Add src to path for imports
@@ -30,7 +31,7 @@ def get_database_url():
         # Local development fallback
         return os.getenv(
             'DATABASE_URL', 
-            'postgresql://election_user:dev_password_2025@postgres:5432/myanmar_election'
+            'postgresql://election_user:election_pass_2025@localhost:5432/myanmar_election'
         )
 
 def clean_database(connection_string):
@@ -47,6 +48,48 @@ def clean_database(connection_string):
         logger.error(f"❌ Error cleaning database: {e}")
         return False
 
+def load_mimu_coordinates():
+    """Load MIMU coordinate lookup from GeoJSON."""
+    try:
+        # Load MIMU boundary data
+        mimu_path = Path(__file__).parent.parent / 'data' / 'geojson' / 'mimu_township_boundaries.geojson'
+        if not mimu_path.exists():
+            logger.warning(f"⚠️ MIMU GeoJSON not found: {mimu_path}")
+            return {}
+        
+        with open(mimu_path, 'r', encoding='utf-8') as f:
+            mimu_data = json.load(f)
+        
+        mimu_coords = {}
+        for feature in mimu_data.get('features', []):
+            props = feature.get('properties', {})
+            tsp_pcode = props.get('tsp_pcode', props.get('TS_PCODE'))
+            
+            if tsp_pcode and feature.get('geometry'):
+                # Calculate centroid from geometry
+                geom = feature['geometry']
+                if geom['type'] == 'Polygon' and geom.get('coordinates'):
+                    coords = geom['coordinates'][0]  # Outer ring
+                    if len(coords) > 0:
+                        # Simple centroid calculation
+                        sum_lat, sum_lng = 0, 0
+                        count = len(coords)
+                        for coord in coords:
+                            if len(coord) >= 2:
+                                sum_lng += coord[0]
+                                sum_lat += coord[1]
+                        
+                        centroid_lat = sum_lat / count
+                        centroid_lng = sum_lng / count
+                        mimu_coords[tsp_pcode] = (centroid_lat, centroid_lng)
+        
+        logger.info(f"📍 Loaded {len(mimu_coords)} MIMU coordinate entries")
+        return mimu_coords
+        
+    except Exception as e:
+        logger.error(f"❌ Error loading MIMU coordinates: {e}")
+        return {}
+
 def load_complete_constituencies(connection_string):
     """Load all constituency data from comprehensive CSV."""
     try:
@@ -58,6 +101,9 @@ def load_complete_constituencies(connection_string):
         
         df = pd.read_csv(csv_path)
         logger.info(f"📊 Loaded {len(df)} constituencies from comprehensive CSV")
+        
+        # Load MIMU coordinates for population
+        mimu_coords = load_mimu_coordinates()
         
         # Connect to database
         conn = psycopg2.connect(connection_string)
@@ -79,14 +125,32 @@ def load_complete_constituencies(connection_string):
                     """, (constituency_code, row['assembly_type'], 2025))
                     
                     if cursor.fetchone()[0] == 0:  # Doesn't exist, safe to insert
+                        # Get MIMU coordinates if available
+                        lat, lng = None, None
+                        coordinate_source = 'mimu_pending'
+                        
+                        tsp_pcode = row.get('tsp_pcode', '')
+                        if tsp_pcode and tsp_pcode in mimu_coords:
+                            lat, lng = mimu_coords[tsp_pcode]
+                            coordinate_source = 'mimu_boundary_centroid'
+                            logger.info(f"📍 MIMU coordinates for {row['constituency_en']}: {lat:.4f}, {lng:.4f}")
+                        
+                        # Map electoral system to shorter value
+                        electoral_system = str(row['electoral_system_en'])
+                        if 'FPTP' in electoral_system or 'First Past The Post' in electoral_system:
+                            electoral_system = 'FPTP'
+                        elif len(electoral_system) > 10:
+                            electoral_system = electoral_system[:10]
+                        
                         cursor.execute("""
                             INSERT INTO constituencies (
                                 constituency_code, constituency_en, constituency_mm,
                                 state_region_en, state_region_mm, assembly_type,
-                                areas_included_en, areas_included_mm, representatives,
+                                constituency_areas_en, constituency_areas_mm, representatives,
                                 electoral_system, lat, lng, coordinate_source,
-                                validation_status, election_year
-                            ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
+                                validation_status, election_year, township_name_eng, township_name_mm,
+                                tsp_pcode
+                            ) VALUES (%s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s, %s)
                         """, (
                             constituency_code,
                             str(row['constituency_en']),
@@ -94,15 +158,18 @@ def load_complete_constituencies(connection_string):
                             str(row['state_region_en']),
                             str(row['state_region_mm']),
                             str(row['assembly_type']),
-                            str(row['areas_included_en']),
-                            str(row['areas_included_mm']),
+                            str(row['areas_included_en']),  # constituency_areas_en
+                            str(row['areas_included_mm']),  # constituency_areas_mm
                             int(row['representatives']),
-                            str(row['electoral_system_en']),
-                            None,  # lat - will be populated from MIMU
-                            None,  # lng - will be populated from MIMU
-                            'mimu_pending',
+                            electoral_system,
+                            lat,  # lat - from MIMU if available
+                            lng,  # lng - from MIMU if available
+                            coordinate_source,
                             'verified',
-                            2025
+                            2025,
+                            str(row['township_name_en']),  # township_name_eng
+                            str(row.get('township_mm', row.get('state_region_mm', ''))),  # township_name_mm
+                            str(row['tsp_pcode'])  # tsp_pcode
                         ))
                         inserted += 1
                         

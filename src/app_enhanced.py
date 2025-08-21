@@ -86,37 +86,72 @@ def get_text(key, **kwargs):
     return text
 
 def configure_page():
-    """Configure Streamlit page settings."""
+    """Configure Streamlit page settings with enhanced HTML header and favicon."""
     st.set_page_config(
-        page_title=get_text("page_title"),
-        page_icon="🗳️",
+        page_title="Myanmar Election 2025 - Interactive Constituency Visualization",
+        page_icon="🗺️",  # Changed to map icon to represent geographic visualization
         layout="wide",
         initial_sidebar_state="expanded",
         menu_items={
             'About': '''
-            # Myanmar Election Data Visualization - Enhanced
+            # Myanmar Election 2025 - Interactive Visualization Platform
+            ### Version 2025.2.0 - MIMU Enhanced Multi-Layer Edition
             
-            This application visualizes Myanmar's 2025 electoral constituencies
-            across ALL assemblies: PTHT, AMTHT, TPHT, and TPTYT.
+            This application provides comprehensive visualization of Myanmar's 2025 electoral constituencies
+            with MIMU (Myanmar Information Management Unit) integrated mapping system.
             
-            **Features:**
-            - 835+ constituencies across 4 assembly types
-            - Interactive maps with multi-assembly filtering
-            - Statistical charts and breakdowns
+            **🏛️ Complete Assembly Coverage:**
+            - **Pyithu Hluttaw (PTHT):** 330 constituencies
+            - **Amyotha Hluttaw (AMTHT):** 85 + 27 PR constituencies  
+            - **State/Regional Hluttaw (TPHT):** 323 + 43 PR constituencies
+            - **Ethnic Affairs (TPTYT):** 30 constituencies
+            - **Total: 838 constituencies with MIMU coordinate mapping**
+            
+            **🗺️ Advanced Features:**
+            - Multi-layer interactive mapping with MIMU township boundaries
+            - Pinpoint constituency markers with coordinate verification
+            - Assembly-specific color coding and transparency
+            - Multi-township constituency coordinate averaging
+            - Real-time PostgreSQL database with comprehensive data
             - Bilingual support (Myanmar/English)
-            - Real-time PostgreSQL data
+            - Performance-optimized rendering for all zoom levels
             
-            **Assemblies:**
-            - Pyithu Hluttaw (PTHT): 330 constituencies
-            - Amyotha Hluttaw (AMTHT): 116 constituencies  
-            - State/Regional (TPHT): 360 constituencies
-            - Ethnic Affairs (TPTYT): 29 constituencies
-            - **Total: 835 constituencies**
+            **📊 Data Integration:**
+            - **Geographic:** MIMU administrative boundaries and coordinates
+            - **Electoral:** Myanmar Election Commission official data
+            - **Technical:** PostGIS-enabled PostgreSQL with spatial indexing
             
-            **Data Source:** Myanmar Election Commission + Docker PostgreSQL
+            **🎯 Coordinate Mapping:**
+            - 804/838 constituencies mapped (96% coverage)
+            - Multi-township centroid averaging for complex constituencies
+            - Township code mapping with + separator pattern
+            - Coordinate source tracking and verification
+            
+            ---
+            **Version:** 2025.2.0 MIMU Enhanced  
+            **Build:** Heroku v44+ with comprehensive MIMU integration  
+            **Data Source:** Myanmar Election Commission + MIMU Geographic Data  
+            **Credits:** NLS translations, Clean Text processing, MIMU boundaries
             '''
         }
     )
+    
+    # Inject custom HTML header with favicon and meta tags
+    st.markdown("""
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Interactive visualization of Myanmar's 2025 electoral constituencies with MIMU integrated mapping, covering all assemblies: PTHT, AMTHT, TPHT, and TPTYT.">
+        <meta name="keywords" content="Myanmar Election 2025, constituencies, MIMU, interactive map, Pyithu Hluttaw, Amyotha Hluttaw, electoral visualization">
+        <meta name="author" content="Myanmar Election Visualization Team">
+        <meta property="og:title" content="Myanmar Election 2025 - Interactive Constituency Visualization">
+        <meta property="og:description" content="Comprehensive visualization of Myanmar's 838 electoral constituencies with MIMU geographic integration">
+        <meta property="og:type" content="website">
+        <meta property="og:image" content="/assets/icons/favicon.svg">
+        <title>Myanmar Election 2025 - Interactive Constituency Visualization</title>
+        <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzIiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAzMiAzMiIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KICA8Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNSIgZmlsbD0iI0ZFQ0YzRSIgc3Ryb2tlPSIjMzMzIiBzdHJva2Utd2lkdGg9IjIiLz4KICA8cmVjdCB4PSI4IiB5PSIxMCIgd2lkdGg9IjE2IiBoZWlnaHQ9IjEyIiByeD0iMiIgZmlsbD0iI2ZmZiIgc3Ryb2tlPSIjMzMzIiBzdHJva2Utd2lkdGg9IjEuNSIvPgogIDxyZWN0IHg9IjEwIiB5PSI4IiB3aWR0aD0iMTIiIGhlaWdodD0iMyIgcng9IjEiIGZpbGw9IiMzMzMiLz4KICA8cmVjdCB4PSI4IiB5PSIxNCIgd2lkdGg9IjE2IiBoZWlnaHQ9IjIiIGZpbGw9IiMzNEE4NTMiLz4KICA8cmVjdCB4PSI4IiB5PSIxNyIgd2lkdGg9IjE2IiBoZWlnaHQ9IjIiIGZpbGw9IiNFQTQzMzUiLz4KICA8cGF0aCBkPSJNMTYgMTEgTDE2LjUgMTIuNSBMMTggMTIuNSBMMTYuNzUgMTMuNSBMMTcuMjUgMTUgTDE2IDE0IEwxNC43NSAxNSBMMTUuMjUgMTMuNSBMMTQgMTIuNSBMMTUuNSAxMi41IFoiIGZpbGw9IiNGRUNGM0UiLz4KPC9zdmc+" />
+    </head>
+    """, unsafe_allow_html=True)
 
 def get_theme_css(theme='light'):
     """Get CSS for specific theme."""
@@ -1278,10 +1313,11 @@ def create_sidebar(db):
         with st.expander("⚙️ Version & Technical License", expanded=False):
             st.markdown("""
             **Application Version:**
-            - 🏷️ **Version:** 2025.1.0 Enhanced Multi-Assembly
-            - 📅 **Release Date:** January 2025
-            - 🔄 **Update Cycle:** Continuous integration with data updates
-            - 💾 **Database Version:** PostgreSQL 15 + PostGIS 3.4
+            - 🏷️ **Version:** 2025.2.0 MIMU Enhanced Multi-Layer Edition
+            - 📅 **Release Date:** August 2025
+            - 🗺️ **Major Features:** MIMU township boundaries + pinpoint markers
+            - 🔄 **Update Cycle:** Continuous integration with comprehensive data
+            - 💾 **Database Version:** PostgreSQL 15 + PostGIS 3.4 with spatial indexing
             
             **Technical Licensing:**
             - 🐍 **Python Libraries:** Various open-source licenses (MIT, BSD, Apache 2.0)
@@ -1314,12 +1350,13 @@ def create_sidebar(db):
     yangon_tz = timezone(timedelta(hours=6, minutes=30))
     current_time = datetime.now(yangon_tz)
     
-    st.sidebar.markdown(f"**Version:** Heroku v40-{git_hash}")
+    st.sidebar.markdown(f"**Version:** 2025.2.0-v44+{git_hash}")
     st.sidebar.markdown(f"**Last Updated:** {current_time.strftime('%B %d, %Y at %I:%M %p MMT')}")
-    st.sidebar.markdown("**Features:** Pin Points + Boundary Layers")
+    st.sidebar.markdown("**Features:** MIMU Multi-Layer + Pinpoint Markers")
+    st.sidebar.markdown("**Data:** 838 constituencies with 96% coordinate mapping")
     
     st.sidebar.markdown("---")
-    st.sidebar.markdown("*📊 Myanmar Election Data Visualization - 2025 Enhanced | Built with ❤️ for transparency*")
+    st.sidebar.markdown("*🗺️ Myanmar Election 2025 - MIMU Enhanced | Built with ❤️ for electoral transparency*")
     
     return page, selected_assemblies, selected_regions, electoral_systems, search_term, performance_mode, render_mode, show_township_boundaries, show_state_boundaries, boundary_opacity
 
