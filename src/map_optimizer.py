@@ -13,6 +13,12 @@ from typing import Dict, List, Optional, Tuple
 import json
 import math
 
+# Import boundary renderer with error handling
+try:
+    from boundary_renderer import BoundaryRenderer
+except ImportError:
+    print("Warning: BoundaryRenderer not available")
+
 class MapRenderingOptimizer:
     """Optimize map rendering for large numbers of constituencies."""
     
@@ -36,7 +42,10 @@ class MapRenderingOptimizer:
         assembly_types: List[str], 
         zoom_level: int = 6,
         render_mode: str = "auto",
-        performance_mode: str = "balanced"
+        performance_mode: str = "balanced",
+        show_township_boundaries: bool = False,
+        show_state_boundaries: bool = True,
+        boundary_opacity: float = 0.6
     ) -> folium.Map:
         """Create an optimized map based on data size and performance requirements.
         
@@ -79,6 +88,24 @@ class MapRenderingOptimizer:
             self._add_simplified_markers(base_map, filtered_data, assembly_types)
         else:  # full rendering
             self._add_full_markers(base_map, filtered_data, assembly_types)
+        
+        # Add boundary layers if requested
+        try:
+            boundary_renderer = BoundaryRenderer()
+            
+            if show_state_boundaries:
+                boundary_renderer.add_state_boundaries(base_map, zoom_level=zoom_level)
+            
+            if show_township_boundaries:
+                boundary_renderer.add_township_boundaries(
+                    base_map, 
+                    zoom_level=zoom_level, 
+                    constituency_data=filtered_data,
+                    opacity=boundary_opacity
+                )
+        except NameError:
+            # BoundaryRenderer not available, skip boundary layers
+            pass
         
         # Add performance info
         self._add_performance_info(base_map, filtered_data, optimal_mode)
@@ -470,7 +497,10 @@ def create_performance_optimized_map(
     data: pd.DataFrame,
     assembly_types: List[str],
     zoom_level: int = 6,
-    performance_mode: str = "balanced"
+    performance_mode: str = "balanced",
+    show_township_boundaries: bool = False,
+    show_state_boundaries: bool = True,
+    boundary_opacity: float = 0.6
 ) -> folium.Map:
     """Create a performance-optimized map for large constituency datasets.
     
@@ -479,11 +509,15 @@ def create_performance_optimized_map(
         assembly_types: List of assembly types to display
         zoom_level: Initial zoom level
         performance_mode: Performance optimization level (fast, balanced, quality)
+        show_township_boundaries: Show township boundary polygons
+        show_state_boundaries: Show state/region boundary outlines
+        boundary_opacity: Transparency level for boundary lines
         
     Returns:
         Optimized folium map object
     """
     optimizer = MapRenderingOptimizer()
     return optimizer.create_optimized_map(
-        data, assembly_types, zoom_level, "auto", performance_mode
+        data, assembly_types, zoom_level, "auto", performance_mode,
+        show_township_boundaries, show_state_boundaries, boundary_opacity
     )
