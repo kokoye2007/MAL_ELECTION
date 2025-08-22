@@ -639,9 +639,18 @@ def create_performance_optimized_map(
             tsp_pcode = row.get('tsp_pcode', '')
             coord_source_label = "MIMU boundary centroid" if tsp_pcode and tsp_pcode in mimu_coords else "Geographic data"
             
+            # Map assembly abbreviations to full names
+            assembly_names = {
+                'PTHT': '🏛️ Pyithu Hluttaw (House of Representatives)',
+                'AMTHT': '🏛️ Amyotha Hluttaw (House of Nationalities)', 
+                'TPHT': '🏛️ State/Regional Hluttaws',
+                'TPTYT': '🏛️ Ethnic Affairs Hluttaws'
+            }
+            assembly_display_name = assembly_names.get(assembly, assembly)
+            
             popup_html = f"""
-            <div style="font-family: Arial; width: 250px;">
-                <h4 style="margin: 0; color: {color};">{assembly}</h4>
+            <div style="font-family: Arial; width: 280px;">
+                <h4 style="margin: 0; color: {color}; font-size: 14px;">{assembly_display_name}</h4>
                 <hr style="margin: 5px 0;">
                 <b>English:</b> {row['constituency_en']}<br>
                 <b>Myanmar:</b> {row.get('constituency_mm', 'N/A')}<br>
