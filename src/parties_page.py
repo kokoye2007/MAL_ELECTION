@@ -100,113 +100,198 @@ def create_party_distribution_chart(party_data: Dict[str, Any]) -> None:
     
     st.plotly_chart(fig, use_container_width=True)
 
-def create_party_search_and_filter(party_data: Dict[str, Any]) -> pd.DataFrame:
-    """Create search and filter interface, return filtered dataframe."""
+def create_context_cards() -> None:
+    """Create context cards explaining party categories."""
+    st.markdown("### 📖 Understanding Party Categories")
+    
+    col1, col2, col3 = st.columns(3)
+    
+    with col1:
+        st.markdown("""
+        <div style="background-color: rgba(46, 134, 171, 0.1); padding: 15px; border-radius: 10px; border-left: 5px solid #2E86AB;">
+        <h4 style="color: #2E86AB; margin-top: 0;">📋 Currently Registered (61)</h4>
+        <p style="margin-bottom: 0;">Parties already active from previous elections and continuing their registration for 2025.</p>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    with col2:
+        st.markdown("""
+        <div style="background-color: rgba(241, 143, 1, 0.1); padding: 15px; border-radius: 10px; border-left: 5px solid #F18F01;">
+        <h4 style="color: #F18F01; margin-top: 0;">📝 Newly Allowed to Register (63)</h4>
+        <p style="margin-bottom: 0;">NEW parties that have received permission to register specifically for the 2025 election.</p>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    with col3:
+        st.markdown("""
+        <div style="background-color: rgba(199, 62, 29, 0.1); padding: 15px; border-radius: 10px; border-left: 5px solid #C73E1D;">
+        <h4 style="color: #C73E1D; margin-top: 0;">❌ Canceled/Historical (80)</h4>
+        <p style="margin-bottom: 0;">Previously registered parties that have been canceled, dissolved, or rejected.</p>
+        </div>
+        """, unsafe_allow_html=True)
+    
+    st.markdown("---")
+    st.info("💡 **Key Point**: These are three distinct, non-overlapping categories representing different registration statuses, not stages in a transformation process.")
+
+def get_parties_by_type(party_data: Dict[str, Any], party_types: List[str]) -> pd.DataFrame:
+    """Get parties filtered by type(s)."""
     if not party_data or 'parties' not in party_data:
         return pd.DataFrame()
     
-    st.subheader("🔍 Search & Filter Parties")
+    parties = []
+    for party_type in party_types:
+        if party_type in party_data['parties']:
+            for party in party_data['parties'][party_type]:
+                party_info = party.copy()
+                party_info['type'] = party_type
+                parties.append(party_info)
     
-    # Create combined dataframe
-    all_parties = []
-    for party_type, parties in party_data['parties'].items():
-        for party in parties:
-            party_info = party.copy()
-            party_info['type'] = party_type
-            all_parties.append(party_info)
-    
-    if not all_parties:
-        st.warning("No party data available")
-        return pd.DataFrame()
-    
-    df = pd.DataFrame(all_parties)
-    
-    # Search and filter controls
-    col1, col2 = st.columns(2)
-    
-    with col1:
-        search_term = st.text_input(
-            "Search parties (Myanmar or English)",
-            placeholder="Enter party name...",
-            help="Search by party name in Myanmar or English"
-        )
-    
-    with col2:
-        party_types = st.multiselect(
-            "Filter by status",
-            options=['existing', 'allowed_to_register', 'canceled'],
-            default=['existing', 'allowed_to_register'],
-            format_func=lambda x: {
-                'existing': '📋 Existing',
-                'allowed_to_register': '📝 Allowed to Register', 
-                'canceled': '❌ Canceled'
-            }[x]
-        )
-    
-    # Apply filters
-    filtered_df = df[df['type'].isin(party_types)].copy()
-    
-    # Apply search
-    if search_term:
-        search_mask = (
-            filtered_df['name_mm'].str.contains(search_term, case=False, na=False) |
-            filtered_df['name_en'].str.contains(search_term, case=False, na=False)
-        )
-        filtered_df = filtered_df[search_mask]
-    
-    # Display filter results
-    st.info(f"📊 Showing {len(filtered_df)} parties out of {len(df)} total")
-    
-    return filtered_df
+    return pd.DataFrame(parties) if parties else pd.DataFrame()
 
-def display_party_table(df: pd.DataFrame) -> None:
+def create_party_search(df: pd.DataFrame, search_key: str) -> pd.DataFrame:
+    """Create search interface and return filtered dataframe."""
+    search_term = st.text_input(
+        "🔍 Search parties (Myanmar or English)",
+        placeholder="Enter party name...",
+        help="Search by party name in Myanmar or English",
+        key=search_key
+    )
+    
+    if search_term and not df.empty:
+        search_mask = (
+            df['name_mm'].str.contains(search_term, case=False, na=False) |
+            df['name_en'].str.contains(search_term, case=False, na=False)
+        )
+        filtered_df = df[search_mask]
+        st.info(f"🔍 Found {len(filtered_df)} parties matching '{search_term}'")
+        return filtered_df
+    
+    return df
+
+def display_party_table(df: pd.DataFrame, show_status: bool = False) -> None:
     """Display parties in a formatted table."""
     if df.empty:
         st.warning("No parties found matching your criteria")
         return
     
-    st.subheader("📋 Party Details")
-    
     # Prepare display dataframe
     display_df = df.copy()
     
-    # Add status badges
-    status_map = {
-        'existing': '🟢 Existing',
-        'allowed_to_register': '🟡 Allowed to Register',
-        'canceled': '🔴 Canceled'
-    }
-    display_df['Status'] = display_df['type'].map(status_map)
+    # Select columns for display
+    columns_to_show = ['name_mm', 'name_en']
+    column_names = ['Party Name (Myanmar)', 'Party Name (English)']
     
-    # Select and rename columns for display
-    columns_to_show = ['name_mm', 'name_en', 'Status']
-    column_names = ['Party Name (Myanmar)', 'Party Name (English)', 'Status']
+    # Add status column if requested
+    if show_status:
+        status_map = {
+            'existing': '🟢 Currently Registered',
+            'allowed_to_register': '🟡 Newly Allowed to Register',
+            'canceled': '🔴 Canceled/Historical'
+        }
+        display_df['Status'] = display_df['type'].map(status_map)
+        columns_to_show.append('Status')
+        column_names.append('Status')
     
-    # Add additional columns based on party type
-    if 'address' in display_df.columns:
+    # Add additional columns based on available data
+    if 'address' in display_df.columns and not display_df['address'].isna().all():
         columns_to_show.append('address')
         column_names.append('Address')
     
-    if 'registration_date' in display_df.columns:
+    if 'registration_date' in display_df.columns and not display_df['registration_date'].isna().all():
         columns_to_show.append('registration_date')
         column_names.append('Registration Date')
     
-    # Show the table
+    # Create display subset
     display_subset = display_df[columns_to_show].copy()
     display_subset.columns = column_names
     
-    # Color code rows by status
-    def highlight_party_type(row):
-        if 'Existing' in str(row['Status']):
-            return ['background-color: rgba(46, 134, 171, 0.1)'] * len(row)
-        elif 'Allowed' in str(row['Status']):
-            return ['background-color: rgba(241, 143, 1, 0.1)'] * len(row)
-        elif 'Canceled' in str(row['Status']):
-            return ['background-color: rgba(199, 62, 29, 0.1)'] * len(row)
-        return [''] * len(row)
+    # Color code rows by status if showing status
+    if show_status:
+        def highlight_party_type(row):
+            if 'Currently Registered' in str(row.get('Status', '')):
+                return ['background-color: rgba(46, 134, 171, 0.1)'] * len(row)
+            elif 'Newly Allowed' in str(row.get('Status', '')):
+                return ['background-color: rgba(241, 143, 1, 0.1)'] * len(row)
+            elif 'Canceled' in str(row.get('Status', '')):
+                return ['background-color: rgba(199, 62, 29, 0.1)'] * len(row)
+            return [''] * len(row)
+        
+        styled_df = display_subset.style.apply(highlight_party_type, axis=1)
+        st.dataframe(styled_df, use_container_width=True, height=500)
+    else:
+        st.dataframe(display_subset, use_container_width=True, height=500)
+
+def create_tabbed_party_interface(party_data: Dict[str, Any]) -> None:
+    """Create tabbed interface for different party categories."""
+    if not party_data or 'parties' not in party_data:
+        st.error("No party data available")
+        return
     
-    styled_df = display_subset.style.apply(highlight_party_type, axis=1)
-    st.dataframe(styled_df, use_container_width=True, height=600)
+    summary = party_data.get('summary', {})
+    
+    # Create tabs
+    tab1, tab2, tab3, tab4 = st.tabs([
+        f"🗳️ 2025 Election Eligible ({summary.get('total_existing', 0) + summary.get('total_allowed_to_register', 0)})",
+        f"📋 Currently Registered ({summary.get('total_existing', 0)})",
+        f"📝 Newly Allowed to Register ({summary.get('total_allowed_to_register', 0)})",
+        f"📜 Historical/Canceled ({summary.get('total_canceled', 0)})"
+    ])
+    
+    # Tab 1: 2025 Election Eligible (Combined)
+    with tab1:
+        st.markdown("### 🗳️ Parties Eligible for 2025 Election")
+        st.info("This tab shows all parties that can participate in the 2025 election: both currently registered parties and newly allowed parties.")
+        
+        eligible_df = get_parties_by_type(party_data, ['existing', 'allowed_to_register'])
+        filtered_df = create_party_search(eligible_df, "search_eligible")
+        
+        if not filtered_df.empty:
+            st.markdown(f"**📊 Total: {len(filtered_df)} parties eligible for 2025 election**")
+            display_party_table(filtered_df, show_status=True)
+        else:
+            st.warning("No parties found")
+    
+    # Tab 2: Currently Registered
+    with tab2:
+        st.markdown("### 📋 Currently Registered Parties")
+        st.info("Parties that were already registered from previous elections and continue to be active for 2025.")
+        
+        existing_df = get_parties_by_type(party_data, ['existing'])
+        filtered_df = create_party_search(existing_df, "search_existing")
+        
+        if not filtered_df.empty:
+            st.markdown(f"**📊 Total: {len(filtered_df)} currently registered parties**")
+            display_party_table(filtered_df)
+        else:
+            st.warning("No currently registered parties found")
+    
+    # Tab 3: Newly Allowed to Register
+    with tab3:
+        st.markdown("### 📝 Newly Allowed to Register")
+        st.info("NEW parties that have received permission to register specifically for the 2025 election. These are not previously existing parties.")
+        
+        new_df = get_parties_by_type(party_data, ['allowed_to_register'])
+        filtered_df = create_party_search(new_df, "search_new")
+        
+        if not filtered_df.empty:
+            st.markdown(f"**📊 Total: {len(filtered_df)} newly allowed parties**")
+            display_party_table(filtered_df)
+        else:
+            st.warning("No newly allowed parties found")
+    
+    # Tab 4: Historical/Canceled
+    with tab4:
+        st.markdown("### 📜 Historical/Canceled Parties")
+        st.warning("These parties are no longer active and cannot participate in the 2025 election.")
+        
+        canceled_df = get_parties_by_type(party_data, ['canceled'])
+        filtered_df = create_party_search(canceled_df, "search_canceled")
+        
+        if not filtered_df.empty:
+            st.markdown(f"**📊 Total: {len(filtered_df)} canceled/historical parties**")
+            display_party_table(filtered_df)
+        else:
+            st.warning("No canceled parties found")
 
 def create_parties_page():
     """Main function to create the parties page."""
@@ -220,26 +305,29 @@ def create_parties_page():
         st.error("Unable to load party data")
         return
     
+    # Context cards explaining categories
+    create_context_cards()
+    
     # Overview section
     create_parties_overview(party_data)
     
     # Distribution chart
-    st.subheader("📊 Party Distribution")
+    st.subheader("📊 Party Distribution by Registration Status")
     create_party_distribution_chart(party_data)
     
-    # Search and filter
-    filtered_df = create_party_search_and_filter(party_data)
+    st.markdown("---")
     
-    # Display table
-    display_party_table(filtered_df)
+    # Tabbed interface for party categories
+    create_tabbed_party_interface(party_data)
     
     # Data source note
     st.markdown("---")
     st.markdown("**Data Source:** Union Election Commission (UEC) Myanmar")
-    st.markdown("**Categories:**")
-    st.markdown("- 🟢 **Existing**: Currently active political parties")
-    st.markdown("- 🟡 **Allowed to Register**: Parties permitted to register for 2025 election")
-    st.markdown("- 🔴 **Canceled**: Previously registered but canceled parties")
+    st.markdown("**Important Notes:**")
+    st.markdown("- These three categories are **distinct and non-overlapping**")
+    st.markdown("- 'Newly Allowed to Register' parties are **NEW** applications, not existing parties changing status")
+    st.markdown("- Only parties in 'Currently Registered' and 'Newly Allowed to Register' categories can participate in 2025")
+    st.markdown("- Data represents official UEC registration statuses as of the extraction date")
 
 if __name__ == "__main__":
     create_parties_page()
