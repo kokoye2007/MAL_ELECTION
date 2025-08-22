@@ -307,7 +307,7 @@ class MapRenderingOptimizer:
                 folium.CircleMarker(
                     location=[row['lat'], row['lng']],
                     radius=5,  # Smaller radius for performance
-                    popup=folium.Popup(popup_html, max_width=250),
+                    popup=folium.Popup(popup_html, max_width=320),
                     color=color,
                     fillColor=color,
                     weight=1,  # Thinner border
@@ -396,7 +396,7 @@ class MapRenderingOptimizer:
                 folium.CircleMarker(
                     location=[row['lat'], row['lng']],
                     radius=6,
-                    popup=folium.Popup(popup_html, max_width=300),
+                    popup=folium.Popup(popup_html, max_width=340),
                     tooltip=row['constituency_en'],
                     color=color,
                     fillColor=color,
@@ -406,13 +406,47 @@ class MapRenderingOptimizer:
     
     def _create_simple_popup(self, row: pd.Series, assembly: str, color: str) -> str:
         """Create simplified popup for performance."""
+        # Map assembly abbreviations to full names
+        assembly_names = {
+            'PTHT': '🏛️ Pyithu Hluttaw (House of Representatives)',
+            'AMTHT': '🏛️ Amyotha Hluttaw (House of Nationalities)', 
+            'TPHT': '🏛️ State/Regional Hluttaws',
+            'TPTYT': '🏛️ Ethnic Affairs Hluttaws'
+        }
+        assembly_display_name = assembly_names.get(assembly, assembly)
+        
         return f"""
-        <div style="font-family: Arial; width: 200px;">
-            <h4 style="margin: 0; color: {color};">{assembly}</h4>
-            <hr style="margin: 5px 0;">
-            <b>{row['constituency_en']}</b><br>
-            <b>Region:</b> {row['state_region_en']}<br>
-            <b>Reps:</b> {row.get('representatives', 1)}
+        <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+                    width: 280px; 
+                    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+                    border-radius: 10px;
+                    box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+                    padding: 14px;
+                    margin: 0;">
+            <h4 style="margin: 0 0 10px 0; 
+                       color: {color}; 
+                       font-size: 15px; 
+                       font-weight: 600;
+                       text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+                       border-bottom: 2px solid {color};
+                       padding-bottom: 6px;">{assembly_display_name}</h4>
+            
+            <div style="font-size: 13px; line-height: 1.5; color: #2c3e50;">
+                <div style="margin-bottom: 6px;">
+                    <span style="font-weight: 600; color: #34495e;">🏛️ Constituency:</span>
+                    <br><span style="color: #2980b9; font-weight: 500;">{row['constituency_en']}</span>
+                </div>
+                
+                <div style="margin-bottom: 6px;">
+                    <span style="font-weight: 600; color: #34495e;">📍 Region:</span> 
+                    <span style="color: #27ae60; font-weight: 500;">{row['state_region_en']}</span>
+                </div>
+                
+                <div style="margin-bottom: 6px;">
+                    <span style="font-weight: 600; color: #34495e;">👥 Reps:</span> 
+                    <span style="color: #c0392b; font-weight: 600; background: #fff5f5; padding: 2px 6px; border-radius: 3px;">{row.get('representatives', 1)}</span>
+                </div>
+            </div>
         </div>
         """
     
@@ -422,16 +456,62 @@ class MapRenderingOptimizer:
     
     def _create_detailed_popup(self, row: pd.Series, assembly: str, color: str) -> str:
         """Create detailed popup for full rendering."""
+        # Map assembly abbreviations to full names
+        assembly_names = {
+            'PTHT': '🏛️ Pyithu Hluttaw (House of Representatives)',
+            'AMTHT': '🏛️ Amyotha Hluttaw (House of Nationalities)', 
+            'TPHT': '🏛️ State/Regional Hluttaws',
+            'TPTYT': '🏛️ Ethnic Affairs Hluttaws'
+        }
+        assembly_display_name = assembly_names.get(assembly, assembly)
+        
         return f"""
-        <div style="font-family: Arial; width: 250px;">
-            <h4 style="margin: 0; color: {color};">{assembly}</h4>
-            <hr style="margin: 5px 0;">
-            <b>English:</b> {row['constituency_en']}<br>
-            <b>Myanmar:</b> {row.get('constituency_mm', 'N/A')}<br>
-            <b>State/Region:</b> {row['state_region_en']}<br>
-            <b>Electoral System:</b> {row.get('electoral_system', 'N/A')}<br>
-            <b>Representatives:</b> {row.get('representatives', 1)}<br>
-            <b>Code:</b> {row.get('constituency_code', 'N/A')}
+        <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+                    width: 300px; 
+                    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+                    border-radius: 12px;
+                    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+                    padding: 16px;
+                    margin: 0;">
+            <h4 style="margin: 0 0 12px 0; 
+                       color: {color}; 
+                       font-size: 16px; 
+                       font-weight: 600;
+                       text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+                       border-bottom: 2px solid {color};
+                       padding-bottom: 8px;">{assembly_display_name}</h4>
+            
+            <div style="font-size: 14px; line-height: 1.6; color: #2c3e50;">
+                <div style="margin-bottom: 8px;">
+                    <span style="font-weight: 600; color: #34495e;">🏛️ English:</span> 
+                    <span style="color: #2980b9; font-weight: 500;">{row['constituency_en']}</span>
+                </div>
+                
+                <div style="margin-bottom: 8px;">
+                    <span style="font-weight: 600; color: #34495e;">🇲🇲 Myanmar:</span> 
+                    <span style="color: #8e44ad; font-weight: 500;">{row.get('constituency_mm', 'N/A')}</span>
+                </div>
+                
+                <div style="margin-bottom: 8px;">
+                    <span style="font-weight: 600; color: #34495e;">📍 State/Region:</span> 
+                    <span style="color: #27ae60; font-weight: 500;">{row['state_region_en']}</span>
+                </div>
+                
+                <div style="margin-bottom: 8px;">
+                    <span style="font-weight: 600; color: #34495e;">⚖️ Electoral System:</span> 
+                    <span style="color: #e67e22; font-weight: 500;">{row.get('electoral_system', 'N/A')}</span>
+                </div>
+                
+                <div style="margin-bottom: 8px;">
+                    <span style="font-weight: 600; color: #34495e;">👥 Representatives:</span> 
+                    <span style="color: #c0392b; font-weight: 600; background: #fff5f5; padding: 2px 8px; border-radius: 4px;">{row.get('representatives', 1)}</span>
+                </div>
+                
+                <div style="margin-bottom: 8px;">
+                    <span style="font-weight: 600; color: #34495e;">🔢 Code:</span> 
+                    <span style="color: #7f8c8d; font-family: 'Courier New', monospace; background: #f8f9fa; padding: 2px 6px; border-radius: 3px;">{row.get('constituency_code', 'N/A')}</span>
+                </div>
+            </div>
         </div>
         """
     
@@ -649,24 +729,70 @@ def create_performance_optimized_map(
             assembly_display_name = assembly_names.get(assembly, assembly)
             
             popup_html = f"""
-            <div style="font-family: Arial; width: 280px;">
-                <h4 style="margin: 0; color: {color}; font-size: 14px;">{assembly_display_name}</h4>
-                <hr style="margin: 5px 0;">
-                <b>English:</b> {row['constituency_en']}<br>
-                <b>Myanmar:</b> {row.get('constituency_mm', 'N/A')}<br>
-                <b>State/Region:</b> {row['state_region_en']}<br>
-                <b>Electoral System:</b> {row.get('electoral_system', 'N/A')}<br>
-                <b>Representatives:</b> {row.get('representatives', 1)}<br>
-                <b>Code:</b> {row.get('constituency_code', row.get('tsp_pcode', 'N/A'))}<br>
-                <b>Location:</b> {lat:.4f}, {lng:.4f}<br>
-                <small style="color: #666;">Source: {coord_source_label}</small>
+            <div style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+                        width: 320px; 
+                        background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+                        border-radius: 12px;
+                        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+                        padding: 16px;
+                        margin: 0;">
+                <h4 style="margin: 0 0 12px 0; 
+                           color: {color}; 
+                           font-size: 16px; 
+                           font-weight: 600;
+                           text-shadow: 0 1px 2px rgba(0,0,0,0.1);
+                           border-bottom: 2px solid {color};
+                           padding-bottom: 8px;">{assembly_display_name}</h4>
+                
+                <div style="font-size: 14px; line-height: 1.6; color: #2c3e50;">
+                    <div style="margin-bottom: 8px;">
+                        <span style="font-weight: 600; color: #34495e;">🏛️ English:</span> 
+                        <span style="color: #2980b9; font-weight: 500;">{row['constituency_en']}</span>
+                    </div>
+                    
+                    <div style="margin-bottom: 8px;">
+                        <span style="font-weight: 600; color: #34495e;">🇲🇲 Myanmar:</span> 
+                        <span style="color: #8e44ad; font-weight: 500;">{row.get('constituency_mm', 'N/A')}</span>
+                    </div>
+                    
+                    <div style="margin-bottom: 8px;">
+                        <span style="font-weight: 600; color: #34495e;">📍 State/Region:</span> 
+                        <span style="color: #27ae60; font-weight: 500;">{row['state_region_en']}</span>
+                    </div>
+                    
+                    <div style="margin-bottom: 8px;">
+                        <span style="font-weight: 600; color: #34495e;">⚖️ Electoral System:</span> 
+                        <span style="color: #e67e22; font-weight: 500;">{row.get('electoral_system', 'N/A')}</span>
+                    </div>
+                    
+                    <div style="margin-bottom: 8px;">
+                        <span style="font-weight: 600; color: #34495e;">👥 Representatives:</span> 
+                        <span style="color: #c0392b; font-weight: 600; background: #fff5f5; padding: 2px 8px; border-radius: 4px;">{row.get('representatives', 1)}</span>
+                    </div>
+                    
+                    <div style="margin-bottom: 8px;">
+                        <span style="font-weight: 600; color: #34495e;">🔢 Code:</span> 
+                        <span style="color: #7f8c8d; font-family: 'Courier New', monospace; background: #f8f9fa; padding: 2px 6px; border-radius: 3px;">{row.get('constituency_code', row.get('tsp_pcode', 'N/A'))}</span>
+                    </div>
+                    
+                    <div style="margin-bottom: 8px;">
+                        <span style="font-weight: 600; color: #34495e;">📍 Location:</span> 
+                        <span style="color: #16a085; font-family: 'Courier New', monospace; font-size: 13px;">{lat:.4f}, {lng:.4f}</span>
+                    </div>
+                </div>
+                
+                <div style="margin-top: 12px; padding-top: 8px; border-top: 1px solid #ecf0f1;">
+                    <small style="color: #95a5a6; font-size: 12px; font-style: italic;">
+                        📊 Source: {coord_source_label}
+                    </small>
+                </div>
             </div>
             """
             
             folium.CircleMarker(
                 location=[lat, lng],
                 radius=6 if assembly == 'PTHT' else 8,  # Slightly larger for other assemblies
-                popup=folium.Popup(popup_html, max_width=300),
+                popup=folium.Popup(popup_html, max_width=350),
                 color=color,
                 fillColor=color,
                 weight=2,
