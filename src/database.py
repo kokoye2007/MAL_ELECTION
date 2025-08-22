@@ -74,6 +74,9 @@ class DatabaseConnector:
             # No parameters needed since we're building the query directly
             df = pd.read_sql_query(query, _self.engine)
             
+            # Post-process to ensure Naypyitaw constituencies have proper state regions
+            df = _self._fix_naypyitaw_regions(df)
+            
             return df
             
         except Exception as e:
@@ -123,6 +126,9 @@ class DatabaseConnector:
             # Filter by assembly types if specified
             if assembly_types:
                 df = df[df['assembly_type'].isin(assembly_types)]
+            
+            # Post-process to ensure Naypyitaw constituencies have proper state regions
+            df = _self._fix_naypyitaw_regions(df)
             
             st.info(f"📁 Using CSV data: {len(df)} constituencies loaded from {csv_path.split('/')[-1]}")
             return df
@@ -202,43 +208,114 @@ class DatabaseConnector:
     def get_states_regions(_self) -> List[str]:
         """Get list of all states and regions."""
         try:
-            # Get all regions from database
-            df = pd.read_sql_query("""
+            # Get all regions from database using raw SQL to avoid SQLAlchemy issues
+            conn = psycopg2.connect(_self.connection_string)
+            cursor = conn.cursor()
+            
+            # First get all valid regions
+            cursor.execute("""
                 SELECT DISTINCT state_region_en 
                 FROM constituencies 
                 WHERE election_year = 2025 
                     AND state_region_en IS NOT NULL 
                     AND state_region_en != ''
+                    AND state_region_en != 'Unknown State'
                 ORDER BY state_region_en
-            """, _self.engine)
+            """)
             
-            regions = df['state_region_en'].tolist()
+            regions = [row[0] for row in cursor.fetchall() if row[0] and row[0].strip()]
             
-            # Filter out Unknown State if it exists
-            regions = [r for r in regions if r and r.strip() and r != 'Unknown State']
+            # Check for Naypyitaw constituencies and ensure they're properly labeled
+            cursor.execute("""
+                SELECT COUNT(*) as count
+                FROM constituencies 
+                WHERE election_year = 2025 
+                    AND (LOWER(constituency_en) LIKE '%naypyitaw%' 
+                         OR constituency_en LIKE '%သီရိ%' OR constituency_en LIKE '%တပ်ကုန်း%' OR constituency_en LIKE '%လယ်ဝေး%' 
+                         OR constituency_mm LIKE '%သီရိ%' OR constituency_mm LIKE '%တပ်ကုန်း%' OR constituency_mm LIKE '%လယ်ဝေး%'
+                         OR constituency_mm LIKE '%ပုဗ္ဗ%' OR constituency_mm LIKE '%ဇေယျာ%' OR constituency_mm LIKE '%ဇမ္ဗူ%'
+                         OR constituency_mm LIKE '%ဒက္ခိဏ%' OR constituency_mm LIKE '%ဥတ္တရ%' OR constituency_mm LIKE '%ပျဉ်းမနား%'
+                         OR constituency_mm LIKE '%တက္ကုန်း%')
+            """)
             
-            # Ensure Naypyitaw Union Territory is included if we have Naypyitaw constituencies
-            if 'Naypyitaw Union Territory' not in regions:
-                # Check if we have Naypyitaw constituencies in the data
-                naypyitaw_check = pd.read_sql_query("""
-                    SELECT COUNT(*) as count
-                    FROM constituencies 
-                    WHERE election_year = 2025 
-                        AND (constituency_en LIKE '%သီရိ%' OR constituency_en LIKE '%တပ်ကုန်း%' OR constituency_en LIKE '%လယ်ဝေး%' 
-                             OR constituency_mm LIKE '%သီရိ%' OR constituency_mm LIKE '%တပ်ကုန်း%' OR constituency_mm LIKE '%လယ်ဝေး%'
-                             OR constituency_mm LIKE '%ပုဗ္ဗ%' OR constituency_mm LIKE '%ဇေယျာ%' OR constituency_mm LIKE '%ဇမ္ဗူ%'
-                             OR constituency_mm LIKE '%ဒက္ခိဏ%' OR constituency_mm LIKE '%ဥတ္တရ%' OR constituency_mm LIKE '%ပျဉ်းမနား%')
-                """, _self.engine)
-                
-                if naypyitaw_check['count'].iloc[0] > 0:
-                    regions.append('Naypyitaw Union Territory')
+            naypyitaw_count = cursor.fetchone()[0]
             
-            # Sort the regions
-            regions.sort()
+            if naypyitaw_count > 0 and 'Naypyitaw Union Territory' not in regions:
+                regions.append('Naypyitaw Union Territory')
+            
+            cursor.close()
+            conn.close()
+            
+            # Sort the regions and ensure no None/empty values
+            regions = sorted([r for r in regions if r and r.strip()])
             return regions
             
         except Exception as e:
-            st.error(f"Database regions error: {e}")
+            st.warning(f"Database regions error, using CSV fallback: {e}")
+            return _self._get_states_regions_from_csv()
+    
+    def _fix_naypyitaw_regions(self, df: pd.DataFrame) -> pd.DataFrame:
+        """Fix Naypyitaw constituencies that have missing or incorrect state regions."""
+        if df.empty:
+            return df
+        
+        # Comprehensive Naypyitaw indicators
+        naypyitaw_indicators = [
+            'naypyitaw', 'ပြည်ထောင်စု', 'သီရိ', 'တပ်ကုန်း', 'တက္ကုန်း', 'လယ်ဝေး', 
+            'ပုဗ္ဗ', 'ဇေယျာ', 'ဇမ္ဗူ', 'ဒက္ခိဏ', 'ဥတ္တရ', 'ပျဉ်းမနား',
+            'tatkon', 'ottara', 'thiri', 'pyinmana', 'dakkhin', 'zabbu', 'zeyya', 'pobba', 'lewe'
+        ]
+        
+        # Find Naypyitaw constituencies
+        for idx, row in df.iterrows():
+            constituency_en = str(row.get('constituency_en', '')).lower()
+            constituency_mm = str(row.get('constituency_mm', ''))
+            state_region = row.get('state_region_en', '')
+            
+            # Check if this is a Naypyitaw constituency
+            is_naypyitaw = (
+                any(indicator in constituency_en for indicator in naypyitaw_indicators) or
+                any(indicator in constituency_mm for indicator in naypyitaw_indicators)
+            )
+            
+            # If it's a Naypyitaw constituency but doesn't have proper state region, fix it
+            if is_naypyitaw and (pd.isna(state_region) or not str(state_region).strip() or state_region == 'Unknown State'):
+                df.at[idx, 'state_region_en'] = 'Naypyitaw Union Territory'
+                df.at[idx, 'state_region_mm'] = 'ပြည်ထောင်စုနယ်မြေ'
+        
+        return df
+    
+    def _get_states_regions_from_csv(self) -> List[str]:
+        """Get states/regions from CSV when database is unavailable."""
+        try:
+            # Load data from CSV using the same logic as get_constituencies
+            csv_path = "/app/data/processed/myanmar_election_2025_complete.csv"
+            if not os.path.exists(csv_path):
+                csv_path = "data/processed/myanmar_election_2025_complete.csv"
+            
+            if not os.path.exists(csv_path):
+                # Fallback to legacy CSV
+                csv_path = "/app/data/processed/myanmar_constituencies.csv"
+                if not os.path.exists(csv_path):
+                    csv_path = "data/processed/myanmar_constituencies.csv"
+            
+            if not os.path.exists(csv_path):
+                return []
+            
+            df = pd.read_csv(csv_path)
+            
+            # Apply the same Naypyitaw fix
+            df = self._fix_naypyitaw_regions(df)
+            
+            # Get unique regions, excluding NaN/empty values
+            regions = df['state_region_en'].dropna().unique().tolist()
+            regions = [r for r in regions if r and str(r).strip() and str(r) != 'Unknown State']
+            
+            # Sort and return
+            return sorted(regions)
+            
+        except Exception as e:
+            st.error(f"CSV regions fallback error: {e}")
             return []
             
     @st.cache_data(ttl=300)

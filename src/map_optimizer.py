@@ -23,17 +23,24 @@ def get_safe_state_region(row: pd.Series) -> str:
     """Get state/region name with fallback for missing data (standalone function)."""
     state_region = row.get('state_region_en')
     
-    # If we have the value, return it
-    if state_region and state_region.strip():
+    # If we have the value and it's not 'Unknown State', return it
+    if state_region and state_region.strip() and state_region != 'Unknown State':
         return state_region
     
-    # Check if this is a Naypyitaw constituency
+    # Check if this is a Naypyitaw constituency using comprehensive indicators
     constituency_en = str(row.get('constituency_en', '')).lower()
     constituency_mm = str(row.get('constituency_mm', ''))
     
-    naypyitaw_indicators = ['naypyitaw', 'ပြည်ထောင်စု', 'သီရိ', 'တပ်ကုန်း', 'လယ်ဝေး', 'ပုဗ္ဗ', 'ဇေယျာ', 'ဇမ္ဗူ', 'ဒက္ခိဏ', 'ဥတ္တရ', 'ပျဉ်းမနား']
+    # Comprehensive Naypyitaw indicators
+    naypyitaw_indicators = [
+        'naypyitaw', 'ပြည်ထောင်စု', 'သီရိ', 'တပ်ကုန်း', 'တက္ကုန်း', 'လယ်ဝေး', 
+        'ပုဗ္ဗ', 'ဇေယျာ', 'ဇမ္ဗူ', 'ဒက္ခိဏ', 'ဥတ္တရ', 'ပျဉ်းမနား',
+        'tatkon', 'ottara', 'thiri', 'pyinmana', 'dakkhin', 'zabbu', 'zeyya', 'pobba', 'lewe'
+    ]
     
-    if any(indicator in constituency_en or indicator in constituency_mm for indicator in naypyitaw_indicators):
+    # Check English name (lowercase) and Myanmar name
+    if (any(indicator in constituency_en for indicator in naypyitaw_indicators) or
+        any(indicator in constituency_mm for indicator in naypyitaw_indicators)):
         return 'Naypyitaw Union Territory'
     
     return 'Unknown State'

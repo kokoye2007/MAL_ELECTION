@@ -2,6 +2,35 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Recent Improvements (August 2025)
+
+### Political Party Data Enhancements
+- **Phone Number Extraction**: Added `extract_phone_numbers.py` script to separate phone patterns from party addresses
+- **Terminology Correction**: Updated "Newly Allowed to Register" to accurate "Granted Registration Permission" based on Myanmar UEC documentation
+- **Quick Reference Update**: Expanded help guide from 4 to 6 pages including Political Parties and Historical Data sections
+
+### Map Popup Improvements
+- **Coordinate Display Fix**: Replaced confusing "Coordinates: CSV" with meaningful location coordinates and source attribution
+- **Assembly Name Enhancement**: Changed abbreviations (PTHT) to full descriptive names (🏛️ Pyithu Hluttaw - House of Representatives)
+- **Modern Popup Styling**: Complete refactor with:
+  - Segoe UI fonts with gradient backgrounds and rounded corners
+  - Color-coded fields (English=Blue, Myanmar=Purple, Region=Green, etc.)
+  - Enhanced typography with proper spacing and shadows
+  - Responsive widths (280-320px) with improved readability
+  - Professional appearance with visual hierarchy
+
+### Files Modified
+- `extract_phone_numbers.py`: Phone number extraction from party addresses
+- `src/parties_page.py`: Terminology updates and phone column support
+- `src/languages.json`: Quick reference expansion for both English/Myanmar
+- `src/app_enhanced.py`: Display updates for new quick reference items
+- `src/map_optimizer.py`: Complete popup styling overhaul with modern design
+
+### Deployment Status
+- All improvements deployed to Heroku: https://myanmar-election-2025-df34bedd7e69.herokuapp.com/
+- Database: 838 constituencies, 96% mapping coverage
+- Enhanced user experience with professional popup styling
+
 ## Development Commands
 
 ### Setup and Installation
