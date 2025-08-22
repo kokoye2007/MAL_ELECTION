@@ -33,8 +33,25 @@ class MapRenderingOptimizer:
         
         # Performance thresholds
         self.CLUSTER_THRESHOLD = 100  # Use clustering above this number
-        self.HEATMAP_THRESHOLD = 300  # Use heatmap above this number
-        self.SIMPLIFY_THRESHOLD = 500  # Simplify markers above this number
+    
+    def _get_safe_state_region(self, row: pd.Series) -> str:
+        """Get state/region name with fallback for missing data."""
+        state_region = row.get('state_region_en')
+        
+        # If we have the value, return it
+        if state_region and state_region.strip():
+            return state_region
+        
+        # Check if this is a Naypyitaw constituency
+        constituency_en = str(row.get('constituency_en', '')).lower()
+        constituency_mm = str(row.get('constituency_mm', ''))
+        
+        naypyitaw_indicators = ['naypyitaw', 'ပြည်ထောင်စု', 'သီရိ', 'တပ်ကုန်း', 'လယ်ဝေး', 'ပုဗ္ဗ', 'ဇေယျာ', 'ဇမ္ဗူ', 'ဒက္ခိဏ', 'ဥတ္တရ', 'ပျဉ်းမနား']
+        
+        if any(indicator in constituency_en or indicator in constituency_mm for indicator in naypyitaw_indicators):
+            return 'Naypyitaw Union Territory'
+        
+        return 'Unknown State'
         
     def create_optimized_map(
         self, 
@@ -351,7 +368,7 @@ class MapRenderingOptimizer:
                         "name": row['constituency_en'],
                         "assembly": assembly,
                         "representatives": row.get('representatives', 1),
-                        "state_region": row['state_region_en'],
+                        "state_region": self._get_safe_state_region(row),
                         "popup": self._create_simple_popup_text(row, assembly)
                     }
                 }
@@ -439,7 +456,7 @@ class MapRenderingOptimizer:
                 
                 <div style="margin-bottom: 6px;">
                     <span style="font-weight: 600; color: #34495e;">📍 Region:</span> 
-                    <span style="color: #27ae60; font-weight: 500;">{row['state_region_en']}</span>
+                    <span style="color: #27ae60; font-weight: 500;">{self._get_safe_state_region(row)}</span>
                 </div>
                 
                 <div style="margin-bottom: 6px;">
@@ -452,7 +469,7 @@ class MapRenderingOptimizer:
     
     def _create_simple_popup_text(self, row: pd.Series, assembly: str) -> str:
         """Create simple popup text for GeoJSON."""
-        return f"<b>{row['constituency_en']}</b><br>{row['state_region_en']}<br>Assembly: {assembly}"
+        return f"<b>{row['constituency_en']}</b><br>{self._get_safe_state_region(row)}<br>Assembly: {assembly}"
     
     def _create_detailed_popup(self, row: pd.Series, assembly: str, color: str) -> str:
         """Create detailed popup for full rendering."""
@@ -494,7 +511,7 @@ class MapRenderingOptimizer:
                 
                 <div style="margin-bottom: 8px;">
                     <span style="font-weight: 600; color: #34495e;">📍 State/Region:</span> 
-                    <span style="color: #27ae60; font-weight: 500;">{row['state_region_en']}</span>
+                    <span style="color: #27ae60; font-weight: 500;">{self._get_safe_state_region(row)}</span>
                 </div>
                 
                 <div style="margin-bottom: 8px;">
@@ -757,7 +774,7 @@ def create_performance_optimized_map(
                     
                     <div style="margin-bottom: 8px;">
                         <span style="font-weight: 600; color: #34495e;">📍 State/Region:</span> 
-                        <span style="color: #27ae60; font-weight: 500;">{row['state_region_en']}</span>
+                        <span style="color: #27ae60; font-weight: 500;">{self._get_safe_state_region(row)}</span>
                     </div>
                     
                     <div style="margin-bottom: 8px;">
