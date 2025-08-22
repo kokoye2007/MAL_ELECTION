@@ -11,13 +11,14 @@
       "map": "🗺️ Interactive Map",
       "search": "📋 Constituency Search",
       "comparison": "📈 Assembly Comparison",
+      "parties": "🏛️ Political Parties (2025)",
       "historical": "📜 Historical Data (2020)"
     },
     "assemblies": {
-      "PTHT": "🏛️ Pyithu Hluttaw (330)",
-      "AMTHT": "🏛️ Amyotha Hluttaw (116)",
-      "TPHT": "🏛️ State/Regional (360)",
-      "TPTYT": "🏛️ Ethnic Affairs (29)"
+      "PTHT": "🏛️ Pyithu Hluttaw (House of Representatives) (330)",
+      "AMTHT": "🏛️ Amyotha Hluttaw (House of Nationalities) (116)",
+      "TPHT": "🏛️ State/Regional Hluttaws (360)",
+      "TPTYT": "🏛️ Ethnic Affairs Hluttaws (29)"
     },
     "guides": {
       "how_to_use": "📖 How to Use This Application",
@@ -77,7 +78,8 @@
       "overview": "📊 ပါလီမန်အားလုံး အခြုံ့ပုံ",
       "map": "🗺️ အပြန်အလှန် မြေပုံ",
       "search": "📋 မဲဆန္ဒနယ် ရှာဖွေခြင်း",
-      "comparison": "📈 ပါလီမန် နိုင်ငံတိုင်းခြင်း",
+      "comparison": "📈 လွှတ်တော်များ နှိုင်းယှဉ်ခြင်း",
+      "parties": "🏛️ နိုင်ငံရေးပါတီများ (၂၀၂၅)",
       "historical": "📜 သမိုင်းဆိုင်ရာ ဒေတာ (၂၀၂၀)"
     },
     "assemblies": {
@@ -118,8 +120,8 @@
     },
     "overview": {
       "metrics_title": "📈 အနေအထား အကြမ်းဖျဉ်း",
-      "comparison_title": "🏛️ ပါလီမန် နိုင်ငံတိုင်းခြင်း",
-      "breakdown_title": "📊 အသေးစိတ် ပါလီမန် ခွဲခြမ်းစိပ်ဖြာခြင်း",
+      "comparison_title": "🏛️ လွှတ်တော်များ နှိုင်းယှဉ်ခြင်း",
+      "breakdown_title": "📊 အသေးစိတ် လွှတ်တော် ခွဲခြမ်းစိပ်ဖြာခြင်း",
       "quick_reference": "📖 ဤအပလီကေးရှင်းကို အသုံးပြုနည်း",
       "quick_ref_items": {
         "overview": "• အခြုံ့ပုံ - အနှစ်ချုပ် ကိန်းဂဏန်းများ",

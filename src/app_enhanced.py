@@ -19,6 +19,7 @@ sys.path.append(str(Path(__file__).parent))
 
 from database import get_database
 from boundary_renderer import BoundaryRenderer
+from parties_page import create_parties_page
 from streamlit_folium import st_folium
 import folium
 from folium.plugins import MarkerCluster
@@ -1053,7 +1054,7 @@ def create_sidebar(db):
     # 2. Page Selection (standalone)
     page = st.sidebar.selectbox(
         "📄 Select Page",
-        [get_text("pages.overview"), get_text("pages.map"), get_text("pages.search"), get_text("pages.comparison"), get_text("pages.historical")],
+        [get_text("pages.overview"), get_text("pages.map"), get_text("pages.search"), get_text("pages.comparison"), get_text("pages.parties"), get_text("pages.historical")],
         index=0,
         help="Choose which section of the application to view"
     )
@@ -1950,6 +1951,7 @@ def main():
         get_text("pages.map"): "map", 
         get_text("pages.search"): "search",
         get_text("pages.comparison"): "comparison",
+        get_text("pages.parties"): "parties",
         get_text("pages.historical"): "historical"
     }
     
@@ -2254,6 +2256,9 @@ def main():
                 title_font_color=colors['text_color']
             )
             st.plotly_chart(fig2, use_container_width=True)
+    
+    elif current_page_type == "parties":
+        create_parties_page()
     
     elif current_page_type == "historical":
         show_historical_data_page()
