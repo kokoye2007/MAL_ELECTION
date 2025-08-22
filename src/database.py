@@ -202,13 +202,40 @@ class DatabaseConnector:
     def get_states_regions(_self) -> List[str]:
         """Get list of all states and regions."""
         try:
+            # Get all regions from database
             df = pd.read_sql_query("""
                 SELECT DISTINCT state_region_en 
                 FROM constituencies 
                 WHERE election_year = 2025 
+                    AND state_region_en IS NOT NULL 
+                    AND state_region_en != ''
                 ORDER BY state_region_en
             """, _self.engine)
-            return df['state_region_en'].tolist()
+            
+            regions = df['state_region_en'].tolist()
+            
+            # Filter out Unknown State if it exists
+            regions = [r for r in regions if r and r.strip() and r != 'Unknown State']
+            
+            # Ensure Naypyitaw Union Territory is included if we have Naypyitaw constituencies
+            if 'Naypyitaw Union Territory' not in regions:
+                # Check if we have Naypyitaw constituencies in the data
+                naypyitaw_check = pd.read_sql_query("""
+                    SELECT COUNT(*) as count
+                    FROM constituencies 
+                    WHERE election_year = 2025 
+                        AND (constituency_en LIKE '%သီရိ%' OR constituency_en LIKE '%တပ်ကုန်း%' OR constituency_en LIKE '%လယ်ဝေး%' 
+                             OR constituency_mm LIKE '%သီရိ%' OR constituency_mm LIKE '%တပ်ကုန်း%' OR constituency_mm LIKE '%လယ်ဝေး%'
+                             OR constituency_mm LIKE '%ပုဗ္ဗ%' OR constituency_mm LIKE '%ဇေယျာ%' OR constituency_mm LIKE '%ဇမ္ဗူ%'
+                             OR constituency_mm LIKE '%ဒက္ခိဏ%' OR constituency_mm LIKE '%ဥတ္တရ%' OR constituency_mm LIKE '%ပျဉ်းမနား%')
+                """, _self.engine)
+                
+                if naypyitaw_check['count'].iloc[0] > 0:
+                    regions.append('Naypyitaw Union Territory')
+            
+            # Sort the regions
+            regions.sort()
+            return regions
             
         except Exception as e:
             st.error(f"Database regions error: {e}")

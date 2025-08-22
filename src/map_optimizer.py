@@ -19,6 +19,25 @@ try:
 except ImportError:
     print("Warning: BoundaryRenderer not available")
 
+def get_safe_state_region(row: pd.Series) -> str:
+    """Get state/region name with fallback for missing data (standalone function)."""
+    state_region = row.get('state_region_en')
+    
+    # If we have the value, return it
+    if state_region and state_region.strip():
+        return state_region
+    
+    # Check if this is a Naypyitaw constituency
+    constituency_en = str(row.get('constituency_en', '')).lower()
+    constituency_mm = str(row.get('constituency_mm', ''))
+    
+    naypyitaw_indicators = ['naypyitaw', 'ပြည်ထောင်စု', 'သီရိ', 'တပ်ကုန်း', 'လယ်ဝေး', 'ပုဗ္ဗ', 'ဇေယျာ', 'ဇမ္ဗူ', 'ဒက္ခိဏ', 'ဥတ္တရ', 'ပျဉ်းမနား']
+    
+    if any(indicator in constituency_en or indicator in constituency_mm for indicator in naypyitaw_indicators):
+        return 'Naypyitaw Union Territory'
+    
+    return 'Unknown State'
+
 class MapRenderingOptimizer:
     """Optimize map rendering for large numbers of constituencies."""
     
@@ -35,23 +54,8 @@ class MapRenderingOptimizer:
         self.CLUSTER_THRESHOLD = 100  # Use clustering above this number
     
     def _get_safe_state_region(self, row: pd.Series) -> str:
-        """Get state/region name with fallback for missing data."""
-        state_region = row.get('state_region_en')
-        
-        # If we have the value, return it
-        if state_region and state_region.strip():
-            return state_region
-        
-        # Check if this is a Naypyitaw constituency
-        constituency_en = str(row.get('constituency_en', '')).lower()
-        constituency_mm = str(row.get('constituency_mm', ''))
-        
-        naypyitaw_indicators = ['naypyitaw', 'ပြည်ထောင်စု', 'သီရိ', 'တပ်ကုန်း', 'လယ်ဝေး', 'ပုဗ္ဗ', 'ဇေယျာ', 'ဇမ္ဗူ', 'ဒက္ခိဏ', 'ဥတ္တရ', 'ပျဉ်းမနား']
-        
-        if any(indicator in constituency_en or indicator in constituency_mm for indicator in naypyitaw_indicators):
-            return 'Naypyitaw Union Territory'
-        
-        return 'Unknown State'
+        """Get state/region name with fallback for missing data (class method wrapper)."""
+        return get_safe_state_region(row)
         
     def create_optimized_map(
         self, 
@@ -774,7 +778,7 @@ def create_performance_optimized_map(
                     
                     <div style="margin-bottom: 8px;">
                         <span style="font-weight: 600; color: #34495e;">📍 State/Region:</span> 
-                        <span style="color: #27ae60; font-weight: 500;">{self._get_safe_state_region(row)}</span>
+                        <span style="color: #27ae60; font-weight: 500;">{get_safe_state_region(row)}</span>
                     </div>
                     
                     <div style="margin-bottom: 8px;">
