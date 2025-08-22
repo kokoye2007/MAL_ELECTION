@@ -406,10 +406,10 @@ class MapRenderingOptimizer:
     
     def _create_simple_popup(self, row: pd.Series, assembly: str, color: str) -> str:
         """Create simplified popup for performance."""
-        # Map assembly abbreviations to full names
+        # Map assembly abbreviations to full names with line breaks
         assembly_names = {
-            'PTHT': '🏛️ Pyithu Hluttaw (House of Representatives)',
-            'AMTHT': '🏛️ Amyotha Hluttaw (House of Nationalities)', 
+            'PTHT': '🏛️ Pyithu Hluttaw<br>(House of Representatives)',
+            'AMTHT': '🏛️ Amyotha Hluttaw<br>(House of Nationalities)', 
             'TPHT': '🏛️ State/Regional Hluttaws',
             'TPTYT': '🏛️ Ethnic Affairs Hluttaws'
         }
@@ -456,10 +456,10 @@ class MapRenderingOptimizer:
     
     def _create_detailed_popup(self, row: pd.Series, assembly: str, color: str) -> str:
         """Create detailed popup for full rendering."""
-        # Map assembly abbreviations to full names
+        # Map assembly abbreviations to full names with line breaks
         assembly_names = {
-            'PTHT': '🏛️ Pyithu Hluttaw (House of Representatives)',
-            'AMTHT': '🏛️ Amyotha Hluttaw (House of Nationalities)', 
+            'PTHT': '🏛️ Pyithu Hluttaw<br>(House of Representatives)',
+            'AMTHT': '🏛️ Amyotha Hluttaw<br>(House of Nationalities)', 
             'TPHT': '🏛️ State/Regional Hluttaws',
             'TPTYT': '🏛️ Ethnic Affairs Hluttaws'
         }
@@ -719,10 +719,10 @@ def create_performance_optimized_map(
             tsp_pcode = row.get('tsp_pcode', '')
             coord_source_label = "MIMU boundary centroid" if tsp_pcode and tsp_pcode in mimu_coords else "Geographic data"
             
-            # Map assembly abbreviations to full names
+            # Map assembly abbreviations to full names with line breaks
             assembly_names = {
-                'PTHT': '🏛️ Pyithu Hluttaw (House of Representatives)',
-                'AMTHT': '🏛️ Amyotha Hluttaw (House of Nationalities)', 
+                'PTHT': '🏛️ Pyithu Hluttaw<br>(House of Representatives)',
+                'AMTHT': '🏛️ Amyotha Hluttaw<br>(House of Nationalities)', 
                 'TPHT': '🏛️ State/Regional Hluttaws',
                 'TPTYT': '🏛️ Ethnic Affairs Hluttaws'
             }
