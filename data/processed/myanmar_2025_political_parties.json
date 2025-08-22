@@ -17,7 +17,7 @@
         "type": "existing",
         "chairman": "",
         "secretary_general": "",
-        "address": "အမှတ်(၅)၊ ရာဇသင်္ဂဟလမ်းနှင့်ရွှေပြည်တော်ဝင်လမ်းထောင့်၊ ဒက္ခိဏသီရိမြို့နယ်၊ နေပြည်တော်။\\nဖုန်းနံပါတ်-",
+        "address": "အမှတ်(၅)၊ ရာဇသင်္ဂဟလမ်းနှင့်ရွှေပြည်တော်ဝင်လမ်းထောင့်၊ ဒက္ခိဏသီရိမြို့နယ်၊ နေပြည်တော်။",
         "name_en": "",
         "current_status": "existing",
         "primary_type": "existing",
@@ -27,7 +27,8 @@
         ],
         "registration_date": "၂၀-၄-၂ဝ၂၃/ အမှတ်စဉ် (၁)",
         "announcement_number": "၆/၂ဝ၂၃",
-        "notes": ""
+        "notes": "",
+        "phone": ""
       },
       {
         "id": 2,
@@ -35,7 +36,7 @@
         "type": "existing",
         "chairman": "",
         "secretary_general": "",
-        "address": "အမှတ်(၈၃)၊ ရန်ကုန်-ပဲခူးလမ်းမကြီး၊ ထောက်ကြန့်မြို့၊ ရန်ကုန်တိုင်းဒေသကြီး။\\nဖုန်းနံပါတ်-",
+        "address": "အမှတ်(၈၃)၊ ရန်ကုန်-ပဲခူးလမ်းမကြီး၊ ထောက်ကြန့်မြို့၊ ရန်ကုန်တိုင်းဒေသကြီး။",
         "name_en": "",
         "current_status": "existing",
         "primary_type": "existing",
@@ -45,7 +46,8 @@
         ],
         "registration_date": "၂၄-၄-၂ဝ၂၃/ အမှတ်စဉ် (၂)",
         "announcement_number": "၇/၂ဝ၂၃",
-        "notes": ""
+        "notes": "",
+        "phone": ""
       },
       {
         "id": 3,
@@ -53,7 +55,7 @@
         "type": "existing",
         "chairman": "",
         "secretary_general": "",
-        "address": "အမှတ်(၃)၊ ချန်းမောအိမ်ရာ(၁၇)၊ ချီဖွေခရိုင်၊ ချီဖွေမြို့နယ်၊ ပန်ဝါမြို့၊ ကချင်ပြည်နယ်။\\nဖုန်းနံပါတ်-",
+        "address": "အမှတ်(၃)၊ ချန်းမောအိမ်ရာ(၁၇)၊ ချီဖွေခရိုင်၊ ချီဖွေမြို့နယ်၊ ပန်ဝါမြို့၊ ကချင်ပြည်နယ်။",
         "name_en": "",
         "current_status": "existing",
         "primary_type": "existing",
@@ -63,7 +65,8 @@
         ],
         "registration_date": "၂၅-၄-၂ဝ၂၃/ အမှတ်စဉ်(၃)",
         "announcement_number": "၈/၂ဝ၂၃",
-        "notes": ""
+        "notes": "",
+        "phone": ""
       },
       {
         "id": 4,
@@ -71,7 +74,7 @@
         "type": "existing",
         "chairman": "",
         "secretary_general": "",
-        "address": "အမှတ်(၉)၊ ရတနာဒီပ၊ ငုရွှေဝါလမ်းနှင့်အင်ကြင်း(၂)လမ်းထောင့်၊ ဘားအံမြို့၊ ကရင်ပြည်နယ်။\\nဖုန်းနံပါတ်-",
+        "address": "အမှတ်(၉)၊ ရတနာဒီပ၊ ငုရွှေဝါလမ်းနှင့်အင်ကြင်း(၂)လမ်းထောင့်၊ ဘားအံမြို့၊ ကရင်ပြည်နယ်။",
         "name_en": "",
         "current_status": "existing",
         "primary_type": "existing",
@@ -81,7 +84,8 @@
         ],
         "registration_date": "၂၅-၄-၂ဝ၂၃/ အမှတ်စဉ်(၄)",
         "announcement_number": "၉/၂ဝ၂၃",
-        "notes": ""
+        "notes": "",
+        "phone": ""
       },
       {
         "id": 5,
@@ -89,7 +93,7 @@
         "type": "existing",
         "chairman": "",
         "secretary_general": "",
-        "address": "အမှတ်(၂၄)၊ ရွှေတောင်ကြား(၁)ရပ်ကွက်၊ အောင်ဇေယျလမ်း၊ ဗဟန်းမြို့နယ်၊ ရန်ကုန်တိုင်းဒေသကြီး။\\nဖုန်းနံပါတ်-",
+        "address": "အမှတ်(၂၄)၊ ရွှေတောင်ကြား(၁)ရပ်ကွက်၊ အောင်ဇေယျလမ်း၊ ဗဟန်းမြို့နယ်၊ ရန်ကုန်တိုင်းဒေသကြီး။",
         "name_en": "",
         "current_status": "existing",
         "primary_type": "existing",
@@ -99,7 +103,8 @@
         ],
         "registration_date": "၂၅-၄-၂ဝ၂၃/ အမှတ်စဉ် (၅)",
         "announcement_number": "၁၀/၂ဝ၂၃",
-        "notes": ""
+        "notes": "",
+        "phone": ""
       },
       {
         "id": 6,
@@ -107,7 +112,7 @@
         "type": "existing",
         "chairman": "",
         "secretary_general": "",
-        "address": "အိမ်အမှတ် (၁/ဃ/၁)၊ မင်းဂံရပ်ကွက်၊ မင်းစောမွန်လမ်း၊ စစ်တွေမြို့၊ ရခိုင်ပြည်နယ်၊၊\\nဖုန်းနံပါတ်-",
+        "address": "အိမ်အမှတ် (၁/ဃ/၁)၊ မင်းဂံရပ်ကွက်၊ မင်းစောမွန်လမ်း၊ စစ်တွေမြို့၊ ရခိုင်ပြည်နယ်၊၊",
         "name_en": "Arakan Front Party (AFP)",
         "current_status": "existing",
         "primary_type": "existing",
@@ -117,7 +122,8 @@
         ],
         "registration_date": "၂-၅-၂ဝ၂၃/ အမှတ်စဉ် (၆)",
         "announcement_number": "၁၁/၂ဝ၂၃",
-        "notes": ""
+        "notes": "",
+        "phone": ""
       },
       {
         "id": 7,
@@ -125,7 +131,7 @@
         "type": "existing",
         "chairman": "",
         "secretary_general": "",
-        "address": "အလဝ-၁၃၊ ရွာသစ်ကုန်းကျေးရွာအုပ်စု၊ အာလဝီကုန်းရပ်၊ မိုးညှင်းခရိုင်၊ မိုးညှင်းမြို့နယ်၊ ကချင်ပြည်နယ်။\\nဖုန်းနံပါတ်-",
+        "address": "အလဝ-၁၃၊ ရွာသစ်ကုန်းကျေးရွာအုပ်စု၊ အာလဝီကုန်းရပ်၊ မိုးညှင်းခရိုင်၊ မိုးညှင်းမြို့နယ်၊ ကချင်ပြည်နယ်။",
         "name_en": "TAI-LENG NATIONALITIES DEVELOPMENT PARTY (T.N.D.P)",
         "current_status": "existing",
         "primary_type": "existing",
@@ -135,7 +141,8 @@
         ],
         "registration_date": "၂-၅-၂ဝ၂၃/ အမှတ်စဉ် (၇)",
         "announcement_number": "၁၂/၂ဝ၂၃",
-        "notes": ""
+        "notes": "",
+        "phone": ""
       },
       {
         "id": 8,
@@ -143,7 +150,7 @@
         "type": "existing",
         "chairman": "",
         "secretary_general": "",
-        "address": "အမှတ် (၁/၈၉)၊ အေးသာယာရပ်၊ မြို့ပတ်လမ်း၊ မုံရွာမြို့၊  စစ်ကိုင်းတိုင်းဒေသကြီး။\\nဖုန်းနံပါတ်-",
+        "address": "အမှတ် (၁/၈၉)၊ အေးသာယာရပ်၊ မြို့ပတ်လမ်း၊ မုံရွာမြို့၊  စစ်ကိုင်းတိုင်းဒေသကြီး။",
         "name_en": "Shan-Ni Solidarity Party (S.S.P)",
         "current_status": "existing",
         "primary_type": "existing",
@@ -153,7 +160,8 @@
         ],
         "registration_date": "၂-၅-၂ဝ၂၃/ အမှတ်စဉ် (၈)",
         "announcement_number": "၁၃/၂ဝ၂၃",
-        "notes": ""
+        "notes": "",
+        "phone": ""
       },
       {
         "id": 9,
@@ -161,7 +169,7 @@
         "type": "existing",
         "chairman": "",
         "secretary_general": "",
-        "address": "အမှတ် (၂၅၄)၊ (၈)ရပ်ကွက်၊ (၅)လမ်း၊ သံတွဲမြို့နယ်၊ ရခိုင်ပြည်နယ်။  \\nဖုန်းနံပါတ်-",
+        "address": "အမှတ် (၂၅၄)၊ (၈)ရပ်ကွက်၊ (၅)လမ်း၊ သံတွဲမြို့နယ်၊ ရခိုင်ပြည်နယ်။",
         "name_en": "",
         "current_status": "existing",
         "primary_type": "existing",
@@ -171,7 +179,8 @@
         ],
         "registration_date": "၂-၅-၂ဝ၂၃/ အမှတ်စဉ် (၉)",
         "announcement_number": "၁၄/၂ဝ၂၃",
-        "notes": ""
+        "notes": "",
+        "phone": ""
       },
       {
         "id": 10,
@@ -179,7 +188,7 @@
         "type": "existing",
         "chairman": "",
         "secretary_general": "",
-        "address": "အမှတ်(၁၈)၊ ဈေးပိုင်းရပ်ကွက်၊ အနောက်မြို့ပတ်လမ်း၊ တောင်ကြီးမြို့၊  ရှမ်းပြည်နယ်။\\nဖုန်းနံပါတ်-",
+        "address": "အမှတ်(၁၈)၊ ဈေးပိုင်းရပ်ကွက်၊ အနောက်မြို့ပတ်လမ်း၊ တောင်ကြီးမြို့၊  ရှမ်းပြည်နယ်။",
         "name_en": "",
         "current_status": "existing",
         "primary_type": "existing",
@@ -189,7 +198,8 @@
         ],
         "registration_date": "၄-၅-၂ဝ၂၃/ အမှတ်စဉ် (၁ဝ)",
         "announcement_number": "၁၅/၂ဝ၂၃",
-        "notes": ""
+        "notes": "",
+        "phone": ""
       },
       {
         "id": 11,
@@ -197,7 +207,7 @@
         "type": "existing",
         "chairman": "",
         "secretary_general": "",
-        "address": "အမှတ် (၂၃/၁၁၈)၊ ရမ်ပူရပ်ကွက်၊ မြစ်ကြီးနားမြို့၊  ကချင်ပြည်နယ်။\\nဖုန်းနံပါတ်-",
+        "address": "အမှတ် (၂၃/၁၁၈)၊ ရမ်ပူရပ်ကွက်၊ မြစ်ကြီးနားမြို့၊  ကချင်ပြည်နယ်။",
         "name_en": "LISU NATIONAL DEVELOPMENT  PARTY (L.N.D.P)",
         "current_status": "existing",
         "primary_type": "existing",
@@ -207,7 +217,8 @@
         ],
         "registration_date": "၅-၅-၂ဝ၂၃/ အမှတ်စဉ် (၁၂)",
         "announcement_number": "၁၇/၂ဝ၂၃",
-        "notes": ""
+        "notes": "",
+        "phone": ""
       },
       {
         "id": 12,
@@ -215,7 +226,7 @@
         "type": "existing",
         "chairman": "",
         "secretary_general": "",
-        "address": "အမှတ် (၁၁၄)၊ အကွက် (၁)၊ ဆင်ကူးလမ်း၊ စစ်တွေမြို့၊  ရခိုင်ပြည်နယ်။\\nဖုန်းနံပါတ်-",
+        "address": "အမှတ် (၁၁၄)၊ အကွက် (၁)၊ ဆင်ကူးလမ်း၊ စစ်တွေမြို့၊  ရခိုင်ပြည်နယ်။",
         "name_en": "",
         "current_status": "existing",
         "primary_type": "existing",
@@ -225,7 +236,8 @@
         ],
         "registration_date": "၅-၅-၂ဝ၂၃/ အမှတ်စဉ် (၁၃)",
         "announcement_number": "၁၈/၂ဝ၂၃",
-        "notes": ""
+        "notes": "",
+        "phone": ""
       },
       {
         "id": 13,
@@ -233,7 +245,7 @@
         "type": "existing",
         "chairman": "",
         "secretary_general": "",
-        "address": "အမှတ် (၂၈၁)၊ အာခါစျေးလမ်း၊ ဝိန်းကျောက်ရပ်၊ တာချီလိတ်မြို့၊ ရှမ်းပြည်နယ်(အရှေ့ပိုင်း)။\\nဖုန်းနံပါတ်-",
+        "address": "အမှတ် (၂၈၁)၊ အာခါစျေးလမ်း၊ ဝိန်းကျောက်ရပ်၊ တာချီလိတ်မြို့၊ ရှမ်းပြည်နယ်(အရှေ့ပိုင်း)။",
         "name_en": "",
         "current_status": "existing",
         "primary_type": "existing",
@@ -243,7 +255,8 @@
         ],
         "registration_date": "၈-၅-၂ဝ၂၃/ အမှတ်စဉ် (၁၄)",
         "announcement_number": "၁၉/၂ဝ၂၃",
-        "notes": ""
+        "notes": "",
+        "phone": ""
       },
       {
         "id": 14,
@@ -251,7 +264,7 @@
         "type": "existing",
         "chairman": "",
         "secretary_general": "",
-        "address": "ကံသာရပ်၊ တိတ်နန်းတံတားအနီး၊ ရုံးကြီးလမ်း၊ ညောင်ရွှေမြို့၊ ရှမ်းပြည်နယ် (တောင်ပိုင်း)။\\nဖုန်းနံပါတ်-",
+        "address": "ကံသာရပ်၊ တိတ်နန်းတံတားအနီး၊ ရုံးကြီးလမ်း၊ ညောင်ရွှေမြို့၊ ရှမ်းပြည်နယ် (တောင်ပိုင်း)။",
         "name_en": "",
         "current_status": "existing",
         "primary_type": "existing",
@@ -261,7 +274,8 @@
         ],
         "registration_date": "၁၆-၅-၂ဝ၂၃/ အမှတ်စဉ် (၁၅)",
         "announcement_number": "၂၀/၂ဝ၂၃",
-        "notes": ""
+        "notes": "",
+        "phone": ""
       },
       {
         "id": 15,
@@ -269,7 +283,7 @@
         "type": "existing",
         "chairman": "",
         "secretary_general": "",
-        "address": "အမှတ် (ဌ/ ၁၉/ ၇၆၄)၊ ဟူးမွန်လမ်း၊ ရပ်ကွက် (၁၂)၊ နယ်မြေ (၁၉)၊ မန်ဆူရှမ်းကျောင်းနောက်၊  လားရှိုးမြို့၊  ရှမ်းပြည်နယ်။\\nဖုန်းနံပါတ်-",
+        "address": "အမှတ် (ဌ/ ၁၉/ ၇၆၄)၊ ဟူးမွန်လမ်း၊ ရပ်ကွက် (၁၂)၊ နယ်မြေ (၁၉)၊ မန်ဆူရှမ်းကျောင်းနောက်၊  လားရှိုးမြို့၊  ရှမ်းပြည်နယ်။",
         "name_en": "",
         "current_status": "existing",
         "primary_type": "existing",
@@ -279,7 +293,8 @@
         ],
         "registration_date": "၁၆-၅-၂ဝ၂၃/ အမှတ်စဉ် (၁၆)",
         "announcement_number": "၂၁/၂ဝ၂၃",
-        "notes": ""
+        "notes": "",
+        "phone": ""
       },
       {
         "id": 16,
@@ -287,7 +302,7 @@
         "type": "existing",
         "chairman": "",
         "secretary_general": "",
-        "address": "ခြံအမှတ် (၄/၄၁၃)၊ အမှတ်(၄)ရပ်ကွက်၊ သုဓနုလမ်း၊ ဘားအံမြို့၊ ကရင်ပြည်နယ်။\\nဖုန်းနံပါတ်-",
+        "address": "ခြံအမှတ် (၄/၄၁၃)၊ အမှတ်(၄)ရပ်ကွက်၊ သုဓနုလမ်း၊ ဘားအံမြို့၊ ကရင်ပြည်နယ်။",
         "name_en": "",
         "current_status": "existing",
         "primary_type": "existing",
@@ -297,7 +312,8 @@
         ],
         "registration_date": "၂၂-၅-၂ဝ၂၃/ အမှတ်စဉ် (၁၇)",
         "announcement_number": "၂၂/၂ဝ၂၃",
-        "notes": ""
+        "notes": "",
+        "phone": ""
       },
       {
         "id": 17,
@@ -305,7 +321,7 @@
         "type": "existing",
         "chairman": "",
         "secretary_general": "",
-        "address": "အမှတ်(၂၈)၊ ရွှေဒါးကုန်းလမ်း၊ မရမ်းကုန်းရပ်ကွက်၊ မြောင်းမြမြို့၊ ဧရာဝတီတိုင်းဒေသကြီး။  \\nဖုန်းနံပါတ်-",
+        "address": "အမှတ်(၂၈)၊ ရွှေဒါးကုန်းလမ်း၊ မရမ်းကုန်းရပ်ကွက်၊ မြောင်းမြမြို့၊ ဧရာဝတီတိုင်းဒေသကြီး။",
         "name_en": "",
         "current_status": "existing",
         "primary_type": "existing",
@@ -315,7 +331,8 @@
         ],
         "registration_date": "၂၂-၅-၂ဝ၂၃/ အမှတ်စဉ် (၁၈)",
         "announcement_number": "၂၃/၂ဝ၂၃",
-        "notes": ""
+        "notes": "",
+        "phone": ""
       },
       {
         "id": 18,
@@ -323,7 +340,7 @@
         "type": "existing",
         "chairman": "",
         "secretary_general": "",
-        "address": "ဇီးဖြူကုန်းရပ်ကွက်၊ ခန္တီးမြို့၊ စစ်ကိုင်းတိုင်းဒေသကြီး။\\nဖုန်းနံပါတ်-",
+        "address": "ဇီးဖြူကုန်းရပ်ကွက်၊ ခန္တီးမြို့၊ စစ်ကိုင်းတိုင်းဒေသကြီး။",
         "name_en": "Naga National Party (NNP)",
         "current_status": "existing",
         "primary_type": "existing",
@@ -333,7 +350,8 @@
         ],
         "registration_date": "၃၀-၅-၂ဝ၂၃/ အမှတ်စဉ် (၂၀)",
         "announcement_number": "၂၅/၂ဝ၂၃",
-        "notes": ""
+        "notes": "",
+        "phone": ""
       },
       {
         "id": 19,
@@ -341,7 +359,7 @@
         "type": "existing",
         "chairman": "",
         "secretary_general": "",
-        "address": "အမှတ် (၁၀/၆၄)၊ ချယ်ရီလမ်း၊ (၁၀)ရပ်ကွက်၊ ကလောမြို့၊ ရှမ်းပြည်နယ် (တောင်ပိုင်း)။  \\nဖုန်းနံပါတ်-",
+        "address": "အမှတ် (၁၀/၆၄)၊ ချယ်ရီလမ်း၊ (၁၀)ရပ်ကွက်၊ ကလောမြို့၊ ရှမ်းပြည်နယ် (တောင်ပိုင်း)။",
         "name_en": "",
         "current_status": "existing",
         "primary_type": "existing",
@@ -351,7 +369,8 @@
         ],
         "registration_date": "၅-၆-၂ဝ၂၃/ အမှတ်စဉ် (၂၁)",
         "announcement_number": "၂၆/၂ဝ၂၃",
-        "notes": ""
+        "notes": "",
+        "phone": ""
       },
       {
         "id": 20,
@@ -359,7 +378,7 @@
         "type": "existing",
         "chairman": "",
         "secretary_general": "",
-        "address": "အမှတ် (၆၃)၊ လသာအောက်လမ်း၊ အမှတ်(၃)ရပ်ကွက်၊ လသာမြို့နယ်၊ ရန်ကုန်တိုင်းဒေသကြီး။\\nဖုန်းနံပါတ်-",
+        "address": "အမှတ် (၆၃)၊ လသာအောက်လမ်း၊ အမှတ်(၃)ရပ်ကွက်၊ လသာမြို့နယ်၊ ရန်ကုန်တိုင်းဒေသကြီး။",
         "name_en": "",
         "current_status": "existing",
         "primary_type": "existing",
@@ -369,7 +388,8 @@
         ],
         "registration_date": "၅-၆-၂ဝ၂၃/ အမှတ်စဉ် (၂၂)",
         "announcement_number": "၂၇/၂ဝ၂၃",
-        "notes": ""
+        "notes": "",
+        "phone": ""
       },
       {
         "id": 21,
@@ -377,7 +397,7 @@
         "type": "existing",
         "chairman": "",
         "secretary_general": "",
-        "address": "ဇေယျဌာနီလမ်းနှင့် ပန်းခင်းလမ်းထောင့် (ဘဲကုန်းမီးပွိုင့် အနီး)၊ စက်ြာဒီပခြံ၊ ပုဗ္ဗသီရိမြို့နယ်၊ နေပြည်တော်။\\nဖုန်းနံပါတ်-",
+        "address": "ဇေယျဌာနီလမ်းနှင့် ပန်းခင်းလမ်းထောင့် (ဘဲကုန်းမီးပွိုင့် အနီး)၊ စက်ြာဒီပခြံ၊ ပုဗ္ဗသီရိမြို့နယ်၊ နေပြည်တော်။",
         "name_en": "Democratic Party of National Politics (DNP)",
         "current_status": "existing",
         "primary_type": "existing",
@@ -387,7 +407,8 @@
         ],
         "registration_date": "၉-၆-၂ဝ၂၃/ အမှတ်စဉ် (၂၃)",
         "announcement_number": "၂၈/၂ဝ၂၃",
-        "notes": ""
+        "notes": "",
+        "phone": ""
       },
       {
         "id": 22,
@@ -395,7 +416,7 @@
         "type": "existing",
         "chairman": "",
         "secretary_general": "",
-        "address": "(၄)ရပ်ကွက်၊ ပညာလမ်း၊ အမှတ် (၁၀၁၀/ခ)၊ တောင်ဥက္ကလာပမြို့နယ်၊ ရန်ကုန်တိုင်းဒေသကြီး။\\nဖုန်းနံပါတ်-",
+        "address": "(၄)ရပ်ကွက်၊ ပညာလမ်း၊ အမှတ် (၁၀၁၀/ခ)၊ တောင်ဥက္ကလာပမြို့နယ်၊ ရန်ကုန်တိုင်းဒေသကြီး။",
         "name_en": "",
         "current_status": "existing",
         "primary_type": "existing",
@@ -405,7 +426,8 @@
         ],
         "registration_date": "၉-၆-၂ဝ၂၃/ အမှတ်စဉ် (၂၄)",
         "announcement_number": "၂၉/၂ဝ၂၃",
-        "notes": ""
+        "notes": "",
+        "phone": ""
       },
       {
         "id": 23,
@@ -413,7 +435,7 @@
         "type": "existing",
         "chairman": "",
         "secretary_general": "",
-        "address": "ရွာမမြောက်ရပ်ကွက်၊ ပဒေသရာဇာလမ်း၊ အမှတ် (၇၃၁)၊  ကြို့ပင်ကောက်မြို့နယ်၊  ပဲခူးတိုင်းဒေသကြီး။\\nဖုန်းနံပါတ်-",
+        "address": "ရွာမမြောက်ရပ်ကွက်၊ ပဒေသရာဇာလမ်း၊ အမှတ် (၇၃၁)၊  ကြို့ပင်ကောက်မြို့နယ်၊  ပဲခူးတိုင်းဒေသကြီး။",
         "name_en": "",
         "current_status": "existing",
         "primary_type": "existing",
@@ -423,7 +445,8 @@
         ],
         "registration_date": "၉-၆-၂ဝ၂၃/ အမှတ်စဉ် (၂၅)",
         "announcement_number": "၃၀/၂ဝ၂၃",
-        "notes": ""
+        "notes": "",
+        "phone": ""
       },
       {
         "id": 24,
@@ -431,7 +454,7 @@
         "type": "existing",
         "chairman": "",
         "secretary_general": "",
-        "address": "(၄၁)တိုးချဲ့ရပ်ကွက်၊ တော်ဝင်အိမ်ရာ၊ အခန်း (၂၅)၊ တိုက် (၈)၊  ဒဂုံမြို့သစ် (မြောက်ပိုင်း)မြို့နယ်၊ ရန်ကုန်တိုင်းဒေသကြီး။\\nဖုန်းနံပါတ်-",
+        "address": "(၄၁)တိုးချဲ့ရပ်ကွက်၊ တော်ဝင်အိမ်ရာ၊ အခန်း (၂၅)၊ တိုက် (၈)၊  ဒဂုံမြို့သစ် (မြောက်ပိုင်း)မြို့နယ်၊ ရန်ကုန်တိုင်းဒေသကြီး။",
         "name_en": "",
         "current_status": "existing",
         "primary_type": "existing",
@@ -441,7 +464,8 @@
         ],
         "registration_date": "၂၁-၆-၂ဝ၂၃/ အမှတ်စဉ် (၂၆)",
         "announcement_number": "၃၁/၂ဝ၂၃",
-        "notes": ""
+        "notes": "",
+        "phone": ""
       },
       {
         "id": 25,
@@ -449,7 +473,7 @@
         "type": "existing",
         "chairman": "",
         "secretary_general": "",
-        "address": "ချမ်းသာရွှေပြည်အိမ်ရာ၊ (၁၀)ရပ်ကွက်၊ မြို့တော်(၂)လမ်း၊ အမှတ် (စီ/၁၀)၊  ဒဂုံမြို့သစ် (အရှေ့ပိုင်း) မြို့နယ်၊ ရန်ကုန်တိုင်းဒေသကြီး။\\nဖုန်းနံပါတ်-",
+        "address": "ချမ်းသာရွှေပြည်အိမ်ရာ၊ (၁၀)ရပ်ကွက်၊ မြို့တော်(၂)လမ်း၊ အမှတ် (စီ/၁၀)၊  ဒဂုံမြို့သစ် (အရှေ့ပိုင်း) မြို့နယ်၊ ရန်ကုန်တိုင်းဒေသကြီး။",
         "name_en": "",
         "current_status": "existing",
         "primary_type": "existing",
@@ -459,7 +483,8 @@
         ],
         "registration_date": "၂၁-၆-၂ဝ၂၃/ အမှတ်စဉ် (၂၇)",
         "announcement_number": "၃၂/၂ဝ၂၃",
-        "notes": ""
+        "notes": "",
+        "phone": ""
       },
       {
         "id": 26,
@@ -467,7 +492,7 @@
         "type": "existing",
         "chairman": "",
         "secretary_general": "",
-        "address": "ကမ်းနားလမ်း၊ MMM ကွန်ဒို၊ အမှတ် ၄၃-၄၄ (8-A)၊ အလုံမြို့နယ်၊ ရန်ကုန်တိုင်းဒေသကြီး။\\nဖုန်းနံပါတ်-",
+        "address": "ကမ်းနားလမ်း၊ MMM ကွန်ဒို၊ အမှတ် ၄၃-၄၄ (8-A)၊ အလုံမြို့နယ်၊ ရန်ကုန်တိုင်းဒေသကြီး။",
         "name_en": "",
         "current_status": "existing",
         "primary_type": "existing",
@@ -477,7 +502,8 @@
         ],
         "registration_date": "၂၃-၆-၂ဝ၂၃/ အမှတ်စဉ် (၂၈)",
         "announcement_number": "၃၃/၂ဝ၂၃",
-        "notes": ""
+        "notes": "",
+        "phone": ""
       },
       {
         "id": 27,
@@ -485,7 +511,7 @@
         "type": "existing",
         "chairman": "",
         "secretary_general": "",
-        "address": "ဆရာစံမြောက်/အနောက်ရပ်ကွက်၊ ပြည်ထောင်စုလမ်းသွယ်၊ အမှတ် (၄၂)၊ ဗဟန်းမြို့နယ်၊ရန်ကုန်တိုင်းဒေသကြီး။\\nဖုန်းနံပါတ်-",
+        "address": "ဆရာစံမြောက်/အနောက်ရပ်ကွက်၊ ပြည်ထောင်စုလမ်းသွယ်၊ အမှတ် (၄၂)၊ ဗဟန်းမြို့နယ်၊ရန်ကုန်တိုင်းဒေသကြီး။",
         "name_en": "",
         "current_status": "existing",
         "primary_type": "existing",
@@ -495,7 +521,8 @@
         ],
         "registration_date": "၂၃-၆-၂ဝ၂၃/ အမှတ်စဉ် (၂၉)",
         "announcement_number": "၃၄/၂ဝ၂၃",
-        "notes": ""
+        "notes": "",
+        "phone": ""
       },
       {
         "id": 28,
@@ -503,7 +530,7 @@
         "type": "existing",
         "chairman": "",
         "secretary_general": "",
-        "address": "အောင်နန်းအနောက်ရပ်ကွက်၊ ၃၃ x ၃၄ ကြား၊ (၈၅) လမ်း၊ အမှတ် (၁၂)၊ မလွန်ဆေးရိုးဝင်း၊မန္တလေးတိုင်းဒေသကြီး။ \\nဖုန်းနံပါတ်-",
+        "address": "အောင်နန်းအနောက်ရပ်ကွက်၊ ၃၃ x ၃၄ ကြား၊ (၈၅) လမ်း၊ အမှတ် (၁၂)၊ မလွန်ဆေးရိုးဝင်း၊မန္တလေးတိုင်းဒေသကြီး။",
         "name_en": "",
         "current_status": "existing",
         "primary_type": "existing",
@@ -513,7 +540,8 @@
         ],
         "registration_date": "၂၃-၆-၂ဝ၂၃/ အမှတ်စဉ် (၃၀)",
         "announcement_number": "၃၅/၂ဝ၂၃",
-        "notes": ""
+        "notes": "",
+        "phone": ""
       },
       {
         "id": 29,
@@ -521,7 +549,7 @@
         "type": "existing",
         "chairman": "",
         "secretary_general": "",
-        "address": "မြိုင်သာယာရပ်ကွက်၊ ဗိုလ်ချုပ်အောင်ဆန်းလမ်း၊ အမှတ် (၅/ခ)၊ မော်လမြိုင်မြို့၊  မွန်ပြည်နယ်။\\nဖုန်းနံပါတ်-",
+        "address": "မြိုင်သာယာရပ်ကွက်၊ ဗိုလ်ချုပ်အောင်ဆန်းလမ်း၊ အမှတ် (၅/ခ)၊ မော်လမြိုင်မြို့၊  မွန်ပြည်နယ်။",
         "name_en": "",
         "current_status": "existing",
         "primary_type": "existing",
@@ -531,7 +559,8 @@
         ],
         "registration_date": "၂၃-၆-၂ဝ၂၃/ အမှတ်စဉ် (၃၁)",
         "announcement_number": "၃၆/၂ဝ၂၃",
-        "notes": ""
+        "notes": "",
+        "phone": ""
       },
       {
         "id": 30,
@@ -539,7 +568,7 @@
         "type": "existing",
         "chairman": "",
         "secretary_general": "",
-        "address": "ပြည်တော်သာရပ်ကွက်၊ စာတိုက်လမ်း၊ အမှတ် (၂၀၂)၊ အထကကျောင်းရှေ့၊  ကျောက်တော်မြို့၊ ရခိုင်ပြည်နယ်။ \\nဖုန်းနံပါတ်-",
+        "address": "ပြည်တော်သာရပ်ကွက်၊ စာတိုက်လမ်း၊ အမှတ် (၂၀၂)၊ အထကကျောင်းရှေ့၊  ကျောက်တော်မြို့၊ ရခိုင်ပြည်နယ်။",
         "name_en": "",
         "current_status": "existing",
         "primary_type": "existing",
@@ -549,7 +578,8 @@
         ],
         "registration_date": "၃-၇-၂ဝ၂၃/ အမှတ်စဉ် (၃၂)",
         "announcement_number": "၃၇/၂ဝ၂၃",
-        "notes": ""
+        "notes": "",
+        "phone": ""
       },
       {
         "id": 31,
@@ -557,7 +587,7 @@
         "type": "existing",
         "chairman": "",
         "secretary_general": "",
-        "address": "ဇ/မြောက်ရပ်ကွက်၊ လေးထောင့်ကန်လမ်း၊ ခြံအမှတ်(၇၂)၊ သင်္ဃန်းကျွန်းမြို့နယ်၊ သင်္ဃန်းကျွန်းခရိုင်၊ ရန်ကုန်တိုင်းဒေသကြီး။\\nဖုန်းနံပါတ်-",
+        "address": "ဇ/မြောက်ရပ်ကွက်၊ လေးထောင့်ကန်လမ်း၊ ခြံအမှတ်(၇၂)၊ သင်္ဃန်းကျွန်းမြို့နယ်၊ သင်္ဃန်းကျွန်းခရိုင်၊ ရန်ကုန်တိုင်းဒေသကြီး။",
         "name_en": "",
         "current_status": "existing",
         "primary_type": "existing",
@@ -567,7 +597,8 @@
         ],
         "registration_date": "၁၄-၇-၂ဝ၂၃/ အမှတ်စဉ် (၃၃)",
         "announcement_number": "၃၈/၂ဝ၂၃",
-        "notes": ""
+        "notes": "",
+        "phone": ""
       },
       {
         "id": 32,
@@ -575,7 +606,7 @@
         "type": "existing",
         "chairman": "",
         "secretary_general": "",
-        "address": "ဖက်ခင်းရပ်၊ ဖက်ခင်းလမ်း၊ ခြံအမှတ်(၂)၊ မော်လမြိုင်မြို့၊ မွန်ပြည်နယ်။ \\nဖုန်းနံပါတ်-",
+        "address": "ဖက်ခင်းရပ်၊ ဖက်ခင်းလမ်း၊ ခြံအမှတ်(၂)၊ မော်လမြိုင်မြို့၊ မွန်ပြည်နယ်။",
         "name_en": "",
         "current_status": "existing",
         "primary_type": "existing",
@@ -585,7 +616,8 @@
         ],
         "registration_date": "၁၄-၇-၂ဝ၂၃/ အမှတ်စဉ် (၃၄)",
         "announcement_number": "၃၉/၂ဝ၂၃",
-        "notes": ""
+        "notes": "",
+        "phone": ""
       },
       {
         "id": 33,
@@ -593,7 +625,7 @@
         "type": "existing",
         "chairman": "",
         "secretary_general": "",
-        "address": "နယ်မြေ (၂)၊ ရပ်ကွက်(၁)၊ သာယာလမ်း၊ အမှတ် (၄၀)၊ ရှမ်းပြည်နယ် (မြောက်ပိုင်း)၊ လားရှိုးမြို့။\\nဖုန်းနံပါတ်-",
+        "address": "နယ်မြေ (၂)၊ ရပ်ကွက်(၁)၊ သာယာလမ်း၊ အမှတ် (၄၀)၊ ရှမ်းပြည်နယ် (မြောက်ပိုင်း)၊ လားရှိုးမြို့။",
         "name_en": "",
         "current_status": "existing",
         "primary_type": "existing",
@@ -603,7 +635,8 @@
         ],
         "registration_date": "၂၇-၇-၂ဝ၂၃/ အမှတ်စဉ် (၃၅)",
         "announcement_number": "၄၀/၂ဝ၂၃",
-        "notes": ""
+        "notes": "",
+        "phone": ""
       },
       {
         "id": 34,
@@ -611,7 +644,7 @@
         "type": "existing",
         "chairman": "",
         "secretary_general": "",
-        "address": "အိမ်အမှတ် (၆)၊ အောင်စောင်လမ်း၊ ရိက္ခာရပ်ကွက်၊ ပလက်ဝမြို့၊ ချင်းပြည်နယ်။ \\nဖုန်းနံပါတ်-",
+        "address": "အိမ်အမှတ် (၆)၊ အောင်စောင်လမ်း၊ ရိက္ခာရပ်ကွက်၊ ပလက်ဝမြို့၊ ချင်းပြည်နယ်။",
         "name_en": "",
         "current_status": "existing",
         "primary_type": "existing",
@@ -621,7 +654,8 @@
         ],
         "registration_date": "၁၁-၈-၂ဝ၂၃/ အမှတ်စဉ် (၃၆)",
         "announcement_number": "၄၁/၂ဝ၂၃",
-        "notes": ""
+        "notes": "",
+        "phone": ""
       },
       {
         "id": 35,
@@ -629,7 +663,7 @@
         "type": "existing",
         "chairman": "",
         "secretary_general": "",
-        "address": "ဒီဇင်ဘာအိမ်ရာ၊ ချယ်ရီ(၁)လမ်း၊ အခန်းအမှတ် (၃၀၂)၊ တိုက်အမှတ် (၁၁၉)၊  ဒဂုံမြို့သစ် (တောင်ပိုင်း)မြို့နယ်၊ ရန်ကုန်တိုင်းဒေသကြီး။\\nဖုန်းနံပါတ်-",
+        "address": "ဒီဇင်ဘာအိမ်ရာ၊ ချယ်ရီ(၁)လမ်း၊ အခန်းအမှတ် (၃၀၂)၊ တိုက်အမှတ် (၁၁၉)၊  ဒဂုံမြို့သစ် (တောင်ပိုင်း)မြို့နယ်၊ ရန်ကုန်တိုင်းဒေသကြီး။",
         "name_en": "",
         "current_status": "existing",
         "primary_type": "existing",
@@ -639,7 +673,8 @@
         ],
         "registration_date": "၁၅-၉-၂ဝ၂၃/ အမှတ်စဉ် (၃၇)",
         "announcement_number": "၄၂/၂ဝ၂၃",
-        "notes": ""
+        "notes": "",
+        "phone": ""
       },
       {
         "id": 36,
@@ -647,7 +682,7 @@
         "type": "existing",
         "chairman": "",
         "secretary_general": "",
-        "address": "ကျောက်မြောင်း၊ မနောဟရလမ်း၊ ပထမထပ်၊ အမှတ် (၈)၊  တာမွေမြို့နယ်၊ ရန်ကုန်တိုင်းဒေသကြီး။\\nဖုန်းနံပါတ်-",
+        "address": "ကျောက်မြောင်း၊ မနောဟရလမ်း၊ ပထမထပ်၊ အမှတ် (၈)၊  တာမွေမြို့နယ်၊ ရန်ကုန်တိုင်းဒေသကြီး။",
         "name_en": "",
         "current_status": "existing",
         "primary_type": "existing",
@@ -657,7 +692,8 @@
         ],
         "registration_date": "၇-၁၁-၂ဝ၂၃/ အမှတ်စဉ် (၃၈)",
         "announcement_number": "၄၃/၂ဝ၂၃",
-        "notes": ""
+        "notes": "",
+        "phone": ""
       },
       {
         "id": 37,
@@ -665,7 +701,7 @@
         "type": "existing",
         "chairman": "",
         "secretary_general": "",
-        "address": "ဘုရားကြီးဘုရားအနီး၊ ဆည်မြောင်းတိုးချဲ့ရပ်ကွက်၊ သရဖီလမ်း၊ အိမ်အမှတ် (၂)၊ ပြည်မြို့၊  ပဲခူးတိုင်းဒေသကြီး။\\nဖုန်းနံပါတ်-",
+        "address": "ဘုရားကြီးဘုရားအနီး၊ ဆည်မြောင်းတိုးချဲ့ရပ်ကွက်၊ သရဖီလမ်း၊ အိမ်အမှတ် (၂)၊ ပြည်မြို့၊  ပဲခူးတိုင်းဒေသကြီး။",
         "name_en": "",
         "current_status": "existing",
         "primary_type": "existing",
@@ -675,7 +711,8 @@
         ],
         "registration_date": "၇-၁၁-၂ဝ၂၃/ အမှတ်စဉ် (၃၉)",
         "announcement_number": "၄၄/၂ဝ၂၃",
-        "notes": ""
+        "notes": "",
+        "phone": ""
       },
       {
         "id": 38,
@@ -683,7 +720,7 @@
         "type": "existing",
         "chairman": "",
         "secretary_general": "",
-        "address": "(၄)ရပ်ကွက်၊ တကောင်းဘုရားလမ်း၊ အမှတ်(၂)၊ ပုသိမ်မြို့၊ ဧရာဝတီတိုင်းဒေသကြီး။\\nဖုန်းနံပါတ်-",
+        "address": "(၄)ရပ်ကွက်၊ တကောင်းဘုရားလမ်း၊ အမှတ်(၂)၊ ပုသိမ်မြို့၊ ဧရာဝတီတိုင်းဒေသကြီး။",
         "name_en": "",
         "current_status": "existing",
         "primary_type": "existing",
@@ -693,7 +730,8 @@
         ],
         "registration_date": "၁၃-၁၁-၂ဝ၂၃/ အမှတ်စဉ် (၄၀)",
         "announcement_number": "၄၅/၂ဝ၂၃",
-        "notes": ""
+        "notes": "",
+        "phone": ""
       },
       {
         "id": 39,
@@ -701,7 +739,7 @@
         "type": "existing",
         "chairman": "",
         "secretary_general": "",
-        "address": "(၅) ရပ်ကွက်၊ အောင်သုခလမ်း၊ တိုက် (၁၀၀/၁၀၁)၊ အခန်း (၁၀၁)၊ ကမာရွတ်မြို့နယ်၊ ရန်ကုန်တိုင်းဒေသကြီး။\\nဖုန်းနံပါတ်-",
+        "address": "(၅) ရပ်ကွက်၊ အောင်သုခလမ်း၊ တိုက် (၁၀၀/၁၀၁)၊ အခန်း (၁၀၁)၊ ကမာရွတ်မြို့နယ်၊ ရန်ကုန်တိုင်းဒေသကြီး။",
         "name_en": "",
         "current_status": "existing",
         "primary_type": "existing",
@@ -711,7 +749,8 @@
         ],
         "registration_date": "၂၀-၁၁-၂ဝ၂၃/ အမှတ်စဉ် (၄၁)",
         "announcement_number": "၄၆/၂ဝ၂၃",
-        "notes": ""
+        "notes": "",
+        "phone": ""
       },
       {
         "id": 40,
@@ -719,7 +758,7 @@
         "type": "existing",
         "chairman": "",
         "secretary_general": "",
-        "address": "(၁)ရပ်ကွက်၊ မဟာဗန္ဓုလပန်းခြံလမ်းနှင့် ဘဏ်လမ်းထောင့်၊ အမှတ် (၃၃/၄၉)၊ ကျောက်တံတားမြို့နယ်၊ ရန်ကုန်တိုင်းဒေသကြီး။\\nဖုန်းနံပါတ်-",
+        "address": "(၁)ရပ်ကွက်၊ မဟာဗန္ဓုလပန်းခြံလမ်းနှင့် ဘဏ်လမ်းထောင့်၊ အမှတ် (၃၃/၄၉)၊ ကျောက်တံတားမြို့နယ်၊ ရန်ကုန်တိုင်းဒေသကြီး။",
         "name_en": "",
         "current_status": "existing",
         "primary_type": "existing",
@@ -729,7 +768,8 @@
         ],
         "registration_date": "၂၀-၁၁-၂ဝ၂၃/ အမှတ်စဉ် (၄၂)",
         "announcement_number": "၄၇/၂ဝ၂၃",
-        "notes": ""
+        "notes": "",
+        "phone": ""
       },
       {
         "id": 41,
@@ -737,7 +777,7 @@
         "type": "existing",
         "chairman": "",
         "secretary_general": "",
-        "address": "ဗိုလ်စိန်မှန်ရပ်ကွက်၊ တာမွေအဝိုင်းအနီး၊ အနောက်မြင်းပြိုင်ကွင်းလမ်း၊ ပထမထပ်၊ အမှတ်(၄၇)၊ ဗဟန်းမြို့နယ်၊ ရန်ကုန်တိုင်းဒေသကြီး။ \\nဖုန်းနံပါတ်-",
+        "address": "ဗိုလ်စိန်မှန်ရပ်ကွက်၊ တာမွေအဝိုင်းအနီး၊ အနောက်မြင်းပြိုင်ကွင်းလမ်း၊ ပထမထပ်၊ အမှတ်(၄၇)၊ ဗဟန်းမြို့နယ်၊ ရန်ကုန်တိုင်းဒေသကြီး။",
         "name_en": "National Democratic Force Party (NDF)",
         "current_status": "existing",
         "primary_type": "existing",
@@ -747,7 +787,8 @@
         ],
         "registration_date": "၂၃-၁၁-၂ဝ၂၃/ အမှတ်စဉ် (၄၃)",
         "announcement_number": "၅၀/၂ဝ၂၃",
-        "notes": ""
+        "notes": "",
+        "phone": ""
       },
       {
         "id": 42,
@@ -755,7 +796,7 @@
         "type": "existing",
         "chairman": "",
         "secretary_general": "",
-        "address": "လှိုင်သာယာ(အရှေ့ပိုင်း)မြို့နယ်၊ ရွှေလင်ပန်း တန်ဖိုးနည်းအိမ်ရာ အပိုင်း(၁)၊ ရွှေနှင်းဆီလမ်း၊ အခန်း (၀၀၂)၊ တိုက် (၁၀)၊ အင်းစိန်ခရိုင်၊ ရန်ကုန်တိုင်းဒေသကြီး။\\nဖုန်းနံပါတ်-",
+        "address": "လှိုင်သာယာ(အရှေ့ပိုင်း)မြို့နယ်၊ ရွှေလင်ပန်း တန်ဖိုးနည်းအိမ်ရာ အပိုင်း(၁)၊ ရွှေနှင်းဆီလမ်း၊ အခန်း (၀၀၂)၊ တိုက် (၁၀)၊ အင်းစိန်ခရိုင်၊ ရန်ကုန်တိုင်းဒေသကြီး။",
         "name_en": "THE 88 GENERATION STUDENT YOUTHS (UNION OF MYANMAR)PARTY",
         "current_status": "existing",
         "primary_type": "existing",
@@ -765,7 +806,8 @@
         ],
         "registration_date": "၂၉-၁၁-၂ဝ၂၃/ အမှတ်စဉ် (၄၄)",
         "announcement_number": "၅၁/၂ဝ၂၃",
-        "notes": ""
+        "notes": "",
+        "phone": ""
       },
       {
         "id": 43,
@@ -773,7 +815,7 @@
         "type": "existing",
         "chairman": "",
         "secretary_general": "",
-        "address": "ဆံတော်ရပ်ကွက်၊ စကားတောင်ရပ်၊ ပုထိုးကြီးလမ်း၊ အမှတ် (၄၅) ၊ ပြည်မြို့၊ ပြည်ခရိုင်၊ ပဲခူးတိုင်းဒေသကြီး။\\nဖုန်းနံပါတ်-",
+        "address": "ဆံတော်ရပ်ကွက်၊ စကားတောင်ရပ်၊ ပုထိုးကြီးလမ်း၊ အမှတ် (၄၅) ၊ ပြည်မြို့၊ ပြည်ခရိုင်၊ ပဲခူးတိုင်းဒေသကြီး။",
         "name_en": "",
         "current_status": "existing",
         "primary_type": "existing",
@@ -783,7 +825,8 @@
         ],
         "registration_date": "၂၉-၁၁-၂ဝ၂၃/ အမှတ်စဉ် (၄၅)",
         "announcement_number": "၅၂/၂ဝ၂၃",
-        "notes": ""
+        "notes": "",
+        "phone": ""
       },
       {
         "id": 44,
@@ -791,7 +834,7 @@
         "type": "existing",
         "chairman": "",
         "secretary_general": "",
-        "address": "အမှတ် (၄/၃၆၁)၊ သင်္ဃန်းကျွန်းကြီးရပ်ကွက်၊ ကာယ (၁၂)လမ်း၊ မင်္ဂလာဒုံမြို့နယ်၊ရန်ကုန်တိုင်းဒေသကြီး။\\nဖုန်းနံပါတ်-",
+        "address": "အမှတ် (၄/၃၆၁)၊ သင်္ဃန်းကျွန်းကြီးရပ်ကွက်၊ ကာယ (၁၂)လမ်း၊ မင်္ဂလာဒုံမြို့နယ်၊ရန်ကုန်တိုင်းဒေသကြီး။",
         "name_en": "",
         "current_status": "existing",
         "primary_type": "existing",
@@ -801,7 +844,8 @@
         ],
         "registration_date": "၂၁-၁၂-၂ဝ၂၃/ အမှတ်စဉ် (၄၆)",
         "announcement_number": "၅၃/၂ဝ၂၃",
-        "notes": ""
+        "notes": "",
+        "phone": ""
       },
       {
         "id": 45,
@@ -809,7 +853,7 @@
         "type": "existing",
         "chairman": "",
         "secretary_general": "",
-        "address": "မဟာဗန္ဓုလလမ်းမ၊ မဟာဗန္ဓုလအိမ်ရာ၊ အမှတ် (၆၂)၊ တိုက် (ဒီ)၊ (၉)လွှာ၊ အခန်း (၉၀၂)၊  ပုဇွန်တောင်မြို့နယ်၊ ရန်ကုန်တိုင်းဒေသကြီး။ \\nဖုန်းနံပါတ်-",
+        "address": "မဟာဗန္ဓုလလမ်းမ၊ မဟာဗန္ဓုလအိမ်ရာ၊ အမှတ် (၆၂)၊ တိုက် (ဒီ)၊ (၉)လွှာ၊ အခန်း (၉၀၂)၊  ပုဇွန်တောင်မြို့နယ်၊ ရန်ကုန်တိုင်းဒေသကြီး။",
         "name_en": "",
         "current_status": "existing",
         "primary_type": "existing",
@@ -819,7 +863,8 @@
         ],
         "registration_date": "၂၉-၁၂-၂ဝ၂၃/ အမှတ်စဉ် (၄၇)",
         "announcement_number": "၅၄/၂ဝ၂၃",
-        "notes": ""
+        "notes": "",
+        "phone": ""
       },
       {
         "id": 46,
@@ -827,7 +872,7 @@
         "type": "existing",
         "chairman": "",
         "secretary_general": "",
-        "address": "အမှတ် (၉)၊ ရတနာဒီပရပ်ကွက်၊ ရာဇဓိရာဇ်လမ်း၊ ဘားအံမြို့၊ ကရင်ပြည်နယ်။\\nဖုန်းနံပါတ်-",
+        "address": "အမှတ် (၉)၊ ရတနာဒီပရပ်ကွက်၊ ရာဇဓိရာဇ်လမ်း၊ ဘားအံမြို့၊ ကရင်ပြည်နယ်။",
         "name_en": "",
         "current_status": "existing",
         "primary_type": "existing",
@@ -837,7 +882,8 @@
         ],
         "registration_date": "၁-၄-၂၀၂၄/ အမှတ်စဉ် (၄၈)",
         "announcement_number": "၁/၂ဝ၂၄",
-        "notes": ""
+        "notes": "",
+        "phone": ""
       },
       {
         "id": 47,
@@ -845,7 +891,7 @@
         "type": "existing",
         "chairman": "",
         "secretary_general": "",
-        "address": "အမှတ် (၉၉)၊ (၃)ရပ်ကွက်၊ ကျိုက်ဝိုင်းဘုရားလမ်း၊ မရမ်းကုန်းမြို့နယ်၊  ရန်ကုန်တိုင်းဒေသကြီး။\\nဖုန်းနံပါတ်-",
+        "address": "အမှတ် (၉၉)၊ (၃)ရပ်ကွက်၊ ကျိုက်ဝိုင်းဘုရားလမ်း၊ မရမ်းကုန်းမြို့နယ်၊  ရန်ကုန်တိုင်းဒေသကြီး။",
         "name_en": "",
         "current_status": "existing",
         "primary_type": "existing",
@@ -855,7 +901,8 @@
         ],
         "registration_date": "၂၅-၄-၂၀၂၄/ အမှတ်စဉ် (၄၉)",
         "announcement_number": "၂/၂ဝ၂၄",
-        "notes": ""
+        "notes": "",
+        "phone": ""
       },
       {
         "id": 48,
@@ -863,13 +910,14 @@
         "type": "existing",
         "chairman": "",
         "secretary_general": "",
-        "address": "အမှတ်(၂/၂/၂၃၂)၊ မဟော်ဂနီလမ်း၊ ထောက်ကြန့်တိုးချဲ့ရပ်ကွက်၊ မင်္ဂလာဒုံမြို့နယ်၊ ရန်ကုန်တိုင်း‌ဒေသကြီး။\\nဖုန်းနံပါတ်-",
+        "address": "အမှတ်(၂/၂/၂၃၂)၊ မဟော်ဂနီလမ်း၊ ထောက်ကြန့်တိုးချဲ့ရပ်ကွက်၊ မင်္ဂလာဒုံမြို့နယ်၊ ရန်ကုန်တိုင်း‌ဒေသကြီး။",
         "name_en": "",
         "current_status": "existing",
         "primary_type": "existing",
         "all_statuses": [
           "existing"
-        ]
+        ],
+        "phone": ""
       },
       {
         "id": 49,
@@ -877,7 +925,7 @@
         "type": "existing",
         "chairman": "",
         "secretary_general": "",
-        "address": "အမှတ် (၃၂၈)၊ စိမ်းမြဧရာပန်းခြံအနီး၊ ပြည်ထောင်စုလမ်းမကြီးဘေး၊ ယုဇနရပ်ကွက်၊ မြစ်ကြီးနားမြို့၊ ကချင်ပြည်နယ်။\\nဖုန်းနံပါတ်-",
+        "address": "အမှတ် (၃၂၈)၊ စိမ်းမြဧရာပန်းခြံအနီး၊ ပြည်ထောင်စုလမ်းမကြီးဘေး၊ ယုဇနရပ်ကွက်၊ မြစ်ကြီးနားမြို့၊ ကချင်ပြည်နယ်။",
         "name_en": "Kachin State People’s Party (KSPP)",
         "current_status": "existing",
         "primary_type": "existing",
@@ -887,7 +935,8 @@
         ],
         "registration_date": "၁၉-၈-၂၀၂၄/ အမှတ်စဉ် (၅၁)",
         "announcement_number": "၄/၂ဝ၂၄",
-        "notes": ""
+        "notes": "",
+        "phone": ""
       },
       {
         "id": 50,
@@ -895,7 +944,7 @@
         "type": "existing",
         "chairman": "",
         "secretary_general": "",
-        "address": "အိမ်အမှတ်(၁၆)၊ (၁၉)လမ်း၊ မြိုင်သာယာရပ်ကွက်၊ မော်လမြိုင်မြို့၊ မွန်ပြည်နယ်။  \\nဖုန်းနံပါတ်-",
+        "address": "အိမ်အမှတ်(၁၆)၊ (၁၉)လမ်း၊ မြိုင်သာယာရပ်ကွက်၊ မော်လမြိုင်မြို့၊ မွန်ပြည်နယ်။",
         "name_en": "",
         "current_status": "existing",
         "primary_type": "existing",
@@ -905,7 +954,8 @@
         ],
         "registration_date": "၉-၉-၂၀၂၄/ အမှတ်စဉ် (၅၂)",
         "announcement_number": "၅/၂ဝ၂၄",
-        "notes": ""
+        "notes": "",
+        "phone": ""
       },
       {
         "id": 51,
@@ -913,7 +963,7 @@
         "type": "existing",
         "chairman": "",
         "secretary_general": "",
-        "address": "အမှတ် (A/၄၀၆)၊ လန်းဆန်းအိမ်ရာ၊ မှော်ကန်(၁)လမ်း၊ လိပ်ပြာကန်ရပ်ကွက်၊  ပဲခူးတိုင်းဒေသကြီး။\\nဖုန်းနံပါတ်-",
+        "address": "အမှတ် (A/၄၀၆)၊ လန်းဆန်းအိမ်ရာ၊ မှော်ကန်(၁)လမ်း၊ လိပ်ပြာကန်ရပ်ကွက်၊  ပဲခူးတိုင်းဒေသကြီး။",
         "name_en": "",
         "current_status": "existing",
         "primary_type": "existing",
@@ -923,7 +973,8 @@
         ],
         "registration_date": "၁၂-၁၁-၂၀၂၄/ အမှတ်စဉ် (၅၃)",
         "announcement_number": "၆/၂ဝ၂၄",
-        "notes": ""
+        "notes": "",
+        "phone": ""
       },
       {
         "id": 52,
@@ -931,7 +982,7 @@
         "type": "existing",
         "chairman": "",
         "secretary_general": "",
-        "address": "(၂၈)လမ်း (မြောက်ဘက်)၊ အောင်သာယာရပ်ကွက်၊ ပုဗ္ဗသီရိမြို့နယ်၊ ဇေယျာသီရိခရိုင်၊  နေပြည်တော်။\\nဖုန်းနံပါတ်-",
+        "address": "(၂၈)လမ်း (မြောက်ဘက်)၊ အောင်သာယာရပ်ကွက်၊ ပုဗ္ဗသီရိမြို့နယ်၊ ဇေယျာသီရိခရိုင်၊  နေပြည်တော်။",
         "name_en": "",
         "current_status": "existing",
         "primary_type": "existing",
@@ -941,7 +992,8 @@
         ],
         "registration_date": "၁၈-၁၁-၂၀၂၄/ အမှတ်စဉ် (၅၄)",
         "announcement_number": "၇/၂ဝ၂၄",
-        "notes": ""
+        "notes": "",
+        "phone": ""
       },
       {
         "id": 53,
@@ -949,13 +1001,14 @@
         "type": "existing",
         "chairman": "",
         "secretary_general": "",
-        "address": "ခြံအမှတ်(၂၆)၊ စိန်ပန်းလမ်း၊ ACE အိမ်ရာ၊ သာကေတမြို့နယ်၊ ရန်ကုန်တိုင်းဒေသကြီး။ \\nဖုန်းနံပါတ်-",
+        "address": "ခြံအမှတ်(၂၆)၊ စိန်ပန်းလမ်း၊ ACE အိမ်ရာ၊ သာကေတမြို့နယ်၊ ရန်ကုန်တိုင်းဒေသကြီး။",
         "name_en": " Unity and Development Party (UADP) ",
         "current_status": "existing",
         "primary_type": "existing",
         "all_statuses": [
           "existing"
-        ]
+        ],
+        "phone": ""
       },
       {
         "id": 54,
@@ -963,7 +1016,7 @@
         "type": "existing",
         "chairman": "",
         "secretary_general": "",
-        "address": "ဧ-၁၂၇၊ သဇင်လမ်း၊ အောင်သီဟရပ်ကွက်၊ လွိုင်ကော်မြို့၊ ကယားပြည်နယ်။\\nဖုန်းနံပါတ်-",
+        "address": "ဧ-၁၂၇၊ သဇင်လမ်း၊ အောင်သီဟရပ်ကွက်၊ လွိုင်ကော်မြို့၊ ကယားပြည်နယ်။",
         "name_en": "",
         "current_status": "existing",
         "primary_type": "existing",
@@ -973,7 +1026,8 @@
         ],
         "registration_date": "၂၀-၂-၂၀၂၅/ အမှတ်စဉ် (၅၆)",
         "announcement_number": "၁/၂ဝ၂၅",
-        "notes": ""
+        "notes": "",
+        "phone": ""
       },
       {
         "id": 55,
@@ -981,7 +1035,7 @@
         "type": "existing",
         "chairman": "",
         "secretary_general": "",
-        "address": "အမှတ် (၄၅၉)၊ ပဒုမ္မာလမ်း၊  ရွှေကြာပင်ရပ်ကွက်၊ ဇမ္ဗူသီရိမြို့နယ်၊ နေပြည်တော်။\\nဖုန်းနံပါတ်-",
+        "address": "အမှတ် (၄၅၉)၊ ပဒုမ္မာလမ်း၊  ရွှေကြာပင်ရပ်ကွက်၊ ဇမ္ဗူသီရိမြို့နယ်၊ နေပြည်တော်။",
         "name_en": "New Chinland Congress (NCC)",
         "current_status": "existing",
         "primary_type": "existing",
@@ -991,7 +1045,8 @@
         ],
         "registration_date": "၁၀-၇-၂၀၂၅/ အမှတ်စဉ် (၅၇)",
         "announcement_number": "၂/၂ဝ၂၅",
-        "notes": ""
+        "notes": "",
+        "phone": ""
       },
       {
         "id": 56,
@@ -999,7 +1054,7 @@
         "type": "existing",
         "chairman": "",
         "secretary_general": "",
-        "address": "အမှတ် (၄၉)၊ ဦးဥတ္တမလမ်း၊ အလယ်ပိုင်းရပ်ကွက်၊ ကျောက်ဖြူမြို့၊ ရခိုင်ပြည်နယ်။\\nဖုန်းနံပါတ်-",
+        "address": "အမှတ် (၄၉)၊ ဦးဥတ္တမလမ်း၊ အလယ်ပိုင်းရပ်ကွက်၊ ကျောက်ဖြူမြို့၊ ရခိုင်ပြည်နယ်။",
         "name_en": "",
         "current_status": "existing",
         "primary_type": "existing",
@@ -1009,7 +1064,8 @@
         ],
         "registration_date": "၄-၈-၂၀၂၅/ အမှတ်စဉ် (၅၈)",
         "announcement_number": "၄၁/၂၀၂၅",
-        "notes": ""
+        "notes": "",
+        "phone": ""
       },
       {
         "id": 57,
@@ -1017,7 +1073,7 @@
         "type": "existing",
         "chairman": "",
         "secretary_general": "",
-        "address": "အမှတ် (၁၁၀)၊ ၄ လွှာ (ဘီ)၊ အောင်မင်္ဂလာလမ်း၊ ကျောက်မြောင်းကြီးရပ်ကွက်၊ ရန်ကုန်တိုင်းဒေသကြီး။\\nဖုန်းနံပါတ်-",
+        "address": "အမှတ် (၁၁၀)၊ ၄ လွှာ (ဘီ)၊ အောင်မင်္ဂလာလမ်း၊ ကျောက်မြောင်းကြီးရပ်ကွက်၊ ရန်ကုန်တိုင်းဒေသကြီး။",
         "name_en": "",
         "current_status": "existing",
         "primary_type": "existing",
@@ -1027,7 +1083,8 @@
         ],
         "registration_date": "၇-၈-၂၀၂၅/ အမှတ်စဉ် (၅၉)",
         "announcement_number": "၄၂/၂၀၂၅",
-        "notes": ""
+        "notes": "",
+        "phone": ""
       },
       {
         "id": 58,
@@ -1035,7 +1092,7 @@
         "type": "existing",
         "chairman": "",
         "secretary_general": "",
-        "address": "အိမ်အမှတ် [၉/၃၄(A)]၊ ကြာအင်းတောင်ပေါ်လမ်း၊ ရတနာဒီပရပ်ကွက်၊ ဘားအံမြို့၊ ကရင်ပြည်နယ်။\\nဖုန်းနံပါတ်-",
+        "address": "အိမ်အမှတ် [၉/၃၄(A)]၊ ကြာအင်းတောင်ပေါ်လမ်း၊ ရတနာဒီပရပ်ကွက်၊ ဘားအံမြို့၊ ကရင်ပြည်နယ်။",
         "name_en": "",
         "current_status": "existing",
         "primary_type": "existing",
@@ -1045,7 +1102,8 @@
         ],
         "registration_date": "၈-၈-၂၀၂၅/ အမှတ်စဉ် (၆၀)",
         "announcement_number": "၄၇/၂၀၂၅",
-        "notes": ""
+        "notes": "",
+        "phone": ""
       },
       {
         "id": 59,
@@ -1053,7 +1111,7 @@
         "type": "existing",
         "chairman": "",
         "secretary_general": "",
-        "address": "၆  လမ်း နှင့် ၇ လမ်းကြား၊ ၇၄ (B) လမ်း၊ ဥပုသ်တော်ရပ်ကွက်၊  အောင်မြေသာစံမြို့နယ်၊မန္တလေးတိုင်းဒေသကြီး။   \\nဖုန်းနံပါတ်-",
+        "address": "၆  လမ်း နှင့် ၇ လမ်းကြား၊ ၇၄ (B) လမ်း၊ ဥပုသ်တော်ရပ်ကွက်၊  အောင်မြေသာစံမြို့နယ်၊မန္တလေးတိုင်းဒေသကြီး။",
         "name_en": "",
         "current_status": "existing",
         "primary_type": "existing",
@@ -1063,7 +1121,8 @@
         ],
         "registration_date": "၂၀-၈-၂၀၂၅/ အမှတ်စဉ် (၆၁)",
         "announcement_number": "၅၈/၂၀၂၅",
-        "notes": ""
+        "notes": "",
+        "phone": ""
       },
       {
         "id": 60,
@@ -1071,7 +1130,7 @@
         "type": "existing",
         "chairman": "",
         "secretary_general": "",
-        "address": "ခြံအမှတ် (၁၇/A)၊ ဇီးအုန်ကုန်းလမ်း၊ နံ့သာကုန်းရပ်ကွက်၊ အင်းစိန်မြို့နယ်၊ ရန်ကုန်တိုင်းဒေသကြီး။\\n ဖုန်းနံပါတ်-",
+        "address": "ခြံအမှတ် (၁၇/A)၊ ဇီးအုန်ကုန်းလမ်း၊ နံ့သာကုန်းရပ်ကွက်၊ အင်းစိန်မြို့နယ်၊ ရန်ကုန်တိုင်းဒေသကြီး။",
         "name_en": "",
         "current_status": "existing",
         "primary_type": "existing",
@@ -1081,7 +1140,8 @@
         ],
         "registration_date": "၂၀-၈-၂၀၂၅/ အမှတ်စဉ် (၆၂)",
         "announcement_number": "၅၉/၂၀၂၅",
-        "notes": ""
+        "notes": "",
+        "phone": ""
       },
       {
         "id": 61,
@@ -1089,7 +1149,7 @@
         "type": "existing",
         "chairman": "",
         "secretary_general": "",
-        "address": "အမှတ် (၆၉၁)၊ ခေမာရာမသီလရှင် စာသင်တိုက်ကျောင်းလမ်း၊ မရမ်းချောင်ရပ်၊ ဘင်လှိုင်ရပ်ကွက်၊ သထုံမြို့၊ မွန်ပြည်နယ်။\\nဖုန်းနံပါတ်-",
+        "address": "အမှတ် (၆၉၁)၊ ခေမာရာမသီလရှင် စာသင်တိုက်ကျောင်းလမ်း၊ မရမ်းချောင်ရပ်၊ ဘင်လှိုင်ရပ်ကွက်၊ သထုံမြို့၊ မွန်ပြည်နယ်။",
         "name_en": "",
         "current_status": "existing",
         "primary_type": "existing",
@@ -1099,7 +1159,8 @@
         ],
         "registration_date": "၂၀-၈-၂၀၂၅/ အမှတ်စဉ် (၆၃)",
         "announcement_number": "၆၀/၂၀၂၅",
-        "notes": ""
+        "notes": "",
+        "phone": ""
       }
     ],
     "allowed_to_register": [
@@ -1118,7 +1179,8 @@
           "canceled"
         ],
         "cancellation_date": "၁၄-၉-၂ဝ၁ဝ",
-        "cancellation_announcement": "၉၇/၂ဝ၁ဝ"
+        "cancellation_announcement": "၉၇/၂ဝ၁ဝ",
+        "phone": ""
       },
       {
         "id": 19,
@@ -1135,7 +1197,8 @@
           "canceled"
         ],
         "cancellation_date": "၂၀-၁၁-၂၀၂၃",
-        "cancellation_announcement": "၄၈/၂၀၂၃"
+        "cancellation_announcement": "၄၈/၂၀၂၃",
+        "phone": ""
       },
       {
         "id": 50,
@@ -1149,7 +1212,8 @@
         "primary_type": "allowed_to_register",
         "all_statuses": [
           "allowed_to_register"
-        ]
+        ],
+        "phone": ""
       },
       {
         "id": 55,
@@ -1163,7 +1227,8 @@
         "primary_type": "allowed_to_register",
         "all_statuses": [
           "allowed_to_register"
-        ]
+        ],
+        "phone": ""
       }
     ],
     "canceled": [
@@ -1181,7 +1246,8 @@
         "primary_type": "canceled",
         "all_statuses": [
           "canceled"
-        ]
+        ],
+        "phone": ""
       },
       {
         "id": 2,
@@ -1197,7 +1263,8 @@
         "primary_type": "canceled",
         "all_statuses": [
           "canceled"
-        ]
+        ],
+        "phone": ""
       },
       {
         "id": 3,
@@ -1213,7 +1280,8 @@
         "primary_type": "canceled",
         "all_statuses": [
           "canceled"
-        ]
+        ],
+        "phone": ""
       },
       {
         "id": 5,
@@ -1229,7 +1297,8 @@
         "primary_type": "canceled",
         "all_statuses": [
           "canceled"
-        ]
+        ],
+        "phone": ""
       },
       {
         "id": 6,
@@ -1245,7 +1314,8 @@
         "primary_type": "canceled",
         "all_statuses": [
           "canceled"
-        ]
+        ],
+        "phone": ""
       },
       {
         "id": 7,
@@ -1261,7 +1331,8 @@
         "primary_type": "canceled",
         "all_statuses": [
           "canceled"
-        ]
+        ],
+        "phone": ""
       },
       {
         "id": 8,
@@ -1277,7 +1348,8 @@
         "primary_type": "canceled",
         "all_statuses": [
           "canceled"
-        ]
+        ],
+        "phone": ""
       },
       {
         "id": 9,
@@ -1293,7 +1365,8 @@
         "primary_type": "canceled",
         "all_statuses": [
           "canceled"
-        ]
+        ],
+        "phone": ""
       },
       {
         "id": "၁ဝ",
@@ -1309,7 +1382,8 @@
         "primary_type": "canceled",
         "all_statuses": [
           "canceled"
-        ]
+        ],
+        "phone": ""
       },
       {
         "id": 11,
@@ -1325,7 +1399,8 @@
         "primary_type": "canceled",
         "all_statuses": [
           "canceled"
-        ]
+        ],
+        "phone": ""
       },
       {
         "id": 12,
@@ -1341,7 +1416,8 @@
         "primary_type": "canceled",
         "all_statuses": [
           "canceled"
-        ]
+        ],
+        "phone": ""
       },
       {
         "id": 13,
@@ -1357,7 +1433,8 @@
         "primary_type": "canceled",
         "all_statuses": [
           "canceled"
-        ]
+        ],
+        "phone": ""
       },
       {
         "id": 14,
@@ -1373,7 +1450,8 @@
         "primary_type": "canceled",
         "all_statuses": [
           "canceled"
-        ]
+        ],
+        "phone": ""
       },
       {
         "id": 15,
@@ -1389,7 +1467,8 @@
         "primary_type": "canceled",
         "all_statuses": [
           "canceled"
-        ]
+        ],
+        "phone": ""
       },
       {
         "id": 16,
@@ -1405,7 +1484,8 @@
         "primary_type": "canceled",
         "all_statuses": [
           "canceled"
-        ]
+        ],
+        "phone": ""
       },
       {
         "id": 17,
@@ -1421,7 +1501,8 @@
         "primary_type": "canceled",
         "all_statuses": [
           "canceled"
-        ]
+        ],
+        "phone": ""
       },
       {
         "id": 18,
@@ -1437,7 +1518,8 @@
         "primary_type": "canceled",
         "all_statuses": [
           "canceled"
-        ]
+        ],
+        "phone": ""
       },
       {
         "id": 19,
@@ -1453,7 +1535,8 @@
         "primary_type": "canceled",
         "all_statuses": [
           "canceled"
-        ]
+        ],
+        "phone": ""
       },
       {
         "id": 20,
@@ -1469,7 +1552,8 @@
         "primary_type": "canceled",
         "all_statuses": [
           "canceled"
-        ]
+        ],
+        "phone": ""
       },
       {
         "id": 21,
@@ -1485,7 +1569,8 @@
         "primary_type": "canceled",
         "all_statuses": [
           "canceled"
-        ]
+        ],
+        "phone": ""
       },
       {
         "id": 22,
@@ -1501,7 +1586,8 @@
         "primary_type": "canceled",
         "all_statuses": [
           "canceled"
-        ]
+        ],
+        "phone": ""
       },
       {
         "id": 23,
@@ -1517,7 +1603,8 @@
         "primary_type": "canceled",
         "all_statuses": [
           "canceled"
-        ]
+        ],
+        "phone": ""
       },
       {
         "id": 24,
@@ -1533,7 +1620,8 @@
         "primary_type": "canceled",
         "all_statuses": [
           "canceled"
-        ]
+        ],
+        "phone": ""
       },
       {
         "id": 25,
@@ -1549,7 +1637,8 @@
         "primary_type": "canceled",
         "all_statuses": [
           "canceled"
-        ]
+        ],
+        "phone": ""
       },
       {
         "id": 26,
@@ -1565,7 +1654,8 @@
         "primary_type": "canceled",
         "all_statuses": [
           "canceled"
-        ]
+        ],
+        "phone": ""
       },
       {
         "id": 27,
@@ -1581,7 +1671,8 @@
         "primary_type": "canceled",
         "all_statuses": [
           "canceled"
-        ]
+        ],
+        "phone": ""
       },
       {
         "id": 28,
@@ -1597,7 +1688,8 @@
         "primary_type": "canceled",
         "all_statuses": [
           "canceled"
-        ]
+        ],
+        "phone": ""
       },
       {
         "id": 29,
@@ -1613,7 +1705,8 @@
         "primary_type": "canceled",
         "all_statuses": [
           "canceled"
-        ]
+        ],
+        "phone": ""
       },
       {
         "id": 30,
@@ -1629,7 +1722,8 @@
         "primary_type": "canceled",
         "all_statuses": [
           "canceled"
-        ]
+        ],
+        "phone": ""
       },
       {
         "id": 31,
@@ -1645,7 +1739,8 @@
         "primary_type": "canceled",
         "all_statuses": [
           "canceled"
-        ]
+        ],
+        "phone": ""
       },
       {
         "id": 32,
@@ -1661,7 +1756,8 @@
         "primary_type": "canceled",
         "all_statuses": [
           "canceled"
-        ]
+        ],
+        "phone": ""
       },
       {
         "id": 33,
@@ -1677,7 +1773,8 @@
         "primary_type": "canceled",
         "all_statuses": [
           "canceled"
-        ]
+        ],
+        "phone": ""
       },
       {
         "id": 34,
@@ -1693,7 +1790,8 @@
         "primary_type": "canceled",
         "all_statuses": [
           "canceled"
-        ]
+        ],
+        "phone": ""
       },
       {
         "id": 35,
@@ -1709,7 +1807,8 @@
         "primary_type": "canceled",
         "all_statuses": [
           "canceled"
-        ]
+        ],
+        "phone": ""
       },
       {
         "id": 36,
@@ -1725,7 +1824,8 @@
         "primary_type": "canceled",
         "all_statuses": [
           "canceled"
-        ]
+        ],
+        "phone": ""
       },
       {
         "id": 37,
@@ -1741,7 +1841,8 @@
         "primary_type": "canceled",
         "all_statuses": [
           "canceled"
-        ]
+        ],
+        "phone": ""
       },
       {
         "id": 38,
@@ -1757,7 +1858,8 @@
         "primary_type": "canceled",
         "all_statuses": [
           "canceled"
-        ]
+        ],
+        "phone": ""
       },
       {
         "id": 39,
@@ -1773,7 +1875,8 @@
         "primary_type": "canceled",
         "all_statuses": [
           "canceled"
-        ]
+        ],
+        "phone": ""
       },
       {
         "id": 40,
@@ -1789,7 +1892,8 @@
         "primary_type": "canceled",
         "all_statuses": [
           "canceled"
-        ]
+        ],
+        "phone": ""
       },
       {
         "id": 41,
@@ -1805,7 +1909,8 @@
         "primary_type": "canceled",
         "all_statuses": [
           "canceled"
-        ]
+        ],
+        "phone": ""
       },
       {
         "id": 42,
@@ -1821,7 +1926,8 @@
         "primary_type": "canceled",
         "all_statuses": [
           "canceled"
-        ]
+        ],
+        "phone": ""
       },
       {
         "id": 43,
@@ -1837,7 +1943,8 @@
         "primary_type": "canceled",
         "all_statuses": [
           "canceled"
-        ]
+        ],
+        "phone": ""
       },
       {
         "id": 44,
@@ -1853,7 +1960,8 @@
         "primary_type": "canceled",
         "all_statuses": [
           "canceled"
-        ]
+        ],
+        "phone": ""
       },
       {
         "id": 45,
@@ -1869,7 +1977,8 @@
         "primary_type": "canceled",
         "all_statuses": [
           "canceled"
-        ]
+        ],
+        "phone": ""
       },
       {
         "id": 46,
@@ -1885,7 +1994,8 @@
         "primary_type": "canceled",
         "all_statuses": [
           "canceled"
-        ]
+        ],
+        "phone": ""
       },
       {
         "id": 47,
@@ -1901,7 +2011,8 @@
         "primary_type": "canceled",
         "all_statuses": [
           "canceled"
-        ]
+        ],
+        "phone": ""
       },
       {
         "id": 48,
@@ -1917,7 +2028,8 @@
         "primary_type": "canceled",
         "all_statuses": [
           "canceled"
-        ]
+        ],
+        "phone": ""
       },
       {
         "id": 49,
@@ -1933,7 +2045,8 @@
         "primary_type": "canceled",
         "all_statuses": [
           "canceled"
-        ]
+        ],
+        "phone": ""
       },
       {
         "id": 50,
@@ -1949,7 +2062,8 @@
         "primary_type": "canceled",
         "all_statuses": [
           "canceled"
-        ]
+        ],
+        "phone": ""
       },
       {
         "id": 52,
@@ -1965,7 +2079,8 @@
         "primary_type": "canceled",
         "all_statuses": [
           "canceled"
-        ]
+        ],
+        "phone": ""
       },
       {
         "id": 53,
@@ -1981,7 +2096,8 @@
         "primary_type": "canceled",
         "all_statuses": [
           "canceled"
-        ]
+        ],
+        "phone": ""
       },
       {
         "id": 54,
@@ -1997,7 +2113,8 @@
         "primary_type": "canceled",
         "all_statuses": [
           "canceled"
-        ]
+        ],
+        "phone": ""
       },
       {
         "id": 55,
@@ -2013,7 +2130,8 @@
         "primary_type": "canceled",
         "all_statuses": [
           "canceled"
-        ]
+        ],
+        "phone": ""
       },
       {
         "id": 56,
@@ -2029,7 +2147,8 @@
         "primary_type": "canceled",
         "all_statuses": [
           "canceled"
-        ]
+        ],
+        "phone": ""
       },
       {
         "id": 57,
@@ -2045,7 +2164,8 @@
         "primary_type": "canceled",
         "all_statuses": [
           "canceled"
-        ]
+        ],
+        "phone": ""
       },
       {
         "id": 58,
@@ -2061,7 +2181,8 @@
         "primary_type": "canceled",
         "all_statuses": [
           "canceled"
-        ]
+        ],
+        "phone": ""
       },
       {
         "id": 59,
@@ -2077,7 +2198,8 @@
         "primary_type": "canceled",
         "all_statuses": [
           "canceled"
-        ]
+        ],
+        "phone": ""
       },
       {
         "id": 60,
@@ -2093,7 +2215,8 @@
         "primary_type": "canceled",
         "all_statuses": [
           "canceled"
-        ]
+        ],
+        "phone": ""
       },
       {
         "id": 61,
@@ -2109,7 +2232,8 @@
         "primary_type": "canceled",
         "all_statuses": [
           "canceled"
-        ]
+        ],
+        "phone": ""
       },
       {
         "id": 62,
@@ -2125,7 +2249,8 @@
         "primary_type": "canceled",
         "all_statuses": [
           "canceled"
-        ]
+        ],
+        "phone": ""
       },
       {
         "id": 63,
@@ -2141,7 +2266,8 @@
         "primary_type": "canceled",
         "all_statuses": [
           "canceled"
-        ]
+        ],
+        "phone": ""
       },
       {
         "id": 64,
@@ -2157,7 +2283,8 @@
         "primary_type": "canceled",
         "all_statuses": [
           "canceled"
-        ]
+        ],
+        "phone": ""
       },
       {
         "id": 65,
@@ -2173,7 +2300,8 @@
         "primary_type": "canceled",
         "all_statuses": [
           "canceled"
-        ]
+        ],
+        "phone": ""
       },
       {
         "id": 66,
@@ -2189,7 +2317,8 @@
         "primary_type": "canceled",
         "all_statuses": [
           "canceled"
-        ]
+        ],
+        "phone": ""
       },
       {
         "id": 67,
@@ -2205,7 +2334,8 @@
         "primary_type": "canceled",
         "all_statuses": [
           "canceled"
-        ]
+        ],
+        "phone": ""
       },
       {
         "id": 68,
@@ -2221,7 +2351,8 @@
         "primary_type": "canceled",
         "all_statuses": [
           "canceled"
-        ]
+        ],
+        "phone": ""
       },
       {
         "id": 69,
@@ -2237,7 +2368,8 @@
         "primary_type": "canceled",
         "all_statuses": [
           "canceled"
-        ]
+        ],
+        "phone": ""
       },
       {
         "id": 70,
@@ -2253,7 +2385,8 @@
         "primary_type": "canceled",
         "all_statuses": [
           "canceled"
-        ]
+        ],
+        "phone": ""
       },
       {
         "id": 72,
@@ -2269,7 +2402,8 @@
         "primary_type": "canceled",
         "all_statuses": [
           "canceled"
-        ]
+        ],
+        "phone": ""
       },
       {
         "id": 73,
@@ -2285,7 +2419,8 @@
         "primary_type": "canceled",
         "all_statuses": [
           "canceled"
-        ]
+        ],
+        "phone": ""
       },
       {
         "id": 74,
@@ -2301,7 +2436,8 @@
         "primary_type": "canceled",
         "all_statuses": [
           "canceled"
-        ]
+        ],
+        "phone": ""
       },
       {
         "id": 75,
@@ -2317,7 +2453,8 @@
         "primary_type": "canceled",
         "all_statuses": [
           "canceled"
-        ]
+        ],
+        "phone": ""
       },
       {
         "id": 76,
@@ -2333,7 +2470,8 @@
         "primary_type": "canceled",
         "all_statuses": [
           "canceled"
-        ]
+        ],
+        "phone": ""
       },
       {
         "id": 77,
@@ -2349,7 +2487,8 @@
         "primary_type": "canceled",
         "all_statuses": [
           "canceled"
-        ]
+        ],
+        "phone": ""
       },
       {
         "id": 78,
@@ -2365,7 +2504,8 @@
         "primary_type": "canceled",
         "all_statuses": [
           "canceled"
-        ]
+        ],
+        "phone": ""
       }
     ]
   },

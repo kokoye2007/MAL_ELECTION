@@ -197,6 +197,10 @@ def display_party_table(df: pd.DataFrame, show_status: bool = False) -> None:
         columns_to_show.append('address')
         column_names.append('Address')
     
+    if 'phone' in display_df.columns and not display_df['phone'].isna().all() and (display_df['phone'] != '').any():
+        columns_to_show.append('phone')
+        column_names.append('Phone')
+    
     if 'registration_date' in display_df.columns and not display_df['registration_date'].isna().all():
         columns_to_show.append('registration_date')
         column_names.append('Registration Date')
