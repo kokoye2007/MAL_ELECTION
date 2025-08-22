@@ -117,16 +117,16 @@ def create_context_cards() -> None:
     with col2:
         st.markdown("""
         <div style="background-color: rgba(241, 143, 1, 0.1); padding: 15px; border-radius: 10px; border-left: 5px solid #F18F01;">
-        <h4 style="color: #F18F01; margin-top: 0;">📝 Newly Allowed to Register (63)</h4>
-        <p style="margin-bottom: 0;">NEW parties that have received permission to register specifically for the 2025 election.</p>
+        <h4 style="color: #F18F01; margin-top: 0;">📝 Newly Allowed to Register (4)</h4>
+        <p style="margin-bottom: 0;">Genuinely NEW parties that have received permission to register specifically for the 2025 election (duplicates merged).</p>
         </div>
         """, unsafe_allow_html=True)
     
     with col3:
         st.markdown("""
         <div style="background-color: rgba(199, 62, 29, 0.1); padding: 15px; border-radius: 10px; border-left: 5px solid #C73E1D;">
-        <h4 style="color: #C73E1D; margin-top: 0;">❌ Canceled/Historical (80)</h4>
-        <p style="margin-bottom: 0;">Previously registered parties that have been canceled, dissolved, or rejected.</p>
+        <h4 style="color: #C73E1D; margin-top: 0;">❌ Canceled/Historical (75)</h4>
+        <p style="margin-bottom: 0;">Previously registered parties that have been canceled, dissolved, or rejected (duplicates merged).</p>
         </div>
         """, unsafe_allow_html=True)
     

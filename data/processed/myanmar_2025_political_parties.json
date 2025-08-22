@@ -18,7 +18,16 @@
         "chairman": "",
         "secretary_general": "",
         "address": "အမှတ်(၅)၊ ရာဇသင်္ဂဟလမ်းနှင့်ရွှေပြည်တော်ဝင်လမ်းထောင့်၊ ဒက္ခိဏသီရိမြို့နယ်၊ နေပြည်တော်။\\nဖုန်းနံပါတ်-",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "existing",
+        "primary_type": "existing",
+        "all_statuses": [
+          "existing",
+          "allowed_to_register"
+        ],
+        "registration_date": "၂၀-၄-၂ဝ၂၃/ အမှတ်စဉ် (၁)",
+        "announcement_number": "၆/၂ဝ၂၃",
+        "notes": ""
       },
       {
         "id": 2,
@@ -27,7 +36,16 @@
         "chairman": "",
         "secretary_general": "",
         "address": "အမှတ်(၈၃)၊ ရန်ကုန်-ပဲခူးလမ်းမကြီး၊ ထောက်ကြန့်မြို့၊ ရန်ကုန်တိုင်းဒေသကြီး။\\nဖုန်းနံပါတ်-",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "existing",
+        "primary_type": "existing",
+        "all_statuses": [
+          "existing",
+          "allowed_to_register"
+        ],
+        "registration_date": "၂၄-၄-၂ဝ၂၃/ အမှတ်စဉ် (၂)",
+        "announcement_number": "၇/၂ဝ၂၃",
+        "notes": ""
       },
       {
         "id": 3,
@@ -36,7 +54,16 @@
         "chairman": "",
         "secretary_general": "",
         "address": "အမှတ်(၃)၊ ချန်းမောအိမ်ရာ(၁၇)၊ ချီဖွေခရိုင်၊ ချီဖွေမြို့နယ်၊ ပန်ဝါမြို့၊ ကချင်ပြည်နယ်။\\nဖုန်းနံပါတ်-",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "existing",
+        "primary_type": "existing",
+        "all_statuses": [
+          "existing",
+          "allowed_to_register"
+        ],
+        "registration_date": "၂၅-၄-၂ဝ၂၃/ အမှတ်စဉ်(၃)",
+        "announcement_number": "၈/၂ဝ၂၃",
+        "notes": ""
       },
       {
         "id": 4,
@@ -45,7 +72,16 @@
         "chairman": "",
         "secretary_general": "",
         "address": "အမှတ်(၉)၊ ရတနာဒီပ၊ ငုရွှေဝါလမ်းနှင့်အင်ကြင်း(၂)လမ်းထောင့်၊ ဘားအံမြို့၊ ကရင်ပြည်နယ်။\\nဖုန်းနံပါတ်-",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "existing",
+        "primary_type": "existing",
+        "all_statuses": [
+          "existing",
+          "allowed_to_register"
+        ],
+        "registration_date": "၂၅-၄-၂ဝ၂၃/ အမှတ်စဉ်(၄)",
+        "announcement_number": "၉/၂ဝ၂၃",
+        "notes": ""
       },
       {
         "id": 5,
@@ -54,7 +90,16 @@
         "chairman": "",
         "secretary_general": "",
         "address": "အမှတ်(၂၄)၊ ရွှေတောင်ကြား(၁)ရပ်ကွက်၊ အောင်ဇေယျလမ်း၊ ဗဟန်းမြို့နယ်၊ ရန်ကုန်တိုင်းဒေသကြီး။\\nဖုန်းနံပါတ်-",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "existing",
+        "primary_type": "existing",
+        "all_statuses": [
+          "existing",
+          "allowed_to_register"
+        ],
+        "registration_date": "၂၅-၄-၂ဝ၂၃/ အမှတ်စဉ် (၅)",
+        "announcement_number": "၁၀/၂ဝ၂၃",
+        "notes": ""
       },
       {
         "id": 6,
@@ -63,7 +108,16 @@
         "chairman": "",
         "secretary_general": "",
         "address": "အိမ်အမှတ် (၁/ဃ/၁)၊ မင်းဂံရပ်ကွက်၊ မင်းစောမွန်လမ်း၊ စစ်တွေမြို့၊ ရခိုင်ပြည်နယ်၊၊\\nဖုန်းနံပါတ်-",
-        "name_en": "Arakan Front Party (AFP)"
+        "name_en": "Arakan Front Party (AFP)",
+        "current_status": "existing",
+        "primary_type": "existing",
+        "all_statuses": [
+          "existing",
+          "allowed_to_register"
+        ],
+        "registration_date": "၂-၅-၂ဝ၂၃/ အမှတ်စဉ် (၆)",
+        "announcement_number": "၁၁/၂ဝ၂၃",
+        "notes": ""
       },
       {
         "id": 7,
@@ -72,7 +126,16 @@
         "chairman": "",
         "secretary_general": "",
         "address": "အလဝ-၁၃၊ ရွာသစ်ကုန်းကျေးရွာအုပ်စု၊ အာလဝီကုန်းရပ်၊ မိုးညှင်းခရိုင်၊ မိုးညှင်းမြို့နယ်၊ ကချင်ပြည်နယ်။\\nဖုန်းနံပါတ်-",
-        "name_en": "TAI-LENG NATIONALITIES DEVELOPMENT PARTY (T.N.D.P)"
+        "name_en": "TAI-LENG NATIONALITIES DEVELOPMENT PARTY (T.N.D.P)",
+        "current_status": "existing",
+        "primary_type": "existing",
+        "all_statuses": [
+          "existing",
+          "allowed_to_register"
+        ],
+        "registration_date": "၂-၅-၂ဝ၂၃/ အမှတ်စဉ် (၇)",
+        "announcement_number": "၁၂/၂ဝ၂၃",
+        "notes": ""
       },
       {
         "id": 8,
@@ -81,7 +144,16 @@
         "chairman": "",
         "secretary_general": "",
         "address": "အမှတ် (၁/၈၉)၊ အေးသာယာရပ်၊ မြို့ပတ်လမ်း၊ မုံရွာမြို့၊  စစ်ကိုင်းတိုင်းဒေသကြီး။\\nဖုန်းနံပါတ်-",
-        "name_en": "Shan-Ni Solidarity Party (S.S.P)"
+        "name_en": "Shan-Ni Solidarity Party (S.S.P)",
+        "current_status": "existing",
+        "primary_type": "existing",
+        "all_statuses": [
+          "existing",
+          "allowed_to_register"
+        ],
+        "registration_date": "၂-၅-၂ဝ၂၃/ အမှတ်စဉ် (၈)",
+        "announcement_number": "၁၃/၂ဝ၂၃",
+        "notes": ""
       },
       {
         "id": 9,
@@ -90,7 +162,16 @@
         "chairman": "",
         "secretary_general": "",
         "address": "အမှတ် (၂၅၄)၊ (၈)ရပ်ကွက်၊ (၅)လမ်း၊ သံတွဲမြို့နယ်၊ ရခိုင်ပြည်နယ်။  \\nဖုန်းနံပါတ်-",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "existing",
+        "primary_type": "existing",
+        "all_statuses": [
+          "existing",
+          "allowed_to_register"
+        ],
+        "registration_date": "၂-၅-၂ဝ၂၃/ အမှတ်စဉ် (၉)",
+        "announcement_number": "၁၄/၂ဝ၂၃",
+        "notes": ""
       },
       {
         "id": 10,
@@ -99,7 +180,16 @@
         "chairman": "",
         "secretary_general": "",
         "address": "အမှတ်(၁၈)၊ ဈေးပိုင်းရပ်ကွက်၊ အနောက်မြို့ပတ်လမ်း၊ တောင်ကြီးမြို့၊  ရှမ်းပြည်နယ်။\\nဖုန်းနံပါတ်-",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "existing",
+        "primary_type": "existing",
+        "all_statuses": [
+          "existing",
+          "allowed_to_register"
+        ],
+        "registration_date": "၄-၅-၂ဝ၂၃/ အမှတ်စဉ် (၁ဝ)",
+        "announcement_number": "၁၅/၂ဝ၂၃",
+        "notes": ""
       },
       {
         "id": 11,
@@ -108,7 +198,16 @@
         "chairman": "",
         "secretary_general": "",
         "address": "အမှတ် (၂၃/၁၁၈)၊ ရမ်ပူရပ်ကွက်၊ မြစ်ကြီးနားမြို့၊  ကချင်ပြည်နယ်။\\nဖုန်းနံပါတ်-",
-        "name_en": "LISU NATIONAL DEVELOPMENT  PARTY (L.N.D.P)"
+        "name_en": "LISU NATIONAL DEVELOPMENT  PARTY (L.N.D.P)",
+        "current_status": "existing",
+        "primary_type": "existing",
+        "all_statuses": [
+          "existing",
+          "allowed_to_register"
+        ],
+        "registration_date": "၅-၅-၂ဝ၂၃/ အမှတ်စဉ် (၁၂)",
+        "announcement_number": "၁၇/၂ဝ၂၃",
+        "notes": ""
       },
       {
         "id": 12,
@@ -117,7 +216,16 @@
         "chairman": "",
         "secretary_general": "",
         "address": "အမှတ် (၁၁၄)၊ အကွက် (၁)၊ ဆင်ကူးလမ်း၊ စစ်တွေမြို့၊  ရခိုင်ပြည်နယ်။\\nဖုန်းနံပါတ်-",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "existing",
+        "primary_type": "existing",
+        "all_statuses": [
+          "existing",
+          "allowed_to_register"
+        ],
+        "registration_date": "၅-၅-၂ဝ၂၃/ အမှတ်စဉ် (၁၃)",
+        "announcement_number": "၁၈/၂ဝ၂၃",
+        "notes": ""
       },
       {
         "id": 13,
@@ -126,7 +234,16 @@
         "chairman": "",
         "secretary_general": "",
         "address": "အမှတ် (၂၈၁)၊ အာခါစျေးလမ်း၊ ဝိန်းကျောက်ရပ်၊ တာချီလိတ်မြို့၊ ရှမ်းပြည်နယ်(အရှေ့ပိုင်း)။\\nဖုန်းနံပါတ်-",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "existing",
+        "primary_type": "existing",
+        "all_statuses": [
+          "existing",
+          "allowed_to_register"
+        ],
+        "registration_date": "၈-၅-၂ဝ၂၃/ အမှတ်စဉ် (၁၄)",
+        "announcement_number": "၁၉/၂ဝ၂၃",
+        "notes": ""
       },
       {
         "id": 14,
@@ -135,7 +252,16 @@
         "chairman": "",
         "secretary_general": "",
         "address": "ကံသာရပ်၊ တိတ်နန်းတံတားအနီး၊ ရုံးကြီးလမ်း၊ ညောင်ရွှေမြို့၊ ရှမ်းပြည်နယ် (တောင်ပိုင်း)။\\nဖုန်းနံပါတ်-",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "existing",
+        "primary_type": "existing",
+        "all_statuses": [
+          "existing",
+          "allowed_to_register"
+        ],
+        "registration_date": "၁၆-၅-၂ဝ၂၃/ အမှတ်စဉ် (၁၅)",
+        "announcement_number": "၂၀/၂ဝ၂၃",
+        "notes": ""
       },
       {
         "id": 15,
@@ -144,7 +270,16 @@
         "chairman": "",
         "secretary_general": "",
         "address": "အမှတ် (ဌ/ ၁၉/ ၇၆၄)၊ ဟူးမွန်လမ်း၊ ရပ်ကွက် (၁၂)၊ နယ်မြေ (၁၉)၊ မန်ဆူရှမ်းကျောင်းနောက်၊  လားရှိုးမြို့၊  ရှမ်းပြည်နယ်။\\nဖုန်းနံပါတ်-",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "existing",
+        "primary_type": "existing",
+        "all_statuses": [
+          "existing",
+          "allowed_to_register"
+        ],
+        "registration_date": "၁၆-၅-၂ဝ၂၃/ အမှတ်စဉ် (၁၆)",
+        "announcement_number": "၂၁/၂ဝ၂၃",
+        "notes": ""
       },
       {
         "id": 16,
@@ -153,7 +288,16 @@
         "chairman": "",
         "secretary_general": "",
         "address": "ခြံအမှတ် (၄/၄၁၃)၊ အမှတ်(၄)ရပ်ကွက်၊ သုဓနုလမ်း၊ ဘားအံမြို့၊ ကရင်ပြည်နယ်။\\nဖုန်းနံပါတ်-",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "existing",
+        "primary_type": "existing",
+        "all_statuses": [
+          "existing",
+          "allowed_to_register"
+        ],
+        "registration_date": "၂၂-၅-၂ဝ၂၃/ အမှတ်စဉ် (၁၇)",
+        "announcement_number": "၂၂/၂ဝ၂၃",
+        "notes": ""
       },
       {
         "id": 17,
@@ -162,7 +306,16 @@
         "chairman": "",
         "secretary_general": "",
         "address": "အမှတ်(၂၈)၊ ရွှေဒါးကုန်းလမ်း၊ မရမ်းကုန်းရပ်ကွက်၊ မြောင်းမြမြို့၊ ဧရာဝတီတိုင်းဒေသကြီး။  \\nဖုန်းနံပါတ်-",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "existing",
+        "primary_type": "existing",
+        "all_statuses": [
+          "existing",
+          "allowed_to_register"
+        ],
+        "registration_date": "၂၂-၅-၂ဝ၂၃/ အမှတ်စဉ် (၁၈)",
+        "announcement_number": "၂၃/၂ဝ၂၃",
+        "notes": ""
       },
       {
         "id": 18,
@@ -171,7 +324,16 @@
         "chairman": "",
         "secretary_general": "",
         "address": "ဇီးဖြူကုန်းရပ်ကွက်၊ ခန္တီးမြို့၊ စစ်ကိုင်းတိုင်းဒေသကြီး။\\nဖုန်းနံပါတ်-",
-        "name_en": "Naga National Party (NNP)"
+        "name_en": "Naga National Party (NNP)",
+        "current_status": "existing",
+        "primary_type": "existing",
+        "all_statuses": [
+          "existing",
+          "allowed_to_register"
+        ],
+        "registration_date": "၃၀-၅-၂ဝ၂၃/ အမှတ်စဉ် (၂၀)",
+        "announcement_number": "၂၅/၂ဝ၂၃",
+        "notes": ""
       },
       {
         "id": 19,
@@ -180,7 +342,16 @@
         "chairman": "",
         "secretary_general": "",
         "address": "အမှတ် (၁၀/၆၄)၊ ချယ်ရီလမ်း၊ (၁၀)ရပ်ကွက်၊ ကလောမြို့၊ ရှမ်းပြည်နယ် (တောင်ပိုင်း)။  \\nဖုန်းနံပါတ်-",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "existing",
+        "primary_type": "existing",
+        "all_statuses": [
+          "existing",
+          "allowed_to_register"
+        ],
+        "registration_date": "၅-၆-၂ဝ၂၃/ အမှတ်စဉ် (၂၁)",
+        "announcement_number": "၂၆/၂ဝ၂၃",
+        "notes": ""
       },
       {
         "id": 20,
@@ -189,7 +360,16 @@
         "chairman": "",
         "secretary_general": "",
         "address": "အမှတ် (၆၃)၊ လသာအောက်လမ်း၊ အမှတ်(၃)ရပ်ကွက်၊ လသာမြို့နယ်၊ ရန်ကုန်တိုင်းဒေသကြီး။\\nဖုန်းနံပါတ်-",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "existing",
+        "primary_type": "existing",
+        "all_statuses": [
+          "existing",
+          "allowed_to_register"
+        ],
+        "registration_date": "၅-၆-၂ဝ၂၃/ အမှတ်စဉ် (၂၂)",
+        "announcement_number": "၂၇/၂ဝ၂၃",
+        "notes": ""
       },
       {
         "id": 21,
@@ -198,7 +378,16 @@
         "chairman": "",
         "secretary_general": "",
         "address": "ဇေယျဌာနီလမ်းနှင့် ပန်းခင်းလမ်းထောင့် (ဘဲကုန်းမီးပွိုင့် အနီး)၊ စက်ြာဒီပခြံ၊ ပုဗ္ဗသီရိမြို့နယ်၊ နေပြည်တော်။\\nဖုန်းနံပါတ်-",
-        "name_en": "Democratic Party of National Politics (DNP)"
+        "name_en": "Democratic Party of National Politics (DNP)",
+        "current_status": "existing",
+        "primary_type": "existing",
+        "all_statuses": [
+          "existing",
+          "allowed_to_register"
+        ],
+        "registration_date": "၉-၆-၂ဝ၂၃/ အမှတ်စဉ် (၂၃)",
+        "announcement_number": "၂၈/၂ဝ၂၃",
+        "notes": ""
       },
       {
         "id": 22,
@@ -207,7 +396,16 @@
         "chairman": "",
         "secretary_general": "",
         "address": "(၄)ရပ်ကွက်၊ ပညာလမ်း၊ အမှတ် (၁၀၁၀/ခ)၊ တောင်ဥက္ကလာပမြို့နယ်၊ ရန်ကုန်တိုင်းဒေသကြီး။\\nဖုန်းနံပါတ်-",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "existing",
+        "primary_type": "existing",
+        "all_statuses": [
+          "existing",
+          "allowed_to_register"
+        ],
+        "registration_date": "၉-၆-၂ဝ၂၃/ အမှတ်စဉ် (၂၄)",
+        "announcement_number": "၂၉/၂ဝ၂၃",
+        "notes": ""
       },
       {
         "id": 23,
@@ -216,7 +414,16 @@
         "chairman": "",
         "secretary_general": "",
         "address": "ရွာမမြောက်ရပ်ကွက်၊ ပဒေသရာဇာလမ်း၊ အမှတ် (၇၃၁)၊  ကြို့ပင်ကောက်မြို့နယ်၊  ပဲခူးတိုင်းဒေသကြီး။\\nဖုန်းနံပါတ်-",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "existing",
+        "primary_type": "existing",
+        "all_statuses": [
+          "existing",
+          "allowed_to_register"
+        ],
+        "registration_date": "၉-၆-၂ဝ၂၃/ အမှတ်စဉ် (၂၅)",
+        "announcement_number": "၃၀/၂ဝ၂၃",
+        "notes": ""
       },
       {
         "id": 24,
@@ -225,7 +432,16 @@
         "chairman": "",
         "secretary_general": "",
         "address": "(၄၁)တိုးချဲ့ရပ်ကွက်၊ တော်ဝင်အိမ်ရာ၊ အခန်း (၂၅)၊ တိုက် (၈)၊  ဒဂုံမြို့သစ် (မြောက်ပိုင်း)မြို့နယ်၊ ရန်ကုန်တိုင်းဒေသကြီး။\\nဖုန်းနံပါတ်-",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "existing",
+        "primary_type": "existing",
+        "all_statuses": [
+          "existing",
+          "allowed_to_register"
+        ],
+        "registration_date": "၂၁-၆-၂ဝ၂၃/ အမှတ်စဉ် (၂၆)",
+        "announcement_number": "၃၁/၂ဝ၂၃",
+        "notes": ""
       },
       {
         "id": 25,
@@ -234,7 +450,16 @@
         "chairman": "",
         "secretary_general": "",
         "address": "ချမ်းသာရွှေပြည်အိမ်ရာ၊ (၁၀)ရပ်ကွက်၊ မြို့တော်(၂)လမ်း၊ အမှတ် (စီ/၁၀)၊  ဒဂုံမြို့သစ် (အရှေ့ပိုင်း) မြို့နယ်၊ ရန်ကုန်တိုင်းဒေသကြီး။\\nဖုန်းနံပါတ်-",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "existing",
+        "primary_type": "existing",
+        "all_statuses": [
+          "existing",
+          "allowed_to_register"
+        ],
+        "registration_date": "၂၁-၆-၂ဝ၂၃/ အမှတ်စဉ် (၂၇)",
+        "announcement_number": "၃၂/၂ဝ၂၃",
+        "notes": ""
       },
       {
         "id": 26,
@@ -243,7 +468,16 @@
         "chairman": "",
         "secretary_general": "",
         "address": "ကမ်းနားလမ်း၊ MMM ကွန်ဒို၊ အမှတ် ၄၃-၄၄ (8-A)၊ အလုံမြို့နယ်၊ ရန်ကုန်တိုင်းဒေသကြီး။\\nဖုန်းနံပါတ်-",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "existing",
+        "primary_type": "existing",
+        "all_statuses": [
+          "existing",
+          "allowed_to_register"
+        ],
+        "registration_date": "၂၃-၆-၂ဝ၂၃/ အမှတ်စဉ် (၂၈)",
+        "announcement_number": "၃၃/၂ဝ၂၃",
+        "notes": ""
       },
       {
         "id": 27,
@@ -252,7 +486,16 @@
         "chairman": "",
         "secretary_general": "",
         "address": "ဆရာစံမြောက်/အနောက်ရပ်ကွက်၊ ပြည်ထောင်စုလမ်းသွယ်၊ အမှတ် (၄၂)၊ ဗဟန်းမြို့နယ်၊ရန်ကုန်တိုင်းဒေသကြီး။\\nဖုန်းနံပါတ်-",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "existing",
+        "primary_type": "existing",
+        "all_statuses": [
+          "existing",
+          "allowed_to_register"
+        ],
+        "registration_date": "၂၃-၆-၂ဝ၂၃/ အမှတ်စဉ် (၂၉)",
+        "announcement_number": "၃၄/၂ဝ၂၃",
+        "notes": ""
       },
       {
         "id": 28,
@@ -261,7 +504,16 @@
         "chairman": "",
         "secretary_general": "",
         "address": "အောင်နန်းအနောက်ရပ်ကွက်၊ ၃၃ x ၃၄ ကြား၊ (၈၅) လမ်း၊ အမှတ် (၁၂)၊ မလွန်ဆေးရိုးဝင်း၊မန္တလေးတိုင်းဒေသကြီး။ \\nဖုန်းနံပါတ်-",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "existing",
+        "primary_type": "existing",
+        "all_statuses": [
+          "existing",
+          "allowed_to_register"
+        ],
+        "registration_date": "၂၃-၆-၂ဝ၂၃/ အမှတ်စဉ် (၃၀)",
+        "announcement_number": "၃၅/၂ဝ၂၃",
+        "notes": ""
       },
       {
         "id": 29,
@@ -270,7 +522,16 @@
         "chairman": "",
         "secretary_general": "",
         "address": "မြိုင်သာယာရပ်ကွက်၊ ဗိုလ်ချုပ်အောင်ဆန်းလမ်း၊ အမှတ် (၅/ခ)၊ မော်လမြိုင်မြို့၊  မွန်ပြည်နယ်။\\nဖုန်းနံပါတ်-",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "existing",
+        "primary_type": "existing",
+        "all_statuses": [
+          "existing",
+          "allowed_to_register"
+        ],
+        "registration_date": "၂၃-၆-၂ဝ၂၃/ အမှတ်စဉ် (၃၁)",
+        "announcement_number": "၃၆/၂ဝ၂၃",
+        "notes": ""
       },
       {
         "id": 30,
@@ -279,7 +540,16 @@
         "chairman": "",
         "secretary_general": "",
         "address": "ပြည်တော်သာရပ်ကွက်၊ စာတိုက်လမ်း၊ အမှတ် (၂၀၂)၊ အထကကျောင်းရှေ့၊  ကျောက်တော်မြို့၊ ရခိုင်ပြည်နယ်။ \\nဖုန်းနံပါတ်-",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "existing",
+        "primary_type": "existing",
+        "all_statuses": [
+          "existing",
+          "allowed_to_register"
+        ],
+        "registration_date": "၃-၇-၂ဝ၂၃/ အမှတ်စဉ် (၃၂)",
+        "announcement_number": "၃၇/၂ဝ၂၃",
+        "notes": ""
       },
       {
         "id": 31,
@@ -288,7 +558,16 @@
         "chairman": "",
         "secretary_general": "",
         "address": "ဇ/မြောက်ရပ်ကွက်၊ လေးထောင့်ကန်လမ်း၊ ခြံအမှတ်(၇၂)၊ သင်္ဃန်းကျွန်းမြို့နယ်၊ သင်္ဃန်းကျွန်းခရိုင်၊ ရန်ကုန်တိုင်းဒေသကြီး။\\nဖုန်းနံပါတ်-",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "existing",
+        "primary_type": "existing",
+        "all_statuses": [
+          "existing",
+          "allowed_to_register"
+        ],
+        "registration_date": "၁၄-၇-၂ဝ၂၃/ အမှတ်စဉ် (၃၃)",
+        "announcement_number": "၃၈/၂ဝ၂၃",
+        "notes": ""
       },
       {
         "id": 32,
@@ -297,7 +576,16 @@
         "chairman": "",
         "secretary_general": "",
         "address": "ဖက်ခင်းရပ်၊ ဖက်ခင်းလမ်း၊ ခြံအမှတ်(၂)၊ မော်လမြိုင်မြို့၊ မွန်ပြည်နယ်။ \\nဖုန်းနံပါတ်-",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "existing",
+        "primary_type": "existing",
+        "all_statuses": [
+          "existing",
+          "allowed_to_register"
+        ],
+        "registration_date": "၁၄-၇-၂ဝ၂၃/ အမှတ်စဉ် (၃၄)",
+        "announcement_number": "၃၉/၂ဝ၂၃",
+        "notes": ""
       },
       {
         "id": 33,
@@ -306,7 +594,16 @@
         "chairman": "",
         "secretary_general": "",
         "address": "နယ်မြေ (၂)၊ ရပ်ကွက်(၁)၊ သာယာလမ်း၊ အမှတ် (၄၀)၊ ရှမ်းပြည်နယ် (မြောက်ပိုင်း)၊ လားရှိုးမြို့။\\nဖုန်းနံပါတ်-",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "existing",
+        "primary_type": "existing",
+        "all_statuses": [
+          "existing",
+          "allowed_to_register"
+        ],
+        "registration_date": "၂၇-၇-၂ဝ၂၃/ အမှတ်စဉ် (၃၅)",
+        "announcement_number": "၄၀/၂ဝ၂၃",
+        "notes": ""
       },
       {
         "id": 34,
@@ -315,7 +612,16 @@
         "chairman": "",
         "secretary_general": "",
         "address": "အိမ်အမှတ် (၆)၊ အောင်စောင်လမ်း၊ ရိက္ခာရပ်ကွက်၊ ပလက်ဝမြို့၊ ချင်းပြည်နယ်။ \\nဖုန်းနံပါတ်-",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "existing",
+        "primary_type": "existing",
+        "all_statuses": [
+          "existing",
+          "allowed_to_register"
+        ],
+        "registration_date": "၁၁-၈-၂ဝ၂၃/ အမှတ်စဉ် (၃၆)",
+        "announcement_number": "၄၁/၂ဝ၂၃",
+        "notes": ""
       },
       {
         "id": 35,
@@ -324,7 +630,16 @@
         "chairman": "",
         "secretary_general": "",
         "address": "ဒီဇင်ဘာအိမ်ရာ၊ ချယ်ရီ(၁)လမ်း၊ အခန်းအမှတ် (၃၀၂)၊ တိုက်အမှတ် (၁၁၉)၊  ဒဂုံမြို့သစ် (တောင်ပိုင်း)မြို့နယ်၊ ရန်ကုန်တိုင်းဒေသကြီး။\\nဖုန်းနံပါတ်-",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "existing",
+        "primary_type": "existing",
+        "all_statuses": [
+          "existing",
+          "allowed_to_register"
+        ],
+        "registration_date": "၁၅-၉-၂ဝ၂၃/ အမှတ်စဉ် (၃၇)",
+        "announcement_number": "၄၂/၂ဝ၂၃",
+        "notes": ""
       },
       {
         "id": 36,
@@ -333,7 +648,16 @@
         "chairman": "",
         "secretary_general": "",
         "address": "ကျောက်မြောင်း၊ မနောဟရလမ်း၊ ပထမထပ်၊ အမှတ် (၈)၊  တာမွေမြို့နယ်၊ ရန်ကုန်တိုင်းဒေသကြီး။\\nဖုန်းနံပါတ်-",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "existing",
+        "primary_type": "existing",
+        "all_statuses": [
+          "existing",
+          "allowed_to_register"
+        ],
+        "registration_date": "၇-၁၁-၂ဝ၂၃/ အမှတ်စဉ် (၃၈)",
+        "announcement_number": "၄၃/၂ဝ၂၃",
+        "notes": ""
       },
       {
         "id": 37,
@@ -342,7 +666,16 @@
         "chairman": "",
         "secretary_general": "",
         "address": "ဘုရားကြီးဘုရားအနီး၊ ဆည်မြောင်းတိုးချဲ့ရပ်ကွက်၊ သရဖီလမ်း၊ အိမ်အမှတ် (၂)၊ ပြည်မြို့၊  ပဲခူးတိုင်းဒေသကြီး။\\nဖုန်းနံပါတ်-",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "existing",
+        "primary_type": "existing",
+        "all_statuses": [
+          "existing",
+          "allowed_to_register"
+        ],
+        "registration_date": "၇-၁၁-၂ဝ၂၃/ အမှတ်စဉ် (၃၉)",
+        "announcement_number": "၄၄/၂ဝ၂၃",
+        "notes": ""
       },
       {
         "id": 38,
@@ -351,7 +684,16 @@
         "chairman": "",
         "secretary_general": "",
         "address": "(၄)ရပ်ကွက်၊ တကောင်းဘုရားလမ်း၊ အမှတ်(၂)၊ ပုသိမ်မြို့၊ ဧရာဝတီတိုင်းဒေသကြီး။\\nဖုန်းနံပါတ်-",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "existing",
+        "primary_type": "existing",
+        "all_statuses": [
+          "existing",
+          "allowed_to_register"
+        ],
+        "registration_date": "၁၃-၁၁-၂ဝ၂၃/ အမှတ်စဉ် (၄၀)",
+        "announcement_number": "၄၅/၂ဝ၂၃",
+        "notes": ""
       },
       {
         "id": 39,
@@ -360,7 +702,16 @@
         "chairman": "",
         "secretary_general": "",
         "address": "(၅) ရပ်ကွက်၊ အောင်သုခလမ်း၊ တိုက် (၁၀၀/၁၀၁)၊ အခန်း (၁၀၁)၊ ကမာရွတ်မြို့နယ်၊ ရန်ကုန်တိုင်းဒေသကြီး။\\nဖုန်းနံပါတ်-",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "existing",
+        "primary_type": "existing",
+        "all_statuses": [
+          "existing",
+          "allowed_to_register"
+        ],
+        "registration_date": "၂၀-၁၁-၂ဝ၂၃/ အမှတ်စဉ် (၄၁)",
+        "announcement_number": "၄၆/၂ဝ၂၃",
+        "notes": ""
       },
       {
         "id": 40,
@@ -369,7 +720,16 @@
         "chairman": "",
         "secretary_general": "",
         "address": "(၁)ရပ်ကွက်၊ မဟာဗန္ဓုလပန်းခြံလမ်းနှင့် ဘဏ်လမ်းထောင့်၊ အမှတ် (၃၃/၄၉)၊ ကျောက်တံတားမြို့နယ်၊ ရန်ကုန်တိုင်းဒေသကြီး။\\nဖုန်းနံပါတ်-",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "existing",
+        "primary_type": "existing",
+        "all_statuses": [
+          "existing",
+          "allowed_to_register"
+        ],
+        "registration_date": "၂၀-၁၁-၂ဝ၂၃/ အမှတ်စဉ် (၄၂)",
+        "announcement_number": "၄၇/၂ဝ၂၃",
+        "notes": ""
       },
       {
         "id": 41,
@@ -378,7 +738,16 @@
         "chairman": "",
         "secretary_general": "",
         "address": "ဗိုလ်စိန်မှန်ရပ်ကွက်၊ တာမွေအဝိုင်းအနီး၊ အနောက်မြင်းပြိုင်ကွင်းလမ်း၊ ပထမထပ်၊ အမှတ်(၄၇)၊ ဗဟန်းမြို့နယ်၊ ရန်ကုန်တိုင်းဒေသကြီး။ \\nဖုန်းနံပါတ်-",
-        "name_en": "National Democratic Force Party (NDF)"
+        "name_en": "National Democratic Force Party (NDF)",
+        "current_status": "existing",
+        "primary_type": "existing",
+        "all_statuses": [
+          "existing",
+          "allowed_to_register"
+        ],
+        "registration_date": "၂၃-၁၁-၂ဝ၂၃/ အမှတ်စဉ် (၄၃)",
+        "announcement_number": "၅၀/၂ဝ၂၃",
+        "notes": ""
       },
       {
         "id": 42,
@@ -387,7 +756,16 @@
         "chairman": "",
         "secretary_general": "",
         "address": "လှိုင်သာယာ(အရှေ့ပိုင်း)မြို့နယ်၊ ရွှေလင်ပန်း တန်ဖိုးနည်းအိမ်ရာ အပိုင်း(၁)၊ ရွှေနှင်းဆီလမ်း၊ အခန်း (၀၀၂)၊ တိုက် (၁၀)၊ အင်းစိန်ခရိုင်၊ ရန်ကုန်တိုင်းဒေသကြီး။\\nဖုန်းနံပါတ်-",
-        "name_en": "THE 88 GENERATION STUDENT YOUTHS (UNION OF MYANMAR)PARTY"
+        "name_en": "THE 88 GENERATION STUDENT YOUTHS (UNION OF MYANMAR)PARTY",
+        "current_status": "existing",
+        "primary_type": "existing",
+        "all_statuses": [
+          "existing",
+          "allowed_to_register"
+        ],
+        "registration_date": "၂၉-၁၁-၂ဝ၂၃/ အမှတ်စဉ် (၄၄)",
+        "announcement_number": "၅၁/၂ဝ၂၃",
+        "notes": ""
       },
       {
         "id": 43,
@@ -396,7 +774,16 @@
         "chairman": "",
         "secretary_general": "",
         "address": "ဆံတော်ရပ်ကွက်၊ စကားတောင်ရပ်၊ ပုထိုးကြီးလမ်း၊ အမှတ် (၄၅) ၊ ပြည်မြို့၊ ပြည်ခရိုင်၊ ပဲခူးတိုင်းဒေသကြီး။\\nဖုန်းနံပါတ်-",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "existing",
+        "primary_type": "existing",
+        "all_statuses": [
+          "existing",
+          "allowed_to_register"
+        ],
+        "registration_date": "၂၉-၁၁-၂ဝ၂၃/ အမှတ်စဉ် (၄၅)",
+        "announcement_number": "၅၂/၂ဝ၂၃",
+        "notes": ""
       },
       {
         "id": 44,
@@ -405,7 +792,16 @@
         "chairman": "",
         "secretary_general": "",
         "address": "အမှတ် (၄/၃၆၁)၊ သင်္ဃန်းကျွန်းကြီးရပ်ကွက်၊ ကာယ (၁၂)လမ်း၊ မင်္ဂလာဒုံမြို့နယ်၊ရန်ကုန်တိုင်းဒေသကြီး။\\nဖုန်းနံပါတ်-",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "existing",
+        "primary_type": "existing",
+        "all_statuses": [
+          "existing",
+          "allowed_to_register"
+        ],
+        "registration_date": "၂၁-၁၂-၂ဝ၂၃/ အမှတ်စဉ် (၄၆)",
+        "announcement_number": "၅၃/၂ဝ၂၃",
+        "notes": ""
       },
       {
         "id": 45,
@@ -414,7 +810,16 @@
         "chairman": "",
         "secretary_general": "",
         "address": "မဟာဗန္ဓုလလမ်းမ၊ မဟာဗန္ဓုလအိမ်ရာ၊ အမှတ် (၆၂)၊ တိုက် (ဒီ)၊ (၉)လွှာ၊ အခန်း (၉၀၂)၊  ပုဇွန်တောင်မြို့နယ်၊ ရန်ကုန်တိုင်းဒေသကြီး။ \\nဖုန်းနံပါတ်-",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "existing",
+        "primary_type": "existing",
+        "all_statuses": [
+          "existing",
+          "allowed_to_register"
+        ],
+        "registration_date": "၂၉-၁၂-၂ဝ၂၃/ အမှတ်စဉ် (၄၇)",
+        "announcement_number": "၅၄/၂ဝ၂၃",
+        "notes": ""
       },
       {
         "id": 46,
@@ -423,7 +828,16 @@
         "chairman": "",
         "secretary_general": "",
         "address": "အမှတ် (၉)၊ ရတနာဒီပရပ်ကွက်၊ ရာဇဓိရာဇ်လမ်း၊ ဘားအံမြို့၊ ကရင်ပြည်နယ်။\\nဖုန်းနံပါတ်-",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "existing",
+        "primary_type": "existing",
+        "all_statuses": [
+          "existing",
+          "allowed_to_register"
+        ],
+        "registration_date": "၁-၄-၂၀၂၄/ အမှတ်စဉ် (၄၈)",
+        "announcement_number": "၁/၂ဝ၂၄",
+        "notes": ""
       },
       {
         "id": 47,
@@ -432,7 +846,16 @@
         "chairman": "",
         "secretary_general": "",
         "address": "အမှတ် (၉၉)၊ (၃)ရပ်ကွက်၊ ကျိုက်ဝိုင်းဘုရားလမ်း၊ မရမ်းကုန်းမြို့နယ်၊  ရန်ကုန်တိုင်းဒေသကြီး။\\nဖုန်းနံပါတ်-",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "existing",
+        "primary_type": "existing",
+        "all_statuses": [
+          "existing",
+          "allowed_to_register"
+        ],
+        "registration_date": "၂၅-၄-၂၀၂၄/ အမှတ်စဉ် (၄၉)",
+        "announcement_number": "၂/၂ဝ၂၄",
+        "notes": ""
       },
       {
         "id": 48,
@@ -441,7 +864,12 @@
         "chairman": "",
         "secretary_general": "",
         "address": "အမှတ်(၂/၂/၂၃၂)၊ မဟော်ဂနီလမ်း၊ ထောက်ကြန့်တိုးချဲ့ရပ်ကွက်၊ မင်္ဂလာဒုံမြို့နယ်၊ ရန်ကုန်တိုင်း‌ဒေသကြီး။\\nဖုန်းနံပါတ်-",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "existing",
+        "primary_type": "existing",
+        "all_statuses": [
+          "existing"
+        ]
       },
       {
         "id": 49,
@@ -450,7 +878,16 @@
         "chairman": "",
         "secretary_general": "",
         "address": "အမှတ် (၃၂၈)၊ စိမ်းမြဧရာပန်းခြံအနီး၊ ပြည်ထောင်စုလမ်းမကြီးဘေး၊ ယုဇနရပ်ကွက်၊ မြစ်ကြီးနားမြို့၊ ကချင်ပြည်နယ်။\\nဖုန်းနံပါတ်-",
-        "name_en": "Kachin State People’s Party (KSPP)"
+        "name_en": "Kachin State People’s Party (KSPP)",
+        "current_status": "existing",
+        "primary_type": "existing",
+        "all_statuses": [
+          "existing",
+          "allowed_to_register"
+        ],
+        "registration_date": "၁၉-၈-၂၀၂၄/ အမှတ်စဉ် (၅၁)",
+        "announcement_number": "၄/၂ဝ၂၄",
+        "notes": ""
       },
       {
         "id": 50,
@@ -459,7 +896,16 @@
         "chairman": "",
         "secretary_general": "",
         "address": "အိမ်အမှတ်(၁၆)၊ (၁၉)လမ်း၊ မြိုင်သာယာရပ်ကွက်၊ မော်လမြိုင်မြို့၊ မွန်ပြည်နယ်။  \\nဖုန်းနံပါတ်-",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "existing",
+        "primary_type": "existing",
+        "all_statuses": [
+          "existing",
+          "allowed_to_register"
+        ],
+        "registration_date": "၉-၉-၂၀၂၄/ အမှတ်စဉ် (၅၂)",
+        "announcement_number": "၅/၂ဝ၂၄",
+        "notes": ""
       },
       {
         "id": 51,
@@ -468,7 +914,16 @@
         "chairman": "",
         "secretary_general": "",
         "address": "အမှတ် (A/၄၀၆)၊ လန်းဆန်းအိမ်ရာ၊ မှော်ကန်(၁)လမ်း၊ လိပ်ပြာကန်ရပ်ကွက်၊  ပဲခူးတိုင်းဒေသကြီး။\\nဖုန်းနံပါတ်-",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "existing",
+        "primary_type": "existing",
+        "all_statuses": [
+          "existing",
+          "allowed_to_register"
+        ],
+        "registration_date": "၁၂-၁၁-၂၀၂၄/ အမှတ်စဉ် (၅၃)",
+        "announcement_number": "၆/၂ဝ၂၄",
+        "notes": ""
       },
       {
         "id": 52,
@@ -477,7 +932,16 @@
         "chairman": "",
         "secretary_general": "",
         "address": "(၂၈)လမ်း (မြောက်ဘက်)၊ အောင်သာယာရပ်ကွက်၊ ပုဗ္ဗသီရိမြို့နယ်၊ ဇေယျာသီရိခရိုင်၊  နေပြည်တော်။\\nဖုန်းနံပါတ်-",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "existing",
+        "primary_type": "existing",
+        "all_statuses": [
+          "existing",
+          "allowed_to_register"
+        ],
+        "registration_date": "၁၈-၁၁-၂၀၂၄/ အမှတ်စဉ် (၅၄)",
+        "announcement_number": "၇/၂ဝ၂၄",
+        "notes": ""
       },
       {
         "id": 53,
@@ -486,7 +950,12 @@
         "chairman": "",
         "secretary_general": "",
         "address": "ခြံအမှတ်(၂၆)၊ စိန်ပန်းလမ်း၊ ACE အိမ်ရာ၊ သာကေတမြို့နယ်၊ ရန်ကုန်တိုင်းဒေသကြီး။ \\nဖုန်းနံပါတ်-",
-        "name_en": " Unity and Development Party (UADP) "
+        "name_en": " Unity and Development Party (UADP) ",
+        "current_status": "existing",
+        "primary_type": "existing",
+        "all_statuses": [
+          "existing"
+        ]
       },
       {
         "id": 54,
@@ -495,7 +964,16 @@
         "chairman": "",
         "secretary_general": "",
         "address": "ဧ-၁၂၇၊ သဇင်လမ်း၊ အောင်သီဟရပ်ကွက်၊ လွိုင်ကော်မြို့၊ ကယားပြည်နယ်။\\nဖုန်းနံပါတ်-",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "existing",
+        "primary_type": "existing",
+        "all_statuses": [
+          "existing",
+          "allowed_to_register"
+        ],
+        "registration_date": "၂၀-၂-၂၀၂၅/ အမှတ်စဉ် (၅၆)",
+        "announcement_number": "၁/၂ဝ၂၅",
+        "notes": ""
       },
       {
         "id": 55,
@@ -504,7 +982,16 @@
         "chairman": "",
         "secretary_general": "",
         "address": "အမှတ် (၄၅၉)၊ ပဒုမ္မာလမ်း၊  ရွှေကြာပင်ရပ်ကွက်၊ ဇမ္ဗူသီရိမြို့နယ်၊ နေပြည်တော်။\\nဖုန်းနံပါတ်-",
-        "name_en": "New Chinland Congress (NCC)"
+        "name_en": "New Chinland Congress (NCC)",
+        "current_status": "existing",
+        "primary_type": "existing",
+        "all_statuses": [
+          "existing",
+          "allowed_to_register"
+        ],
+        "registration_date": "၁၀-၇-၂၀၂၅/ အမှတ်စဉ် (၅၇)",
+        "announcement_number": "၂/၂ဝ၂၅",
+        "notes": ""
       },
       {
         "id": 56,
@@ -513,7 +1000,16 @@
         "chairman": "",
         "secretary_general": "",
         "address": "အမှတ် (၄၉)၊ ဦးဥတ္တမလမ်း၊ အလယ်ပိုင်းရပ်ကွက်၊ ကျောက်ဖြူမြို့၊ ရခိုင်ပြည်နယ်။\\nဖုန်းနံပါတ်-",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "existing",
+        "primary_type": "existing",
+        "all_statuses": [
+          "existing",
+          "allowed_to_register"
+        ],
+        "registration_date": "၄-၈-၂၀၂၅/ အမှတ်စဉ် (၅၈)",
+        "announcement_number": "၄၁/၂၀၂၅",
+        "notes": ""
       },
       {
         "id": 57,
@@ -522,7 +1018,16 @@
         "chairman": "",
         "secretary_general": "",
         "address": "အမှတ် (၁၁၀)၊ ၄ လွှာ (ဘီ)၊ အောင်မင်္ဂလာလမ်း၊ ကျောက်မြောင်းကြီးရပ်ကွက်၊ ရန်ကုန်တိုင်းဒေသကြီး။\\nဖုန်းနံပါတ်-",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "existing",
+        "primary_type": "existing",
+        "all_statuses": [
+          "existing",
+          "allowed_to_register"
+        ],
+        "registration_date": "၇-၈-၂၀၂၅/ အမှတ်စဉ် (၅၉)",
+        "announcement_number": "၄၂/၂၀၂၅",
+        "notes": ""
       },
       {
         "id": 58,
@@ -531,7 +1036,16 @@
         "chairman": "",
         "secretary_general": "",
         "address": "အိမ်အမှတ် [၉/၃၄(A)]၊ ကြာအင်းတောင်ပေါ်လမ်း၊ ရတနာဒီပရပ်ကွက်၊ ဘားအံမြို့၊ ကရင်ပြည်နယ်။\\nဖုန်းနံပါတ်-",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "existing",
+        "primary_type": "existing",
+        "all_statuses": [
+          "existing",
+          "allowed_to_register"
+        ],
+        "registration_date": "၈-၈-၂၀၂၅/ အမှတ်စဉ် (၆၀)",
+        "announcement_number": "၄၇/၂၀၂၅",
+        "notes": ""
       },
       {
         "id": 59,
@@ -540,7 +1054,16 @@
         "chairman": "",
         "secretary_general": "",
         "address": "၆  လမ်း နှင့် ၇ လမ်းကြား၊ ၇၄ (B) လမ်း၊ ဥပုသ်တော်ရပ်ကွက်၊  အောင်မြေသာစံမြို့နယ်၊မန္တလေးတိုင်းဒေသကြီး။   \\nဖုန်းနံပါတ်-",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "existing",
+        "primary_type": "existing",
+        "all_statuses": [
+          "existing",
+          "allowed_to_register"
+        ],
+        "registration_date": "၂၀-၈-၂၀၂၅/ အမှတ်စဉ် (၆၁)",
+        "announcement_number": "၅၈/၂၀၂၅",
+        "notes": ""
       },
       {
         "id": 60,
@@ -549,7 +1072,16 @@
         "chairman": "",
         "secretary_general": "",
         "address": "ခြံအမှတ် (၁၇/A)၊ ဇီးအုန်ကုန်းလမ်း၊ နံ့သာကုန်းရပ်ကွက်၊ အင်းစိန်မြို့နယ်၊ ရန်ကုန်တိုင်းဒေသကြီး။\\n ဖုန်းနံပါတ်-",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "existing",
+        "primary_type": "existing",
+        "all_statuses": [
+          "existing",
+          "allowed_to_register"
+        ],
+        "registration_date": "၂၀-၈-၂၀၂၅/ အမှတ်စဉ် (၆၂)",
+        "announcement_number": "၅၉/၂၀၂၅",
+        "notes": ""
       },
       {
         "id": 61,
@@ -558,171 +1090,35 @@
         "chairman": "",
         "secretary_general": "",
         "address": "အမှတ် (၆၉၁)၊ ခေမာရာမသီလရှင် စာသင်တိုက်ကျောင်းလမ်း၊ မရမ်းချောင်ရပ်၊ ဘင်လှိုင်ရပ်ကွက်၊ သထုံမြို့၊ မွန်ပြည်နယ်။\\nဖုန်းနံပါတ်-",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "existing",
+        "primary_type": "existing",
+        "all_statuses": [
+          "existing",
+          "allowed_to_register"
+        ],
+        "registration_date": "၂၀-၈-၂၀၂၅/ အမှတ်စဉ် (၆၃)",
+        "announcement_number": "၆၀/၂၀၂၅",
+        "notes": ""
       }
     ],
     "allowed_to_register": [
-      {
-        "id": 1,
-        "name_mm": "ပြည်ထောင်စုကြံ့ခိုင်ရေးနှင့်ဖွံ့ဖြိုးရေးပါတီ",
-        "type": "allowed_to_register",
-        "registration_date": "၂၀-၄-၂ဝ၂၃/ အမှတ်စဉ် (၁)",
-        "announcement_number": "၆/၂ဝ၂၃",
-        "notes": "",
-        "name_en": ""
-      },
-      {
-        "id": 2,
-        "name_mm": "မြန်မာပြည်သူ့ဒီမိုကရက်တစ်ပါတီ(MPD)",
-        "type": "allowed_to_register",
-        "registration_date": "၂၄-၄-၂ဝ၂၃/ အမှတ်စဉ် (၂)",
-        "announcement_number": "၇/၂ဝ၂၃",
-        "notes": "",
-        "name_en": ""
-      },
-      {
-        "id": 3,
-        "name_mm": "ဒီမိုကရေစီပါတီသစ်(ကချင်)",
-        "type": "allowed_to_register",
-        "registration_date": "၂၅-၄-၂ဝ၂၃/ အမှတ်စဉ်(၃)",
-        "announcement_number": "၈/၂ဝ၂၃",
-        "notes": "",
-        "name_en": ""
-      },
-      {
-        "id": 4,
-        "name_mm": "ဖလုံ-စဝေါ်ဒီမိုကရက်တစ်ပါတီ",
-        "type": "allowed_to_register",
-        "registration_date": "၂၅-၄-၂ဝ၂၃/ အမှတ်စဉ်(၄)",
-        "announcement_number": "၉/၂ဝ၂၃",
-        "notes": "",
-        "name_en": ""
-      },
-      {
-        "id": 5,
-        "name_mm": "တိုင်းရင်းသားစည်းလုံးညီညွတ်ရေးပါတီ",
-        "type": "allowed_to_register",
-        "registration_date": "၂၅-၄-၂ဝ၂၃/ အမှတ်စဉ် (၅)",
-        "announcement_number": "၁၀/၂ဝ၂၃",
-        "notes": "",
-        "name_en": ""
-      },
-      {
-        "id": 6,
-        "name_mm": "ရခိုင့်ဦးဆောင်ပါတီ",
-        "type": "allowed_to_register",
-        "registration_date": "၂-၅-၂ဝ၂၃/ အမှတ်စဉ် (၆)",
-        "announcement_number": "၁၁/၂ဝ၂၃",
-        "notes": "",
-        "name_en": "Arakan Front Party (AFP)"
-      },
-      {
-        "id": 7,
-        "name_mm": "တိုင်းလိုင်(ရှမ်းနီ)အမျိုးသားများဖွံ့ဖြိုးတိုးတက်ရေးပါတီ",
-        "type": "allowed_to_register",
-        "registration_date": "၂-၅-၂ဝ၂၃/ အမှတ်စဉ် (၇)",
-        "announcement_number": "၁၂/၂ဝ၂၃",
-        "notes": "",
-        "name_en": "TAI-LENG NATIONALITIES DEVELOPMENT PARTY (T.N.D.P)"
-      },
-      {
-        "id": 8,
-        "name_mm": "ရှမ်းနီ(တိုင်းလျန်)သွေးစည်းညီညွတ်ရေးပါတီ",
-        "type": "allowed_to_register",
-        "registration_date": "၂-၅-၂ဝ၂၃/ အမှတ်စဉ် (၈)",
-        "announcement_number": "၁၃/၂ဝ၂၃",
-        "notes": "",
-        "name_en": "Shan-Ni Solidarity Party (S.S.P)"
-      },
-      {
-        "id": 9,
-        "name_mm": "ရခိုင်ပြည်နယ်အမျိုးသားအင်အားစုပါတီ",
-        "type": "allowed_to_register",
-        "registration_date": "၂-၅-၂ဝ၂၃/ အမှတ်စဉ် (၉)",
-        "announcement_number": "၁၄/၂ဝ၂၃",
-        "notes": "",
-        "name_en": ""
-      },
-      {
-        "id": 10,
-        "name_mm": "ပအိုဝ်းအမျိုးသားအဖွဲ့ချုပ် (PNO) ပါတီ",
-        "type": "allowed_to_register",
-        "registration_date": "၄-၅-၂ဝ၂၃/ အမှတ်စဉ် (၁ဝ)",
-        "announcement_number": "၁၅/၂ဝ၂၃",
-        "notes": "",
-        "name_en": ""
-      },
       {
         "id": 11,
         "name_mm": "မြိုတိုင်းရင်းသားပါတီ",
         "type": "allowed_to_register",
         "registration_date": "၄-၅-၂ဝ၂၃/ အမှတ်စဉ် (၁၁)",
         "announcement_number": "၁၆/၂ဝ၂၃",
-        "notes": "",
-        "name_en": ""
-      },
-      {
-        "id": 12,
-        "name_mm": "လီဆူအမျိုးသားဖွံ့ဖြိုးတိုးတက်ရေးပါတီ (ဒူးလေးပါတီ)",
-        "type": "allowed_to_register",
-        "registration_date": "၅-၅-၂ဝ၂၃/ အမှတ်စဉ် (၁၂)",
-        "announcement_number": "၁၇/၂ဝ၂၃",
-        "notes": "",
-        "name_en": "LISU NATIONAL DEVELOPMENT  PARTY (L.N.D.P)"
-      },
-      {
-        "id": 13,
-        "name_mm": "ခမီအမျိုးသားဖွံ့ဖြိုးတိုးတက်ရေးပါတီ",
-        "type": "allowed_to_register",
-        "registration_date": "၅-၅-၂ဝ၂၃/ အမှတ်စဉ် (၁၃)",
-        "announcement_number": "၁၈/၂ဝ၂၃",
-        "notes": "",
-        "name_en": ""
-      },
-      {
-        "id": 14,
-        "name_mm": "အာခါအမျိုးသားဖွံ့ဖြိုးတိုးတက်ရေးပါတီ",
-        "type": "allowed_to_register",
-        "registration_date": "၈-၅-၂ဝ၂၃/ အမှတ်စဉ် (၁၄)",
-        "announcement_number": "၁၉/၂ဝ၂၃",
-        "notes": "",
-        "name_en": ""
-      },
-      {
-        "id": 15,
-        "name_mm": "အင်းအမျိုးသားအဖွဲ့ချုပ်ပါတီ (Inn National League Party)",
-        "type": "allowed_to_register",
-        "registration_date": "၁၆-၅-၂ဝ၂၃/ အမှတ်စဉ် (၁၅)",
-        "announcement_number": "၂၀/၂ဝ၂၃",
-        "notes": "",
-        "name_en": ""
-      },
-      {
-        "id": 16,
-        "name_mm": "ကိုးကန့်ဒီမိုကရေစီနှင့် ညီညွတ်ရေးပါတီ (KKDUP)",
-        "type": "allowed_to_register",
-        "registration_date": "၁၆-၅-၂ဝ၂၃/ အမှတ်စဉ် (၁၆)",
-        "announcement_number": "၂၁/၂ဝ၂၃",
-        "notes": "",
-        "name_en": ""
-      },
-      {
-        "id": 17,
-        "name_mm": "ကရင်အမျိုးသားဒီမိုကရက်တစ်ပါတီ (Karen National Democratic Party)",
-        "type": "allowed_to_register",
-        "registration_date": "၂၂-၅-၂ဝ၂၃/ အမှတ်စဉ် (၁၇)",
-        "announcement_number": "၂၂/၂ဝ၂၃",
-        "notes": "",
-        "name_en": ""
-      },
-      {
-        "id": 18,
-        "name_mm": "ကရင်ပြည်သူ့ပါတီ (KPP)",
-        "type": "allowed_to_register",
-        "registration_date": "၂၂-၅-၂ဝ၂၃/ အမှတ်စဉ် (၁၈)",
-        "announcement_number": "၂၃/၂ဝ၂၃",
-        "notes": "",
-        "name_en": ""
+        "notes": "ပုဒ်မ ၁၂ (က)အရ မဲဆန္ဒနယ်သုံးနယ်တွင် မယှဉ်ပြိုင်နိုင်၍ ပယ်ဖျက်ခြင်း",
+        "name_en": "",
+        "current_status": "allowed_to_register",
+        "primary_type": "allowed_to_register",
+        "all_statuses": [
+          "allowed_to_register",
+          "canceled"
+        ],
+        "cancellation_date": "၁၄-၉-၂ဝ၁ဝ",
+        "cancellation_announcement": "၉၇/၂ဝ၁ဝ"
       },
       {
         "id": 19,
@@ -730,278 +1126,16 @@
         "type": "allowed_to_register",
         "registration_date": "၃၀-၅-၂ဝ၂၃/ အမှတ်စဉ် (၁၉)",
         "announcement_number": "၂၄/၂ဝ၂၃",
-        "notes": "",
-        "name_en": ""
-      },
-      {
-        "id": 20,
-        "name_mm": "နာဂအမျိုးသားပါတီ",
-        "type": "allowed_to_register",
-        "registration_date": "၃၀-၅-၂ဝ၂၃/ အမှတ်စဉ် (၂၀)",
-        "announcement_number": "၂၅/၂ဝ၂၃",
-        "notes": "",
-        "name_en": "Naga National Party (NNP)"
-      },
-      {
-        "id": 21,
-        "name_mm": "ဓနုတိုင်းရင်းသားလူမျိုးများဒီမိုကရေစီပါတီ (Danu National Democracy Party)",
-        "type": "allowed_to_register",
-        "registration_date": "၅-၆-၂ဝ၂၃/ အမှတ်စဉ် (၂၁)",
-        "announcement_number": "၂၆/၂ဝ၂၃",
-        "notes": "",
-        "name_en": ""
-      },
-      {
-        "id": 22,
-        "name_mm": "ပြည်သူ့ရှေ့ဆောင်ပါတီ (People’s Pioneer Party)",
-        "type": "allowed_to_register",
-        "registration_date": "၅-၆-၂ဝ၂၃/ အမှတ်စဉ် (၂၂)",
-        "announcement_number": "၂၇/၂ဝ၂၃",
-        "notes": "",
-        "name_en": ""
-      },
-      {
-        "id": 23,
-        "name_mm": "အမျိုးသားနိုင်ငံရေးဒီမိုကရက်တစ်ပါတီ",
-        "type": "allowed_to_register",
-        "registration_date": "၉-၆-၂ဝ၂၃/ အမှတ်စဉ် (၂၃)",
-        "announcement_number": "၂၈/၂ဝ၂၃",
-        "notes": "",
-        "name_en": "Democratic Party of National Politics (DNP)"
-      },
-      {
-        "id": 24,
-        "name_mm": "အမျိုးသားနိုင်ငံရေးမဟာမိတ်များအဖွဲ့ချုပ်ပါတီ",
-        "type": "allowed_to_register",
-        "registration_date": "၉-၆-၂ဝ၂၃/ အမှတ်စဉ် (၂၄)",
-        "announcement_number": "၂၉/၂ဝ၂၃",
-        "notes": "",
-        "name_en": ""
-      },
-      {
-        "id": 25,
-        "name_mm": "ဖက်ဒရယ်ဒီမိုကရက်တစ်ပါတီ",
-        "type": "allowed_to_register",
-        "registration_date": "၉-၆-၂ဝ၂၃/ အမှတ်စဉ် (၂၅)",
-        "announcement_number": "၃၀/၂ဝ၂၃",
-        "notes": "",
-        "name_en": ""
-      },
-      {
-        "id": 26,
-        "name_mm": "ပြည်သူ့အလုပ်သမားပါတီ",
-        "type": "allowed_to_register",
-        "registration_date": "၂၁-၆-၂ဝ၂၃/ အမှတ်စဉ် (၂၆)",
-        "announcement_number": "၃၁/၂ဝ၂၃",
-        "notes": "",
-        "name_en": ""
-      },
-      {
-        "id": 27,
-        "name_mm": "မြန်မာနိုင်ငံ တောင်သူလယ်သမားဖွံ့ဖြိုးတိုးတက်ရေးပါတီ (Myanmar Farmers’ Development Party)",
-        "type": "allowed_to_register",
-        "registration_date": "၂၁-၆-၂ဝ၂၃/ အမှတ်စဉ် (၂၇)",
-        "announcement_number": "၃၂/၂ဝ၂၃",
-        "notes": "",
-        "name_en": ""
-      },
-      {
-        "id": 28,
-        "name_mm": "ရှမ်းနှင့်တိုင်းရင်းသားများဒီမိုကရက်တစ်ပါတီ(ကျားဖြူပါတီ)",
-        "type": "allowed_to_register",
-        "registration_date": "၂၃-၆-၂ဝ၂၃/ အမှတ်စဉ် (၂၈)",
-        "announcement_number": "၃၃/၂ဝ၂၃",
-        "notes": "",
-        "name_en": ""
-      },
-      {
-        "id": 29,
-        "name_mm": "ဒီမိုကရက်တစ်ပါတီ",
-        "type": "allowed_to_register",
-        "registration_date": "၂၃-၆-၂ဝ၂၃/ အမှတ်စဉ် (၂၉)",
-        "announcement_number": "၃၄/၂ဝ၂၃",
-        "notes": "",
-        "name_en": ""
-      },
-      {
-        "id": 30,
-        "name_mm": "ဒီမိုကရက်တစ်အင်အားစုလေဘာပါတီ",
-        "type": "allowed_to_register",
-        "registration_date": "၂၃-၆-၂ဝ၂၃/ အမှတ်စဉ် (၃၀)",
-        "announcement_number": "၃၅/၂ဝ၂၃",
-        "notes": "",
-        "name_en": ""
-      },
-      {
-        "id": 31,
-        "name_mm": "အမျိုးသမီးပါတီ (မွန်)",
-        "type": "allowed_to_register",
-        "registration_date": "၂၃-၆-၂ဝ၂၃/ အမှတ်စဉ် (၃၁)",
-        "announcement_number": "၃၆/၂ဝ၂၃",
-        "notes": "",
-        "name_en": ""
-      },
-      {
-        "id": 32,
-        "name_mm": "မြိုတိုင်းရင်းသားဖွံ့ဖြိုးရေးပါတီ (MRO NATIONAL DEVELOPMENT PARTY)",
-        "type": "allowed_to_register",
-        "registration_date": "၃-၇-၂ဝ၂၃/ အမှတ်စဉ် (၃၂)",
-        "announcement_number": "၃၇/၂ဝ၂၃",
-        "notes": "",
-        "name_en": ""
-      },
-      {
-        "id": 33,
-        "name_mm": "အမျိုးသားဒီမိုကရေစီပါတီသစ် (NEW NATIONAL DEMOCRACY PARTY)",
-        "type": "allowed_to_register",
-        "registration_date": "၁၄-၇-၂ဝ၂၃/ အမှတ်စဉ် (၃၃)",
-        "announcement_number": "၃၈/၂ဝ၂၃",
-        "notes": "",
-        "name_en": ""
-      },
-      {
-        "id": 34,
-        "name_mm": "အမျိုးသားအကျိုးစီးပွားတိုးတက်ရေးပါတီ (NIDP)",
-        "type": "allowed_to_register",
-        "registration_date": "၁၄-၇-၂ဝ၂၃/ အမှတ်စဉ် (၃၄)",
-        "announcement_number": "၃၉/၂ဝ၂၃",
-        "notes": "",
-        "name_en": ""
-      },
-      {
-        "id": 35,
-        "name_mm": "“ဝ”အမျိုးသားပါတီ (WA NATIONAL PARTY)",
-        "type": "allowed_to_register",
-        "registration_date": "၂၇-၇-၂ဝ၂၃/ အမှတ်စဉ် (၃၅)",
-        "announcement_number": "၄၀/၂ဝ၂၃",
-        "notes": "",
-        "name_en": ""
-      },
-      {
-        "id": 36,
-        "name_mm": "ခူမီးအမျိုးသားပါတီ",
-        "type": "allowed_to_register",
-        "registration_date": "၁၁-၈-၂ဝ၂၃/ အမှတ်စဉ် (၃၆)",
-        "announcement_number": "၄၁/၂ဝ၂၃",
-        "notes": "",
-        "name_en": ""
-      },
-      {
-        "id": 37,
-        "name_mm": "အမျိုးသားနိုင်ငံရေးအားမာန်သစ်ပါတီ",
-        "type": "allowed_to_register",
-        "registration_date": "၁၅-၉-၂ဝ၂၃/ အမှတ်စဉ် (၃၇)",
-        "announcement_number": "၄၂/၂ဝ၂၃",
-        "notes": "",
-        "name_en": ""
-      },
-      {
-        "id": 38,
-        "name_mm": "ညီညွတ်သောတိုင်းရင်းသားလူမျိုးများဒီမိုကရေစီပါတီ (United Nationalities Democracy Party)",
-        "type": "allowed_to_register",
-        "registration_date": "၇-၁၁-၂ဝ၂၃/ အမှတ်စဉ် (၃၈)",
-        "announcement_number": "၄၃/၂ဝ၂၃",
-        "notes": "",
-        "name_en": ""
-      },
-      {
-        "id": 39,
-        "name_mm": "ပြည်ထောင်စုငြိမ်းချမ်းရေးနှင့်ညီညွတ်ရေးပါတီ",
-        "type": "allowed_to_register",
-        "registration_date": "၇-၁၁-၂ဝ၂၃/ အမှတ်စဉ် (၃၉)",
-        "announcement_number": "၄၄/၂ဝ၂၃",
-        "notes": "",
-        "name_en": ""
-      },
-      {
-        "id": 40,
-        "name_mm": "မြန်မာနိုင်ငံတောင်သူလယ်သမား အလုပ်သမား ပြည်သူ့ပါတီ",
-        "type": "allowed_to_register",
-        "registration_date": "၁၃-၁၁-၂ဝ၂၃/ အမှတ်စဉ် (၄၀)",
-        "announcement_number": "၄၅/၂ဝ၂၃",
-        "notes": "",
-        "name_en": ""
-      },
-      {
-        "id": 41,
-        "name_mm": "ခေတ်သစ်ပြည်သူ့ပါတီ (Modern People Party)",
-        "type": "allowed_to_register",
-        "registration_date": "၂၀-၁၁-၂ဝ၂၃/ အမှတ်စဉ် (၄၁)",
-        "announcement_number": "၄၆/၂ဝ၂၃",
-        "notes": "",
-        "name_en": ""
-      },
-      {
-        "id": 42,
-        "name_mm": "လေဘာပါတီ (Labour Party)",
-        "type": "allowed_to_register",
-        "registration_date": "၂၀-၁၁-၂ဝ၂၃/ အမှတ်စဉ် (၄၂)",
-        "announcement_number": "၄၇/၂ဝ၂၃",
-        "notes": "",
-        "name_en": ""
-      },
-      {
-        "id": 43,
-        "name_mm": "အမျိုးသားဒီမိုကရေစီအင်အားစုပါတီ",
-        "type": "allowed_to_register",
-        "registration_date": "၂၃-၁၁-၂ဝ၂၃/ အမှတ်စဉ် (၄၃)",
-        "announcement_number": "၅၀/၂ဝ၂၃",
-        "notes": "",
-        "name_en": "National Democratic Force Party (NDF)"
-      },
-      {
-        "id": 44,
-        "name_mm": "၈၈ မျိုးဆက်ကျောင်းသားလူငယ်များ (ပြည်ထောင်စုမြန်မာနိုင်ငံ)ပါတီ\\n",
-        "type": "allowed_to_register",
-        "registration_date": "၂၉-၁၁-၂ဝ၂၃/ အမှတ်စဉ် (၄၄)",
-        "announcement_number": "၅၁/၂ဝ၂၃",
-        "notes": "",
-        "name_en": "THE 88 GENERATION STUDENT YOUTHS (UNION OF MYANMAR)PARTY"
-      },
-      {
-        "id": 45,
-        "name_mm": "ပြည်ထောင်စုမြန်မာနိုင်ငံအမျိုးသားနိုင်ငံရေးအဖွဲ့ချုပ်ပါတီ\\n(THE UNION OF MYANMAR FEDERATION OF NATIONAL POLITICS PARTY)",
-        "type": "allowed_to_register",
-        "registration_date": "၂၉-၁၁-၂ဝ၂၃/ အမှတ်စဉ် (၄၅)",
-        "announcement_number": "၅၂/၂ဝ၂၃",
-        "notes": "",
-        "name_en": ""
-      },
-      {
-        "id": 46,
-        "name_mm": "လူထုပါတီ (The Party for People)",
-        "type": "allowed_to_register",
-        "registration_date": "၂၁-၁၂-၂ဝ၂၃/ အမှတ်စဉ် (၄၆)",
-        "announcement_number": "၅၃/၂ဝ၂၃",
-        "notes": "",
-        "name_en": ""
-      },
-      {
-        "id": 47,
-        "name_mm": "ပြည်သူ့ပါတီ (People’s Party)",
-        "type": "allowed_to_register",
-        "registration_date": "၂၉-၁၂-၂ဝ၂၃/ အမှတ်စဉ် (၄၇)",
-        "announcement_number": "၅၄/၂ဝ၂၃",
-        "notes": "",
-        "name_en": ""
-      },
-      {
-        "id": 48,
-        "name_mm": "မွန်တိုးတက်ရေးပါတီ",
-        "type": "allowed_to_register",
-        "registration_date": "၁-၄-၂၀၂၄/ အမှတ်စဉ် (၄၈)",
-        "announcement_number": "၁/၂ဝ၂၄",
-        "notes": "",
-        "name_en": ""
-      },
-      {
-        "id": 49,
-        "name_mm": "ငြိမ်းချမ်းရေးအကျိုးဆောင်ပါတီ",
-        "type": "allowed_to_register",
-        "registration_date": "၂၅-၄-၂၀၂၄/ အမှတ်စဉ် (၄၉)",
-        "announcement_number": "၂/၂ဝ၂၄",
-        "notes": "",
-        "name_en": ""
+        "notes": "ပုဒ်မ ၁၂ ပုဒ်မခွဲ (ခ)အရ ပယ်ဖျက်ခြင်း",
+        "name_en": "",
+        "current_status": "allowed_to_register",
+        "primary_type": "allowed_to_register",
+        "all_statuses": [
+          "allowed_to_register",
+          "canceled"
+        ],
+        "cancellation_date": "၂၀-၁၁-၂၀၂၃",
+        "cancellation_announcement": "၄၈/၂၀၂၃"
       },
       {
         "id": 50,
@@ -1010,43 +1144,12 @@
         "registration_date": "၁၅-၇-၂၀၂၄/ အမှတ်စဉ် (၅၀)",
         "announcement_number": "၃/၂ဝ၂၄",
         "notes": "",
-        "name_en": ""
-      },
-      {
-        "id": 51,
-        "name_mm": "ကချင်ပြည်နယ်ပြည်သူ့ပါတီ",
-        "type": "allowed_to_register",
-        "registration_date": "၁၉-၈-၂၀၂၄/ အမှတ်စဉ် (၅၁)",
-        "announcement_number": "၄/၂ဝ၂၄",
-        "notes": "",
-        "name_en": "Kachin State People’s Party (KSPP)"
-      },
-      {
-        "id": 52,
-        "name_mm": "မွန်ညီညွတ်ရေးပါတီ (Mon Unity Party)",
-        "type": "allowed_to_register",
-        "registration_date": "၉-၉-၂၀၂၄/ အမှတ်စဉ် (၅၂)",
-        "announcement_number": "၅/၂ဝ၂၄",
-        "notes": "",
-        "name_en": ""
-      },
-      {
-        "id": 53,
-        "name_mm": "ပြည်ထောင်စုလယ်သမားအလုပ်သမားအင်အားစုပါတီ",
-        "type": "allowed_to_register",
-        "registration_date": "၁၂-၁၁-၂၀၂၄/ အမှတ်စဉ် (၅၃)",
-        "announcement_number": "၆/၂ဝ၂၄",
-        "notes": "",
-        "name_en": ""
-      },
-      {
-        "id": 54,
-        "name_mm": "လူမှုစီးပွားမြှင့်တင်ရေးပါတီ",
-        "type": "allowed_to_register",
-        "registration_date": "၁၈-၁၁-၂၀၂၄/ အမှတ်စဉ် (၅၄)",
-        "announcement_number": "၇/၂ဝ၂၄",
-        "notes": "",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "allowed_to_register",
+        "primary_type": "allowed_to_register",
+        "all_statuses": [
+          "allowed_to_register"
+        ]
       },
       {
         "id": 55,
@@ -1055,79 +1158,12 @@
         "registration_date": "၂-၁၂-၂၀၂၄/ အမှတ်စဉ် (၅၅)",
         "announcement_number": "၈/၂ဝ၂၄",
         "notes": "",
-        "name_en": "Unity and Development Party (UADP)"
-      },
-      {
-        "id": 56,
-        "name_mm": "ကယားပြည်နယ်ပြည်သူ့ပါတီ (KySPP)",
-        "type": "allowed_to_register",
-        "registration_date": "၂၀-၂-၂၀၂၅/ အမှတ်စဉ် (၅၆)",
-        "announcement_number": "၁/၂ဝ၂၅",
-        "notes": "",
-        "name_en": ""
-      },
-      {
-        "id": 57,
-        "name_mm": "ချင်းပြည်သစ်ကွန်ဂရက်ပါတီ",
-        "type": "allowed_to_register",
-        "registration_date": "၁၀-၇-၂၀၂၅/ အမှတ်စဉ် (၅၇)",
-        "announcement_number": "၂/၂ဝ၂၅",
-        "notes": "",
-        "name_en": "New Chinland Congress (NCC)"
-      },
-      {
-        "id": 58,
-        "name_mm": "ရခိုင်တိုင်းရင်းသားများပါတီ (Rakhine Nationalities Party)",
-        "type": "allowed_to_register",
-        "registration_date": "၄-၈-၂၀၂၅/ အမှတ်စဉ် (၅၈)",
-        "announcement_number": "၄၁/၂၀၂၅",
-        "notes": "",
-        "name_en": ""
-      },
-      {
-        "id": 59,
-        "name_mm": "ဇိုမီးအမျိုးသားပါတီ (Zomi National Party)",
-        "type": "allowed_to_register",
-        "registration_date": "၇-၈-၂၀၂၅/ အမှတ်စဉ် (၅၉)",
-        "announcement_number": "၄၂/၂၀၂၅",
-        "notes": "",
-        "name_en": ""
-      },
-      {
-        "id": 60,
-        "name_mm": "ပအိုဝ်းအမျိုးသားညီညွတ်ရေးပါတီ",
-        "type": "allowed_to_register",
-        "registration_date": "၈-၈-၂၀၂၅/ အမှတ်စဉ် (၆၀)",
-        "announcement_number": "၄၇/၂၀၂၅",
-        "notes": "",
-        "name_en": ""
-      },
-      {
-        "id": 61,
-        "name_mm": "မျိုးဆက်သစ်ဝံသာနုပါတီ",
-        "type": "allowed_to_register",
-        "registration_date": "၂၀-၈-၂၀၂၅/ အမှတ်စဉ် (၆၁)",
-        "announcement_number": "၅၈/၂၀၂၅",
-        "notes": "",
-        "name_en": ""
-      },
-      {
-        "id": 62,
-        "name_mm": "ငြိမ်းချမ်းရေးနှင့် ဖွံ့ဖြိုးရေးပါတီ",
-        "type": "allowed_to_register",
-        "registration_date": "၂၀-၈-၂၀၂၅/ အမှတ်စဉ် (၆၂)",
-        "announcement_number": "၅၉/၂၀၂၅",
-        "notes": "",
-        "name_en": ""
-      },
-      {
-        "id": 63,
-        "name_mm": "ပအိုဝ်းအမျိုးသား ဖွံ့ဖြိုးတိုးတက်ရေးပါတီ",
-        "type": "allowed_to_register",
-        "registration_date": "၂၀-၈-၂၀၂၅/ အမှတ်စဉ် (၆၃)",
-        "announcement_number": "၆၀/၂၀၂၅",
-        "notes": "",
-        "name_en": ""
+        "name_en": "Unity and Development Party (UADP)",
+        "current_status": "allowed_to_register",
+        "primary_type": "allowed_to_register",
+        "all_statuses": [
+          "allowed_to_register"
+        ]
       }
     ],
     "canceled": [
@@ -1140,7 +1176,12 @@
         "cancellation_date": "၁၄-၉-၂ဝ၁ဝ",
         "cancellation_announcement": "၉၇/၂ဝ၁ဝ",
         "notes": "ပုဒ်မ ၁၂ (က)အရ မဲဆန္ဒနယ်သုံးနယ်တွင် မယှဉ်ပြိုင်နိုင်၍ ပယ်ဖျက်ခြင်း",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "canceled",
+        "primary_type": "canceled",
+        "all_statuses": [
+          "canceled"
+        ]
       },
       {
         "id": 2,
@@ -1151,7 +1192,12 @@
         "cancellation_date": "၁၄-၉-၂ဝ၁ဝ",
         "cancellation_announcement": "၉၇/၂ဝ၁ဝ",
         "notes": "ပုဒ်မ ၁၂ (က)အရ မဲဆန္ဒနယ်သုံးနယ်တွင် မယှဉ်ပြိုင်နိုင်၍ ပယ်ဖျက်ခြင်း",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "canceled",
+        "primary_type": "canceled",
+        "all_statuses": [
+          "canceled"
+        ]
       },
       {
         "id": 3,
@@ -1162,18 +1208,12 @@
         "cancellation_date": "၁၄-၉-၂ဝ၁ဝ",
         "cancellation_announcement": "၉၇/၂ဝ၁ဝ",
         "notes": "ပုဒ်မ ၁၂ (က)အရ မဲဆန္ဒနယ်သုံးနယ်တွင် မယှဉ်ပြိုင်နိုင်၍ ပယ်ဖျက်ခြင်း",
-        "name_en": ""
-      },
-      {
-        "id": 4,
-        "name_mm": "မြိုတိုင်းရင်းသားပါတီ",
-        "type": "canceled",
-        "registration_date": "၅-၇-၂ဝ၁ဝ/ အမှတ်စဉ် (၃၅)",
-        "announcement_number": "၇၈/၂ဝ၁ဝ",
-        "cancellation_date": "၁၄-၉-၂ဝ၁ဝ",
-        "cancellation_announcement": "၉၇/၂ဝ၁ဝ",
-        "notes": "ပုဒ်မ ၁၂ (က)အရ မဲဆန္ဒနယ်သုံးနယ်တွင် မယှဉ်ပြိုင်နိုင်၍ ပယ်ဖျက်ခြင်း",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "canceled",
+        "primary_type": "canceled",
+        "all_statuses": [
+          "canceled"
+        ]
       },
       {
         "id": 5,
@@ -1184,7 +1224,12 @@
         "cancellation_date": "၁၄-၉-၂ဝ၁ဝ",
         "cancellation_announcement": "၉၇/၂ဝ၁ဝ",
         "notes": "ပုဒ်မ ၁၂ (က)အရ မဲဆန္ဒနယ်သုံးနယ်တွင် မယှဉ်ပြိုင်နိုင်၍ ပယ်ဖျက်ခြင်း",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "canceled",
+        "primary_type": "canceled",
+        "all_statuses": [
+          "canceled"
+        ]
       },
       {
         "id": 6,
@@ -1195,7 +1240,12 @@
         "cancellation_date": "၇-၂-၂ဝ၁၂",
         "cancellation_announcement": "၁ဝ/၂ဝ၁၂",
         "notes": "ပုဒ်မ ၁၂ (က)အရ မဲဆန္ဒနယ်သုံးနယ်တွင် မယှဉ်ပြိုင်နိုင်၍ ပယ်ဖျက်ခြင်း",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "canceled",
+        "primary_type": "canceled",
+        "all_statuses": [
+          "canceled"
+        ]
       },
       {
         "id": 7,
@@ -1206,7 +1256,12 @@
         "cancellation_date": "၇-၂-၂ဝ၁၂",
         "cancellation_announcement": "၁ဝ/၂ဝ၁၂",
         "notes": "ပုဒ်မ ၁၂ (က)အရ မဲဆန္ဒနယ်သုံးနယ်တွင် မယှဉ်ပြိုင်နိုင်၍ ပယ်ဖျက်ခြင်း",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "canceled",
+        "primary_type": "canceled",
+        "all_statuses": [
+          "canceled"
+        ]
       },
       {
         "id": 8,
@@ -1217,7 +1272,12 @@
         "cancellation_date": "၆-၃-၂ဝ၁၄",
         "cancellation_announcement": "၉/၂ဝ၁၄",
         "notes": "ညွှန်ကြားချက် အမှတ် (၁/၂ဝ၁၃)အရ ပယ်ဖျက်ခြင်း",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "canceled",
+        "primary_type": "canceled",
+        "all_statuses": [
+          "canceled"
+        ]
       },
       {
         "id": 9,
@@ -1228,7 +1288,12 @@
         "cancellation_date": "၆-၃-၂ဝ၁၄",
         "cancellation_announcement": "၉/၂ဝ၁၄",
         "notes": "ညွှန်ကြားချက် အမှတ် (၁/၂ဝ၁၃)အရ ပယ်ဖျက်ခြင်း",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "canceled",
+        "primary_type": "canceled",
+        "all_statuses": [
+          "canceled"
+        ]
       },
       {
         "id": "၁ဝ",
@@ -1239,7 +1304,12 @@
         "cancellation_date": "၈-၉-၂ဝ၁၇",
         "cancellation_announcement": "၂၃/၂ဝ၁၇",
         "notes": "နည်းဥပဒေ ၂၅ နှင့် ညွှန်ကြားချက် အမှတ် (၁/၂ဝ၁၃)အရ ပယ်ဖျက်ခြင်း",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "canceled",
+        "primary_type": "canceled",
+        "all_statuses": [
+          "canceled"
+        ]
       },
       {
         "id": 11,
@@ -1250,7 +1320,12 @@
         "cancellation_date": "၈-၉-၂ဝ၁၇",
         "cancellation_announcement": "၂၃/၂ဝ၁၇",
         "notes": "နည်းဥပဒေ ၂၅ နှင့် ညွှန်ကြားချက် အမှတ် (၁/၂ဝ၁၃)အရ ပယ်ဖျက်ခြင်း",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "canceled",
+        "primary_type": "canceled",
+        "all_statuses": [
+          "canceled"
+        ]
       },
       {
         "id": 12,
@@ -1261,7 +1336,12 @@
         "cancellation_date": "၂၂-၂-၂ဝ၁၈",
         "cancellation_announcement": "၂၇/၂ဝ၁၈",
         "notes": "နည်းဥပဒေ ၂၅ နှင့်ညွှန်ကြားချက်  အမှတ် (၁/၂ဝ၁၃)အရ ပယ်ဖျက်ခြင်း",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "canceled",
+        "primary_type": "canceled",
+        "all_statuses": [
+          "canceled"
+        ]
       },
       {
         "id": 13,
@@ -1272,7 +1352,12 @@
         "cancellation_date": "၂၂-၂-၂ဝ၁၈",
         "cancellation_announcement": "၂၇/၂ဝ၁၈",
         "notes": "နည်းဥပဒေ ၂၅ နှင့် ညွှန်ကြားချက်အမှတ် (၁/၂ဝ၁၃)အရ ပယ်ဖျက်ခြင်း",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "canceled",
+        "primary_type": "canceled",
+        "all_statuses": [
+          "canceled"
+        ]
       },
       {
         "id": 14,
@@ -1283,7 +1368,12 @@
         "cancellation_date": "၂၂-၂-၂ဝ၁၈",
         "cancellation_announcement": "၂၇/၂ဝ၁၈",
         "notes": "နည်းဥပဒေ ၂၅ နှင့် ညွှန်ကြားချက်အမှတ် (၁/၂ဝ၁၃)အရ ပယ်ဖျက်ခြင်း",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "canceled",
+        "primary_type": "canceled",
+        "all_statuses": [
+          "canceled"
+        ]
       },
       {
         "id": 15,
@@ -1294,7 +1384,12 @@
         "cancellation_date": "၂၄-၈-၂၀၁၈",
         "cancellation_announcement": "၁၁၆/၂၀၁၈",
         "notes": "ပုဒ်မ ၁၂(က)အရ မဲဆန္ဒနယ်သုံးနယ်တွင် မယှဉ်ပြိုင်နိုင်၍ ပယ်ဖျက်ခြင်း",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "canceled",
+        "primary_type": "canceled",
+        "all_statuses": [
+          "canceled"
+        ]
       },
       {
         "id": 16,
@@ -1305,7 +1400,12 @@
         "cancellation_date": "၂၉-၃-၂၀၁၉",
         "cancellation_announcement": "၄၂ / ၂၀၁၉",
         "notes": "ပုဒ်မ ၁၉ (က)အရ ပယ်ဖျက်ခြင်း",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "canceled",
+        "primary_type": "canceled",
+        "all_statuses": [
+          "canceled"
+        ]
       },
       {
         "id": 17,
@@ -1316,7 +1416,12 @@
         "cancellation_date": "၇-၆-၂၀၁၉",
         "cancellation_announcement": "၈၆/၂၀၁၉",
         "notes": "နည်းဥပဒေ ၂၅ အရ ပယ်ဖျက်ခြင်း",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "canceled",
+        "primary_type": "canceled",
+        "all_statuses": [
+          "canceled"
+        ]
       },
       {
         "id": 18,
@@ -1327,7 +1432,12 @@
         "cancellation_date": "၇-၆-၂၀၁၉",
         "cancellation_announcement": "၈၆/၂၀၁၉",
         "notes": "နည်းဥပဒေ ၂၅ အရပယ်ဖျက်ခြင်း",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "canceled",
+        "primary_type": "canceled",
+        "all_statuses": [
+          "canceled"
+        ]
       },
       {
         "id": 19,
@@ -1338,7 +1448,12 @@
         "cancellation_date": "၇-၆-၂၀၁၉",
         "cancellation_announcement": "၈၆/၂၀၁၉",
         "notes": "နည်းဥပဒေ ၂၅ အရပယ်ဖျက်ခြင်း",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "canceled",
+        "primary_type": "canceled",
+        "all_statuses": [
+          "canceled"
+        ]
       },
       {
         "id": 20,
@@ -1349,7 +1464,12 @@
         "cancellation_date": "၁၃-၆-၂၀၁၉",
         "cancellation_announcement": "၈၈/၂၀၁၉",
         "notes": "ပုဒ်မ ၁၉ (က)အရ ပယ်ဖျက်ခြင်း",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "canceled",
+        "primary_type": "canceled",
+        "all_statuses": [
+          "canceled"
+        ]
       },
       {
         "id": 21,
@@ -1360,7 +1480,12 @@
         "cancellation_date": "၁၁-၇-၂၀၁၉",
         "cancellation_announcement": "၁၁၉/၂၀၁၉",
         "notes": "နည်းဥပဒေ ၂၅ အရပယ်ဖျက်ခြင်း",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "canceled",
+        "primary_type": "canceled",
+        "all_statuses": [
+          "canceled"
+        ]
       },
       {
         "id": 22,
@@ -1371,7 +1496,12 @@
         "cancellation_date": "၁၁-၇-၂၀၁၉",
         "cancellation_announcement": "၁၁၉/၂၀၁၉",
         "notes": "နည်းဥပဒေ ၂၅ အရပယ်ဖျက်ခြင်း",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "canceled",
+        "primary_type": "canceled",
+        "all_statuses": [
+          "canceled"
+        ]
       },
       {
         "id": 23,
@@ -1382,7 +1512,12 @@
         "cancellation_date": "၁၁-၇-၂၀၁၉",
         "cancellation_announcement": "၁၁၉/၂၀၁၉",
         "notes": "နည်းဥပဒေ ၂၅ အရပယ်ဖျက်ခြင်း",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "canceled",
+        "primary_type": "canceled",
+        "all_statuses": [
+          "canceled"
+        ]
       },
       {
         "id": 24,
@@ -1393,7 +1528,12 @@
         "cancellation_date": "၁၁-၇-၂၀၁၉",
         "cancellation_announcement": "၁၂၁/၂၀၁၉",
         "notes": "နည်းဥပဒေ ၂၅ အရပယ်ဖျက်ခြင်း",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "canceled",
+        "primary_type": "canceled",
+        "all_statuses": [
+          "canceled"
+        ]
       },
       {
         "id": 25,
@@ -1404,7 +1544,12 @@
         "cancellation_date": "၁၁-၇-၂၀၁၉",
         "cancellation_announcement": "၁၂၁/၂၀၁၉",
         "notes": "နည်းဥပဒေ ၂၅ အရပယ်ဖျက်ခြင်း",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "canceled",
+        "primary_type": "canceled",
+        "all_statuses": [
+          "canceled"
+        ]
       },
       {
         "id": 26,
@@ -1415,7 +1560,12 @@
         "cancellation_date": "၂၀-၈−၂၀၁၉",
         "cancellation_announcement": "၁၆၁/ ၂၀၁၉",
         "notes": "ပုဒ်မ ၂၄ (င) အရပယ်ဖျက်ခြင်း",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "canceled",
+        "primary_type": "canceled",
+        "all_statuses": [
+          "canceled"
+        ]
       },
       {
         "id": 27,
@@ -1426,7 +1576,12 @@
         "cancellation_date": "၂၀-၂-၂၀၂၀",
         "cancellation_announcement": "၅၆/၂၀၂၀",
         "notes": "ပုဒ်မ ၁၉ (က)အရ ပယ်ဖျက်ခြင်း",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "canceled",
+        "primary_type": "canceled",
+        "all_statuses": [
+          "canceled"
+        ]
       },
       {
         "id": 28,
@@ -1437,7 +1592,12 @@
         "cancellation_date": "၅-၃-၂၀၂၀",
         "cancellation_announcement": "၆၃/၂၀၂၀",
         "notes": "ပုဒ်မ ၁၉ (က)အရ ပယ်ဖျက်ခြင်း",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "canceled",
+        "primary_type": "canceled",
+        "all_statuses": [
+          "canceled"
+        ]
       },
       {
         "id": 29,
@@ -1448,7 +1608,12 @@
         "cancellation_date": "၂-၄-၂၀၂၀",
         "cancellation_announcement": "၇၈/၂၀၂၀",
         "notes": "နည်းဥပဒေ ၂၅ အရပယ်ဖျက်ခြင်း",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "canceled",
+        "primary_type": "canceled",
+        "all_statuses": [
+          "canceled"
+        ]
       },
       {
         "id": 30,
@@ -1459,7 +1624,12 @@
         "cancellation_date": "၂-၄-၂၀၂၀",
         "cancellation_announcement": "၇၈/၂၀၂၀",
         "notes": "နည်းဥပဒေ ၂၅ အရပယ်ဖျက်ခြင်း",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "canceled",
+        "primary_type": "canceled",
+        "all_statuses": [
+          "canceled"
+        ]
       },
       {
         "id": 31,
@@ -1470,7 +1640,12 @@
         "cancellation_date": "၂-၄-၂၀၂၀",
         "cancellation_announcement": "၇၈/၂၀၂၀",
         "notes": "နည်းဥပဒေ ၂၅ အရပယ်ဖျက်ခြင်း",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "canceled",
+        "primary_type": "canceled",
+        "all_statuses": [
+          "canceled"
+        ]
       },
       {
         "id": 32,
@@ -1481,7 +1656,12 @@
         "cancellation_date": "၆-၇-၂၀၂၀",
         "cancellation_announcement": "၁၂၄/၂၀၂၀",
         "notes": "ပုဒ်မ ၁၂(က)(၇)ပါ ပြဋ္ဌာန်းချက်များနှင့် ငြိစွန်းနေသော ကြောင့် ပုဒ်မ ၁၂(ခ)အရ ပယ်ဖျက်ခြင်း",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "canceled",
+        "primary_type": "canceled",
+        "all_statuses": [
+          "canceled"
+        ]
       },
       {
         "id": 33,
@@ -1492,7 +1672,12 @@
         "cancellation_date": "၂၃-၇-၂၀၂၀",
         "cancellation_announcement": "၁၃၉/၂၀၂၀",
         "notes": "ပုဒ်မ ၂၄(င)အရ ပယ်ဖျက်ခြင်း",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "canceled",
+        "primary_type": "canceled",
+        "all_statuses": [
+          "canceled"
+        ]
       },
       {
         "id": 34,
@@ -1503,7 +1688,12 @@
         "cancellation_date": "၁၃-၈-၂၀၂၀",
         "cancellation_announcement": "၁၅၂/၂၀၂၀",
         "notes": "ပုဒ်မ ၁၂ (က)အရ မဲဆန္ဒနယ်  သုံးနယ်တွင် မယှဉ်ပြိုင်နိုင်၍ ပယ်ဖျက်ခြင်း",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "canceled",
+        "primary_type": "canceled",
+        "all_statuses": [
+          "canceled"
+        ]
       },
       {
         "id": 35,
@@ -1514,7 +1704,12 @@
         "cancellation_date": "၁၇-၁၀-၂၀၂၀",
         "cancellation_announcement": "၁၉၈/၂၀၂၀",
         "notes": "ပုဒ်မ ၁၂၊ ပုဒ်မခွဲ(က)၊ ပုဒ်မခွဲငယ် (၄) နှင့် နည်းဥပဒေ ၁၅၊ နည်း  ဥပဒေခွဲ (ခ)၊ (ဂ)၊ (စ) တို့အရ ပယ်ဖျက်ခြင်း",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "canceled",
+        "primary_type": "canceled",
+        "all_statuses": [
+          "canceled"
+        ]
       },
       {
         "id": 36,
@@ -1525,7 +1720,12 @@
         "cancellation_date": "၁၆-၁၁-၂၀၂၁",
         "cancellation_announcement": "၄/၂၀၂၁",
         "notes": "ပုဒ်မ ၁၉(က)အရ ပယ်ဖျက်ခြင်း",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "canceled",
+        "primary_type": "canceled",
+        "all_statuses": [
+          "canceled"
+        ]
       },
       {
         "id": 37,
@@ -1536,7 +1736,12 @@
         "cancellation_date": "၂၇-၁၀-၂၀၂၂",
         "cancellation_announcement": "၁/၂၀၂၂",
         "notes": "ပုဒ်မ ၁၉(က)အရ ပယ်ဖျက်ခြင်း",
-        "name_en": "UNION BETTERMENT PARTY (UBP)"
+        "name_en": "UNION BETTERMENT PARTY (UBP)",
+        "current_status": "canceled",
+        "primary_type": "canceled",
+        "all_statuses": [
+          "canceled"
+        ]
       },
       {
         "id": 38,
@@ -1547,7 +1752,12 @@
         "cancellation_date": "၂၄-၃-၂၀၂၃",
         "cancellation_announcement": "၄/၂၀၂၃",
         "notes": "ပုဒ်မ ၁၉(က)အရ ပယ်ဖျက်ခြင်း",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "canceled",
+        "primary_type": "canceled",
+        "all_statuses": [
+          "canceled"
+        ]
       },
       {
         "id": 39,
@@ -1558,7 +1768,12 @@
         "cancellation_date": "၂၉-၃-၂၀၂၃",
         "cancellation_announcement": "၅/၂၀၂၃",
         "notes": "ပုဒ်မ ၂၅ အရ သတ်မှတ်ကာလအတွင်းလျှောက်ထားခြင်းမရှိပါသဖြင့် ပယ်ဖျက်ခြင်း",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "canceled",
+        "primary_type": "canceled",
+        "all_statuses": [
+          "canceled"
+        ]
       },
       {
         "id": 40,
@@ -1569,7 +1784,12 @@
         "cancellation_date": "၂၉-၃-၂၀၂၃",
         "cancellation_announcement": "၅/၂၀၂၃",
         "notes": "ပုဒ်မ ၂၅ အရ သတ်မှတ်ကာလအတွင်းလျှောက်ထားခြင်းမရှိပါသဖြင့် ပယ်ဖျက်ခြင်း",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "canceled",
+        "primary_type": "canceled",
+        "all_statuses": [
+          "canceled"
+        ]
       },
       {
         "id": 41,
@@ -1580,7 +1800,12 @@
         "cancellation_date": "၂၉-၃-၂၀၂၃",
         "cancellation_announcement": "၅/၂၀၂၃",
         "notes": "ပုဒ်မ ၂၅ အရ သတ်မှတ်ကာလအတွင်းလျှောက်ထားခြင်းမရှိပါသဖြင့် ပယ်ဖျက်ခြင်း",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "canceled",
+        "primary_type": "canceled",
+        "all_statuses": [
+          "canceled"
+        ]
       },
       {
         "id": 42,
@@ -1591,7 +1816,12 @@
         "cancellation_date": "၂၉-၃-၂၀၂၃",
         "cancellation_announcement": "၅/၂၀၂၃",
         "notes": "ပုဒ်မ ၂၅ အရ သတ်မှတ်ကာလအတွင်းလျှောက်ထားခြင်းမရှိပါသဖြင့် ပယ်ဖျက်ခြင်း",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "canceled",
+        "primary_type": "canceled",
+        "all_statuses": [
+          "canceled"
+        ]
       },
       {
         "id": 43,
@@ -1602,7 +1832,12 @@
         "cancellation_date": "၂၉-၃-၂၀၂၃",
         "cancellation_announcement": "၅/၂၀၂၃",
         "notes": "ပုဒ်မ ၂၅ အရ သတ်မှတ်ကာလအတွင်းလျှောက်ထားခြင်းမရှိပါသဖြင့် ပယ်ဖျက်ခြင်း",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "canceled",
+        "primary_type": "canceled",
+        "all_statuses": [
+          "canceled"
+        ]
       },
       {
         "id": 44,
@@ -1613,7 +1848,12 @@
         "cancellation_date": "၂၉-၃-၂၀၂၃",
         "cancellation_announcement": "၅/၂၀၂၃",
         "notes": "ပုဒ်မ ၂၅ အရ သတ်မှတ်ကာလအတွင်းလျှောက်ထားခြင်းမရှိပါသဖြင့် ပယ်ဖျက်ခြင်း",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "canceled",
+        "primary_type": "canceled",
+        "all_statuses": [
+          "canceled"
+        ]
       },
       {
         "id": 45,
@@ -1624,7 +1864,12 @@
         "cancellation_date": "၂၉-၃-၂၀၂၃",
         "cancellation_announcement": "၅/၂၀၂၃",
         "notes": "ပုဒ်မ ၂၅ အရ သတ်မှတ်ကာလအတွင်းလျှောက်ထားခြင်းမရှိပါသဖြင့် ပယ်ဖျက်ခြင်း",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "canceled",
+        "primary_type": "canceled",
+        "all_statuses": [
+          "canceled"
+        ]
       },
       {
         "id": 46,
@@ -1635,7 +1880,12 @@
         "cancellation_date": "၂၉-၃-၂၀၂၃",
         "cancellation_announcement": "၅/၂၀၂၃",
         "notes": "ပုဒ်မ ၂၅ အရ သတ်မှတ်ကာလအတွင်းလျှောက်ထားခြင်းမရှိပါသဖြင့် ပယ်ဖျက်ခြင်း",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "canceled",
+        "primary_type": "canceled",
+        "all_statuses": [
+          "canceled"
+        ]
       },
       {
         "id": 47,
@@ -1646,7 +1896,12 @@
         "cancellation_date": "၂၉-၃-၂၀၂၃",
         "cancellation_announcement": "၅/၂၀၂၃",
         "notes": "ပုဒ်မ ၂၅ အရ သတ်မှတ်ကာလအတွင်းလျှောက်ထားခြင်းမရှိပါသဖြင့် ပယ်ဖျက်ခြင်း",
-        "name_en": "Ethnic National Development Party (ENDP)"
+        "name_en": "Ethnic National Development Party (ENDP)",
+        "current_status": "canceled",
+        "primary_type": "canceled",
+        "all_statuses": [
+          "canceled"
+        ]
       },
       {
         "id": 48,
@@ -1657,7 +1912,12 @@
         "cancellation_date": "၂၉-၃-၂၀၂၃",
         "cancellation_announcement": "၅/၂၀၂၃",
         "notes": "ပုဒ်မ ၂၅ အရ သတ်မှတ်ကာလအတွင်းလျှောက်ထားခြင်းမရှိပါသဖြင့် ပယ်ဖျက်ခြင်း",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "canceled",
+        "primary_type": "canceled",
+        "all_statuses": [
+          "canceled"
+        ]
       },
       {
         "id": 49,
@@ -1668,7 +1928,12 @@
         "cancellation_date": "၂၉-၃-၂၀၂၃",
         "cancellation_announcement": "၅/၂၀၂၃",
         "notes": "ပုဒ်မ ၂၅ အရ သတ်မှတ်ကာလအတွင်းလျှောက်ထားခြင်းမရှိပါသဖြင့် ပယ်ဖျက်ခြင်း",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "canceled",
+        "primary_type": "canceled",
+        "all_statuses": [
+          "canceled"
+        ]
       },
       {
         "id": 50,
@@ -1679,18 +1944,12 @@
         "cancellation_date": "၂၉-၃-၂၀၂၃",
         "cancellation_announcement": "၅/၂၀၂၃",
         "notes": "ပုဒ်မ ၂၅ အရ သတ်မှတ်ကာလအတွင်းလျှောက်ထားခြင်းမရှိပါသဖြင့် ပယ်ဖျက်ခြင်း",
-        "name_en": ""
-      },
-      {
-        "id": 51,
-        "name_mm": "မြန်မာ့လူ့ဘောင်သစ်ဒီမိုကရက်တစ်ပါတီ",
-        "type": "canceled",
-        "registration_date": "၁၆-၁-၂ဝ၁၂/ အမှတ်စဉ် (၄၉)",
-        "announcement_number": "၆/၂ဝ၁၂",
-        "cancellation_date": "၂၉-၃-၂၀၂၃",
-        "cancellation_announcement": "၅/၂၀၂၃",
-        "notes": "ပုဒ်မ ၂၅ အရ သတ်မှတ်ကာလအတွင်းလျှောက်ထားခြင်းမရှိပါသဖြင့် ပယ်ဖျက်ခြင်း",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "canceled",
+        "primary_type": "canceled",
+        "all_statuses": [
+          "canceled"
+        ]
       },
       {
         "id": 52,
@@ -1701,7 +1960,12 @@
         "cancellation_date": "၂၉-၃-၂၀၂၃",
         "cancellation_announcement": "၅/၂၀၂၃",
         "notes": "ပုဒ်မ ၂၅ အရ သတ်မှတ်ကာလအတွင်းလျှောက်ထားခြင်းမရှိပါသဖြင့် ပယ်ဖျက်ခြင်း",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "canceled",
+        "primary_type": "canceled",
+        "all_statuses": [
+          "canceled"
+        ]
       },
       {
         "id": 53,
@@ -1712,7 +1976,12 @@
         "cancellation_date": "၂၉-၃-၂၀၂၃",
         "cancellation_announcement": "၅/၂၀၂၃",
         "notes": "ပုဒ်မ ၂၅ အရ သတ်မှတ်ကာလအတွင်းလျှောက်ထားခြင်းမရှိပါသဖြင့် ပယ်ဖျက်ခြင်း",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "canceled",
+        "primary_type": "canceled",
+        "all_statuses": [
+          "canceled"
+        ]
       },
       {
         "id": 54,
@@ -1723,7 +1992,12 @@
         "cancellation_date": "၂၉-၃-၂၀၂၃",
         "cancellation_announcement": "၅/၂၀၂၃",
         "notes": "ပုဒ်မ ၂၅ အရ သတ်မှတ်ကာလအတွင်းလျှောက်ထားခြင်းမရှိပါသဖြင့် ပယ်ဖျက်ခြင်း",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "canceled",
+        "primary_type": "canceled",
+        "all_statuses": [
+          "canceled"
+        ]
       },
       {
         "id": 55,
@@ -1734,7 +2008,12 @@
         "cancellation_date": "၂၉-၃-၂၀၂၃",
         "cancellation_announcement": "၅/၂၀၂၃",
         "notes": "ပုဒ်မ ၂၅ အရ သတ်မှတ်ကာလအတွင်းလျှောက်ထားခြင်းမရှိပါသဖြင့် ပယ်ဖျက်ခြင်း",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "canceled",
+        "primary_type": "canceled",
+        "all_statuses": [
+          "canceled"
+        ]
       },
       {
         "id": 56,
@@ -1745,7 +2024,12 @@
         "cancellation_date": "၂၉-၃-၂၀၂၃",
         "cancellation_announcement": "၅/၂၀၂၃",
         "notes": "ပုဒ်မ ၂၅ အရ သတ်မှတ်ကာလအတွင်းလျှောက်ထားခြင်းမရှိပါသဖြင့် ပယ်ဖျက်ခြင်း",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "canceled",
+        "primary_type": "canceled",
+        "all_statuses": [
+          "canceled"
+        ]
       },
       {
         "id": 57,
@@ -1756,7 +2040,12 @@
         "cancellation_date": "၂၉-၃-၂၀၂၃",
         "cancellation_announcement": "၅/၂၀၂၃",
         "notes": "ပုဒ်မ ၂၅ အရ သတ်မှတ်ကာလအတွင်းလျှောက်ထားခြင်းမရှိပါသဖြင့် ပယ်ဖျက်ခြင်း",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "canceled",
+        "primary_type": "canceled",
+        "all_statuses": [
+          "canceled"
+        ]
       },
       {
         "id": 58,
@@ -1767,7 +2056,12 @@
         "cancellation_date": "၂၉-၃-၂၀၂၃",
         "cancellation_announcement": "၅/၂၀၂၃",
         "notes": "ပုဒ်မ ၂၅ အရ သတ်မှတ်ကာလအတွင်းလျှောက်ထားခြင်းမရှိပါသဖြင့် ပယ်ဖျက်ခြင်း",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "canceled",
+        "primary_type": "canceled",
+        "all_statuses": [
+          "canceled"
+        ]
       },
       {
         "id": 59,
@@ -1778,7 +2072,12 @@
         "cancellation_date": "၂၉-၃-၂၀၂၃",
         "cancellation_announcement": "၅/၂၀၂၃",
         "notes": "ပုဒ်မ ၂၅ အရ သတ်မှတ်ကာလအတွင်းလျှောက်ထားခြင်းမရှိပါသဖြင့် ပယ်ဖျက်ခြင်း",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "canceled",
+        "primary_type": "canceled",
+        "all_statuses": [
+          "canceled"
+        ]
       },
       {
         "id": 60,
@@ -1789,7 +2088,12 @@
         "cancellation_date": "၂၉-၃-၂၀၂၃",
         "cancellation_announcement": "၅/၂၀၂၃",
         "notes": "ပုဒ်မ ၂၅ အရ သတ်မှတ်ကာလအတွင်းလျှောက်ထားခြင်းမရှိပါသဖြင့် ပယ်ဖျက်ခြင်း",
-        "name_en": "KHUMI (KHAMI) NATIONAL PARTY"
+        "name_en": "KHUMI (KHAMI) NATIONAL PARTY",
+        "current_status": "canceled",
+        "primary_type": "canceled",
+        "all_statuses": [
+          "canceled"
+        ]
       },
       {
         "id": 61,
@@ -1800,7 +2104,12 @@
         "cancellation_date": "၂၉-၃-၂၀၂၃",
         "cancellation_announcement": "၅/၂၀၂၃",
         "notes": "ပုဒ်မ ၂၅ အရ သတ်မှတ်ကာလအတွင်းလျှောက်ထားခြင်းမရှိပါသဖြင့် ပယ်ဖျက်ခြင်း",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "canceled",
+        "primary_type": "canceled",
+        "all_statuses": [
+          "canceled"
+        ]
       },
       {
         "id": 62,
@@ -1811,7 +2120,12 @@
         "cancellation_date": "၂၉-၃-၂၀၂၃",
         "cancellation_announcement": "၅/၂၀၂၃",
         "notes": "ပုဒ်မ ၂၅ အရ သတ်မှတ်ကာလအတွင်းလျှောက်ထားခြင်းမရှိပါသဖြင့် ပယ်ဖျက်ခြင်း",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "canceled",
+        "primary_type": "canceled",
+        "all_statuses": [
+          "canceled"
+        ]
       },
       {
         "id": 63,
@@ -1822,7 +2136,12 @@
         "cancellation_date": "၂၉-၃-၂၀၂၃",
         "cancellation_announcement": "၅/၂၀၂၃",
         "notes": "ပုဒ်မ ၂၅ အရ သတ်မှတ်ကာလအတွင်းလျှောက်ထားခြင်းမရှိပါသဖြင့် ပယ်ဖျက်ခြင်း",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "canceled",
+        "primary_type": "canceled",
+        "all_statuses": [
+          "canceled"
+        ]
       },
       {
         "id": 64,
@@ -1833,7 +2152,12 @@
         "cancellation_date": "၂၉-၃-၂၀၂၃",
         "cancellation_announcement": "၅/၂၀၂၃",
         "notes": "ပုဒ်မ ၂၅ အရ သတ်မှတ်ကာလအတွင်းလျှောက်ထားခြင်းမရှိပါသဖြင့် ပယ်ဖျက်ခြင်း",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "canceled",
+        "primary_type": "canceled",
+        "all_statuses": [
+          "canceled"
+        ]
       },
       {
         "id": 65,
@@ -1844,7 +2168,12 @@
         "cancellation_date": "၂၉-၃-၂၀၂၃",
         "cancellation_announcement": "၅/၂၀၂၃",
         "notes": "ပုဒ်မ ၂၅ အရ သတ်မှတ်ကာလအတွင်းလျှောက်ထားခြင်းမရှိပါသဖြင့် ပယ်ဖျက်ခြင်း",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "canceled",
+        "primary_type": "canceled",
+        "all_statuses": [
+          "canceled"
+        ]
       },
       {
         "id": 66,
@@ -1855,7 +2184,12 @@
         "cancellation_date": "၂၉-၃-၂၀၂၃",
         "cancellation_announcement": "၅/၂၀၂၃",
         "notes": "ပုဒ်မ ၂၅ အရ သတ်မှတ်ကာလအတွင်းလျှောက်ထားခြင်းမရှိပါသဖြင့် ပယ်ဖျက်ခြင်း",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "canceled",
+        "primary_type": "canceled",
+        "all_statuses": [
+          "canceled"
+        ]
       },
       {
         "id": 67,
@@ -1866,7 +2200,12 @@
         "cancellation_date": "၂၉-၃-၂၀၂၃",
         "cancellation_announcement": "၅/၂၀၂၃",
         "notes": "ပုဒ်မ ၂၅ အရ သတ်မှတ်ကာလအတွင်းလျှောက်ထားခြင်းမရှိပါသဖြင့် ပယ်ဖျက်ခြင်း",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "canceled",
+        "primary_type": "canceled",
+        "all_statuses": [
+          "canceled"
+        ]
       },
       {
         "id": 68,
@@ -1877,7 +2216,12 @@
         "cancellation_date": "၂၉-၃-၂၀၂၃",
         "cancellation_announcement": "၅/၂၀၂၃",
         "notes": "ပုဒ်မ ၂၅ အရ သတ်မှတ်ကာလအတွင်းလျှောက်ထားခြင်းမရှိပါသဖြင့် ပယ်ဖျက်ခြင်း",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "canceled",
+        "primary_type": "canceled",
+        "all_statuses": [
+          "canceled"
+        ]
       },
       {
         "id": 69,
@@ -1888,7 +2232,12 @@
         "cancellation_date": "၂၉-၃-၂၀၂၃",
         "cancellation_announcement": "၅/၂၀၂၃",
         "notes": "ပုဒ်မ ၂၅ အရ သတ်မှတ်ကာလအတွင်းလျှောက်ထားခြင်းမရှိပါသဖြင့် ပယ်ဖျက်ခြင်း",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "canceled",
+        "primary_type": "canceled",
+        "all_statuses": [
+          "canceled"
+        ]
       },
       {
         "id": 70,
@@ -1899,18 +2248,12 @@
         "cancellation_date": "၂၉-၃-၂၀၂၃",
         "cancellation_announcement": "၅/၂၀၂၃",
         "notes": "ပုဒ်မ ၂၅ အရ သတ်မှတ်ကာလအတွင်းလျှောက်ထားခြင်းမရှိပါသဖြင့် ပယ်ဖျက်ခြင်း",
-        "name_en": ""
-      },
-      {
-        "id": 71,
-        "name_mm": "ရခိုင်ဒီမိုကရေစီအဖွဲ့ချုပ်ပါတီ",
-        "type": "canceled",
-        "registration_date": "၁၈-၇-၂ဝ၁၇/အမှတ်စဉ် (၁ဝ၃)",
-        "announcement_number": "၁၈/၂ဝ၁၇",
-        "cancellation_date": "၂၉-၃-၂၀၂၃",
-        "cancellation_announcement": "၅/၂၀၂၃",
-        "notes": "ပုဒ်မ ၂၅ အရ သတ်မှတ်ကာလအတွင်းလျှောက်ထားခြင်းမရှိပါသဖြင့် ပယ်ဖျက်ခြင်း",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "canceled",
+        "primary_type": "canceled",
+        "all_statuses": [
+          "canceled"
+        ]
       },
       {
         "id": 72,
@@ -1921,7 +2264,12 @@
         "cancellation_date": "၂၉-၃-၂၀၂၃",
         "cancellation_announcement": "၅/၂၀၂၃",
         "notes": "ပုဒ်မ ၂၅ အရ သတ်မှတ်ကာလအတွင်းလျှောက်ထားခြင်းမရှိပါသဖြင့် ပယ်ဖျက်ခြင်း",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "canceled",
+        "primary_type": "canceled",
+        "all_statuses": [
+          "canceled"
+        ]
       },
       {
         "id": 73,
@@ -1932,7 +2280,12 @@
         "cancellation_date": "၂၉-၃-၂၀၂၃",
         "cancellation_announcement": "၅/၂၀၂၃",
         "notes": "ပုဒ်မ ၂၅ အရ သတ်မှတ်ကာလအတွင်းလျှောက်ထားခြင်းမရှိပါသဖြင့် ပယ်ဖျက်ခြင်း",
-        "name_en": "National United Democratic Party (N.U.D.P)"
+        "name_en": "National United Democratic Party (N.U.D.P)",
+        "current_status": "canceled",
+        "primary_type": "canceled",
+        "all_statuses": [
+          "canceled"
+        ]
       },
       {
         "id": 74,
@@ -1943,7 +2296,12 @@
         "cancellation_date": "၂၉-၃-၂၀၂၃",
         "cancellation_announcement": "၅/၂၀၂၃",
         "notes": "ပုဒ်မ ၂၅ အရ သတ်မှတ်ကာလအတွင်းလျှောက်ထားခြင်းမရှိပါသဖြင့် ပယ်ဖျက်ခြင်း",
-        "name_en": "The Yeomanry Development Party (YDP)"
+        "name_en": "The Yeomanry Development Party (YDP)",
+        "current_status": "canceled",
+        "primary_type": "canceled",
+        "all_statuses": [
+          "canceled"
+        ]
       },
       {
         "id": 75,
@@ -1954,7 +2312,12 @@
         "cancellation_date": "၂၉-၃-၂၀၂၃",
         "cancellation_announcement": "၅/၂၀၂၃",
         "notes": "ပုဒ်မ ၂၅ အရ သတ်မှတ်ကာလအတွင်းလျှောက်ထားခြင်းမရှိပါသဖြင့် ပယ်ဖျက်ခြင်း",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "canceled",
+        "primary_type": "canceled",
+        "all_statuses": [
+          "canceled"
+        ]
       },
       {
         "id": 76,
@@ -1965,7 +2328,12 @@
         "cancellation_date": "၂၉-၃-၂၀၂၃",
         "cancellation_announcement": "၅/၂၀၂၃",
         "notes": "ပုဒ်မ ၂၅ အရ သတ်မှတ်ကာလအတွင်းလျှောက်ထားခြင်းမရှိပါသဖြင့် ပယ်ဖျက်ခြင်း",
-        "name_en": "Chin National Party (CNP)"
+        "name_en": "Chin National Party (CNP)",
+        "current_status": "canceled",
+        "primary_type": "canceled",
+        "all_statuses": [
+          "canceled"
+        ]
       },
       {
         "id": 77,
@@ -1976,7 +2344,12 @@
         "cancellation_date": "၂၉-၃-၂၀၂၃",
         "cancellation_announcement": "၅/၂၀၂၃",
         "notes": "ပုဒ်မ ၂၅ အရ သတ်မှတ်ကာလအတွင်းလျှောက်ထားခြင်းမရှိပါသဖြင့် ပယ်ဖျက်ခြင်း",
-        "name_en": ""
+        "name_en": "",
+        "current_status": "canceled",
+        "primary_type": "canceled",
+        "all_statuses": [
+          "canceled"
+        ]
       },
       {
         "id": 78,
@@ -1987,36 +2360,20 @@
         "cancellation_date": "၂၉-၃-၂၀၂၃",
         "cancellation_announcement": "၅/၂၀၂၃",
         "notes": "ပုဒ်မ ၂၅ အရ သတ်မှတ်ကာလအတွင်းလျှောက်ထားခြင်းမရှိပါသဖြင့် ပယ်ဖျက်ခြင်း",
-        "name_en": "Alliance of Myanmar's Worker and Farmer Party (A.M.W.F.P)"
-      },
-      {
-        "id": 79,
-        "name_mm": "ရှမ်းပြည်ကိုးကန့်ဒီမိုကရက်တစ်ပါတီ",
-        "type": "canceled",
-        "registration_date": "၃၀-၅-၂ဝ၂၃/အမှတ်စဉ် (၁၉)",
-        "announcement_number": "၂၄/၂ဝ၂၃",
-        "cancellation_date": "၂၀-၁၁-၂၀၂၃",
-        "cancellation_announcement": "၄၈/၂၀၂၃",
-        "notes": "ပုဒ်မ ၁၂ ပုဒ်မခွဲ (ခ)အရ ပယ်ဖျက်ခြင်း",
-        "name_en": ""
-      },
-      {
-        "id": 80,
-        "name_mm": "မြိုတိုင်းရင်းသားပါတီ",
-        "type": "canceled",
-        "registration_date": "၄-၅-၂ဝ၂၃/အမှတ်စဉ် (၁၁)",
-        "announcement_number": "၁၆/၂ဝ၂၃",
-        "cancellation_date": "၂၂-၁၁-၂၀၂၃",
-        "cancellation_announcement": "၄၉/၂၀၂၃",
-        "notes": "ပုဒ်မ ၁၉ ပုဒ်မခွဲ (က)အရ ပယ်ဖျက်ခြင်း",
-        "name_en": ""
+        "name_en": "Alliance of Myanmar's Worker and Farmer Party (A.M.W.F.P)",
+        "current_status": "canceled",
+        "primary_type": "canceled",
+        "all_statuses": [
+          "canceled"
+        ]
       }
     ]
   },
   "summary": {
     "total_existing": 61,
-    "total_allowed_to_register": 63,
-    "total_canceled": 80,
-    "total_all_parties": 204
+    "total_allowed_to_register": 4,
+    "total_canceled": 75,
+    "total_all_parties": 140,
+    "duplicates_resolved": 64
   }
 }
