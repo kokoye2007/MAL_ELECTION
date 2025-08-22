@@ -1048,6 +1048,8 @@ def create_sidebar(db):
             st.markdown(get_text("overview.quick_ref_items.map")) 
             st.markdown(get_text("overview.quick_ref_items.search"))
             st.markdown(get_text("overview.quick_ref_items.comparison"))
+            st.markdown(get_text("overview.quick_ref_items.parties"))
+            st.markdown(get_text("overview.quick_ref_items.historical"))
     
     st.sidebar.markdown("---")
     

@@ -56,10 +56,12 @@
       "breakdown_title": "📊 Detailed Assembly Breakdown",
       "quick_reference": "📖 How to Use This Application",
       "quick_ref_items": {
-        "overview": "• Overview - Summary stats",
-        "map": "• Map - Interactive visualization",
-        "search": "• Search - Find constituencies",
-        "comparison": "• Comparison - Data analysis"
+        "overview": "• Overview - Multi-assembly summary statistics",
+        "map": "• Interactive Map - Visualize constituencies by region",
+        "search": "• Search - Find specific constituencies",
+        "comparison": "• Comparison - Compare different assemblies",
+        "parties": "• Political Parties - 2025 election party data",
+        "historical": "• Historical Data - 2020 election results"
       }
     },
     "themes": {
@@ -124,10 +126,12 @@
       "breakdown_title": "📊 အသေးစိတ် လွှတ်တော် ခွဲခြမ်းစိပ်ဖြာခြင်း",
       "quick_reference": "📖 ဤအပလီကေးရှင်းကို အသုံးပြုနည်း",
       "quick_ref_items": {
-        "overview": "• အခြုံ့ပုံ - အနှစ်ချုပ် ကိန်းဂဏန်းများ",
-        "map": "• မြေပုံ - အပြန်အလှန် ရှုမြင်နိုင်မှု",
-        "search": "• ရှာဖွေခြင်း - မဲဆန္ဒနယ်များ ရှာဖွေခြင်း",
-        "comparison": "• နိုင်ငံတိုင်းခြင်း - ဒေတာ ခွဲခြမ်းစိပ်ဖြာခြင်း"
+        "overview": "• အခြုံ့ပုံ - လွှတ်တော်အားလုံး အနှစ်ချုပ် ကိန်းဂဏန်းများ",
+        "map": "• အပြန်အလှန် မြေပုံ - နယ်မြေအလိုက် မဲဆန္ဒနယ်များကြည့်ရှုခြင်း",
+        "search": "• ရှာဖွေခြင်း - သတ်မှတ်ထားသော မဲဆန္ဒနယ်များ ရှာဖွေခြင်း",
+        "comparison": "• နှိုင်းယှဉ်ခြင်း - လွှတ်တော်အမျိုးမျိုး နှိုင်းယှဉ်ခြင်း",
+        "parties": "• နိုင်ငံရေးပါတီများ - ၂၀၂၅ ရွေးကောက်ပွဲ ပါတီဒေတာ",
+        "historical": "• သမိုင်းဆိုင်ရာ ဒေတာ - ၂၀၂၀ ရွေးကောက်ပွဲ ရလဒ်များ"
       }
     },
     "themes": {
