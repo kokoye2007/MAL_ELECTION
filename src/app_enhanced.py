@@ -2213,6 +2213,15 @@ def main():
         stats = db.get_assembly_statistics()
         
         if not all_data.empty:
+            # Apply additional fix for any remaining Unknown State issues
+            # This ensures Naypyitaw constituencies are properly labeled
+            all_data = db._fix_naypyitaw_regions(all_data)
+            
+            # Also fix any remaining "Unknown State" entries
+            all_data.loc[all_data['state_region_en'].isna() | 
+                        (all_data['state_region_en'] == '') | 
+                        (all_data['state_region_en'] == 'Unknown State'), 'state_region_en'] = 'Naypyitaw Union Territory'
+            
             # Regional distribution by assembly
             st.subheader("🌍 Regional Distribution by Assembly")
             

@@ -161,16 +161,24 @@ class DatabaseConnector:
                 
                 assembly_stats = cursor.fetchall()
                 
-                # Regional breakdown
+                # Regional breakdown - with Naypyitaw fix
                 cursor.execute("""
                     SELECT 
-                        state_region_en,
+                        CASE 
+                            WHEN state_region_en IS NULL OR state_region_en = '' OR state_region_en = 'Unknown State' THEN 'Naypyitaw Union Territory'
+                            ELSE state_region_en
+                        END as state_region_en,
                         assembly_type,
                         COUNT(*) as constituencies,
                         SUM(representatives) as representatives
                     FROM constituencies 
                     WHERE election_year = 2025
-                    GROUP BY state_region_en, assembly_type
+                    GROUP BY 
+                        CASE 
+                            WHEN state_region_en IS NULL OR state_region_en = '' OR state_region_en = 'Unknown State' THEN 'Naypyitaw Union Territory'
+                            ELSE state_region_en
+                        END,
+                        assembly_type
                     ORDER BY state_region_en, assembly_type
                 """)
                 
@@ -465,15 +473,22 @@ class DatabaseConnector:
                 
                 historical_data = {row['state_region_en']: dict(row) for row in cursor.fetchall()}
                 
-                # Current data
+                # Current data - with Naypyitaw fix
                 cursor.execute("""
                     SELECT 
-                        state_region_en,
+                        CASE 
+                            WHEN state_region_en IS NULL OR state_region_en = '' OR state_region_en = 'Unknown State' THEN 'Naypyitaw Union Territory'
+                            ELSE state_region_en
+                        END as state_region_en,
                         COUNT(*) as constituencies_current,
                         SUM(representatives) as representatives_current
                     FROM constituencies 
                     WHERE election_year = %s
-                    GROUP BY state_region_en
+                    GROUP BY 
+                        CASE 
+                            WHEN state_region_en IS NULL OR state_region_en = '' OR state_region_en = 'Unknown State' THEN 'Naypyitaw Union Territory'
+                            ELSE state_region_en
+                        END
                     ORDER BY state_region_en
                 """, (compare_year,))
                 
