@@ -53,9 +53,9 @@ def create_parties_overview(party_data: Dict[str, Any]) -> None:
     
     with col2:
         st.metric(
-            label="📝 Allowed to Register",
+            label="📝 Granted Registration Permission",
             value=summary['total_allowed_to_register'],
-            help="Parties allowed to register for 2025 election"
+            help="Parties granted permission to register for 2025 election"
         )
     
     with col3:
@@ -81,7 +81,7 @@ def create_party_distribution_chart(party_data: Dict[str, Any]) -> None:
     
     # Pie chart of party distribution
     fig = go.Figure(data=[go.Pie(
-        labels=['Existing', 'Allowed to Register', 'Canceled'],
+        labels=['Existing', 'Granted Registration Permission', 'Canceled'],
         values=[
             summary['total_existing'],
             summary['total_allowed_to_register'],
@@ -117,8 +117,8 @@ def create_context_cards() -> None:
     with col2:
         st.markdown("""
         <div style="background-color: rgba(241, 143, 1, 0.1); padding: 15px; border-radius: 10px; border-left: 5px solid #F18F01;">
-        <h4 style="color: #F18F01; margin-top: 0;">📝 Newly Allowed to Register (4)</h4>
-        <p style="margin-bottom: 0;">Genuinely NEW parties that have received permission to register specifically for the 2025 election (duplicates merged).</p>
+        <h4 style="color: #F18F01; margin-top: 0;">📝 Granted Registration Permission (4)</h4>
+        <p style="margin-bottom: 0;">Parties that have been granted permission to register for the 2025 election by UEC.</p>
         </div>
         """, unsafe_allow_html=True)
     
@@ -185,7 +185,7 @@ def display_party_table(df: pd.DataFrame, show_status: bool = False) -> None:
     if show_status:
         status_map = {
             'existing': '🟢 Currently Registered',
-            'allowed_to_register': '🟡 Newly Allowed to Register',
+            'allowed_to_register': '🟡 Granted Registration Permission',
             'canceled': '🔴 Canceled/Historical'
         }
         display_df['Status'] = display_df['type'].map(status_map)
@@ -214,7 +214,7 @@ def display_party_table(df: pd.DataFrame, show_status: bool = False) -> None:
         def highlight_party_type(row):
             if 'Currently Registered' in str(row.get('Status', '')):
                 return ['background-color: rgba(46, 134, 171, 0.1)'] * len(row)
-            elif 'Newly Allowed' in str(row.get('Status', '')):
+            elif 'Granted Registration' in str(row.get('Status', '')):
                 return ['background-color: rgba(241, 143, 1, 0.1)'] * len(row)
             elif 'Canceled' in str(row.get('Status', '')):
                 return ['background-color: rgba(199, 62, 29, 0.1)'] * len(row)
@@ -237,14 +237,14 @@ def create_tabbed_party_interface(party_data: Dict[str, Any]) -> None:
     tab1, tab2, tab3, tab4 = st.tabs([
         f"🗳️ 2025 Election Eligible ({summary.get('total_existing', 0) + summary.get('total_allowed_to_register', 0)})",
         f"📋 Currently Registered ({summary.get('total_existing', 0)})",
-        f"📝 Newly Allowed to Register ({summary.get('total_allowed_to_register', 0)})",
+        f"📝 Granted Registration Permission ({summary.get('total_allowed_to_register', 0)})",
         f"📜 Historical/Canceled ({summary.get('total_canceled', 0)})"
     ])
     
     # Tab 1: 2025 Election Eligible (Combined)
     with tab1:
         st.markdown("### 🗳️ Parties Eligible for 2025 Election")
-        st.info("This tab shows all parties that can participate in the 2025 election: both currently registered parties and newly allowed parties.")
+        st.info("This tab shows all parties that can participate in the 2025 election: both currently registered parties and parties granted registration permission.")
         
         eligible_df = get_parties_by_type(party_data, ['existing', 'allowed_to_register'])
         filtered_df = create_party_search(eligible_df, "search_eligible")
@@ -269,19 +269,19 @@ def create_tabbed_party_interface(party_data: Dict[str, Any]) -> None:
         else:
             st.warning("No currently registered parties found")
     
-    # Tab 3: Newly Allowed to Register
+    # Tab 3: Granted Registration Permission
     with tab3:
-        st.markdown("### 📝 Newly Allowed to Register")
-        st.info("NEW parties that have received permission to register specifically for the 2025 election. These are not previously existing parties.")
+        st.markdown("### 📝 Granted Registration Permission")
+        st.info("Parties that have been granted permission to register for the 2025 election by the Union Election Commission (UEC).")
         
         new_df = get_parties_by_type(party_data, ['allowed_to_register'])
         filtered_df = create_party_search(new_df, "search_new")
         
         if not filtered_df.empty:
-            st.markdown(f"**📊 Total: {len(filtered_df)} newly allowed parties**")
+            st.markdown(f"**📊 Total: {len(filtered_df)} parties granted registration permission**")
             display_party_table(filtered_df)
         else:
-            st.warning("No newly allowed parties found")
+            st.warning("No parties with granted registration permission found")
     
     # Tab 4: Historical/Canceled
     with tab4:
@@ -329,8 +329,8 @@ def create_parties_page():
     st.markdown("**Data Source:** Union Election Commission (UEC) Myanmar")
     st.markdown("**Important Notes:**")
     st.markdown("- These three categories are **distinct and non-overlapping**")
-    st.markdown("- 'Newly Allowed to Register' parties are **NEW** applications, not existing parties changing status")
-    st.markdown("- Only parties in 'Currently Registered' and 'Newly Allowed to Register' categories can participate in 2025")
+    st.markdown("- 'Granted Registration Permission' parties have received UEC approval to register for 2025")
+    st.markdown("- Only parties in 'Currently Registered' and 'Granted Registration Permission' categories can participate in 2025")
     st.markdown("- Data represents official UEC registration statuses as of the extraction date")
 
 if __name__ == "__main__":
