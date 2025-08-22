@@ -637,7 +637,7 @@ def create_performance_optimized_map(
             
             # Check if coordinates came from MIMU or CSV
             tsp_pcode = row.get('tsp_pcode', '')
-            coord_source = "MIMU" if tsp_pcode and tsp_pcode in mimu_coords else "CSV"
+            coord_source_label = "MIMU boundary centroid" if tsp_pcode and tsp_pcode in mimu_coords else "Geographic data"
             
             popup_html = f"""
             <div style="font-family: Arial; width: 250px;">
@@ -649,7 +649,8 @@ def create_performance_optimized_map(
                 <b>Electoral System:</b> {row.get('electoral_system', 'N/A')}<br>
                 <b>Representatives:</b> {row.get('representatives', 1)}<br>
                 <b>Code:</b> {row.get('constituency_code', row.get('tsp_pcode', 'N/A'))}<br>
-                <b>Coordinates:</b> {coord_source}
+                <b>Location:</b> {lat:.4f}, {lng:.4f}<br>
+                <small style="color: #666;">Source: {coord_source_label}</small>
             </div>
             """
             
